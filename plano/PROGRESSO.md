@@ -1322,3 +1322,10 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 - `generate` retorna `Result<String, GenerateError>` para representar as
   exceções do original. O lote acrescenta a contagem por código pedida no plano.
 - Próxima tarefa: 6.1.
+
+## FASE-06 — em andamento
+
+- Tarefa 6.8. O comando `cargo package -p br-validators --allow-dirty`
+  empacotou 272 arquivos e compilou o pacote. O `.crate` mediu 943.734 bytes
+  (922 KiB), abaixo do limite de 10 MB e do limiar de aviso de 8 MB.
+  O Cargo listou os testes de integração excluídos do pacote de distribuição.
