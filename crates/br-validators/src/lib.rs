@@ -18,6 +18,7 @@ pub mod nfe_chave;
 pub mod pis_pasep;
 pub mod pix;
 pub mod placa;
+pub mod platform;
 pub mod processo_judicial;
 pub mod renavam;
 pub mod rg;
