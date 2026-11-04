@@ -91,6 +91,8 @@ pub use data::ibge;
 pub use data::ibpt;
 #[cfg(feature = "incoterms")]
 pub use data::incoterms;
+#[cfg(feature = "lc116")]
+pub use data::lc116;
 #[cfg(feature = "moedas")]
 pub use data::moedas;
 #[cfg(feature = "natureza-juridica")]

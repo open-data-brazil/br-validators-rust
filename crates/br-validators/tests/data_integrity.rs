@@ -164,7 +164,7 @@ dataset!("iss-municipal", iss_municipal;
 );
 
 dataset!("lc116", lc116;
-    "lc116.json", "lc116", LC116
+    "lc116.json", "lc116", get_all_lc116()
 );
 
 dataset!("moedas", moedas;
