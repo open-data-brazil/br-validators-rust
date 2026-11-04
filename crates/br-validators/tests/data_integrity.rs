@@ -176,7 +176,7 @@ dataset!("natureza-juridica", natureza_juridica;
 );
 
 dataset!("nbs", nbs;
-    "nbs.json", "nbs", NBS
+    "nbs.json", "nbs", get_all_nbs()
 );
 
 dataset!("ncm", ncm;

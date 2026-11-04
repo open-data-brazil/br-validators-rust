@@ -89,6 +89,8 @@ pub use data::incoterms;
 pub use data::moedas;
 #[cfg(feature = "natureza-juridica")]
 pub use data::natureza_juridica;
+#[cfg(feature = "nbs")]
+pub use data::nbs;
 #[cfg(feature = "paises-bacen")]
 pub use data::paises_bacen;
 #[cfg(feature = "ptax")]
