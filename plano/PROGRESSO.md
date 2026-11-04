@@ -2024,3 +2024,95 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 - O CI da FASE-06 concluiu com sucesso.
   [Execução no GitHub](https://github.com/open-data-brazil/br-validators-rust/actions/runs/41838324284).
 - Próxima tarefa: 8.1.
+
+## FASE-08 — concluída
+
+- Tarefas das ondas A–E e 8.F1–8.F3 concluídas.
+- Commits
+  - `1ab0873` — feat(bot): fetcher ibge (IBGE Localidades)
+  - `5db69a1` — feat(bot): fetcher cnaes (IBGE CNAE 2.3)
+  - `8e82d6a` — chore(data): primeira captura cnaes pelo bot Rust
+  - `110b8f3` — feat(bot): fetcher ncm (Siscomex)
+  - `cc8583e` — chore(data): primeira captura ncm pelo bot Rust
+  - `eecad14` — feat(bot): fetcher selic (Bacen SGS 432)
+  - `26700fd` — chore(data): primeira captura selic pelo bot Rust
+  - `ad09241` — feat(bot): fetcher moedas (ISO 4217 e Bacen PTAX)
+  - `fb14ac6` — feat(bot): fetcher ptax (Bacen Olinda)
+  - `7c5e78f` — chore(data): primeira captura ptax pelo bot Rust
+  - `015eb2f` — feat(bot): fetcher pncp-reference (PNCP Cadastro)
+  - `c577bb8` — chore(data): primeira captura pncp-reference pelo bot Rust
+  - `063ba73` — feat(bot): fetcher transparencia-snapshots (Portal da Transparência)
+  - `24f4976` — feat(bot): fetcher bancos (Bacen STR)
+  - `b63eab8` — chore(data): primeira captura bancos pelo bot Rust
+  - `54b54fe` — feat(bot): fetcher cbo (MTE Windows-1252)
+  - `17b3fdb` — chore(data): primeira captura cbo pelo bot Rust
+  - `b28ff91` — feat(bot): fetcher aeroportos (ANAC e localidades IBGE)
+  - `c06b175` — feat(bot): fetcher tse-municipios (TSE Windows-1252)
+  - `adf4ccb` — chore(data): primeira captura tse-municipios pelo bot Rust
+  - `b36b91c` — feat(bot): fetcher natureza-juridica (Dados Abertos RFB)
+  - `e2f6e56` — feat(bot): fetcher cnpj-motivos (Dados Abertos RFB)
+  - `c901bc7` — feat(bot): fetcher nbs (Anexo B da NFS-e)
+  - `334f71e` — chore(data): primeira captura nbs pelo bot Rust
+  - `b5d90f6` — feat(bot): fetcher portos (ANTAQ e reparo Windows-1252)
+  - `21194da` — chore(data): primeira captura portos pelo bot Rust
+  - `c1b48b0` — feat(bot): fetcher anp-combustiveis (planilha semanal LPC)
+  - `3ac9bed` — chore(data): primeira captura anp-combustiveis pelo bot Rust
+  - `a7859da` — feat(bot): fetcher paises-bacen (Portal NF-e e Bacen)
+  - `6642d24` — chore(data): primeira captura paises-bacen pelo bot Rust
+  - `10934b1` — feat(bot): fetcher cfop (CONFAZ e espelho versionado)
+  - `6695fa4` — feat(bot): fetcher cest (CONFAZ e espelho versionado)
+  - `cca4ee5` — chore(data): primeira captura cest pelo bot Rust
+  - `9c4aec8` — feat(bot): fetcher cst (postbacks da consulta SPED)
+  - `574cbc2` — feat(bot): fetcher lc116 (Planalto e Portal NFS-e)
+  - `3b95af6` — feat(bot): fetcher esocial (categorias e rubricas da NT 06/2026)
+  - `9d0e9cb` — feat(bot): fetcher incoterms (tabela ICC 2020 e probe)
+  - `abd655d` — feat(bot): fetcher irpf (tabela mensal histórica da Receita)
+  - `997cc80` — feat(bot): fetcher inss (faixas históricas da Portaria MPS/MF)
+  - `b045d79` — feat(bot): fetcher csosn (Ajuste SINIEF 03/10)
+  - `38d74ea` — feat(bot): fetcher nfe-cuf (Manual NF-e e conferência IBGE)
+  - `d75fa04` — feat(bot): fetcher simples-nacional (anexos da LC 123/2006)
+  - `2d235ef` — feat(bot): fetcher feriados (pontos facultativos da Portaria MGI)
+  - `2a21db2` — feat(bot): fetcher telefone-ddd (Anatel e municípios IBGE)
+  - `ae09db7` — feat(bot): fetcher cep-faixas (streaming CNEFE por UF)
+  - `61766f9` — feat(bot): fetcher ibpt (Apidoni e espelho versionado)
+  - `301ad45` — feat(bot): fetcher iss-municipal (SIDRA, sementes legais e MUNIC)
+  - `8a42291` — test(data): exigir UTF-8 sem caractere de substituição
+  - `cc6bfa3` — feat(bot): listar agendamentos e dependências dos fetchers
+  - `0499a3a` — chore(data): registrar o primeiro refresh periódico
+
+- Saída integral dos quatro critérios de aceite em [FASE-08-aceite.txt](evidencias/FASE-08-aceite.txt).
+- O refresh real verificou 27 datasets periódicos, com 0 alterados, 4 alertas e 0 críticos. As fontes manuais foram exercitadas individualmente.
+- Os 34 fetchers têm testes offline. As capturas reais foram executadas por
+  dataset antes do fechamento. O primeiro refresh conjunto está registrado
+  em [latest.json](evidencias/FASE-08-latest.json).
+- Os datasets de CBO, TSE e portos ficaram sem U+FFFD. O XLSX oficial da
+  ANTAQ já continha U+FFFD. O bot recuperou os textos do DBF Windows-1252
+  publicado no mesmo ZIP. O teste de integridade exige UTF-8 limpo em todos
+  os arquivos, sem lista de exceções.
+- CNAE, NCM e PNCP tiveram normalização de espaços. NBS teve dois espaços
+  não separáveis normalizados. STR registrou a atualização do Bacen.
+  SELIC e PTAX avançaram as janelas. O snapshot da ANP recuperou a precisão
+  do TypeScript. Os dados do CONFAZ e da NF-e foram conferidos com as fontes
+  e os espelhos da referência.
+- Os probes da Portaria MGI, Receita e INSS responderam 403, o do CSOSN
+  respondeu 404 e o do Simples Nacional não completou. O bot manteve as
+  tabelas e registrou avisos. O Simples Nacional valida a tabela embutida,
+  mantida manualmente no original. O calendário usa o agendamento derivado
+  do catálogo para conservar a classificação da semente.
+- A derivação dos DDDs usa a UF principal e os municípios do IBGE, como o
+  TypeScript. A ordenação sem dependência de colação reproduz a semente
+  atual. Os empates por código no CNEFE preservam a ordem de entrada.
+- O IBPT usa o espelho versionado na ausência de credenciais, com
+  `failureKind: auth_missing`. A rota autenticada foi exercitada com
+  HTTP injetado e a URL pública da API aparece no relatório sem parâmetros.
+- A captura real do CNEFE reproduziu os 24.649 prefixos da semente.
+  A amostra de teste contém 50 linhas extraídas do CSV oficial de RR.
+- O ISS reproduziu os 500 municípios do recorte e os 5.071 do
+  complemento MUNIC. As datas de captura das linhas idênticas foram
+  preservadas para evitar alterações sem mudança na fonte.
+- O resumo do ISS usa as contagens de cobertura do relatório do bot.
+  Os artefatos auxiliares de cobertura por UF do TypeScript ficaram
+  fora do refresh Rust.
+- A rota oficial autenticada do IBPT fica pendente de verificação real
+  com credenciais. A captura local usou o espelho previsto.
+- Próxima tarefa: 9.0.

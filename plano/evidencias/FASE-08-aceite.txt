@@ -1,0 +1,617 @@
++ cargo test -p br-data-bot
+   Compiling br-data-bot v0.1.0 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/br-validators-rust/crates/br-data-bot)
+    Finished `test` profile [unoptimized] target(s) in 17.93s
+     Running unittests src/lib.rs (target/debug/deps/br_data_bot-cb2cb8bc9f2741c0)
+
+running 63 tests
+test fetchers::cfop::tests::extrai_codigos_da_pagina_e_conserva_os_registros_dourados ... ok
+test fetchers::cnaes::tests::normaliza_subclasses_da_fixture_conforme_a_semente ... ok
+test fetchers::cnpj_motivos::tests::usa_espelho_quando_a_receita_bloqueia_e_propaga_404 ... ok
+test fetchers::csosn::tests::gera_os_dez_codigos_do_ajuste_sinief ... ok
+test fetchers::cest::tests::identifica_ncms_e_segmento_nos_anexos_do_convenio ... ok
+test fetchers::cnpj_motivos::tests::interpreta_o_zip_e_respeita_o_diretorio_mensal_oficial ... ok
+test fetchers::cep_faixas::tests::mantem_o_primeiro_municipio_no_empate ... ok
+test fetchers::feriados::tests::gera_as_datas_especificas_do_calendario_federal ... ok
+test fetchers::esocial::tests::preserva_grupos_rubricas_e_datas_da_fonte ... ok
+test fetchers::cst::tests::prepara_as_quatro_tabelas_e_respeita_o_estado_dos_postbacks ... ok
+test fetchers::bancos::tests::reconhece_bom_codigos_e_campos_com_aspas ... ok
+test fetchers::ibpt::tests::mapeia_amostra_apidoni_da_referencia ... ok
+test fetchers::ibge::tests::fixture_preserva_municipios_e_resolve_uf_pela_regiao_imediata ... ok
+test fetchers::ibpt::tests::consulta_apidoni_com_rastreio_sem_parametros_sensiveis ... ok
+test fetchers::cbo::tests::restaura_acentos_e_preserva_codigos_dourados ... ok
+test fetchers::cnaes::tests::fetch_aceita_contagem_valida_e_propaga_404 ... ok
+test fetchers::irpf::tests::gera_tabela_da_referencia_e_retem_a_semente_se_probe_falha ... ok
+test fetchers::inss::tests::gera_as_faixas_e_o_teto_da_referencia_2025 ... ok
+test fetchers::bancos::tests::prepara_csv_oficial_e_propaga_404 ... ok
+test fetchers::esocial::tests::prepara_os_dois_arquivos_e_propaga_404 ... ok
+test fetchers::incoterms::tests::gera_as_regras_da_icc_e_preserva_os_dados_quando_o_probe_falha ... ok
+test fetchers::lc116::tests::planalto_reune_texto_da_lista_com_marcacao_e_entidades ... ok
+test fetchers::moedas::tests::combina_a_lista_bacen_com_os_simbolos_iso_4217 ... ok
+test fetchers::moedas::tests::fetch_prepara_moedas_e_propaga_404 ... ok
+test fetchers::natureza_juridica::tests::prepara_o_zip_do_espelho_autorizado_e_preserva_a_tabela ... ok
+test fetchers::ibpt::tests::sem_credenciais_preserva_a_tabela_versionada_e_registra_auth_missing ... ok
+test fetchers::cbo::tests::prepara_csv_sem_caractere_de_substituicao_e_propaga_404 ... ok
+test fetchers::cep_faixas::tests::agrega_csv_oficial_dentro_do_zip ... ok
+test fetchers::nbs::tests::identifica_o_cabecalho_e_os_codigos_folha ... ok
+test fetchers::nfe_cuf::tests::cruza_a_tabela_do_manual_com_as_27_ufs_do_ibge ... ok
+test fetchers::paises_bacen::tests::tenta_bacen_apos_404_do_portal_e_complementa_com_a_tabela_oficial ... ok
+test fetchers::ncm::tests::remove_bom_e_conserva_apenas_folhas ... ok
+test fetchers::pncp_reference::tests::compara_modalidades_da_fixture_e_da_semente ... ok
+test fetchers::lc116::tests::republicacao_nfse_preserva_a_semente_e_faz_fallback_do_planalto ... ok
+test fetchers::iss_municipal::tests::ordena_o_pib_do_sidra_e_confere_com_a_planilha_oficial ... ok
+test fetchers::iss_municipal::tests::preserva_capitais_leis_confirmadas_e_faixas_estimadas ... ok
+test fetchers::ptax::tests::seleciona_os_dois_nomes_de_fechamento_e_ignora_abertura ... ok
+test fetchers::rfb::tests::escolhe_mes_recente_da_receita_e_ignora_host_externo ... ok
+test fetchers::selic::tests::consulta_a_janela_definida_pela_data_embutida ... ok
+test fetchers::selic::tests::interpreta_a_resposta_real_e_mescla_repeticoes_pela_data ... ok
+test fetchers::simples_nacional::tests::valida_anexos_e_faixas_da_lei_complementar ... ok
+test fetchers::ibge::tests::fetch_respeita_limites_e_propaga_falha_de_link ... ok
+test fetchers::nbs::tests::prepara_planilha_oficial_e_propaga_404 ... ok
+test fetchers::transparencia_snapshots::tests::probes_reais_preservam_o_registro_sem_timestamp ... ok
+test fetchers::ptax::tests::prepara_todas_as_moedas_no_periodo_embutido ... ok
+test fetchers::cfop::tests::usa_espelho_ao_receber_404_e_informa_falha_sem_espelho ... ok
+test fetchers::paises_bacen::tests::abre_ods_oficial_descarta_excluidos_e_rejeita_zip_truncado ... ok
+test framework::zip::tests::rejeita_path_traversal_e_tamanho_excessivo ... ok
+test fetchers::transparencia_snapshots::tests::falha_de_probe_tem_alerta_e_preserva_classificacao ... ok
+test framework::json_writer::tests::json_canonico_e_repetivel ... ok
+test fetchers::aeroportos::tests::prepara_o_csv_com_dependencia_local_e_propaga_404 ... ok
+test fetchers::aeroportos::tests::cruza_anac_com_o_mapa_iata_e_municipios_ibge ... ok
+test fetchers::telefone_ddd::tests::deriva_os_67_ddds_do_mapa_anatel_e_dos_municipios_ibge ... ok
+test fetchers::pncp_reference::tests::prepara_oito_tabelas_e_retem_somente_a_que_falhar ... ok
+test fetchers::tse_municipios::tests::restaura_acento_e_confere_os_vinculos_tse_ibge ... ok
+test fetchers::ncm::tests::fetch_aceita_folhas_e_propaga_link_descontinuado ... ok
+test fetchers::tse_municipios::tests::prepara_zip_oficial_com_ibge_local_e_propaga_404 ... ok
+test fetchers::anp_combustiveis::tests::interpreta_planilha_oficial_e_descobre_link_mais_recente ... ok
+test fetchers::cest::tests::usa_o_espelho_ao_receber_404_e_propaga_falha_sem_ele ... ok
+test fetchers::portos::tests::recupera_texto_windows_1252_e_preserva_codigos_e_coordenadas ... ok
+test fetchers::portos::tests::descobre_zip_datado_e_prepara_dados_sem_u_fffd ... ok
+test fetchers::ibpt::tests::seleciona_ultima_versao_e_filtra_ncms_dourados_no_espelho ... ok
+test fetchers::anp_combustiveis::tests::troca_janela_semanal_e_propaga_404 ... ok
+
+test result: ok. 63 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.56s
+
+     Running unittests src/main.rs (target/debug/deps/br_data_bot-622cba65242229f9)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/framework.rs (target/debug/deps/framework-9280fb4f8c7e067a)
+
+running 7 tests
+test decodifica_bom_utf8_e_windows_1252 ... ok
+test saude_muda_em_transicoes_e_auth_permanece_warning ... ok
+test dry_run_usa_dependencia_preparada_sem_gravar_arquivos ... ok
+test repete_bloqueio_cinco_vezes_e_nao_repete_link_descontinuado ... ok
+test interpreta_cabecalho_csv_html_e_data_excel ... ok
+test prepara_ordena_distingue_drift_e_protege_a_semente ... ok
+test refresh_retem_fonte_bloqueada_e_continua_dependente ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+   Doc-tests br_data_bot
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ cargo run -p br-data-bot -- list
++ wc -l
+    Finished `dev` profile [unoptimized] target(s) in 0.13s
+     Running `target/debug/br-data-bot list`
+35
++ cargo run -p br-data-bot -- refresh --all --dry-run
+    Finished `dev` profile [unoptimized] target(s) in 0.09s
+     Running `target/debug/br-data-bot refresh --all --dry-run`
+{
+  "executadoEm": "2026-11-04T15:07:42.688545041+00:00",
+  "datasets": [
+    {
+      "id": "ibge",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "estados": 27,
+        "municipios": 5571
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "aeroportos",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "aeroportos": 533,
+        "comIata": 87
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "anp-combustiveis",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "municipios": 396,
+        "precosMedios": 2426,
+        "produtos": 7,
+        "semanas": 1,
+        "ufs": 27
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "bancos",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "bancos": 459
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "cbo",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cbo": 2694
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "cest",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cest": 1021
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "cfop",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cfop": 689
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "cnaes",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cnaes": 1332
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "cnpj-motivos",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "motivos": 61
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "csosn",
+      "status": "embedded_retained",
+      "sourceStatus": "embedded_retained",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "csosn": 10
+      },
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: link deprecated (HTTP 404) at https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10"
+    },
+    {
+      "id": "feriados",
+      "status": "embedded_retained",
+      "sourceStatus": "embedded_retained",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "feriadosNacionaisFixos": 9,
+        "feriadosNacionaisMoveis": 1,
+        "pontosFacultativosFederais": 9,
+        "portariaExtras": 2
+      },
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026"
+    },
+    {
+      "id": "incoterms",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "incoterms": 11
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "inss",
+      "status": "embedded_retained",
+      "sourceStatus": "embedded_retained",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "anos": 1,
+        "faixas": 4
+      },
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabelas-de-contribuicao"
+    },
+    {
+      "id": "irpf",
+      "status": "embedded_retained",
+      "sourceStatus": "embedded_retained",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "anos": 1,
+        "faixas": 5
+      },
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas"
+    },
+    {
+      "id": "moedas",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "moedas": 154
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "natureza-juridica",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "naturezas": 90
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "nbs",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "nbs": 917
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "ncm",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "ncm": 10516
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "nfe-cuf",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cuf": 27
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "paises-bacen",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "paises": 254
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "pncp-reference",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "amparos-legais": 191,
+        "criterios-julgamento": 16,
+        "fontes-orcamentarias": 6,
+        "modalidades": 19,
+        "modos-disputa": 6,
+        "tipos-contrato": 12,
+        "tipos-instrumentos-cobranca": 1,
+        "tipos-instrumentos-convocatorios": 5
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "portos",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "portos": 1094
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "ptax",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cotacoes": 860,
+        "diasUteis": 86,
+        "moedas": 10
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "selic",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "dias": 90,
+        "observacoes": 90
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "telefone-ddd",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "ddds": 67
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "transparencia-snapshots",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "endpoints": 8,
+        "queryAdapter": 7
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "tse-municipios",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "municipios": 5571
+      },
+      "message": "Fonte verificada"
+    }
+  ],
+  "sourceAlerts": [
+    {
+      "datasetId": "csosn",
+      "severity": "warning",
+      "status": "embedded_retained",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: link deprecated (HTTP 404) at https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10",
+      "endpoints": [
+        "https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10"
+      ],
+      "retainedEmbeddedDataFrom": "2026-06-27",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 1
+    },
+    {
+      "datasetId": "feriados",
+      "severity": "warning",
+      "status": "embedded_retained",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026",
+      "endpoints": [
+        "https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026"
+      ],
+      "retainedEmbeddedDataFrom": "2026-06-23",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 1
+    },
+    {
+      "datasetId": "inss",
+      "severity": "warning",
+      "status": "embedded_retained",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabelas-de-contribuicao",
+      "endpoints": [
+        "https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabelas-de-contribuicao"
+      ],
+      "retainedEmbeddedDataFrom": "2026-06-26",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 1
+    },
+    {
+      "datasetId": "irpf",
+      "severity": "warning",
+      "status": "embedded_retained",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas",
+      "endpoints": [
+        "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas"
+      ],
+      "retainedEmbeddedDataFrom": "2026-06-26",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 1
+    }
+  ],
+  "resumo": {
+    "datasetsVerificados": 27,
+    "datasetsAlterados": 0,
+    "totalAdicionados": 0,
+    "totalRemovidos": 0,
+    "totalAlterados": 0,
+    "sourceAlerts": 4,
+    "criticalAlerts": 0
+  }
+}
++ cargo test -p br-validators --all-features --test data_integrity
+    Finished `test` profile [unoptimized] target(s) in 0.23s
+     Running tests/data_integrity.rs (target/debug/deps/data_integrity-36d75fd37d46e3f6)
+
+running 36 tests
+test cnpj_motivos ... ok
+test feriados ... ok
+test cst ... ok
+test inss ... ok
+test irpf ... ok
+test csosn ... ok
+test ibpt ... ok
+test esocial ... ok
+test lc116 ... ok
+test cfop ... ok
+test aeroportos ... ok
+test incoterms ... ok
+test catalogo_contem_os_34_datasets_em_ordem ... ok
+test moedas ... ok
+test bancos ... ok
+test natureza_juridica ... ok
+test nfe_cuf ... ok
+test paises_bacen ... ok
+test cnaes ... ok
+test cbo ... ok
+test simples_nacional ... ok
+test transparencia_snapshots ... ok
+test nbs ... ok
+test cest ... ok
+test selic ... ok
+test pncp_reference ... ok
+test telefone_ddd ... ok
+test ptax ... ok
+test portos ... ok
+test tse_municipios ... ok
+test ibge ... ok
+test iss_municipal ... ok
+test contagens_de_tabelas_e_subconjuntos ... ok
+test anp_combustiveis ... ok
+test ncm ... ok
+test cep_faixas ... ok
+
+test result: ok. 36 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
