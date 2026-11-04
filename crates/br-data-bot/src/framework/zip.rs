@@ -56,3 +56,38 @@ pub(super) fn extract_with_limit(
 fn zip_error(error: ::zip::result::ZipError) -> SourceError {
     SourceError::Parse(format!("ZIP: {error}"))
 }
+
+#[cfg(test)]
+mod tests {
+    use std::io::Write;
+
+    use ::zip::{write::SimpleFileOptions, ZipWriter};
+
+    use super::*;
+
+    fn zip_bytes(path: &str, data: &[u8]) -> anyhow::Result<Vec<u8>> {
+        let mut writer = ZipWriter::new(Cursor::new(Vec::new()));
+        writer.start_file(path, SimpleFileOptions::default())?;
+        writer.write_all(data)?;
+        Ok(writer.finish()?.into_inner())
+    }
+
+    #[test]
+    fn rejeita_path_traversal_e_tamanho_excessivo() -> anyhow::Result<()> {
+        let escaped = zip_bytes("pasta/../dados.csv", b"abc")?;
+        assert!(matches!(
+            extract(&escaped, |_| true),
+            Err(SourceError::Parse(msg)) if msg.contains("insegura")
+        ));
+        let data = zip_bytes("pasta/dados.csv", b"abc")?;
+        assert!(matches!(
+            extract_with_limit(&data, |_| true, 2),
+            Err(SourceError::Parse(msg)) if msg.contains("acima")
+        ));
+        assert_eq!(
+            extract_with_limit(&data, |name| name.ends_with(".csv"), 3)?,
+            [("pasta/dados.csv".into(), b"abc".to_vec())]
+        );
+        Ok(())
+    }
+}
