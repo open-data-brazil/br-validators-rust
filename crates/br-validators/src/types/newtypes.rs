@@ -67,7 +67,7 @@ branded!(
     /// Chave de acesso de NF-e ou NFC-e validada.
     NfeChave,
     /// Número de processo judicial validado.
-    ProcessoJudicial,
+    ProcessoJudicial => new_unchecked,
     /// CEP validado.
     Cep => new_unchecked,
     /// Placa de veículo validada.

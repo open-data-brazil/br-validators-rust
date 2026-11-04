@@ -10,6 +10,7 @@ pub mod cnis;
 pub mod cnpj;
 pub mod cpf;
 pub mod pis_pasep;
+pub mod processo_judicial;
 pub mod renavam;
 pub mod titulo_eleitor;
 pub mod types;
@@ -27,6 +28,11 @@ pub use cnpj::{
 };
 pub use cpf::{format_cpf, is_valid_cpf, strip_cpf, validate_cpf};
 pub use pis_pasep::{format_pis_pasep, is_valid_pis_pasep, strip_pis_pasep, validate_pis_pasep};
+pub use processo_judicial::{
+    compute_processo_judicial_check_digits, format_processo_judicial, is_valid_processo_judicial,
+    parse_processo_judicial, strip_processo_judicial, validate_processo_judicial,
+    ProcessoJudicialSegments, ProcessoJudicialValidationResult, ValidProcessoJudicial,
+};
 pub use renavam::{format_renavam, is_valid_renavam, strip_renavam, validate_renavam};
 pub use titulo_eleitor::{
     format_titulo_eleitor, is_valid_titulo_eleitor, strip_titulo_eleitor, validate_titulo_eleitor,

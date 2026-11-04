@@ -147,7 +147,10 @@ pub type ValidationResult<T> = Result<Valid<T>, ValidationError>;
 /// Texto formatado ou erro de validação.
 pub type FormatResult = Result<String, ValidationError>;
 
-pub(crate) fn fail<T>(code: ValidationErrorCode, message: &'static str) -> ValidationResult<T> {
+pub(crate) fn fail<T>(
+    code: ValidationErrorCode,
+    message: &'static str,
+) -> Result<T, ValidationError> {
     Err(ValidationError {
         code,
         message: Cow::Borrowed(message),
