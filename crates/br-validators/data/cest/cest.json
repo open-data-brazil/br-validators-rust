@@ -6666,7 +6666,15 @@
   },
   {
     "codigo": "2104600",
-    "descricao": "Outros fornos; fogareiros (incluídas as chapas de cocção), grelhas e assadeiras, exceto os portáteis",
+    "descricao": "Outros fornos; fogareiros (incluindo as chapas de cocção), grelhas e assadeiras, exceto os portáteis e os classificados no CEST 21.046.01",
+    "ncms": [
+      "85166000"
+    ],
+    "segmento": "PRODUTOS ELETRÔNICOS, ELETROELETRÔNICOS E ELETRODOMÉSTICOS"
+  },
+  {
+    "codigo": "2104601",
+    "descricao": "Fogões de cozinha, exceto os portáteis",
     "ncms": [
       "85166000"
     ],
@@ -6674,7 +6682,15 @@
   },
   {
     "codigo": "2104700",
-    "descricao": "Outros fornos; fogareiros (incluídas as chapas de cocção), grelhas e assadeiras, portáteis",
+    "descricao": "Outros fornos; fogareiros (incluindo as chapas de cocção), grelhas e assadeiras, portáteis, exceto os classificados no CEST 21.047.01",
+    "ncms": [
+      "85166000"
+    ],
+    "segmento": "PRODUTOS ELETRÔNICOS, ELETROELETRÔNICOS E ELETRODOMÉSTICOS"
+  },
+  {
+    "codigo": "2104701",
+    "descricao": "Fogões portáteis de cozinha",
     "ncms": [
       "85166000"
     ],
@@ -6707,6 +6723,14 @@
   {
     "codigo": "2105100",
     "descricao": "Partes das chaleiras, ferros, fornos e outros aparelhos eletrotérmicos da posição 85.16, descritos nos CEST 21.043.00, 21.044.00, 21.045.00, 21.046.00, 21.047.00, 21.048.00, 21.049.00 e 21.050.00",
+    "ncms": [
+      "85169000"
+    ],
+    "segmento": "PRODUTOS ELETRÔNICOS, ELETROELETRÔNICOS E ELETRODOMÉSTICOS"
+  },
+  {
+    "codigo": "2105101",
+    "descricao": "Partes dos fogões de cozinha da posição 85.16, descritos nos CEST 21.046.01 e 21.047.01",
     "ncms": [
       "85169000"
     ],
