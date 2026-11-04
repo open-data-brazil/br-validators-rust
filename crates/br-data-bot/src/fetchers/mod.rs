@@ -22,6 +22,7 @@ pub(crate) mod moedas;
 pub(crate) mod natureza_juridica;
 pub(crate) mod nbs;
 pub(crate) mod ncm;
+pub(crate) mod paises_bacen;
 pub(crate) mod pncp_reference;
 pub(crate) mod portos;
 pub(crate) mod ptax;

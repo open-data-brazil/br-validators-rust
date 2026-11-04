@@ -36,6 +36,7 @@ impl ReqwestHttp {
             ))
             .timeout(Duration::from_secs(60))
             .redirect(reqwest::redirect::Policy::limited(10))
+            .cookie_store(true)
             .build()?;
         Ok(Self { client })
     }
