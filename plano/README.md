@@ -89,7 +89,7 @@ Marque aqui ao concluir cada fase (a IA executora deve atualizar este bloco):
 - [x] FASE-02 tipos base
 - [x] FASE-03 validadores simples
 - [x] FASE-04 validadores complexos
-- [ ] FASE-05 APIs de plataforma
+- [x] FASE-05 APIs de plataforma
 - [ ] FASE-06 infra de dados
 - [ ] FASE-07 framework do bot
 - [ ] FASE-08 fetchers (ondas A, B, C, D, E)

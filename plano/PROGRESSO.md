@@ -850,3 +850,475 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 - O validador de fator de vencimento mantém a faixa do TypeScript. A conversão
   em data está registrada em Pendências.
 - Próxima tarefa: 5.1 (formatação genérica).
+
+## FASE-05 — concluída
+
+- Tarefas 5.1 a 5.9 concluídas.
+- Commits
+  - `d048b8e` — feat(platform): despachar e normalizar os 19 tipos de documento
+  - `11d431a` — feat(format): portar formatação genérica e máscara por tipo
+  - `11b090e` — feat(detect): preservar precedência e metadados da detecção
+  - `b54cc6a` — feat(sanitize): aplicar correções por tipo e validar o resultado
+  - `ab9ce81` — feat(compare): comparar os valores canônicos de documentos
+  - `eb36f5c` — feat(batch): validar lotes e extrair colunas CSV
+  - `94f7918` — feat(diff): comparar campos estruturais de documentos
+  - `e9d429f` — feat(generate): reproduzir os 17 geradores sintéticos com semente
+  - `53183fb` — feat(lib): reexportar APIs de plataforma e testar exemplos públicos
+- Saída dos critérios de aceite
+
+```text
++ cargo test -p br-validators --all-features
+   Compiling br-validators v0.1.0 (crates/br-validators)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.01s
+     Running unittests src/lib.rs (target/debug/deps/br_validators-71ce25dcacc4d930)
+
+running 78 tests
+test batch::parse_csv::tests::le_indice_sem_cabecalho_e_ignora_coluna_ausente ... ok
+test batch::parse_csv::tests::le_coluna_por_nome_e_escapa_aspas ... ok
+test batch::tests::preserva_indices_e_agrupa_codigos_de_erro ... ok
+test boleto::cobranca::tests::diferencia_codigo_bancario_de_ispb ... ok
+test boleto::arrecadacao::tests::seleciona_algoritmo_pelo_indicador ... ok
+test boleto::cobranca::tests::rejeita_digito_zero_de_codigo_de_barras ... ok
+test boleto::fator_vencimento::tests::verifica_limites_do_fator_e_do_valor ... ok
+test boleto::tests::respeita_forma_forcada_e_semantica ... ok
+test brcode::tests::valida_crc_antes_de_extrair_campos ... ok
+test brcode::tlv::tests::le_campos_inclusive_com_valor_vazio ... ok
+test brcode::tlv::tests::distingue_erros_de_cabecalho_e_valor ... ok
+test brcode::build_static::tests::monta_qr_com_valor_decimal_e_txid ... ok
+test cartao_credito::tests::prioriza_prefixos_especificos ... ok
+test cartao_credito::tests::distingue_checksum_de_padrao_invalido ... ok
+test cep::tests::valida_na_ordem_do_original ... ok
+test cep::tests::aceita_cep_de_oito_digitos_sem_checksum ... ok
+test cnh::tests::aplica_desconto_ao_segundo_digito ... ok
+test cnh::tests::valida_na_ordem_do_original ... ok
+test cnis::tests::informa_metadados_com_opcoes_independentes ... ok
+test cnpj::alphanumeric::tests::verifica_checksum_de_base_alfanumerica ... ok
+test cnpj::numeric::tests::verifica_checksum_numerico ... ok
+test cnpj::tests::detecta_os_dois_formatos ... ok
+test cnpj::tests::valida_na_ordem_do_original ... ok
+test compare::tests::compara_formatos_e_valores_invalidos_normalizados ... ok
+test compare::tests::normaliza_ie_mato_grosso_com_uf ... ok
+test compare::tests::rejeita_tipo_dinamico_desconhecido ... ok
+test cpf::tests::preserva_cpf_canonico_e_mascara ... ok
+test cpf::tests::valida_na_ordem_do_original ... ok
+test diff::tests::compara_valores_incompletos_e_opacos ... ok
+test detect::tests::preserva_precedencia_entre_candidatos ... ok
+test diff::tests::usa_uf_para_normalizar_versoes_de_ie ... ok
+test ean::tests::calcula_digitos_gs1 ... ok
+test diff::tests::relata_apenas_digito_verificador_alterado ... ok
+test ean::tests::distingue_validacao_de_checksum_e_padrao_conhecido ... ok
+test format::tests::limita_formato_generico_aos_tipos_originais ... ok
+test generate::tests::rejeita_opcoes_invalidas_sem_panico ... ok
+test inscricao_estadual::sp_rural::tests::preserva_normalizacao_de_prefixo_e_sufixo ... ok
+test mask::tests::exige_uf_para_mascara_estadual ... ok
+test nfe_chave::tests::calcula_digito_da_base_do_moc ... ok
+test nfe_chave::tests::valida_uf_antes_do_modelo_e_do_digito ... ok
+test pis_pasep::tests::valida_na_ordem_do_original ... ok
+test pix::keys::tests::aceita_evp_oficial_sem_restringir_a_versao_do_uuid ... ok
+test pix::keys::tests::aplica_limite_de_email_e_regras_de_rotulos ... ok
+test pix::keys::tests::distingue_e164_de_regras_brasileiras ... ok
+test pix::tests::mantem_precedencia_de_deteccao ... ok
+test pix::tests::preserva_distincao_entre_normalizar_e_validar ... ok
+test placa::tests::distingue_validacao_estrutural_de_deteccao ... ok
+test pix::tests::valida_tipo_forcado_com_mensagem_original ... ok
+test placa::tests::rejeita_conversao_de_placa_ja_mercosul ... ok
+test platform::tests::identifica_todos_os_tipos_da_plataforma ... ok
+test processo_judicial::tests::modulo97_processa_sequencia_sem_overflow ... ok
+test processo_judicial::tests::valida_na_ordem_do_original ... ok
+test renavam::tests::preserva_zero_no_digito_verificador_e_no_prefixo ... ok
+test renavam::tests::valida_na_ordem_do_original ... ok
+test rg::tests::distingue_mascara_e_nivel_de_validacao ... ok
+test sanitize::tests::distingue_falha_de_validacao_e_uf_ausente ... ok
+test sanitize::tests::preserva_zeros_e_regras_de_prefixo ... ok
+test sanitize::tests::registra_correcoes_em_ordem ... ok
+test telefone::tests::distingue_extracao_de_normalizacao ... ok
+test telefone::tests::valida_caracteres_antes_da_ausencia_de_digitos ... ok
+test titulo_eleitor::tests::aplica_regra_especial_ao_resto_zero ... ok
+test titulo_eleitor::tests::rejeita_codigo_eleitoral_antes_de_digitos_repetidos ... ok
+test types::lookup::tests::distingue_ausencia_formato_e_entrada ... ok
+test types::newtypes::tests::oferece_representacao_canonica ... ok
+test types::newtypes::tests::serializa_como_string ... ok
+test types::validation::tests::exibe_codigo_e_mensagem_do_erro ... ok
+test types::validation::tests::preserva_codigos_e_formatos_do_contrato ... ok
+test types::uf::tests::converte_siglas_e_codigos_das_27_ufs ... ok
+test util::chars::tests::detecta_caractere_repetido ... ok
+test util::chars::tests::mantem_apenas_digitos_ascii ... ok
+test types::validation::tests::serializa_sucesso_e_erro_com_escape ... ok
+test util::chars::tests::remove_apenas_caracteres_selecionados ... ok
+test util::crc16::tests::calcula_crc_da_sequencia_de_referencia ... ok
+test util::luhn::tests::calcula_digito_para_completar_payload ... ok
+test util::luhn::tests::verifica_numero_com_digito_final ... ok
+test util::modulo11::tests::calcula_digito_com_conversao ... ok
+test util::modulo11::tests::mapeia_restos_do_cnpj ... ok
+test util::modulo11::tests::soma_valores_com_pesos ... ok
+
+test result: ok. 78 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/parity_boleto.rs (target/debug/deps/parity_boleto-52e259ee90b7dfa6)
+
+running 2 tests
+test boleto_tem_paridade_com_typescript ... ok
+test arrecadacao_tem_paridade_com_typescript ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/parity_brcode.rs (target/debug/deps/parity_brcode-3952968ea93bbaf3)
+
+running 1 test
+test brcode_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/parity_cartao_credito.rs (target/debug/deps/parity_cartao_credito-1447e7cd6a1edb79)
+
+running 1 test
+test cartao_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_cep.rs (target/debug/deps/parity_cep-88a6cffa94b65b75)
+
+running 1 test
+test cep_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_cnh.rs (target/debug/deps/parity_cnh-7ac6e05fdd8807d2)
+
+running 1 test
+test cnh_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_cnis.rs (target/debug/deps/parity_cnis-4c9ded90e941146d)
+
+running 1 test
+test cnis_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_cnpj.rs (target/debug/deps/parity_cnpj-15df20228e52b495)
+
+running 1 test
+test cnpj_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_cpf.rs (target/debug/deps/parity_cpf-3a561c60332141bf)
+
+running 1 test
+test cpf_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_detect.rs (target/debug/deps/parity_detect-8fcd03c0c5a7bce2)
+
+running 1 test
+test deteccao_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_ean.rs (target/debug/deps/parity_ean-b2f66ddab724285d)
+
+running 1 test
+test ean_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/parity_format.rs (target/debug/deps/parity_format-45569dd4d3027e4e)
+
+running 1 test
+test mascaras_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_generate.rs (target/debug/deps/parity_generate-bc9cbc5c8b3ddab6)
+
+running 1 test
+test geracao_semeada_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/parity_ie.rs (target/debug/deps/parity_ie-68b0f2e519399beb)
+
+running 1 test
+test inscricao_estadual_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_ie_produtor_rural.rs (target/debug/deps/parity_ie_produtor_rural-e889f98f5e9da69e)
+
+running 1 test
+test produtor_rural_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_nfe_chave.rs (target/debug/deps/parity_nfe_chave-4a85d9611dee3752)
+
+running 1 test
+test nfe_chave_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_pis_pasep.rs (target/debug/deps/parity_pis_pasep-861b3d27dd9f007a)
+
+running 1 test
+test pis_pasep_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_pix.rs (target/debug/deps/parity_pix-175d108f5e67e2f0)
+
+running 1 test
+test pix_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_placa.rs (target/debug/deps/parity_placa-5b4237a53b244f7b)
+
+running 1 test
+test placa_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/parity_processo_judicial.rs (target/debug/deps/parity_processo_judicial-4b384a1c0e100ef2)
+
+running 1 test
+test processo_judicial_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/parity_renavam.rs (target/debug/deps/parity_renavam-0af319da0ff37d7b)
+
+running 1 test
+test renavam_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_rg.rs (target/debug/deps/parity_rg-851cd41802a08889)
+
+running 2 tests
+test rg_tem_paridade_com_typescript ... ok
+test mascara_e_strip_do_rg_tem_paridade ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/parity_smoke.rs (target/debug/deps/parity_smoke-2c0eabe09a6f8c29)
+
+running 1 test
+test oraculo_contem_casos_de_paridade ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.26s
+
+     Running tests/parity_telefone.rs (target/debug/deps/parity_telefone-05183b9d54f51313)
+
+running 1 test
+test telefone_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/parity_titulo_eleitor.rs (target/debug/deps/parity_titulo_eleitor-9ff56a706b573357)
+
+running 1 test
+test titulo_eleitor_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/platform_dispatch.rs (target/debug/deps/platform_dispatch-67d9649d0f2cfe97)
+
+running 2 tests
+test despacho_exige_uf_e_retorna_canonico ... ok
+test normalizacao_mantem_texto_canonico_mesmo_quando_invalido ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_boleto.rs (target/debug/deps/vectors_boleto-3a070ea81bd9f3aa)
+
+running 3 tests
+test arrecadacao_reproduz_vetores_dourados ... ok
+test modulos_e_semantica_reproduzem_vetores_dourados ... ok
+test cobranca_reproduz_vetores_dourados ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_brcode.rs (target/debug/deps/vectors_brcode-5431a96014c98ac8)
+
+running 1 test
+test brcode_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_cartao_credito.rs (target/debug/deps/vectors_cartao_credito-03bde079f47ade7e)
+
+running 1 test
+test cartao_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_cep.rs (target/debug/deps/vectors_cep-78a6fc0a38ad5f55)
+
+running 1 test
+test cep_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_cnh.rs (target/debug/deps/vectors_cnh-55d4711106918365)
+
+running 1 test
+test cnh_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_cnis.rs (target/debug/deps/vectors_cnis-a9e4d1e7c2d2ec6c)
+
+running 1 test
+test nit_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_cnpj.rs (target/debug/deps/vectors_cnpj-e7e6530477d51a01)
+
+running 1 test
+test cnpj_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_cpf.rs (target/debug/deps/vectors_cpf-139cf24f9599e34f)
+
+running 1 test
+test cpf_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_ean.rs (target/debug/deps/vectors_ean-5c37c9a5b25df71d)
+
+running 1 test
+test ean_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_format.rs (target/debug/deps/vectors_format-7958671e5c5e7ff4)
+
+running 1 test
+test formatacao_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_ie.rs (target/debug/deps/vectors_ie-2e81f8f6d3c897b9)
+
+running 2 tests
+test inscricao_estadual_reproduz_vetores_negativos ... ok
+test inscricao_estadual_reproduz_vetores_dourados ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_ie_produtor_rural.rs (target/debug/deps/vectors_ie_produtor_rural-b1a309eef7447d0d)
+
+running 1 test
+test produtor_rural_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_nfe_chave.rs (target/debug/deps/vectors_nfe_chave-a0080384525e0b5a)
+
+running 1 test
+test nfe_chave_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_pis_pasep.rs (target/debug/deps/vectors_pis_pasep-bed410857f7df45e)
+
+running 1 test
+test pis_pasep_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_pix.rs (target/debug/deps/vectors_pix-f465f39dc7bc8ea5)
+
+running 1 test
+test pix_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_placa.rs (target/debug/deps/vectors_placa-9bcea20e52bc8253)
+
+running 1 test
+test placa_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_processo_judicial.rs (target/debug/deps/vectors_processo_judicial-4b500cdd35a3efb4)
+
+running 1 test
+test processo_judicial_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_renavam.rs (target/debug/deps/vectors_renavam-ef118b20dbe647b8)
+
+running 1 test
+test renavam_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_rg.rs (target/debug/deps/vectors_rg-3105aae45a00fdf9)
+
+running 1 test
+test rg_reproduz_vetores_dourados_das_27_ufs ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_smoke.rs (target/debug/deps/vectors_smoke-6eb844c944197a03)
+
+running 1 test
+test todos_os_vetores_sao_json_validos ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_telefone.rs (target/debug/deps/vectors_telefone-d2f5bf39a592e7a7)
+
+running 1 test
+test telefone_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vectors_titulo_eleitor.rs (target/debug/deps/vectors_titulo_eleitor-4800b21c27ed0fba)
+
+running 1 test
+test titulo_eleitor_reproduz_vetores_dourados ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests br_validators
+
+running 6 tests
+test crates/br-validators/src/cpf.rs - cpf::validate_cpf (line 37) ... ok
+test crates/br-validators/src/diff.rs - diff::diff (line 72) ... ok
+test crates/br-validators/src/cnpj/mod.rs - cnpj::validate_cnpj (line 86) ... ok
+test crates/br-validators/src/compare.rs - compare::compare (line 24) ... ok
+test crates/br-validators/src/mask.rs - mask::mask (line 23) ... ok
+test crates/br-validators/src/batch/mod.rs - batch::batch (line 72) ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
++ cargo test -p br-validators --test parity_detect
+   Compiling br-validators v0.1.0 (crates/br-validators)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.91s
+     Running tests/parity_detect.rs (target/debug/deps/parity_detect-76c17f9937b5b76f)
+
+running 1 test
+test deteccao_tem_paridade_com_typescript ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+```
+
+- Paridade aprovada nos 1.248 casos de formatação, 703 casos de detecção e
+  8.608 saídas semeadas dos 17 geradores. Os exemplos de comparação, máscara,
+  lote e diferenças rodam como doc-tests.
+- A detecção segue o contrato TypeScript de primeira correspondência com
+  metadados, sem coleção de candidatos. A sanitização mantém os zeros à
+  esquerda e as correções da referência.
+- `generate` retorna `Result<String, GenerateError>` para representar as
+  exceções do original. O lote acrescenta a contagem por código pedida no plano.
+- Próxima tarefa: 6.1.
