@@ -25,6 +25,7 @@ pub mod platform;
 pub mod processo_judicial;
 pub mod renavam;
 pub mod rg;
+pub mod sanitize;
 pub mod telefone;
 pub mod titulo_eleitor;
 pub mod types;
