@@ -47,5 +47,6 @@ pub fn fetchers() -> Vec<Box<dyn Fetcher>> {
         Box::new(crate::fetchers::portos::FETCHER),
         Box::new(crate::fetchers::anp_combustiveis::FETCHER),
         Box::new(crate::fetchers::paises_bacen::FETCHER),
+        Box::new(crate::fetchers::cfop::FETCHER),
     ]
 }
