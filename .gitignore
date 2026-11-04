@@ -1,0 +1,6 @@
+/target
+/reference/br-validators/
+/.tmp/
+/dist/
+/data/refresh-reports/fetch-outcomes/
+/data/refresh-reports/job-summary.md
