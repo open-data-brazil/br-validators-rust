@@ -22,6 +22,7 @@ pub(crate) mod cnpj_motivos;
 mod confaz;
 pub(crate) mod cst;
 pub(crate) mod ibge;
+pub(crate) mod lc116;
 pub(crate) mod moedas;
 pub(crate) mod natureza_juridica;
 pub(crate) mod nbs;
