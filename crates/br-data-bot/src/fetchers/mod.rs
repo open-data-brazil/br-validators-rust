@@ -8,6 +8,7 @@ use crate::{
     registry::Fetcher,
 };
 
+pub(crate) mod cnaes;
 pub(crate) mod ibge;
 
 pub(crate) struct DatasetFetcher {
