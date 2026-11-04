@@ -5,6 +5,7 @@
 //! Validação de documentos brasileiros e acesso a dados públicos embutidos por feature.
 
 pub mod cep;
+pub mod cnh;
 pub mod cnis;
 pub mod cnpj;
 pub mod cpf;
@@ -12,6 +13,7 @@ pub mod pis_pasep;
 pub mod types;
 pub mod util;
 pub use cep::{format_cep, is_valid_cep, strip_cep, validate_cep};
+pub use cnh::{format_cnh, is_valid_cnh, strip_cnh, validate_cnh};
 pub use cnis::{
     format_nit, infer_nit_issuer, infer_nit_tipo, is_valid_nit, strip_nit, validate_nit,
     validate_nit_with_options, NitIssuer, NitMetadataOptions, NitTipo, NitValidationResult,

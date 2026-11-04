@@ -59,7 +59,7 @@ branded!(
     /// CPF validado.
     Cpf => new_unchecked,
     /// CNH validada.
-    Cnh,
+    Cnh => new_unchecked,
     /// RENAVAM validado.
     Renavam,
     /// Título de eleitor validado.
