@@ -13,6 +13,7 @@ pub mod cpf;
 pub mod ean;
 pub mod nfe_chave;
 pub mod pis_pasep;
+pub mod pix;
 pub mod placa;
 pub mod processo_judicial;
 pub mod renavam;
@@ -46,6 +47,12 @@ pub use nfe_chave::{
     strip_nfe_chave, validate_nfe_chave, NfeChaveParts, NfeChaveValidationResult, ValidNfeChave,
 };
 pub use pis_pasep::{format_pis_pasep, is_valid_pis_pasep, strip_pis_pasep, validate_pis_pasep};
+pub use pix::{
+    detect_pix_key_type, format_pix_key, format_pix_key_with_options, is_valid_pix_key,
+    strip_pix_key, validate_pix_cnpj_key, validate_pix_cpf_key, validate_pix_email_key,
+    validate_pix_evp_key, validate_pix_key, validate_pix_key_with_options, validate_pix_phone_key,
+    PixKeyType, PixValidationError, PixValidationResult, ValidPixKey, ValidatePixKeyOptions,
+};
 pub use placa::{
     convert_placa_to_mercosul, detect_placa_format, format_placa, is_valid_placa,
     is_valid_placa_legacy, is_valid_placa_mercosul, strip_placa, validate_placa,

@@ -77,7 +77,7 @@ branded!(
     /// Número de Identificação do Trabalhador validado.
     Nit => new_unchecked,
     /// Chave PIX validada.
-    PixKey,
+    PixKey => new_unchecked,
     /// Linha digitável de boleto de cobrança validada.
     LinhaDigitavel,
     /// Código de barras de boleto de cobrança validado.
