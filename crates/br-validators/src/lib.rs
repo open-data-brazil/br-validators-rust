@@ -4,6 +4,7 @@
 
 //! Validação de documentos brasileiros e acesso a dados públicos embutidos por feature.
 
+pub mod batch;
 pub mod boleto;
 pub mod brcode;
 pub mod cartao_credito;
