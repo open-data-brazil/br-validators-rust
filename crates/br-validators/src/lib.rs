@@ -67,6 +67,8 @@ pub use cnpj::{
     is_valid_cnpj_alphanumeric, is_valid_cnpj_numeric, strip_cnpj, validate_cnpj,
 };
 pub use cpf::{format_cpf, is_valid_cpf, strip_cpf, validate_cpf};
+#[cfg(feature = "aeroportos")]
+pub use data::aeroportos;
 #[cfg(feature = "bancos")]
 pub use data::bancos;
 #[cfg(feature = "ibge")]

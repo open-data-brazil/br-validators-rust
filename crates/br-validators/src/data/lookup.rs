@@ -141,6 +141,25 @@ pub fn index_by<T, K: Eq + Hash>(
     index
 }
 
+/// Agrupa referências aos registros que tenham uma chave.
+pub fn group_by<T, K: Eq + Hash>(
+    rows: &'static [T],
+    key: impl Fn(&'static T) -> Option<K>,
+) -> HashMap<K, Vec<&'static T>> {
+    let mut index: HashMap<K, Vec<&'static T>> = HashMap::new();
+    for row in rows {
+        if let Some(key) = key(row) {
+            index.entry(key).or_default().push(row);
+        }
+    }
+    index
+}
+
+/// Remove espaços nas extremidades e converte para maiúsculas.
+pub fn upper_trim(input: &str) -> String {
+    input.trim_matches(is_ecmascript_whitespace).to_uppercase()
+}
+
 /// Converte para minúsculas e remove acentos do alfabeto latino.
 pub fn fold(input: &str) -> String {
     input

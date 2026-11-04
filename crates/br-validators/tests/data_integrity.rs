@@ -93,7 +93,7 @@ macro_rules! dataset {
 }
 
 dataset!("aeroportos", aeroportos;
-    "aeroportos.json", "aeroportos", AEROPORTOS
+    "aeroportos.json", "aeroportos", get_all_aeroportos()
 );
 
 dataset!("anp-combustiveis", anp_combustiveis;
@@ -298,9 +298,9 @@ fn contagens_de_tabelas_e_subconjuntos() {
     use data::{aeroportos, anp_combustiveis, iss_municipal, ptax, selic, simples_nacional};
 
     contagem(
-        &aeroportos::METADATA,
+        get_dataset_metadata("aeroportos").expect("metadados de aeroportos"),
         "comIata",
-        aeroportos::AEROPORTOS
+        aeroportos::get_all_aeroportos()
             .iter()
             .filter(|a| a.iata.is_some())
             .count(),
