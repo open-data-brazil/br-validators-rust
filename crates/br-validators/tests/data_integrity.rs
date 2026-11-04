@@ -114,7 +114,7 @@ dataset!("cep-faixas", cep_faixas;
 );
 
 dataset!("cest", cest;
-    "cest.json", "cest", CEST
+    "cest.json", "cest", get_all_cest()
 );
 
 dataset!("cfop", cfop;
