@@ -93,7 +93,7 @@ branded!(
     /// Inscrição estadual de produtor rural validada.
     InscricaoEstadualProdutorRural,
     /// Registro geral validado.
-    Rg,
+    Rg => new_unchecked,
     /// Número de telefone validado.
     Telefone => new_unchecked,
     /// Payload BR Code validado.

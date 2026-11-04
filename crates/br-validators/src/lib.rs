@@ -19,6 +19,7 @@ pub mod pix;
 pub mod placa;
 pub mod processo_judicial;
 pub mod renavam;
+pub mod rg;
 pub mod telefone;
 pub mod titulo_eleitor;
 pub mod types;
@@ -74,6 +75,11 @@ pub use processo_judicial::{
     ProcessoJudicialSegments, ProcessoJudicialValidationResult, ValidProcessoJudicial,
 };
 pub use renavam::{format_renavam, is_valid_renavam, strip_renavam, validate_renavam};
+pub use rg::{
+    format_rg, get_rg_official_source_url, get_rg_pending_ufs, get_rg_uf_rules, get_rg_uf_support,
+    is_rg_uf_implemented, is_valid_rg, strip_rg, validate_rg, RgDvAlgorithm, RgError, RgUfRules,
+    RgValidationResult, ValidRg,
+};
 pub use telefone::{
     extract_telefone_digits, format_telefone, is_valid_telefone, normalize_telefone_digits,
     strip_telefone, validate_telefone, TelefoneTipo, TelefoneValidationResult, ValidTelefone,
