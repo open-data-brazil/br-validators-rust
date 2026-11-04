@@ -122,7 +122,7 @@ dataset!("cfop", cfop;
 );
 
 dataset!("cnaes", cnaes;
-    "cnaes.json", "cnaes", CNAES
+    "cnaes.json", "cnaes", get_all_cnae()
 );
 
 dataset!("cnpj-motivos", cnpj_motivos;
