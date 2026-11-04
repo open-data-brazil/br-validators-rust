@@ -20,6 +20,7 @@ pub(crate) mod cfop;
 pub(crate) mod cnaes;
 pub(crate) mod cnpj_motivos;
 mod confaz;
+pub(crate) mod csosn;
 pub(crate) mod cst;
 pub(crate) mod esocial;
 pub(crate) mod ibge;
