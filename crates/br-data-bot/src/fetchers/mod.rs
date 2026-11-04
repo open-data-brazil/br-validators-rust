@@ -42,6 +42,7 @@ mod rfb;
 pub(crate) mod selic;
 pub(crate) mod simples_nacional;
 mod static_source;
+pub(crate) mod telefone_ddd;
 pub(crate) mod transparencia_snapshots;
 pub(crate) mod tse_municipios;
 
