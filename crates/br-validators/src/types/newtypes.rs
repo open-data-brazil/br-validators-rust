@@ -63,7 +63,7 @@ branded!(
     /// RENAVAM validado.
     Renavam => new_unchecked,
     /// Título de eleitor validado.
-    TituloEleitor,
+    TituloEleitor => new_unchecked,
     /// Chave de acesso de NF-e ou NFC-e validada.
     NfeChave,
     /// Número de processo judicial validado.
