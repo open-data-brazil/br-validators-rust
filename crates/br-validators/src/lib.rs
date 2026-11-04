@@ -51,6 +51,8 @@ pub mod cpf;
     feature = "tse-municipios",
 ))]
 pub mod data;
+#[cfg(feature = "_data")]
+pub mod data_catalog;
 pub mod detect;
 pub mod diff;
 pub mod ean;
@@ -100,6 +102,8 @@ pub use cnpj::{
     is_valid_cnpj_alphanumeric, is_valid_cnpj_numeric, strip_cnpj, validate_cnpj,
 };
 pub use cpf::{format_cpf, is_valid_cpf, strip_cpf, validate_cpf};
+#[cfg(feature = "_data")]
+pub use data_catalog::{get_data_catalog, get_dataset_metadata, is_stale};
 pub use ean::{
     compute_gs1_modulo10_check_digit, detect_ean_format, format_ean, is_valid_ean,
     is_valid_gs1_modulo10, passes_gs1_modulo10, strip_ean, validate_ean,
