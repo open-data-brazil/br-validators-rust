@@ -87,7 +87,7 @@ branded!(
     /// Número de cartão validado.
     CartaoCredito,
     /// Código EAN validado.
-    Ean,
+    Ean => new_unchecked,
     /// Inscrição estadual validada.
     InscricaoEstadual,
     /// Inscrição estadual de produtor rural validada.
