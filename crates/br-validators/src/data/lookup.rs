@@ -1,10 +1,10 @@
 //! Normalização, busca e datas civis dos datasets.
 
-use std::{error::Error, fmt, str::FromStr, time::SystemTime};
+use std::{collections::HashMap, error::Error, fmt, hash::Hash, str::FromStr, time::SystemTime};
 
 use crate::{
     types::{lookup_invalid_format, lookup_invalid_input, lookup_not_found, LookupResult},
-    util::chars::{is_ecmascript_whitespace, strip_chars},
+    util::chars::{is_ecmascript_whitespace, only_digits, strip_chars},
 };
 
 /// Limpa o código e verifica o comprimento quando informado.
@@ -108,6 +108,37 @@ pub fn lookup_positive<T>(
         || lookup_not_found(format!("{entity} {input} not in embedded table")),
         Ok,
     )
+}
+
+/// Mantém dígitos ASCII e preenche com zeros à esquerda quando há dígitos.
+pub fn padded_digits(input: &str, width: usize) -> String {
+    let digits = only_digits(input);
+    if digits.is_empty() {
+        digits
+    } else {
+        format!("{digits:0>width$}")
+    }
+}
+
+/// Normaliza como [`padded_digits`] e mantém apenas os últimos dígitos.
+pub fn trailing_digits(input: &str, width: usize) -> String {
+    let digits = padded_digits(input, width);
+    digits
+        .get(digits.len().saturating_sub(width)..)
+        .unwrap_or_default()
+        .to_owned()
+}
+
+/// Indexa os registros, preservando a primeira ocorrência de cada chave.
+pub fn index_by<T, K: Eq + Hash>(
+    rows: &'static [T],
+    key: impl Fn(&'static T) -> K,
+) -> HashMap<K, &'static T> {
+    let mut index = HashMap::with_capacity(rows.len());
+    for row in rows {
+        index.entry(key(row)).or_insert(row);
+    }
+    index
 }
 
 /// Converte para minúsculas e remove acentos do alfabeto latino.

@@ -102,7 +102,7 @@ dataset!("anp-combustiveis", anp_combustiveis;
 );
 
 dataset!("bancos", bancos;
-    "bancos.json", "bancos", BANCOS
+    "bancos.json", "bancos", get_all_bancos()
 );
 
 dataset!("cbo", cbo;
