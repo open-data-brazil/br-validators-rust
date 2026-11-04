@@ -26,15 +26,13 @@ fn contagem(meta: &DatasetMetadata, chave: &str, tamanho: usize) {
     );
 }
 
-fn integridade_bytes(dir: &Path, arquivo: &str, permite_substituicao: bool) -> Vec<u8> {
+fn integridade_bytes(dir: &Path, arquivo: &str) -> Vec<u8> {
     let bytes = fs::read(dir.join(arquivo)).unwrap_or_else(|erro| panic!("{arquivo}: {erro}"));
     let texto = std::str::from_utf8(&bytes).expect("JSON precisa ser UTF-8");
     assert!(!texto.starts_with('\u{FEFF}'), "{arquivo}: BOM");
     assert!(!texto.contains('\r'), "{arquivo}: CR");
     assert!(texto.ends_with('\n'), "{arquivo}: newline final");
-    if !permite_substituicao {
-        assert!(!texto.contains('\u{FFFD}'), "{arquivo}: U+FFFD");
-    }
+    assert!(!texto.contains('\u{FFFD}'), "{arquivo}: U+FFFD");
     bytes
 }
 
@@ -59,10 +57,8 @@ fn arquivos(meta: &DatasetMetadata, esperados: &[&str]) {
         .collect();
     assert_eq!(nomes, previstos, "{}: arquivos em disco", meta.id);
 
-    // TODO(FASE-08): remover após fetcher com Windows-1252.
-    let permite_substituicao = ["cbo", "portos", "tse-municipios"].contains(&meta.id.as_str());
     for arquivo in &meta.arquivos {
-        let bytes = integridade_bytes(&dir, &arquivo.path, permite_substituicao);
+        let bytes = integridade_bytes(&dir, &arquivo.path);
         assert_eq!(bytes.len() as u64, arquivo.bytes, "{}", arquivo.path);
         assert_eq!(
             format!("{:x}", Sha256::digest(&bytes)),
@@ -72,7 +68,7 @@ fn arquivos(meta: &DatasetMetadata, esperados: &[&str]) {
             arquivo.path,
         );
     }
-    let meta_bytes = integridade_bytes(&dir, "metadata.json", false);
+    let meta_bytes = integridade_bytes(&dir, "metadata.json");
     assert_eq!(
         serde_json::from_slice::<DatasetMetadata>(&meta_bytes).expect("JSON do metadata"),
         *meta,
