@@ -61,7 +61,7 @@ branded!(
     /// CNH validada.
     Cnh => new_unchecked,
     /// RENAVAM validado.
-    Renavam,
+    Renavam => new_unchecked,
     /// Título de eleitor validado.
     TituloEleitor,
     /// Chave de acesso de NF-e ou NFC-e validada.
