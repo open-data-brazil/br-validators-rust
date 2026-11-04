@@ -12,6 +12,7 @@ pub mod cnh;
 pub mod cnis;
 pub mod cnpj;
 pub mod cpf;
+pub mod detect;
 pub mod ean;
 pub mod format;
 pub mod inscricao_estadual;

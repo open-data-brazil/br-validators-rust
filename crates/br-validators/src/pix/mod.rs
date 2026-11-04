@@ -112,7 +112,7 @@ fn failure(
     }
 }
 
-fn has_uuid_shape(input: &str, is_hex: impl Fn(u8) -> bool) -> bool {
+pub(crate) fn has_uuid_shape(input: &str, is_hex: impl Fn(u8) -> bool) -> bool {
     let mut groups = input.split('-');
     [8, 4, 4, 4, 12].into_iter().all(|len| {
         groups
