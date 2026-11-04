@@ -155,7 +155,7 @@ dataset!("ibpt", ibpt;
 );
 
 dataset!("incoterms", incoterms;
-    "incoterms.json", "incoterms", INCOTERMS
+    "incoterms.json", "incoterms", get_all_incoterms()
 );
 
 dataset!("iss-municipal", iss_municipal;

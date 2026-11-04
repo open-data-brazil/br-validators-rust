@@ -73,6 +73,8 @@ pub use data::aeroportos;
 pub use data::bancos;
 #[cfg(feature = "ibge")]
 pub use data::ibge;
+#[cfg(feature = "incoterms")]
+pub use data::incoterms;
 #[cfg(feature = "moedas")]
 pub use data::moedas;
 #[cfg(feature = "paises-bacen")]
