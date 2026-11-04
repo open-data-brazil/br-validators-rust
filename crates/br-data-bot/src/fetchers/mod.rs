@@ -15,6 +15,7 @@ pub(crate) mod aeroportos;
 pub(crate) mod bancos;
 pub(crate) mod cbo;
 pub(crate) mod cnaes;
+pub(crate) mod cnpj_motivos;
 pub(crate) mod ibge;
 pub(crate) mod moedas;
 pub(crate) mod natureza_juridica;

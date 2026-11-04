@@ -2,7 +2,6 @@ use br_validators::schema::{Agendamento, NaturezaJuridica};
 
 use crate::framework::{
     context::FetchContext,
-    csv,
     outcome::SourceError,
     prepare::{Bounds, PreparedFile},
 };
@@ -22,32 +21,12 @@ pub(crate) const FETCHER: DatasetFetcher = DatasetFetcher {
     fetch,
 };
 
-fn parse(csv: &str) -> Result<Vec<NaturezaJuridica>, SourceError> {
-    Ok(csv::rows(csv, b';')?
-        .into_iter()
-        .filter_map(|row| {
-            let mut fields = row.into_iter();
-            let digits: String = fields
-                .next()?
-                .chars()
-                .filter(char::is_ascii_digit)
-                .collect();
-            let descricao = fields.next()?;
-            if digits.is_empty() || descricao.is_empty() {
-                return None;
-            }
-            let codigo = &digits[digits.len().saturating_sub(4)..];
-            Some(NaturezaJuridica {
-                codigo: format!("{codigo:0>4}"),
-                descricao,
-            })
-        })
-        .collect())
-}
-
 fn fetch(ctx: &FetchContext<'_>) -> Result<Vec<PreparedFile>, SourceError> {
     let csv = rfb::load_csv(ctx, "Naturezas.zip", MIRROR, "natju")?;
-    let records = parse(&csv)?;
+    let records = rfb::parse_codes(&csv, 4, |codigo, descricao| NaturezaJuridica {
+        codigo,
+        descricao,
+    })?;
     Ok(vec![ctx.prepare(
         FETCHER.id,
         "naturezas.json",

@@ -5,6 +5,7 @@ use reqwest::Url;
 
 use crate::framework::{
     context::FetchContext,
+    csv,
     encoding::{decode, Hint},
     html,
     http::RequestOpts,
@@ -74,6 +75,30 @@ pub(super) fn load_csv(
         Err(SourceError::Internal(error)) => Err(SourceError::Internal(error)),
         Err(_) => load(mirror),
     }
+}
+
+pub(super) fn parse_codes<T>(
+    text: &str,
+    width: usize,
+    mut record: impl FnMut(String, String) -> T,
+) -> Result<Vec<T>, SourceError> {
+    Ok(csv::rows(text, b';')?
+        .into_iter()
+        .filter_map(|row| {
+            let mut fields = row.into_iter();
+            let digits: String = fields
+                .next()?
+                .chars()
+                .filter(char::is_ascii_digit)
+                .collect();
+            let descricao = fields.next()?;
+            if digits.is_empty() || descricao.is_empty() {
+                return None;
+            }
+            let codigo = &digits[digits.len().saturating_sub(width)..];
+            Some(record(format!("{codigo:0>width$}"), descricao))
+        })
+        .collect())
 }
 
 #[cfg(test)]
