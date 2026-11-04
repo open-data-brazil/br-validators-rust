@@ -44,5 +44,6 @@ pub fn fetchers() -> Vec<Box<dyn Fetcher>> {
         Box::new(crate::fetchers::natureza_juridica::FETCHER),
         Box::new(crate::fetchers::cnpj_motivos::FETCHER),
         Box::new(crate::fetchers::nbs::FETCHER),
+        Box::new(crate::fetchers::portos::FETCHER),
     ]
 }

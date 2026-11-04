@@ -22,6 +22,7 @@ pub(crate) mod natureza_juridica;
 pub(crate) mod nbs;
 pub(crate) mod ncm;
 pub(crate) mod pncp_reference;
+pub(crate) mod portos;
 pub(crate) mod ptax;
 mod rfb;
 pub(crate) mod selic;
