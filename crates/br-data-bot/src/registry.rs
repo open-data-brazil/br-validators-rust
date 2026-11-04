@@ -51,5 +51,6 @@ pub fn fetchers() -> Vec<Box<dyn Fetcher>> {
         Box::new(crate::fetchers::cest::FETCHER),
         Box::new(crate::fetchers::cst::FETCHER),
         Box::new(crate::fetchers::lc116::FETCHER),
+        Box::new(crate::fetchers::esocial::FETCHER),
     ]
 }

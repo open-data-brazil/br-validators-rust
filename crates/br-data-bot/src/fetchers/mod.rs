@@ -21,6 +21,7 @@ pub(crate) mod cnaes;
 pub(crate) mod cnpj_motivos;
 mod confaz;
 pub(crate) mod cst;
+pub(crate) mod esocial;
 pub(crate) mod ibge;
 pub(crate) mod lc116;
 pub(crate) mod moedas;
