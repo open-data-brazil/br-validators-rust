@@ -12,6 +12,7 @@ use crate::registry::Fetcher;
 
 use super::{
     context::{FetchContext, StagedData},
+    health::record_health,
     http::HttpClient,
     json_writer::{canonical_json, sha256, write_encoded, write_json},
     metadata::{next_metadata, read_previous},
@@ -82,6 +83,7 @@ pub fn refresh(
     };
     let report_dir = repo_root.join("data/refresh-reports");
     let outcome_dir = report_dir.join("fetch-outcomes");
+    let health_dir = report_dir.join("source-health");
     let mut staged = StagedData::new();
 
     for fetcher in ordered {
@@ -99,7 +101,7 @@ pub fn refresh(
                     .collect(),
             );
         }
-        if let Some(alert) = run.outcome.alert() {
+        if let Some(alert) = record_health(&health_dir, &run.outcome, today, options.dry_run)? {
             report.source_alerts.push(alert);
         }
         if !options.dry_run {

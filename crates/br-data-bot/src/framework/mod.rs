@@ -2,6 +2,7 @@ pub mod context;
 pub mod csv;
 pub mod encoding;
 pub mod guard;
+pub mod health;
 pub mod html;
 pub mod http;
 pub mod json_writer;
