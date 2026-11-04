@@ -18,6 +18,10 @@ mod mt;
 mod pa;
 mod pb;
 mod pe;
+mod pi;
+mod pr;
+mod rj;
+mod rn;
 
 pub use ac::{strip_ie_ac, validate_ie_ac};
 pub use al::{strip_ie_al, validate_ie_al};
@@ -36,6 +40,10 @@ pub use mt::{strip_ie_mt, validate_ie_mt};
 pub use pa::{strip_ie_pa, validate_ie_pa};
 pub use pb::{strip_ie_pb, validate_ie_pb};
 pub use pe::{strip_ie_pe, validate_ie_pe};
+pub use pi::{strip_ie_pi, validate_ie_pi};
+pub use pr::{strip_ie_pr, validate_ie_pr};
+pub use rj::{strip_ie_rj, validate_ie_rj};
+pub use rn::{strip_ie_rn, validate_ie_rn};
 
 use crate::types::{FormatResult, Uf, ValidationErrorCode as E};
 
@@ -97,6 +105,10 @@ pub fn validate_inscricao_estadual(input: &str, uf: Uf) -> InscricaoEstadualVali
         Uf::PA => validate_ie_pa(input),
         Uf::PB => validate_ie_pb(input),
         Uf::PE => validate_ie_pe(input),
+        Uf::PI => validate_ie_pi(input),
+        Uf::PR => validate_ie_pr(input),
+        Uf::RJ => validate_ie_rj(input),
+        Uf::RN => validate_ie_rn(input),
         _ => Err(common::failure(
             None,
             E::UnsupportedFormat,
