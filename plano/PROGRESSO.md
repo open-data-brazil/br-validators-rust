@@ -411,3 +411,11 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
   `None`. O cálculo de dígitos de EAN e processo judicial também retorna
   `None` para caracteres que não são dígitos ASCII.
 - Próxima tarefa: 4.1 (NF-e).
+
+## Pendências
+
+- FASE-04, tarefa 4.5. O plano menciona datas-base de 1997 e 2025 para o fator
+  de vencimento. O TypeScript fixado e os vetores expõem somente a validação de
+  quatro dígitos (0000 sem vencimento, 0001–9997 na faixa). O Rust porta essa
+  API. A conversão para uma data precisa de uma regra confirmada para escolher
+  o ciclo quando o mesmo fator puder representar datas diferentes.

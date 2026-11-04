@@ -79,11 +79,11 @@ branded!(
     /// Chave PIX validada.
     PixKey => new_unchecked,
     /// Linha digitável de boleto de cobrança validada.
-    LinhaDigitavel,
+    LinhaDigitavel => new_unchecked,
     /// Código de barras de boleto de cobrança validado.
-    CodigoBarras,
+    CodigoBarras => new_unchecked,
     /// Boleto de arrecadação validado.
-    Arrecadacao,
+    Arrecadacao => new_unchecked,
     /// Número de cartão validado.
     CartaoCredito => new_unchecked,
     /// Código EAN validado.

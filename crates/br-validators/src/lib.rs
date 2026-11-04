@@ -4,6 +4,7 @@
 
 //! Validação de documentos brasileiros e acesso a dados públicos embutidos por feature.
 
+pub mod boleto;
 pub mod brcode;
 pub mod cartao_credito;
 pub mod cep;
@@ -22,6 +23,10 @@ pub mod telefone;
 pub mod titulo_eleitor;
 pub mod types;
 pub mod util;
+pub use boleto::{
+    detect_boleto_input_kind, format_boleto, is_valid_boleto, validate_boleto,
+    validate_boleto_with_options,
+};
 pub use brcode::{
     build_static_pix_brcode, compute_crc16_ccitt, is_valid_brcode, normalize_brcode_payload,
     parse_brcode, parse_tlv_sequence, validate_brcode, verify_brcode_crc, BrCodeValidationResult,
