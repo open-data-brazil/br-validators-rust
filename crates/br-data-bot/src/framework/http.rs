@@ -4,6 +4,17 @@ use super::outcome::SourceError;
 
 pub trait HttpClient: Send + Sync {
     fn get(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse, SourceError>;
+
+    fn post_form(
+        &self,
+        url: &str,
+        _opts: &RequestOpts,
+        _fields: &[(&str, &str)],
+    ) -> Result<HttpResponse, SourceError> {
+        Err(SourceError::Internal(format!(
+            "POST de formulário indisponível para {url}"
+        )))
+    }
 }
 
 #[derive(Debug, Default, Clone)]
@@ -44,45 +55,60 @@ impl ReqwestHttp {
 
 impl HttpClient for ReqwestHttp {
     fn get(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse, SourceError> {
-        let mut request = self.client.get(url);
-        if let Some(timeout) = opts.timeout {
-            request = request.timeout(timeout);
-        }
-        for (name, value) in &opts.headers {
-            request = request.header(name, value);
-        }
-        let response = request.send().map_err(classify_reqwest)?;
-        let status = response.status().as_u16();
-        let final_url = response.url().to_string();
-        match status {
-            200..=299 => {}
-            404 | 410 => {
-                return Err(SourceError::LinkDeprecated {
-                    url: final_url,
-                    status,
-                });
-            }
-            401 => return Err(SourceError::AuthMissing(format!("HTTP {status}"))),
-            403 | 408 | 429 | 500..=599 => {
-                return Err(SourceError::Blocked(format!(
-                    "HTTP {status} at {final_url}"
-                )));
-            }
-            _ => return Err(SourceError::Parse(format!("HTTP {status} at {final_url}"))),
-        }
-        let content_type = response
-            .headers()
-            .get(reqwest::header::CONTENT_TYPE)
-            .and_then(|value| value.to_str().ok())
-            .map(str::to_owned);
-        let bytes = response.bytes().map_err(classify_reqwest)?.to_vec();
-        Ok(HttpResponse {
-            status,
-            final_url,
-            bytes,
-            content_type,
-        })
+        send(self.client.get(url), opts)
     }
+
+    fn post_form(
+        &self,
+        url: &str,
+        opts: &RequestOpts,
+        fields: &[(&str, &str)],
+    ) -> Result<HttpResponse, SourceError> {
+        send(self.client.post(url).form(fields), opts)
+    }
+}
+
+fn send(
+    mut request: reqwest::blocking::RequestBuilder,
+    opts: &RequestOpts,
+) -> Result<HttpResponse, SourceError> {
+    if let Some(timeout) = opts.timeout {
+        request = request.timeout(timeout);
+    }
+    for (name, value) in &opts.headers {
+        request = request.header(name, value);
+    }
+    let response = request.send().map_err(classify_reqwest)?;
+    let status = response.status().as_u16();
+    let final_url = response.url().to_string();
+    match status {
+        200..=299 => {}
+        404 | 410 => {
+            return Err(SourceError::LinkDeprecated {
+                url: final_url,
+                status,
+            });
+        }
+        401 => return Err(SourceError::AuthMissing(format!("HTTP {status}"))),
+        403 | 408 | 429 | 500..=599 => {
+            return Err(SourceError::Blocked(format!(
+                "HTTP {status} at {final_url}"
+            )));
+        }
+        _ => return Err(SourceError::Parse(format!("HTTP {status} at {final_url}"))),
+    }
+    let content_type = response
+        .headers()
+        .get(reqwest::header::CONTENT_TYPE)
+        .and_then(|value| value.to_str().ok())
+        .map(str::to_owned);
+    let bytes = response.bytes().map_err(classify_reqwest)?.to_vec();
+    Ok(HttpResponse {
+        status,
+        final_url,
+        bytes,
+        content_type,
+    })
 }
 
 fn classify_reqwest(error: reqwest::Error) -> SourceError {

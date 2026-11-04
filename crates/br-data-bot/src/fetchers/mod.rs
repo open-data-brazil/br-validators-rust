@@ -20,6 +20,7 @@ pub(crate) mod cfop;
 pub(crate) mod cnaes;
 pub(crate) mod cnpj_motivos;
 mod confaz;
+pub(crate) mod cst;
 pub(crate) mod ibge;
 pub(crate) mod moedas;
 pub(crate) mod natureza_juridica;

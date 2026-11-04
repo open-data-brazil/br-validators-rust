@@ -44,8 +44,12 @@ impl<'a> RetryHttp<'a> {
     }
 }
 
-impl HttpClient for RetryHttp<'_> {
-    fn get(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse, SourceError> {
+impl RetryHttp<'_> {
+    fn execute(
+        &self,
+        url: &str,
+        request: impl Fn() -> Result<HttpResponse, SourceError>,
+    ) -> Result<HttpResponse, SourceError> {
         let mut attempt = 1;
         loop {
             {
@@ -58,12 +62,27 @@ impl HttpClient for RetryHttp<'_> {
                 }
                 trace.attempts = trace.attempts.saturating_add(1);
             }
-            let result = self.client.get(url, opts);
+            let result = request();
             if attempt >= MAX_ATTEMPTS || !matches!(result, Err(SourceError::Blocked(_))) {
                 return result;
             }
             thread::sleep(self.delay.saturating_mul(attempt));
             attempt += 1;
         }
+    }
+}
+
+impl HttpClient for RetryHttp<'_> {
+    fn get(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse, SourceError> {
+        self.execute(url, || self.client.get(url, opts))
+    }
+
+    fn post_form(
+        &self,
+        url: &str,
+        opts: &RequestOpts,
+        fields: &[(&str, &str)],
+    ) -> Result<HttpResponse, SourceError> {
+        self.execute(url, || self.client.post_form(url, opts, fields))
     }
 }
