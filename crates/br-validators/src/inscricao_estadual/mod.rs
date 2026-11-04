@@ -9,7 +9,11 @@ mod ce;
 mod common;
 mod df;
 mod es;
+mod go;
+mod ma;
+mod mg;
 mod modulo_ie;
+mod ms;
 
 pub use ac::{strip_ie_ac, validate_ie_ac};
 pub use al::{strip_ie_al, validate_ie_al};
@@ -20,6 +24,10 @@ pub use ce::{strip_ie_ce, validate_ie_ce};
 pub use common::{IeError, InscricaoEstadualValidationResult, ValidInscricaoEstadual};
 pub use df::{strip_ie_df, validate_ie_df};
 pub use es::{strip_ie_es, validate_ie_es};
+pub use go::{strip_ie_go, validate_ie_go};
+pub use ma::{strip_ie_ma, validate_ie_ma};
+pub use mg::{strip_ie_mg, validate_ie_mg};
+pub use ms::{strip_ie_ms, validate_ie_ms};
 
 use crate::types::{FormatResult, Uf, ValidationErrorCode as E};
 
@@ -73,6 +81,10 @@ pub fn validate_inscricao_estadual(input: &str, uf: Uf) -> InscricaoEstadualVali
         Uf::CE => validate_ie_ce(input),
         Uf::DF => validate_ie_df(input),
         Uf::ES => validate_ie_es(input),
+        Uf::GO => validate_ie_go(input),
+        Uf::MA => validate_ie_ma(input),
+        Uf::MG => validate_ie_mg(input),
+        Uf::MS => validate_ie_ms(input),
         _ => Err(common::failure(
             None,
             E::UnsupportedFormat,

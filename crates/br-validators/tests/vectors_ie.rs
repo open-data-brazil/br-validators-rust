@@ -14,6 +14,10 @@ const UFS: &[Uf] = &[
     Uf::CE,
     Uf::DF,
     Uf::ES,
+    Uf::GO,
+    Uf::MA,
+    Uf::MG,
+    Uf::MS,
 ];
 
 #[test]
