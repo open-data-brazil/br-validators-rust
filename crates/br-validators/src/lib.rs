@@ -12,6 +12,7 @@ pub mod cnpj;
 pub mod cpf;
 pub mod ean;
 pub mod pis_pasep;
+pub mod placa;
 pub mod processo_judicial;
 pub mod renavam;
 pub mod titulo_eleitor;
@@ -39,6 +40,10 @@ pub use ean::{
     is_valid_gs1_modulo10, passes_gs1_modulo10, strip_ean, validate_ean,
 };
 pub use pis_pasep::{format_pis_pasep, is_valid_pis_pasep, strip_pis_pasep, validate_pis_pasep};
+pub use placa::{
+    convert_placa_to_mercosul, detect_placa_format, format_placa, is_valid_placa,
+    is_valid_placa_legacy, is_valid_placa_mercosul, strip_placa, validate_placa,
+};
 pub use processo_judicial::{
     compute_processo_judicial_check_digits, format_processo_judicial, is_valid_processo_judicial,
     parse_processo_judicial, strip_processo_judicial, validate_processo_judicial,

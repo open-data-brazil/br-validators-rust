@@ -71,7 +71,7 @@ branded!(
     /// CEP validado.
     Cep => new_unchecked,
     /// Placa de veículo validada.
-    Placa,
+    Placa => new_unchecked,
     /// PIS ou PASEP validado.
     PisPasep => new_unchecked,
     /// Número de Identificação do Trabalhador validado.
