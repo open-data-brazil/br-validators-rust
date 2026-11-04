@@ -5,6 +5,10 @@ use super::outcome::SourceError;
 pub trait HttpClient: Send + Sync {
     fn get(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse, SourceError>;
 
+    fn head(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse, SourceError> {
+        self.get(url, opts)
+    }
+
     fn post_form(
         &self,
         url: &str,
@@ -56,6 +60,10 @@ impl ReqwestHttp {
 impl HttpClient for ReqwestHttp {
     fn get(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse, SourceError> {
         send(self.client.get(url), opts)
+    }
+
+    fn head(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse, SourceError> {
+        send(self.client.head(url), opts)
     }
 
     fn post_form(

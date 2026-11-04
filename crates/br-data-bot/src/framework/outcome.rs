@@ -15,6 +15,8 @@ pub enum SourceError {
     AuthMissing(String),
     #[error("dependency failed: {0}")]
     Dependency(String),
+    #[error("reference probe failed: {0}")]
+    Probe(Box<SourceError>),
     #[error("internal error: {0}")]
     Internal(String),
 }
@@ -48,6 +50,7 @@ impl SourceError {
             Self::Blocked(_) => SourceBlocked,
             Self::Parse(_) | Self::Empty(_) => SourceEmpty,
             Self::Dependency(_) | Self::Internal(_) => DependencyFailed,
+            Self::Probe(_) => SourceFetchStatus::EmbeddedRetained,
         }
     }
 
@@ -60,12 +63,14 @@ impl SourceError {
             Self::Parse(_) | Self::Empty(_) => Some(ParseError),
             Self::AuthMissing(_) => Some(AuthMissing),
             Self::Dependency(_) | Self::Internal(_) => None,
+            Self::Probe(error) => error.failure_kind(),
         }
     }
 
     pub fn http_status(&self) -> Option<u16> {
         match self {
             Self::LinkDeprecated { status, .. } => Some(*status),
+            Self::Probe(error) => error.http_status(),
             _ => None,
         }
     }

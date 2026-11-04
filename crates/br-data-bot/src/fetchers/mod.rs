@@ -23,6 +23,7 @@ mod confaz;
 pub(crate) mod cst;
 pub(crate) mod esocial;
 pub(crate) mod ibge;
+pub(crate) mod incoterms;
 pub(crate) mod lc116;
 pub(crate) mod moedas;
 pub(crate) mod natureza_juridica;
@@ -34,6 +35,7 @@ pub(crate) mod portos;
 pub(crate) mod ptax;
 mod rfb;
 pub(crate) mod selic;
+mod static_source;
 pub(crate) mod transparencia_snapshots;
 pub(crate) mod tse_municipios;
 

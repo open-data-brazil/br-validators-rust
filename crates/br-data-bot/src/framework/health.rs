@@ -66,7 +66,10 @@ impl SourceHealth {
         let first = NaiveDate::parse_from_str(first, "%Y-%m-%d")?;
         let days = today.signed_duration_since(first).num_days().max(0) as u64 + 1;
         alert.consecutive_failure_days = days;
-        if days >= 2 && self.failure_kind != Some(SourceFailureKind::AuthMissing) {
+        if days >= 2
+            && self.failure_kind != Some(SourceFailureKind::AuthMissing)
+            && self.status != SourceFetchStatus::EmbeddedRetained
+        {
             alert.severity = Severity::Critical;
         }
         Ok(Some(alert))
