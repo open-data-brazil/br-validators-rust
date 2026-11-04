@@ -75,7 +75,7 @@ branded!(
     /// PIS ou PASEP validado.
     PisPasep => new_unchecked,
     /// Número de Identificação do Trabalhador validado.
-    Nit,
+    Nit => new_unchecked,
     /// Chave PIX validada.
     PixKey,
     /// Linha digitável de boleto de cobrança validada.

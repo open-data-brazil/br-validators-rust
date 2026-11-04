@@ -4,3 +4,4 @@ pub mod chars;
 pub mod crc16;
 pub mod luhn;
 pub mod modulo11;
+pub(crate) mod rv03;
