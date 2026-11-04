@@ -36,7 +36,7 @@ pub struct InssFaixaContribuicao {
     pub salario_min: f64,
     /// Salario max.
     pub salario_max: f64,
-    /// Alíquota expressa em percentual.
+    /// Alíquota como fração do salário de contribuição (0,075 equivale a 7,5%).
     pub aliquota: f64,
     /// Descrição publicada na fonte.
     pub descricao: String,
