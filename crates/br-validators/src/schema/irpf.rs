@@ -34,7 +34,7 @@ pub struct IrpfFaixaProgressiva {
     pub base_calculo_min: f64,
     /// Base calculo max.
     pub base_calculo_max: Option<f64>,
-    /// Alíquota expressa em percentual.
+    /// Alíquota como fração da base de cálculo (0,075 equivale a 7,5%).
     pub aliquota: f64,
     /// Parcela deduzir.
     pub parcela_deduzir: f64,

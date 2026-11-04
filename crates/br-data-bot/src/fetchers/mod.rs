@@ -24,6 +24,7 @@ pub(crate) mod cst;
 pub(crate) mod esocial;
 pub(crate) mod ibge;
 pub(crate) mod incoterms;
+pub(crate) mod irpf;
 pub(crate) mod lc116;
 pub(crate) mod moedas;
 pub(crate) mod natureza_juridica;
