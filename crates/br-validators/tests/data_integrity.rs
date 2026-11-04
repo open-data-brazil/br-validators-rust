@@ -130,7 +130,7 @@ dataset!("cnpj-motivos", cnpj_motivos;
 );
 
 dataset!("csosn", csosn;
-    "csosn.json", "csosn", CSOSN
+    "csosn.json", "csosn", get_all_csosn()
 );
 
 dataset!("cst", cst;

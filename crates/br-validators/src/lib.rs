@@ -79,6 +79,8 @@ pub use data::cfop;
 pub use data::cnaes;
 #[cfg(feature = "cnpj-motivos")]
 pub use data::cnpj_motivos;
+#[cfg(feature = "csosn")]
+pub use data::csosn;
 #[cfg(feature = "cst")]
 pub use data::cst;
 #[cfg(feature = "feriados")]
