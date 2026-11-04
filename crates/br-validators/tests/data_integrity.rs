@@ -168,7 +168,7 @@ dataset!("lc116", lc116;
 );
 
 dataset!("moedas", moedas;
-    "moedas.json", "moedas", MOEDAS
+    "moedas.json", "moedas", get_all_moedas()
 );
 
 dataset!("natureza-juridica", natureza_juridica;

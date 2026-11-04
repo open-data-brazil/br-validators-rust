@@ -73,6 +73,8 @@ pub use data::aeroportos;
 pub use data::bancos;
 #[cfg(feature = "ibge")]
 pub use data::ibge;
+#[cfg(feature = "moedas")]
+pub use data::moedas;
 #[cfg(feature = "tse-municipios")]
 pub use data::tse_municipios;
 #[cfg(feature = "_data")]
