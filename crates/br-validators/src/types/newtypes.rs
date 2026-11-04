@@ -97,7 +97,7 @@ branded!(
     /// Número de telefone validado.
     Telefone => new_unchecked,
     /// Payload BR Code validado.
-    BrCode,
+    BrCode => new_unchecked,
     /// Identificador CNIS validado.
     Cnis,
 );

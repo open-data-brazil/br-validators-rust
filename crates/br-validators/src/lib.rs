@@ -4,6 +4,7 @@
 
 //! Validação de documentos brasileiros e acesso a dados públicos embutidos por feature.
 
+pub mod brcode;
 pub mod cartao_credito;
 pub mod cep;
 pub mod cnh;
@@ -21,6 +22,11 @@ pub mod telefone;
 pub mod titulo_eleitor;
 pub mod types;
 pub mod util;
+pub use brcode::{
+    build_static_pix_brcode, compute_crc16_ccitt, is_valid_brcode, normalize_brcode_payload,
+    parse_brcode, parse_tlv_sequence, validate_brcode, verify_brcode_crc, BrCodeValidationResult,
+    BuildStaticPix, TlvField, ValidBrCode,
+};
 pub use cartao_credito::{
     detect_card_brand, format_cartao_credito, is_valid_cartao_credito, is_valid_luhn,
     strip_cartao_credito, validate_cartao_credito, CardBrand, CartaoCreditoValidationResult,
