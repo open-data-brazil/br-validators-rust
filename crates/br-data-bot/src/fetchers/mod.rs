@@ -10,6 +10,7 @@ use crate::{
 
 pub(crate) mod cnaes;
 pub(crate) mod ibge;
+pub(crate) mod moedas;
 pub(crate) mod ncm;
 pub(crate) mod selic;
 
