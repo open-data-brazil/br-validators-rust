@@ -70,4 +70,5 @@ all-data = ["fiscal", "trade", "finance", "payroll", "logistics", "geo", "gov"]
 full = ["all-data", "serde", "generate"]
 
 [dev-dependencies]
+sha2.workspace = true
 serde_json.workspace = true
