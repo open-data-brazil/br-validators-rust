@@ -84,7 +84,7 @@ Faça um commit por tarefa numerada, no formato descrito em 02-CONVENCOES.md.
 
 Marque aqui ao concluir cada fase (a IA executora deve atualizar este bloco):
 
-- [ ] FASE-00 preparação
+- [x] FASE-00 preparação
 - [ ] FASE-01 workspace
 - [ ] FASE-02 tipos base
 - [ ] FASE-03 validadores simples
