@@ -153,6 +153,7 @@ dependencies = [
  "clap",
  "csv",
  "encoding_rs",
+ "flate2",
  "reqwest",
  "scraper",
  "serde",

@@ -26,6 +26,7 @@ pub(crate) mod cst;
 pub(crate) mod esocial;
 pub(crate) mod feriados;
 pub(crate) mod ibge;
+pub(crate) mod ibpt;
 pub(crate) mod incoterms;
 pub(crate) mod inss;
 pub(crate) mod irpf;

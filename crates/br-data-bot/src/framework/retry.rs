@@ -81,6 +81,15 @@ impl HttpClient for RetryHttp<'_> {
         self.execute(url, || self.client.head(url, opts))
     }
 
+    fn get_with_query(
+        &self,
+        url: &str,
+        opts: &RequestOpts,
+        query: &[(&str, &str)],
+    ) -> Result<HttpResponse, SourceError> {
+        self.execute(url, || self.client.get_with_query(url, opts, query))
+    }
+
     fn post_form(
         &self,
         url: &str,

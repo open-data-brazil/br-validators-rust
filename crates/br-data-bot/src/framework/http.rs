@@ -9,6 +9,18 @@ pub trait HttpClient: Send + Sync {
         self.get(url, opts)
     }
 
+    /// Envia parâmetros sensíveis sem expô-los no histórico HTTP.
+    fn get_with_query(
+        &self,
+        url: &str,
+        _opts: &RequestOpts,
+        _query: &[(&str, &str)],
+    ) -> Result<HttpResponse, SourceError> {
+        Err(SourceError::Internal(format!(
+            "GET com consulta indisponível para {url}"
+        )))
+    }
+
     fn post_form(
         &self,
         url: &str,
@@ -66,6 +78,15 @@ impl HttpClient for ReqwestHttp {
         send(self.client.head(url), opts)
     }
 
+    fn get_with_query(
+        &self,
+        url: &str,
+        opts: &RequestOpts,
+        query: &[(&str, &str)],
+    ) -> Result<HttpResponse, SourceError> {
+        send_request(self.client.get(url).query(query), opts, Some(url))
+    }
+
     fn post_form(
         &self,
         url: &str,
@@ -77,8 +98,16 @@ impl HttpClient for ReqwestHttp {
 }
 
 fn send(
+    request: reqwest::blocking::RequestBuilder,
+    opts: &RequestOpts,
+) -> Result<HttpResponse, SourceError> {
+    send_request(request, opts, None)
+}
+
+fn send_request(
     mut request: reqwest::blocking::RequestBuilder,
     opts: &RequestOpts,
+    public_url: Option<&str>,
 ) -> Result<HttpResponse, SourceError> {
     if let Some(timeout) = opts.timeout {
         request = request.timeout(timeout);
@@ -88,7 +117,9 @@ fn send(
     }
     let response = request.send().map_err(classify_reqwest)?;
     let status = response.status().as_u16();
-    let final_url = response.url().to_string();
+    let final_url = public_url
+        .unwrap_or_else(|| response.url().as_str())
+        .to_owned();
     match status {
         200..=299 => {}
         404 | 410 => {
