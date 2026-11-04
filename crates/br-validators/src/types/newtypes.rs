@@ -69,7 +69,7 @@ branded!(
     /// Número de processo judicial validado.
     ProcessoJudicial,
     /// CEP validado.
-    Cep,
+    Cep => new_unchecked,
     /// Placa de veículo validada.
     Placa,
     /// PIS ou PASEP validado.

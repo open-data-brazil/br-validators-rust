@@ -18,6 +18,12 @@ pub fn strip_chars(input: &str, removed: &[char]) -> String {
     input.chars().filter(|c| !removed.contains(c)).collect()
 }
 
+// Conjunto usado por \s e trim() no TypeScript.
+pub(crate) const fn is_ecmascript_whitespace(c: char) -> bool {
+    matches!(c, '\u{9}'..='\u{d}' | ' ' | '\u{a0}' | '\u{1680}' | '\u{2000}'..='\u{200a}'
+        | '\u{2028}' | '\u{2029}' | '\u{202f}' | '\u{205f}' | '\u{3000}' | '\u{feff}')
+}
+
 pub(crate) fn format_groups(mut input: &str, groups: &[(usize, &str)]) -> Option<String> {
     let mut result = String::with_capacity(input.len());
     for &(width, separator) in groups {
