@@ -35,5 +35,6 @@ pub fn fetchers() -> Vec<Box<dyn Fetcher>> {
         Box::new(crate::fetchers::selic::FETCHER),
         Box::new(crate::fetchers::moedas::FETCHER),
         Box::new(crate::fetchers::ptax::FETCHER),
+        Box::new(crate::fetchers::pncp_reference::FETCHER),
     ]
 }

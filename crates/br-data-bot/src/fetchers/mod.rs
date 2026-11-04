@@ -3,7 +3,10 @@ use serde::de::DeserializeOwned;
 
 use crate::{
     framework::{
-        context::FetchContext, http::RequestOpts, outcome::SourceError, prepare::PreparedFile,
+        context::FetchContext,
+        http::{HttpClient, RequestOpts},
+        outcome::SourceError,
+        prepare::PreparedFile,
     },
     registry::Fetcher,
 };
@@ -12,6 +15,7 @@ pub(crate) mod cnaes;
 pub(crate) mod ibge;
 pub(crate) mod moedas;
 pub(crate) mod ncm;
+pub(crate) mod pncp_reference;
 pub(crate) mod ptax;
 pub(crate) mod selic;
 
@@ -54,10 +58,14 @@ impl Fetcher for DatasetFetcher {
 }
 
 pub(super) fn get_json(ctx: &FetchContext<'_>, url: &str) -> Result<Vec<u8>, SourceError> {
+    get_json_with_http(ctx.http, url)
+}
+
+pub(super) fn get_json_with_http(http: &dyn HttpClient, url: &str) -> Result<Vec<u8>, SourceError> {
     let mut opts = RequestOpts::default();
     opts.headers
         .insert("Accept".into(), "application/json".into());
-    Ok(ctx.http.get(url, &opts)?.bytes)
+    Ok(http.get(url, &opts)?.bytes)
 }
 
 pub(super) fn parse_json<T: DeserializeOwned>(bytes: &[u8]) -> Result<T, SourceError> {
