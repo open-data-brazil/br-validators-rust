@@ -39,6 +39,7 @@ pub(crate) mod portos;
 pub(crate) mod ptax;
 mod rfb;
 pub(crate) mod selic;
+pub(crate) mod simples_nacional;
 mod static_source;
 pub(crate) mod transparencia_snapshots;
 pub(crate) mod tse_municipios;
