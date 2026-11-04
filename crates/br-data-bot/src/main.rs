@@ -7,6 +7,7 @@ use std::path::PathBuf;
 use anyhow::Result;
 use br_data_bot::{
     framework::{
+        drift,
         http::ReqwestHttp,
         runner::{refresh, RefreshOptions},
     },
@@ -26,6 +27,8 @@ struct Cli {
 enum Command {
     /// Lista os fetchers registrados.
     List,
+    /// Conta os datasets com alterações de registros e arquivos modificados.
+    Drift,
     /// Atualiza os dados a partir das fontes registradas.
     Refresh {
         /// Seleciona todos os datasets da execução periódica.
@@ -62,6 +65,7 @@ fn main() -> Result<()> {
                 println!("{}\t{}", fetcher.id(), fetcher.nome());
             }
         }
+        Command::Drift => println!("changed={}", drift::changed(&std::env::current_dir()?)?),
         Command::ImportSeed { from } => import_seed::run(&from)?,
         Command::Refresh {
             all: _,
