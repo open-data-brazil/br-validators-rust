@@ -13,6 +13,7 @@ use br_data_bot::{
     },
     registry::fetchers,
 };
+use br_validators::schema::Agendamento;
 use chrono::NaiveDate;
 use clap::{Parser, Subcommand};
 
@@ -57,12 +58,27 @@ enum Command {
 fn main() -> Result<()> {
     match Cli::parse().command {
         Command::List => {
-            let fetchers = fetchers();
-            if fetchers.is_empty() {
-                println!("nenhum fetcher registrado");
-            }
+            let mut fetchers = fetchers();
+            fetchers.sort_by_key(|fetcher| fetcher.id());
+            println!("id\tagendamento\tdependências\tnome");
             for fetcher in fetchers {
-                println!("{}\t{}", fetcher.id(), fetcher.nome());
+                let agendamento = match fetcher.agendamento() {
+                    Agendamento::Diario => "diario",
+                    Agendamento::Semanal => "semanal",
+                    Agendamento::Derivado => "derivado",
+                    Agendamento::Estatico => "estatico",
+                    Agendamento::Manual => "manual",
+                };
+                let dependencias = if fetcher.depends_on().is_empty() {
+                    "-".into()
+                } else {
+                    fetcher.depends_on().join(",")
+                };
+                println!(
+                    "{}\t{agendamento}\t{dependencias}\t{}",
+                    fetcher.id(),
+                    fetcher.nome()
+                );
             }
         }
         Command::Drift => println!("changed={}", drift::changed(&std::env::current_dir()?)?),
