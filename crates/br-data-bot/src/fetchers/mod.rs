@@ -23,6 +23,7 @@ mod confaz;
 pub(crate) mod csosn;
 pub(crate) mod cst;
 pub(crate) mod esocial;
+pub(crate) mod feriados;
 pub(crate) mod ibge;
 pub(crate) mod incoterms;
 pub(crate) mod inss;
