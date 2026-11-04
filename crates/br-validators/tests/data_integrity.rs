@@ -223,7 +223,7 @@ dataset!("telefone-ddd", telefone_ddd;
 );
 
 dataset!("tse-municipios", tse_municipios;
-    "mapeamento.json", "municipios", MAPEAMENTO
+    "mapeamento.json", "municipios", get_mapeamento_tse_ibge()
 );
 
 #[test]
