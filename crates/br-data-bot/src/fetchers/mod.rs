@@ -15,6 +15,7 @@ pub(crate) mod aeroportos;
 pub(crate) mod anp_combustiveis;
 pub(crate) mod bancos;
 pub(crate) mod cbo;
+pub(crate) mod cep_faixas;
 pub(crate) mod cest;
 pub(crate) mod cfop;
 pub(crate) mod cnaes;
