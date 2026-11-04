@@ -1,4 +1,4 @@
-use std::collections::{HashMap, HashSet};
+use std::collections::HashMap;
 
 use super::{outcome::SourceError, text::clean};
 
@@ -45,25 +45,27 @@ pub fn read(
     let header = header.ok_or_else(|| {
         SourceError::Parse(format!("cabeçalho CSV não contém {header_contains:?}"))
     })?;
-    let mut names = HashSet::new();
-    if header
+    if header_contains
         .iter()
-        .any(|name| !name.is_empty() && !names.insert(name))
+        .any(|field| header.iter().filter(|name| *name == field).count() > 1)
     {
         return Err(SourceError::Parse(
-            "colunas repetidas no cabeçalho CSV".into(),
+            "colunas obrigatórias repetidas no cabeçalho CSV".into(),
         ));
     }
 
     records
         .map(|row| {
             let row = row.map_err(parse_error)?;
-            Ok(header
+            let mut values = HashMap::new();
+            for (name, value) in header
                 .iter()
                 .zip(row.iter())
                 .filter(|(name, _)| !name.is_empty())
-                .map(|(name, value)| (name.clone(), clean(value)))
-                .collect())
+            {
+                values.entry(name.clone()).or_insert_with(|| clean(value));
+            }
+            Ok(values)
         })
         .collect()
 }
