@@ -1,7 +1,6 @@
-use anyhow::Result;
 use br_validators::schema::Agendamento;
 
-use crate::framework::{context::FetchContext, prepare::PreparedFile};
+use crate::framework::{context::FetchContext, outcome::SourceError, prepare::PreparedFile};
 
 pub trait Fetcher: Send + Sync {
     fn id(&self) -> &'static str;
@@ -25,7 +24,7 @@ pub trait Fetcher: Send + Sync {
         )
     }
 
-    fn fetch(&self, ctx: &FetchContext<'_>) -> Result<Vec<PreparedFile>>;
+    fn fetch(&self, ctx: &FetchContext<'_>) -> Result<Vec<PreparedFile>, SourceError>;
 }
 
 pub fn fetchers() -> Vec<Box<dyn Fetcher>> {

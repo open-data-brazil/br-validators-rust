@@ -1,9 +1,9 @@
 use std::{collections::BTreeMap, time::Duration};
 
-use anyhow::Result;
+use super::outcome::SourceError;
 
 pub trait HttpClient: Send + Sync {
-    fn get(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse>;
+    fn get(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse, SourceError>;
 }
 
 #[derive(Debug, Default, Clone)]
