@@ -188,7 +188,7 @@ dataset!("nfe-cuf", nfe_cuf;
 );
 
 dataset!("paises-bacen", paises_bacen;
-    "paises.json", "paises", PAISES
+    "paises.json", "paises", get_all_paises_bacen()
 );
 
 dataset!("pncp-reference", pncp_reference;

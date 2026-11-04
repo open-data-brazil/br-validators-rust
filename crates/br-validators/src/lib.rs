@@ -75,6 +75,8 @@ pub use data::bancos;
 pub use data::ibge;
 #[cfg(feature = "moedas")]
 pub use data::moedas;
+#[cfg(feature = "paises-bacen")]
+pub use data::paises_bacen;
 #[cfg(feature = "ptax")]
 pub use data::ptax;
 #[cfg(feature = "selic")]
