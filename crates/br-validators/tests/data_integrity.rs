@@ -3,7 +3,7 @@
 use std::{collections::BTreeSet, fs, path::Path};
 
 use br_validators::{
-    data,
+    data, get_dataset_metadata,
     schema::{DatasetMetadata, Keyed},
 };
 use sha2::{Digest, Sha256};
@@ -76,16 +76,17 @@ fn arquivos(meta: &DatasetMetadata, esperados: &[&str]) {
 }
 
 macro_rules! dataset {
-    ($id:literal, $module:ident; $($arquivo:literal, $chave:literal, $dados:ident);+) => {
+    ($id:literal, $module:ident; $($arquivo:literal, $chave:literal, $dados:ident $(($($args:tt)*))?);+) => {
         #[test]
         fn $module() {
             use data::$module as dataset;
-            let meta = &*dataset::METADATA;
+            let meta = get_dataset_metadata($id).expect("metadados do dataset");
             assert_eq!(meta.id, $id);
             arquivos(meta, &[$($arquivo),+]);
             $(
-                contagem(meta, $chave, dataset::$dados.len());
-                ordenados(&dataset::$dados);
+                let dados = &dataset::$dados$(($($args)*))?[..];
+                contagem(meta, $chave, dados.len());
+                ordenados(dados);
             )+
         }
     };
@@ -145,8 +146,8 @@ dataset!("esocial", esocial;
 );
 
 dataset!("ibge", ibge;
-    "estados.json", "estados", ESTADOS;
-    "municipios.json", "municipios", MUNICIPIOS
+    "estados.json", "estados", get_all_estados();
+    "municipios.json", "municipios", get_all_municipios()
 );
 
 dataset!("ibpt", ibpt;

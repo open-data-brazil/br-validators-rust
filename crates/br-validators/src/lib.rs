@@ -67,6 +67,8 @@ pub use cnpj::{
     is_valid_cnpj_alphanumeric, is_valid_cnpj_numeric, strip_cnpj, validate_cnpj,
 };
 pub use cpf::{format_cpf, is_valid_cpf, strip_cpf, validate_cpf};
+#[cfg(feature = "ibge")]
+pub use data::ibge;
 #[cfg(feature = "_data")]
 pub use data_catalog::{get_data_catalog, get_dataset_metadata, is_stale};
 pub use ean::{
