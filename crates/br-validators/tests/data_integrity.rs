@@ -134,10 +134,10 @@ dataset!("csosn", csosn;
 );
 
 dataset!("cst", cst;
-    "cst-icms.json", "icms", CST_ICMS;
-    "cst-ipi.json", "ipi", CST_IPI;
-    "cst-pis.json", "pis", CST_PIS;
-    "cst-cofins.json", "cofins", CST_COFINS
+    "cst-icms.json", "icms", get_all_cst_icms();
+    "cst-ipi.json", "ipi", get_all_cst_ipi();
+    "cst-pis.json", "pis", get_all_cst_pis();
+    "cst-cofins.json", "cofins", get_all_cst_cofins()
 );
 
 dataset!("esocial", esocial;
