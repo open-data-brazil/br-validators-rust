@@ -15,6 +15,7 @@ pub mod cnpj;
 pub mod compare;
 pub mod cpf;
 pub mod detect;
+pub mod diff;
 pub mod ean;
 pub mod format;
 pub mod inscricao_estadual;
