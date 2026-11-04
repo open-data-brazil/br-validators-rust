@@ -4,7 +4,7 @@ use anyhow::{ensure, Context, Result};
 use br_validators::schema::*;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
 
-use crate::framework::json_writer::write_json;
+use crate::framework::json_writer::{write_dataset, write_json, WriteOutcome};
 
 #[derive(Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -43,6 +43,7 @@ struct Importacao<'a> {
     origem: &'a Path,
     destino: &'a Path,
     metadata: DatasetMetadata,
+    alterados: usize,
 }
 
 impl Importacao<'_> {
@@ -52,8 +53,13 @@ impl Importacao<'_> {
 
     fn gravar<T: Serialize + ?Sized>(&mut self, arquivo: &str, value: &T) -> Result<()> {
         let meta = write_json(&self.destino.join(arquivo), value)?;
-        self.metadata.arquivos.push(meta);
+        self.registrar(meta);
         Ok(())
+    }
+
+    fn registrar(&mut self, outcome: WriteOutcome) {
+        self.metadata.arquivos.push(outcome.arquivo);
+        self.alterados += usize::from(outcome.changed);
     }
 
     fn contagem(&mut self, chave: &str, total: usize) -> Result<()> {
@@ -76,7 +82,9 @@ impl Importacao<'_> {
         let mut dados: Vec<T> = self.ler(arquivo)?;
         ordenar(&mut dados)?;
         self.contagem(contagem, dados.len())?;
-        self.gravar(arquivo, &dados)
+        let outcome = write_dataset(&self.destino.join(arquivo), &dados)?;
+        self.registrar(outcome);
+        Ok(())
     }
 }
 
@@ -134,6 +142,7 @@ fn importar(
             arquivos: Vec::new(),
             documentacao: original.documentacao,
         },
+        alterados: 0,
     };
     dados(&mut importacao).with_context(|| format!("importar {id}"))?;
     importacao
@@ -141,7 +150,11 @@ fn importar(
         .arquivos
         .sort_by(|a, b| a.path.cmp(&b.path));
     write_json(&destino.join("metadata.json"), &importacao.metadata)?;
-    println!("{id}: {} arquivo(s)", importacao.metadata.arquivos.len());
+    println!(
+        "{id}: {} arquivo(s), {} alterado(s)",
+        importacao.metadata.arquivos.len(),
+        importacao.alterados
+    );
     Ok(())
 }
 
