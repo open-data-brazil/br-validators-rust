@@ -14,6 +14,7 @@ clap.workspace = true
 chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
 anyhow.workspace = true
 br-validators = { path = "../br-validators", features = ["schema"] }
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "rustls-tls", "gzip", "json"] }
 serde.workspace = true
 serde_json.workspace = true
 sha2.workspace = true
