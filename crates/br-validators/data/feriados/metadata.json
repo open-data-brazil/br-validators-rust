@@ -1,0 +1,34 @@
+{
+  "id": "feriados",
+  "nome": "Feriados Nacionais Federais",
+  "fonte": "Lei 662/1949 + Portaria MGI (calendário federal)",
+  "endpoints": [
+    "https://www.planalto.gov.br/ccivil_03/leis/l0662.htm",
+    "https://www.planalto.gov.br/ccivil_03/leis/l10607.htm",
+    "https://www.planalto.gov.br/ccivil_03/leis/l6802.htm",
+    "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14759.htm",
+    "https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026"
+  ],
+  "capturadoEm": "2026-06-23",
+  "contagens": {
+    "feriadosNacionaisFixos": 9,
+    "feriadosNacionaisMoveis": 1,
+    "pontosFacultativosFederais": 9,
+    "portariaExtras": 2
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": null
+  },
+  "agendamento": "derivado",
+  "arquivos": [
+    {
+      "path": "portaria-extras.json",
+      "sha256": "b1ea5671dceff18c90cdcb3fd01108229ba0b1e97000a8b3626bd19fee988a97",
+      "bytes": 271
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#feriados-nacionais"
+}

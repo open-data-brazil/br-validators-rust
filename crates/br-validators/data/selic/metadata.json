@@ -1,0 +1,31 @@
+{
+  "id": "selic",
+  "nome": "Bacen SGS — Meta Selic (série 432)",
+  "fonte": "Banco Central — Taxa meta Selic definida pelo Copom",
+  "endpoints": [
+    "https://dadosabertos.bcb.gov.br/dataset/432-taxa-de-juros---meta-selic-definida-pelo-copom",
+    "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json",
+    "https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarGraficoPorId&hdOidSeriesSelecionadas=432",
+    "https://www.bcb.gov.br/controleinflacao/copom"
+  ],
+  "capturadoEm": "2026-10-26",
+  "contagens": {
+    "dias": 90,
+    "observacoes": 90
+  },
+  "alteracoes": {
+    "adicionados": 1,
+    "removidos": 1,
+    "alterados": 0,
+    "comparadoCom": "2026-10-25"
+  },
+  "agendamento": "diario",
+  "arquivos": [
+    {
+      "path": "selic.json",
+      "sha256": "fe44d405091d388c06540e5279fe812e8b2226db09006821c547b1c0ef011f83",
+      "bytes": 4821
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#selic-meta-sgs-432"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "natureza-juridica",
+  "nome": "RFB CNPJ Naturezas Jurídicas",
+  "fonte": "Receita Federal — Dados Abertos CNPJ (Naturezas.zip)",
+  "endpoints": [
+    "https://github.com/jonathands/dados-abertos-receita-cnpj/releases/download/2024.09/Naturezas.zip"
+  ],
+  "capturadoEm": "2026-10-26",
+  "contagens": {
+    "naturezas": 90
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-10-25"
+  },
+  "agendamento": "diario",
+  "arquivos": [
+    {
+      "path": "naturezas.json",
+      "sha256": "9ebc9eccdc28a08a9be67106a76cc5cf26510647db12a08e20079849c63d91c8",
+      "bytes": 8005
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#natureza-juridica"
+}

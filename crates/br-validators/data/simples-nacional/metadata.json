@@ -1,0 +1,30 @@
+{
+  "id": "simples-nacional",
+  "nome": "LC 123/2006 — Simples Nacional (anexos e faixas)",
+  "fonte": "Lei Complementar 123/2006 — Anexos I a V (redação LC 155/2016)",
+  "endpoints": [
+    "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm",
+    "http://normas.receita.fazenda.gov.br/sijut2consulta/anexoOutros.action?idArquivoBinario=48430",
+    "http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?visao=anotado&idAto=115262"
+  ],
+  "capturadoEm": "2026-06-25",
+  "contagens": {
+    "anexos": 5,
+    "faixas": 30
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-06-25"
+  },
+  "agendamento": "manual",
+  "arquivos": [
+    {
+      "path": "anexos.json",
+      "sha256": "73d551c3b70b6095a8bcbf2978f9f82a20604deeacc1b15df342c5cf14f5a240",
+      "bytes": 6478
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#simples-nacional-anexos"
+}

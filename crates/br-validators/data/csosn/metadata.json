@@ -1,0 +1,27 @@
+{
+  "id": "csosn",
+  "nome": "CONFAZ CSOSN — Simples Nacional",
+  "fonte": "CONFAZ Ajuste SINIEF 03/10 — CSOSN table",
+  "endpoints": [
+    "https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10"
+  ],
+  "capturadoEm": "2026-06-27",
+  "contagens": {
+    "csosn": 10
+  },
+  "alteracoes": {
+    "adicionados": 10,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": null
+  },
+  "agendamento": "estatico",
+  "arquivos": [
+    {
+      "path": "csosn.json",
+      "sha256": "dc460499acd64ba7598135a4a79755cd48e11465ef95364473823c2c7bb0593a",
+      "bytes": 1170
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#csosn"
+}

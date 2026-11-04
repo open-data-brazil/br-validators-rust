@@ -1,0 +1,27 @@
+{
+  "id": "bancos",
+  "nome": "Bacen STR Participants",
+  "fonte": "Banco Central — Participantes STR",
+  "endpoints": [
+    "https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv"
+  ],
+  "capturadoEm": "2026-10-26",
+  "contagens": {
+    "bancos": 460
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-10-25"
+  },
+  "agendamento": "diario",
+  "arquivos": [
+    {
+      "path": "bancos.json",
+      "sha256": "a4b40c68bd7362bb9b1971a5e87404a436ca5752fb58c7bf2d06036c734de6d1",
+      "bytes": 84817
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#bacen-banks"
+}

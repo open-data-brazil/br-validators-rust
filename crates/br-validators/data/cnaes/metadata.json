@@ -1,0 +1,27 @@
+{
+  "id": "cnaes",
+  "nome": "IBGE CNAE 2.3 Subclasses",
+  "fonte": "IBGE API v2 /cnae/subclasses",
+  "endpoints": [
+    "https://servicodados.ibge.gov.br/api/v2/cnae/subclasses"
+  ],
+  "capturadoEm": "2026-10-22",
+  "contagens": {
+    "cnaes": 1332
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-10-21"
+  },
+  "agendamento": "diario",
+  "arquivos": [
+    {
+      "path": "cnaes.json",
+      "sha256": "f57650e712fee05698f4c9127bad1f93c9c8735ca414fc4e47e780acd789c3df",
+      "bytes": 144709
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#cnae-economic-activity"
+}

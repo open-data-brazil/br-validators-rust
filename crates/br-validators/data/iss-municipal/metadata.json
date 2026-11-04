@@ -1,0 +1,44 @@
+{
+  "id": "iss-municipal",
+  "nome": "ISS municipal alíquotas — partial embed (capitals + top PIB)",
+  "fonte": "Municipal legislation + gov.br NFS-e registered alíquotas + LC 116/2003 Art. 8 band + IBGE SIDRA PIB municipal ranking",
+  "endpoints": [
+    "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp116.htm",
+    "https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9088-produto-interno-bruto-dos-municipios.html",
+    "https://www.ibge.gov.br/explica/codigos-dos-municipios.php",
+    "https://apisidra.ibge.gov.br/values/t/5938/n6/all/v/37/p/2022",
+    "https://ftp.ibge.gov.br/Pib_Municipios/2022_2023/xlsx/tabelas_completas_2022.xlsx",
+    "https://www.cnm.org.br/",
+    "https://www.gov.br/nfse/pt-br",
+    "https://www.gov.br/nfse/pt-br/biblioteca/aliquotas",
+    "https://ftp.ibge.gov.br/Perfil_Municipios/2024/Base_de_Dados/Base_MUNIC_2024_20251107.xlsx",
+    "https://www.ibge.gov.br/estatisticas/economicas/contabilidade/9078-pesquisa-de-informacoes-municipais.html"
+  ],
+  "capturadoEm": "2026-09-24",
+  "contagens": {
+    "capitais": 27,
+    "estimativaRows": 50,
+    "municIbgeMunicipios": 5071,
+    "municipios": 500
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 1,
+    "comparadoCom": "2026-09-24"
+  },
+  "agendamento": "manual",
+  "arquivos": [
+    {
+      "path": "iss-munic-ibge.json",
+      "sha256": "6b75cb9506f371d4957ee16cec64e9aca8386c50dc49d9382d8cf5760b07f836",
+      "bytes": 797462
+    },
+    {
+      "path": "iss-municipal.json",
+      "sha256": "dc05cfc26323d3d6ac5d2a4f40e7139a33a2c12603ba9a6a20063b0899936390",
+      "bytes": 136099
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#iss-municipal"
+}

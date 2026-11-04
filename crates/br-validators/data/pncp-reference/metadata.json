@@ -1,0 +1,76 @@
+{
+  "id": "pncp-reference",
+  "nome": "PNCP domain reference tables",
+  "fonte": "PNCP Cadastro API — static domain tables (Lei 14.133 ecosystem)",
+  "endpoints": [
+    "https://pncp.gov.br/api/pncp/v1/modalidades",
+    "https://pncp.gov.br/api/pncp/v1/amparos-legais",
+    "https://pncp.gov.br/api/pncp/v1/modos-disputas",
+    "https://pncp.gov.br/api/pncp/v1/tipos-instrumentos-convocatorios",
+    "https://pncp.gov.br/api/pncp/v1/tipos-contratos",
+    "https://pncp.gov.br/api/pncp/v1/criterios-julgamentos",
+    "https://pncp.gov.br/api/pncp/v1/tipos-instrumentos-cobranca",
+    "https://pncp.gov.br/api/pncp/v1/fontes-orcamentarias"
+  ],
+  "capturadoEm": "2026-10-25",
+  "contagens": {
+    "amparos-legais": 191,
+    "criterios-julgamento": 16,
+    "fontes-orcamentarias": 6,
+    "modalidades": 19,
+    "modos-disputa": 6,
+    "tipos-contrato": 12,
+    "tipos-instrumentos-cobranca": 1,
+    "tipos-instrumentos-convocatorios": 5
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-10-24"
+  },
+  "agendamento": "diario",
+  "arquivos": [
+    {
+      "path": "amparos-legais.json",
+      "sha256": "1bf387214a2ddd4a444283c7174ec023c40ebb84818472ad2e6eb67fb468d1bc",
+      "bytes": 63951
+    },
+    {
+      "path": "criterios-julgamento.json",
+      "sha256": "1c6daca04bc5cbc0c6aac18fd4744a67110a2de3aa5201224dd88cc7c1c8c9d4",
+      "bytes": 4724
+    },
+    {
+      "path": "fontes-orcamentarias.json",
+      "sha256": "a6902e2bb30dbe96895d2c12404aab8dc5bb6a1310c4ab453e097ed2266e2acc",
+      "bytes": 1303
+    },
+    {
+      "path": "modalidades.json",
+      "sha256": "0d8f30f7ae1125fed4b0b192d2e35cdfd280a4e9b565c75b03926e913aadf6a6",
+      "bytes": 5972
+    },
+    {
+      "path": "modos-disputa.json",
+      "sha256": "a4612e23974c1ed1cd02ac5df581b7e724b0fdea4e7f8a4fd7f1f1cf25da9c40",
+      "bytes": 1657
+    },
+    {
+      "path": "tipos-contrato.json",
+      "sha256": "94e3fcef8b21d2e10bcb99e3c9fcd90718cd34525adfef9dedd8091441c00286",
+      "bytes": 3277
+    },
+    {
+      "path": "tipos-instrumentos-cobranca.json",
+      "sha256": "eb7dcabda29b5a3c96326877ec3a18d3e4a8edf43f55e51e70cdc23699dddb61",
+      "bytes": 538
+    },
+    {
+      "path": "tipos-instrumentos-convocatorios.json",
+      "sha256": "60d996eb1dced600f57b254714433d77be1bf2e021619842a0d421f28d62ce95",
+      "bytes": 912
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#pncp-reference"
+}

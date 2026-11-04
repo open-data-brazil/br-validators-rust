@@ -1,0 +1,37 @@
+{
+  "id": "anp-combustiveis",
+  "nome": "ANP — Levantamento de Preços de Combustíveis (LPC)",
+  "fonte": "ANP — resumo_semanal_lpc (municipal averages)",
+  "endpoints": [
+    "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas",
+    "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/resumo_semanal_lpc_2026-10-04_2026-10-10.xlsx"
+  ],
+  "capturadoEm": "2026-10-26",
+  "contagens": {
+    "municipios": 396,
+    "precosMedios": 2426,
+    "produtos": 7,
+    "semanas": 1,
+    "ufs": 27
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-10-25"
+  },
+  "agendamento": "semanal",
+  "arquivos": [
+    {
+      "path": "precos-medios.json",
+      "sha256": "6eb4533563bf8ade58debe54d55f57e40db456c3429eb7a2d1ef55963ec3a85e",
+      "bytes": 1006015
+    },
+    {
+      "path": "semanas.json",
+      "sha256": "7dc014ed32bc04e87ee8749de53368d28769386b8a38cd81b22e5d077c92132f",
+      "bytes": 64
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#anp-combustiveis"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "aeroportos",
+  "nome": "ANAC Public Aerodromos",
+  "fonte": "ANAC — Lista de aeródromos de uso público",
+  "endpoints": [
+    "https://www.anac.gov.br/acesso-a-informacao/dados-abertos/areas-de-atuacao/aerodromos/lista-de-aerodromos-publicos/aerodromospublicosv1.csv/@@download/file/aerodromospublicosv1.csv"
+  ],
+  "capturadoEm": "2026-10-26",
+  "contagens": {
+    "aeroportos": 533,
+    "comIata": 87
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-10-25"
+  },
+  "agendamento": "diario",
+  "arquivos": [
+    {
+      "path": "aeroportos.json",
+      "sha256": "d0078717e31ef0096fa5f1e17891d2def3899644796b6477795254ab967e6d64",
+      "bytes": 84678
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#aeroportos"
+}

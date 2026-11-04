@@ -1,0 +1,47 @@
+{
+  "id": "cst",
+  "nome": "RFB SPED — CST (ICMS, IPI, PIS, COFINS)",
+  "fonte": "SPED Fiscal — Tabelas de Situação Tributária (IN RFB 932/2009 family)",
+  "endpoints": [
+    "http://www.sped.fazenda.gov.br/spedtabelas/AppConsulta/publico/aspx/ConsultaTabelasExternas.aspx?CodSistema=SpedFiscal",
+    "http://sped.rfb.gov.br/arquivo/download/1629",
+    "http://sped.rfb.gov.br/arquivo/download/1630"
+  ],
+  "capturadoEm": "2026-06-24",
+  "contagens": {
+    "cofins": 33,
+    "icms": 11,
+    "ipi": 14,
+    "pis": 33
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-06-24"
+  },
+  "agendamento": "manual",
+  "arquivos": [
+    {
+      "path": "cst-cofins.json",
+      "sha256": "4b69227ccb55423105003de1e1c761de3d8cfe28c0f1925f37f4427099641858",
+      "bytes": 3988
+    },
+    {
+      "path": "cst-icms.json",
+      "sha256": "cef689b484a39a227944eae6b7cf941d85795738737b3853a85c18a966114b27",
+      "bytes": 1050
+    },
+    {
+      "path": "cst-ipi.json",
+      "sha256": "8c00cb9907cefcf2854198e7051010cdb9bae61f76e9cb5704209e7ab7c2cf05",
+      "bytes": 980
+    },
+    {
+      "path": "cst-pis.json",
+      "sha256": "3ef1b1cc1a1d88d7acfaa672a697d5aea6a03b429f67bbd279975818ca5b33d1",
+      "bytes": 3992
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#cst-situacao-tributaria"
+}

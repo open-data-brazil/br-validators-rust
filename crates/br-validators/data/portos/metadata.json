@@ -1,0 +1,27 @@
+{
+  "id": "portos",
+  "nome": "ANTAQ port installations",
+  "fonte": "ANTAQ — Instalações Portuárias Outorgadas (Portos.xlsx)",
+  "endpoints": [
+    "https://www.gov.br/antaq/pt-br/central-de-conteudos/Instalaesporturias06052025.zip"
+  ],
+  "capturadoEm": "2026-10-26",
+  "contagens": {
+    "portos": 1094
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-10-25"
+  },
+  "agendamento": "diario",
+  "arquivos": [
+    {
+      "path": "portos.json",
+      "sha256": "693cb0e0c1de115ce3e7e6875a4e825ec5d8be477656f7d2bd94ec1e0e181917",
+      "bytes": 292732
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#portos"
+}

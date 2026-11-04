@@ -1,0 +1,28 @@
+{
+  "id": "cest",
+  "nome": "CONFAZ CEST",
+  "fonte": "CONFAZ Convênio ICMS 142/2018 — Anexos II a XXVI",
+  "endpoints": [
+    "https://www.confaz.fazenda.gov.br/legislacao/convenios/2018/CV142_18",
+    "data/source-mirrors/confaz/cest_cv142_18.html"
+  ],
+  "capturadoEm": "2026-10-26",
+  "contagens": {
+    "cest": 1018
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-10-25"
+  },
+  "agendamento": "diario",
+  "arquivos": [
+    {
+      "path": "cest.json",
+      "sha256": "54bfc9389d3e6708334dac6ed61f475fe14d03dbe327b31932823187dd6318f7",
+      "bytes": 245837
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#cest"
+}

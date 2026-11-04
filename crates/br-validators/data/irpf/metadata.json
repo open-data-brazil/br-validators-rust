@@ -1,0 +1,30 @@
+{
+  "id": "irpf",
+  "nome": "RFB IRPF — tabela progressiva mensal",
+  "fonte": "Receita Federal — Tabela progressiva mensal (static reference)",
+  "endpoints": [
+    "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas",
+    "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/tabela-progressiva-mensal",
+    "https://www.planalto.gov.br/ccivil_03/leis/l7713.htm"
+  ],
+  "capturadoEm": "2026-06-26",
+  "contagens": {
+    "anos": 1,
+    "faixas": 5
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-06-26"
+  },
+  "agendamento": "estatico",
+  "arquivos": [
+    {
+      "path": "tabela-progressiva.json",
+      "sha256": "e24c0d3863c65965c112809177a9492b9d9dd3d62d42126bacf42bd370d61b2f",
+      "bytes": 1200
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#irpf"
+}

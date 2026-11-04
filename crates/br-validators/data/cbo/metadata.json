@@ -1,0 +1,27 @@
+{
+  "id": "cbo",
+  "nome": "CBO 2002 — Brazilian Occupations",
+  "fonte": "MTE CBO 2002 ocupacao.csv",
+  "endpoints": [
+    "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/cbo/servicos/downloads/cbo2002-ocupacao.csv"
+  ],
+  "capturadoEm": "2026-10-26",
+  "contagens": {
+    "cbo": 2694
+  },
+  "alteracoes": {
+    "adicionados": 0,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-10-25"
+  },
+  "agendamento": "diario",
+  "arquivos": [
+    {
+      "path": "cbo.json",
+      "sha256": "67d1a15d387dc0a4063fb6d889685c7edfbccccd29d187fe0f18ee39324cbfc5",
+      "bytes": 233275
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#cbo-occupations"
+}

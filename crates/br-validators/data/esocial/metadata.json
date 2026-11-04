@@ -1,0 +1,33 @@
+{
+  "id": "esocial",
+  "nome": "eSocial S-1.3 — Tabela 01 (Categorias) + Tabela 03 (Rubricas)",
+  "fonte": "eSocial S-1.3 — Tabelas 01 e 03",
+  "endpoints": [
+    "https://www.gov.br/esocial/pt-br/documentacao-tecnica/leiautes-esocial-versao-s-1-3-nt-06-2026/tabelas.html"
+  ],
+  "capturadoEm": "2026-06-27",
+  "contagens": {
+    "categorias": 47,
+    "rubricas": 208
+  },
+  "alteracoes": {
+    "adicionados": 208,
+    "removidos": 0,
+    "alterados": 0,
+    "comparadoCom": "2026-06-25"
+  },
+  "agendamento": "manual",
+  "arquivos": [
+    {
+      "path": "categorias.json",
+      "sha256": "6921480281624f0de06657717d67d904ad4f69a2626f4d8a506a8c9904bffa64",
+      "bytes": 10002
+    },
+    {
+      "path": "rubricas.json",
+      "sha256": "026aa9255bf0bb3c630719439ff445a37e60af76b67536afa15d8a80085c1c1b",
+      "bytes": 63107
+    }
+  ],
+  "documentacao": "docs/OFFICIAL-SOURCES.md#esocial"
+}
