@@ -16,6 +16,12 @@ pub struct Bounds {
     pub max: usize,
 }
 
+impl Bounds {
+    pub const fn new(min: usize, max: usize) -> Self {
+        Self { min, max }
+    }
+}
+
 #[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct DatasetChanges {
     pub adicionados: u64,

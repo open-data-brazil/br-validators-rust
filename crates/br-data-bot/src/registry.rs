@@ -28,5 +28,5 @@ pub trait Fetcher: Send + Sync {
 }
 
 pub fn fetchers() -> Vec<Box<dyn Fetcher>> {
-    Vec::new()
+    vec![Box::new(crate::fetchers::ibge::FETCHER)]
 }
