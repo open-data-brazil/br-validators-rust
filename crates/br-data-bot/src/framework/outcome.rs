@@ -70,3 +70,57 @@ impl SourceError {
         }
     }
 }
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SourceFetchOutcome {
+    pub dataset_id: String,
+    pub status: SourceFetchStatus,
+    pub endpoints: Vec<String>,
+    pub attempts: u32,
+    pub checked_at: String,
+    pub retained_embedded_data_from: Option<String>,
+    pub message: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub source_status: Option<SourceFetchStatus>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub http_status: Option<u16>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub failure_kind: Option<SourceFailureKind>,
+    pub attempted_endpoints: Vec<String>,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+pub enum Severity {
+    Warning,
+    Critical,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SourceAlert {
+    pub dataset_id: String,
+    pub severity: Severity,
+    pub status: SourceFetchStatus,
+    pub message: String,
+    pub endpoints: Vec<String>,
+    pub retained_embedded_data_from: Option<String>,
+    pub documentation_action: String,
+    pub consecutive_failure_days: u64,
+}
+
+impl SourceFetchOutcome {
+    pub fn alert(&self) -> Option<SourceAlert> {
+        Some(SourceAlert {
+            dataset_id: self.dataset_id.clone(),
+            severity: Severity::Warning,
+            status: self.source_status?,
+            message: self.message.clone(),
+            endpoints: self.endpoints.clone(),
+            retained_embedded_data_from: self.retained_embedded_data_from.clone(),
+            documentation_action: "Consultar docs/DATA-SOURCE-MAINTENANCE.md".into(),
+            consecutive_failure_days: 1,
+        })
+    }
+}

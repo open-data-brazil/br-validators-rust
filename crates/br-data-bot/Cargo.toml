@@ -12,6 +12,7 @@ description = "Atualização de dados públicos do br-validators"
 [dependencies]
 clap.workspace = true
 chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+chrono-tz = "0.10"
 csv = "1"
 calamine = "0.26"
 # A série 2.6 alterou ZipFile e quebrou a API usada por calamine 0.26.

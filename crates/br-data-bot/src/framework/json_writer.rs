@@ -30,23 +30,24 @@ pub fn write_json<T: Serialize + ?Sized>(path: &Path, value: &T) -> Result<Write
         sha256: sha256(&bytes),
         bytes: bytes.len() as u64,
     };
+    let changed = write_encoded(path, &bytes)?;
+    Ok(WriteOutcome { arquivo, changed })
+}
+
+pub(super) fn write_encoded(path: &Path, bytes: &[u8]) -> Result<bool> {
+    let path_name = path
+        .file_name()
+        .and_then(|name| name.to_str())
+        .context("nome de arquivo inválido")?;
     match fs::read(path) {
-        Ok(anterior) if anterior == bytes => {
-            return Ok(WriteOutcome {
-                arquivo,
-                changed: false,
-            });
-        }
+        Ok(anterior) if anterior == bytes => return Ok(false),
         Ok(_) => {}
         Err(error) if error.kind() == io::ErrorKind::NotFound => {}
         Err(error) => return Err(error).with_context(|| format!("ler {}", path.display())),
     }
-    replace_atomically(path, path_name, &bytes)
+    replace_atomically(path, path_name, bytes)
         .with_context(|| format!("gravar {}", path.display()))?;
-    Ok(WriteOutcome {
-        arquivo,
-        changed: true,
-    })
+    Ok(true)
 }
 
 pub fn canonical_json<T: Serialize + ?Sized>(value: &T) -> serde_json::Result<Vec<u8>> {
