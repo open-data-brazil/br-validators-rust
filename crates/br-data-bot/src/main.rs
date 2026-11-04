@@ -1,6 +1,5 @@
 #![forbid(unsafe_code)]
 
-mod framework;
 mod import_seed;
 
 use std::path::PathBuf;
@@ -29,7 +28,15 @@ enum Command {
 
 fn main() -> Result<()> {
     match Cli::parse().command {
-        Command::List => println!("nenhum fetcher registrado"),
+        Command::List => {
+            let fetchers = br_data_bot::registry::fetchers();
+            if fetchers.is_empty() {
+                println!("nenhum fetcher registrado");
+            }
+            for fetcher in fetchers {
+                println!("{}\t{}", fetcher.id(), fetcher.nome());
+            }
+        }
         Command::ImportSeed { from } => import_seed::run(&from)?,
     }
     Ok(())

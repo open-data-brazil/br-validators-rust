@@ -4,7 +4,7 @@ use anyhow::{ensure, Context, Result};
 use br_validators::schema::*;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
 
-use crate::framework::json_writer::{write_dataset, write_json, WriteOutcome};
+use br_data_bot::framework::json_writer::{write_dataset, write_json, WriteOutcome};
 
 #[derive(Deserialize)]
 #[serde(rename_all = "camelCase")]

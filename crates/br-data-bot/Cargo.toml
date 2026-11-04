@@ -11,6 +11,7 @@ description = "Atualização de dados públicos do br-validators"
 
 [dependencies]
 clap.workspace = true
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
 anyhow.workspace = true
 br-validators = { path = "../br-validators", features = ["schema"] }
 serde.workspace = true
