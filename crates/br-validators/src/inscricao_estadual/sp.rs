@@ -13,7 +13,7 @@ use crate::{
 pub use crate::util::chars::only_digits as strip_ie_sp;
 
 const IE_SP_LENGTH: usize = 12;
-const IE_SP_DV1_WEIGHTS: [u32; 8] = [1, 3, 4, 5, 6, 7, 8, 10];
+pub(super) const IE_SP_DV1_WEIGHTS: [u32; 8] = [1, 3, 4, 5, 6, 7, 8, 10];
 const IE_SP_DV2_WEIGHTS: [u32; 11] = [3, 2, 10, 9, 8, 7, 6, 5, 4, 3, 2];
 
 /// Valida a inscrição estadual paulista (BR-IE-SP-001).

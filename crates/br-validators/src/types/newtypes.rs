@@ -91,7 +91,7 @@ branded!(
     /// Inscrição estadual validada.
     InscricaoEstadual => new_unchecked,
     /// Inscrição estadual de produtor rural validada.
-    InscricaoEstadualProdutorRural,
+    InscricaoEstadualProdutorRural => new_unchecked,
     /// Registro geral validado.
     Rg => new_unchecked,
     /// Número de telefone validado.

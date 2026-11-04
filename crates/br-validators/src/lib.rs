@@ -55,10 +55,16 @@ pub use ean::{
     compute_gs1_modulo10_check_digit, detect_ean_format, format_ean, is_valid_ean,
     is_valid_gs1_modulo10, passes_gs1_modulo10, strip_ean, validate_ean,
 };
+pub use inscricao_estadual::sp_rural as inscricao_estadual_produtor_rural;
 pub use inscricao_estadual::{
     format_inscricao_estadual, get_ie_official_source_url, is_valid_inscricao_estadual,
     strip_inscricao_estadual, validate_inscricao_estadual, IeError,
     InscricaoEstadualValidationResult, ValidInscricaoEstadual,
+};
+pub use inscricao_estadual_produtor_rural::{
+    format_ie_produtor_rural, get_ie_produtor_rural_official_source_url, is_sp_rural_ie_input,
+    is_valid_ie_produtor_rural, strip_ie_sp_rural, validate_ie_produtor_rural,
+    validate_ie_sp_rural, IeProdutorRuralValidationResult, ValidIeProdutorRural,
 };
 pub use nfe_chave::{
     compute_nfe_chave_check_digit, format_nfe_chave, is_valid_nfe_chave, parse_nfe_chave,
