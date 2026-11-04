@@ -172,7 +172,7 @@ dataset!("moedas", moedas;
 );
 
 dataset!("natureza-juridica", natureza_juridica;
-    "naturezas.json", "naturezas", NATUREZAS
+    "naturezas.json", "naturezas", get_all_natureza_juridica()
 );
 
 dataset!("nbs", nbs;

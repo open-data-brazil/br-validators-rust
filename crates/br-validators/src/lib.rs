@@ -83,6 +83,8 @@ pub use data::ibge;
 pub use data::incoterms;
 #[cfg(feature = "moedas")]
 pub use data::moedas;
+#[cfg(feature = "natureza-juridica")]
+pub use data::natureza_juridica;
 #[cfg(feature = "paises-bacen")]
 pub use data::paises_bacen;
 #[cfg(feature = "ptax")]
