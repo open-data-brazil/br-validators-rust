@@ -5,7 +5,7 @@
 use std::{borrow::Cow, error::Error, fmt};
 
 use crate::types::{
-    DocumentFormat, FormatResult, TituloEleitor, ValidationError, ValidationErrorCode as E,
+    DocumentFormat, FormatResult, TituloEleitor, Uf, ValidationError, ValidationErrorCode as E,
 };
 use crate::util::{
     chars::{format_groups, is_all_same_char, is_ecmascript_whitespace, only_digits},
@@ -25,9 +25,34 @@ pub const TITULO_ELEITOR_DV2_WEIGHTS: [u32; 3] = [7, 8, 9];
 /// Código eleitoral correspondente ao exterior.
 pub const TITULO_ELEITOR_EXTERIOR_UF_CODE: u8 = 28;
 /// UFs em ordem de código eleitoral, a partir de 01.
-pub const TITULO_ELEITOR_UF_BY_CODE: [&str; 27] = [
-    "SP", "MG", "RJ", "RS", "BA", "PR", "CE", "PE", "SC", "GO", "MA", "PB", "PA", "ES", "PI", "RN",
-    "AL", "MT", "MS", "DF", "SE", "AM", "RO", "AC", "AP", "RR", "TO",
+pub const TITULO_ELEITOR_UF_BY_CODE: [Uf; 27] = [
+    Uf::SP,
+    Uf::MG,
+    Uf::RJ,
+    Uf::RS,
+    Uf::BA,
+    Uf::PR,
+    Uf::CE,
+    Uf::PE,
+    Uf::SC,
+    Uf::GO,
+    Uf::MA,
+    Uf::PB,
+    Uf::PA,
+    Uf::ES,
+    Uf::PI,
+    Uf::RN,
+    Uf::AL,
+    Uf::MT,
+    Uf::MS,
+    Uf::DF,
+    Uf::SE,
+    Uf::AM,
+    Uf::RO,
+    Uf::AC,
+    Uf::AP,
+    Uf::RR,
+    Uf::TO,
 ];
 
 /// Título válido e dados da inscrição eleitoral.
@@ -40,7 +65,7 @@ pub struct ValidTituloEleitor {
     /// Código eleitoral do TSE.
     pub uf_code: u8,
     /// Sigla da UF quando o título é nacional.
-    pub uf: Option<&'static str>,
+    pub uf: Option<Uf>,
     /// Indica uma inscrição no exterior.
     pub exterior: bool,
 }

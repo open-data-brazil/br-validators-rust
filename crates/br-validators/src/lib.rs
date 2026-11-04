@@ -11,6 +11,7 @@ pub mod cnis;
 pub mod cnpj;
 pub mod cpf;
 pub mod ean;
+pub mod nfe_chave;
 pub mod pis_pasep;
 pub mod placa;
 pub mod processo_judicial;
@@ -38,6 +39,10 @@ pub use cpf::{format_cpf, is_valid_cpf, strip_cpf, validate_cpf};
 pub use ean::{
     compute_gs1_modulo10_check_digit, detect_ean_format, format_ean, is_valid_ean,
     is_valid_gs1_modulo10, passes_gs1_modulo10, strip_ean, validate_ean,
+};
+pub use nfe_chave::{
+    compute_nfe_chave_check_digit, format_nfe_chave, is_valid_nfe_chave, parse_nfe_chave,
+    strip_nfe_chave, validate_nfe_chave, NfeChaveParts, NfeChaveValidationResult, ValidNfeChave,
 };
 pub use pis_pasep::{format_pis_pasep, is_valid_pis_pasep, strip_pis_pasep, validate_pis_pasep};
 pub use placa::{

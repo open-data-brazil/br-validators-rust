@@ -17,7 +17,7 @@ fn titulo_eleitor_reproduz_vetores_dourados() {
         let canonical = case["canonical"].as_str().unwrap();
         let valid = validate_titulo_eleitor(canonical).unwrap();
         assert_eq!(valid.value.as_str(), canonical);
-        assert_eq!(valid.uf, uf);
+        assert_eq!(valid.uf.map(br_validators::Uf::as_str), uf);
         assert_eq!(valid.exterior, uf.is_none());
         assert_eq!(u64::from(valid.uf_code), case["ufCode"].as_u64().unwrap());
         assert!(is_valid_titulo_eleitor(canonical));

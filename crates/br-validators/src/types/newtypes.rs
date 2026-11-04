@@ -65,7 +65,7 @@ branded!(
     /// Título de eleitor validado.
     TituloEleitor => new_unchecked,
     /// Chave de acesso de NF-e ou NFC-e validada.
-    NfeChave,
+    NfeChave => new_unchecked,
     /// Número de processo judicial validado.
     ProcessoJudicial => new_unchecked,
     /// CEP validado.

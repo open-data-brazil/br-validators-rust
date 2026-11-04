@@ -11,7 +11,7 @@ fn titulo_eleitor_tem_paridade_com_typescript() {
             Ok(valid) => {
                 let mut result = json!({"ok": true, "value": valid.value.as_str(), "format": valid.format.as_str(), "ufCode": valid.uf_code});
                 if let Some(uf) = valid.uf {
-                    result["uf"] = json!(uf);
+                    result["uf"] = json!(uf.as_str());
                 }
                 if valid.exterior {
                     result["exterior"] = json!(true);
