@@ -1565,6 +1565,7 @@ dependencies = [
  "ego-tree",
  "getopts",
  "html5ever",
+ "indexmap",
  "once_cell",
  "selectors",
  "tendril",
