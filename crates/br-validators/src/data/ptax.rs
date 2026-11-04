@@ -2,11 +2,11 @@
 
 use std::{collections::HashMap, ops::Deref, sync::LazyLock};
 
+use crate::schema::DatasetMetadata;
 pub use crate::schema::PtaxCotacao;
-use crate::{schema::DatasetMetadata, util::chars::is_ecmascript_whitespace};
 
 use super::{
-    calendar::feriado_nacional,
+    calendar::{defasado_em, dia_util, normalize_bacen_date},
     lookup::{group_by, upper_trim, Data},
 };
 
@@ -76,23 +76,6 @@ fn normalize_moeda(moeda: &str) -> Option<String> {
     (moeda.len() == 3 && moeda.bytes().all(|b| b.is_ascii_uppercase())).then_some(moeda)
 }
 
-fn normalize_date(date: &str) -> Option<String> {
-    let date = date.trim_matches(is_ecmascript_whitespace);
-    let (first, rest) = date.split_once('-')?;
-    let (second, third) = rest.split_once('-')?;
-    if ![first, second, third]
-        .iter()
-        .all(|part| part.bytes().all(|b| b.is_ascii_digit()))
-    {
-        return None;
-    }
-    match (first.len(), second.len(), third.len()) {
-        (4, 2, 2) => Some(date.into()),
-        (2, 2, 4) => Some(format!("{third}-{first}-{second}")),
-        _ => None,
-    }
-}
-
 /// Lista as cotações de fechamento embutidas.
 /// Fonte: <https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/swagger-ui3>
 pub fn get_ptax_list() -> &'static [PtaxCotacao] {
@@ -132,7 +115,7 @@ pub fn get_ptax_cotacao_em(
 ) -> Option<PtaxCotacaoResult<'static>> {
     let row = if let Some(data) = data {
         let moeda = normalize_moeda(moeda)?;
-        let data = normalize_date(data)?;
+        let data = normalize_bacen_date(data)?;
         POR_DATA.get(moeda.as_str())?.get(data.as_str()).copied()?
     } else {
         get_ptax_cotacoes_por_moeda(moeda).first().copied()?
@@ -162,7 +145,7 @@ pub fn get_ptax_historico_em(
     ate: &str,
     hoje: Data,
 ) -> Vec<PtaxCotacaoResult<'static>> {
-    let (Some(desde), Some(ate)) = (normalize_date(desde), normalize_date(ate)) else {
+    let (Some(desde), Some(ate)) = (normalize_bacen_date(desde), normalize_bacen_date(ate)) else {
         return Vec::new();
     };
     get_ptax_cotacoes_por_moeda(moeda)
@@ -173,40 +156,11 @@ pub fn get_ptax_historico_em(
         .collect()
 }
 
-/// Retorna a data de hoje em Brasília no formato ISO.
-pub fn get_brazil_today_iso() -> String {
-    Data::hoje_brasil().to_string()
-}
+pub use super::calendar::{get_brazil_today_iso, subtract_business_days};
 
 /// Verifica se a data ISO é dia útil, conforme o calendário nacional.
 pub fn is_brazil_business_day(iso: &str) -> bool {
     iso.parse().is_ok_and(dia_util)
-}
-
-fn dia_util(data: Data) -> bool {
-    data.dia_da_semana() < 5 && !feriado_nacional(data)
-}
-
-/// Retrocede dias úteis. Datas inválidas produzem texto vazio.
-pub fn subtract_business_days(from_iso: &str, business_days: i64) -> String {
-    if business_days < 1 {
-        return from_iso.into();
-    }
-    from_iso
-        .parse()
-        .ok()
-        .and_then(|date| subtrai_dias_uteis(date, business_days))
-        .map_or_else(String::new, |data| data.to_string())
-}
-
-fn subtrai_dias_uteis(mut date: Data, mut days: i64) -> Option<Data> {
-    while days > 0 {
-        date = date.checked_add_days(-1)?;
-        if dia_util(date) {
-            days -= 1;
-        }
-    }
-    Some(date)
 }
 
 /// Indica se a observação antecede o dia útil anterior à data de referência.
@@ -218,9 +172,7 @@ pub fn is_ptax_cotacao_stale(data_referencia: &str, as_of: &str) -> bool {
 
 /// Verifica a defasagem com data de referência tipada.
 pub fn is_ptax_cotacao_stale_em(data_referencia: &str, hoje: Data) -> bool {
-    data_referencia.parse::<Data>().is_ok_and(|referencia| {
-        subtrai_dias_uteis(hoje, 1).is_some_and(|anterior| referencia < anterior)
-    })
+    defasado_em(data_referencia, hoje)
 }
 
 /// Acrescenta a informação de defasagem em relação a hoje.

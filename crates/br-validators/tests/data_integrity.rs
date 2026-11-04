@@ -211,7 +211,7 @@ dataset!("ptax", ptax;
 );
 
 dataset!("selic", selic;
-    "selic.json", "observacoes", SELIC
+    "selic.json", "observacoes", get_selic_list()
 );
 
 dataset!("simples-nacional", simples_nacional;
@@ -355,7 +355,11 @@ fn contagens_de_tabelas_e_subconjuntos() {
             .collect::<BTreeSet<_>>()
             .len(),
     );
-    contagem(&selic::METADATA, "dias", selic::SELIC.len());
+    contagem(
+        get_dataset_metadata("selic").expect("metadados da Selic"),
+        "dias",
+        selic::get_selic_list().len(),
+    );
     let anexos = &*simples_nacional::ANEXOS;
     contagem(
         &simples_nacional::METADATA,
