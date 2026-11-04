@@ -86,7 +86,7 @@ Marque aqui ao concluir cada fase (a IA executora deve atualizar este bloco):
 
 - [x] FASE-00 preparação
 - [x] FASE-01 workspace
-- [ ] FASE-02 tipos base
+- [x] FASE-02 tipos base
 - [ ] FASE-03 validadores simples
 - [ ] FASE-04 validadores complexos
 - [ ] FASE-05 APIs de plataforma
