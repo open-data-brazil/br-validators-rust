@@ -12,6 +12,7 @@ use crate::{
 };
 
 pub(crate) mod aeroportos;
+pub(crate) mod anp_combustiveis;
 pub(crate) mod bancos;
 pub(crate) mod cbo;
 pub(crate) mod cnaes;

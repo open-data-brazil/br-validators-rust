@@ -61,21 +61,50 @@ impl PreparedFile {
     }
 }
 
+#[derive(Clone, Copy)]
+enum ShrinkGuard {
+    RemovedKeys,
+    WindowSize,
+}
+
 impl FetchContext<'_> {
     pub fn prepare<T: Serialize + DeserializeOwned + Keyed>(
         &self,
         id: &str,
         file: &str,
-        mut records: Vec<T>,
+        records: Vec<T>,
         bounds: Bounds,
     ) -> Result<PreparedFile, SourceError> {
+        self.prepare_list(id, file, records, bounds, ShrinkGuard::RemovedKeys)
+    }
+
+    /// Mantém os limites de volume mesmo quando todas as chaves da janela mudam.
+    pub fn prepare_rolling<T: Serialize + DeserializeOwned + Keyed>(
+        &self,
+        id: &str,
+        file: &str,
+        records: Vec<T>,
+        bounds: Bounds,
+    ) -> Result<PreparedFile, SourceError> {
+        self.prepare_list(id, file, records, bounds, ShrinkGuard::WindowSize)
+    }
+
+    fn prepare_list<T: Serialize + DeserializeOwned + Keyed>(
+        &self,
+        id: &str,
+        file: &str,
+        mut records: Vec<T>,
+        bounds: Bounds,
+        guard: ShrinkGuard,
+    ) -> Result<PreparedFile, SourceError> {
         records.sort_by_cached_key(Keyed::key);
-        self.prepare_document(
+        self.prepare_with_guard(
             id,
             file,
             &records,
             |records| records.iter().collect(),
             bounds,
+            guard,
         )
     }
 
@@ -86,6 +115,18 @@ impl FetchContext<'_> {
         data: &T,
         records: impl for<'a> Fn(&'a T) -> Vec<&'a R>,
         bounds: Bounds,
+    ) -> Result<PreparedFile, SourceError> {
+        self.prepare_with_guard(id, file, data, records, bounds, ShrinkGuard::RemovedKeys)
+    }
+
+    fn prepare_with_guard<T: Serialize + DeserializeOwned, R: Keyed + Serialize>(
+        &self,
+        id: &str,
+        file: &str,
+        data: &T,
+        records: impl for<'a> Fn(&'a T) -> Vec<&'a R>,
+        bounds: Bounds,
+        guard: ShrinkGuard,
     ) -> Result<PreparedFile, SourceError> {
         if !valid_data_filename(file) {
             return Err(SourceError::Internal(format!(
@@ -107,9 +148,13 @@ impl FetchContext<'_> {
             None => BTreeMap::new(),
         };
         let changes = diff_records(&previous, &next)?;
+        let removed = match guard {
+            ShrinkGuard::RemovedKeys => changes.removidos,
+            ShrinkGuard::WindowSize => previous.len().saturating_sub(next.len()) as u64,
+        };
         validate_shrink(
             previous.len(),
-            changes.removidos,
+            removed,
             (self.env)("ALLOW_SHRINK").is_some(),
         )?;
 

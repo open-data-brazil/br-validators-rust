@@ -26,3 +26,11 @@ fn sem_acento_latino(ch: char) -> char {
         ch => ch,
     }
 }
+
+pub fn place_key(text: &str) -> String {
+    let letters: String = fold(text)
+        .chars()
+        .map(|c| if c.is_ascii_alphanumeric() { c } else { ' ' })
+        .collect();
+    letters.split_whitespace().collect::<Vec<_>>().join(" ")
+}

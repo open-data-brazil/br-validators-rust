@@ -9,7 +9,7 @@ use crate::framework::{
     http::RequestOpts,
     outcome::SourceError,
     prepare::{Bounds, PreparedFile},
-    text::fold,
+    text::place_key,
 };
 
 use super::DatasetFetcher;
@@ -132,20 +132,12 @@ const IATA_OACI: &[(&str, &str)] = &[
     ("SWXM", "XAP"),
 ];
 
-fn municipio_chave(nome: &str) -> String {
-    let letters: String = fold(nome)
-        .chars()
-        .map(|c| if c.is_ascii_alphanumeric() { c } else { ' ' })
-        .collect();
-    letters.split_whitespace().collect::<Vec<_>>().join(" ")
-}
-
 fn parse(bytes: &[u8], municipios: &[Municipio]) -> Result<Vec<Aeroporto>, SourceError> {
     let text = decode(bytes, Hint::Auto);
     let rows = csv::read(&text, b';', COLS)?;
     let index: HashMap<_, _> = municipios
         .iter()
-        .map(|m| ((m.uf.as_str(), municipio_chave(&m.nome)), m))
+        .map(|m| ((m.uf.as_str(), place_key(&m.nome)), m))
         .collect();
     let mut records = Vec::new();
     for mut row in rows {
@@ -160,7 +152,7 @@ fn parse(bytes: &[u8], municipios: &[Municipio]) -> Result<Vec<Aeroporto>, Sourc
             continue;
         }
         let municipio_raw = row.remove("MUNICÍPIO ATENDIDO").unwrap_or_default();
-        let municipio = index.get(&(uf.as_str(), municipio_chave(&municipio_raw)));
+        let municipio = index.get(&(uf.as_str(), place_key(&municipio_raw)));
         let municipio_nome = municipio.map_or(municipio_raw, |m| m.nome.clone());
         let municipio_ibge = municipio.map(|m| m.codigo);
         if municipio_nome.is_empty() {
