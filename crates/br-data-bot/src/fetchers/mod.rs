@@ -11,6 +11,7 @@ use crate::{
     registry::Fetcher,
 };
 
+pub(crate) mod bancos;
 pub(crate) mod cnaes;
 pub(crate) mod ibge;
 pub(crate) mod moedas;
