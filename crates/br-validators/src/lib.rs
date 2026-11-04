@@ -14,6 +14,43 @@ pub mod cnis;
 pub mod cnpj;
 pub mod compare;
 pub mod cpf;
+#[cfg(any(
+    feature = "aeroportos",
+    feature = "anp-combustiveis",
+    feature = "bancos",
+    feature = "cbo",
+    feature = "cep-faixas",
+    feature = "cest",
+    feature = "cfop",
+    feature = "cnaes",
+    feature = "cnpj-motivos",
+    feature = "csosn",
+    feature = "cst",
+    feature = "esocial",
+    feature = "feriados",
+    feature = "ibge",
+    feature = "ibpt",
+    feature = "incoterms",
+    feature = "inss",
+    feature = "irpf",
+    feature = "iss-municipal",
+    feature = "lc116",
+    feature = "moedas",
+    feature = "natureza-juridica",
+    feature = "nbs",
+    feature = "ncm",
+    feature = "nfe-cuf",
+    feature = "paises-bacen",
+    feature = "pncp-reference",
+    feature = "portos",
+    feature = "ptax",
+    feature = "selic",
+    feature = "simples-nacional",
+    feature = "telefone-ddd",
+    feature = "transparencia-snapshots",
+    feature = "tse-municipios",
+))]
+pub mod data;
 pub mod detect;
 pub mod diff;
 pub mod ean;
