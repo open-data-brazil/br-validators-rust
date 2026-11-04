@@ -30,6 +30,7 @@ pub(crate) mod ibpt;
 pub(crate) mod incoterms;
 pub(crate) mod inss;
 pub(crate) mod irpf;
+pub(crate) mod iss_municipal;
 pub(crate) mod lc116;
 pub(crate) mod moedas;
 pub(crate) mod natureza_juridica;
