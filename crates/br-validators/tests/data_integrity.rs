@@ -126,7 +126,7 @@ dataset!("cnaes", cnaes;
 );
 
 dataset!("cnpj-motivos", cnpj_motivos;
-    "motivos.json", "motivos", MOTIVOS
+    "motivos.json", "motivos", get_motivos_situacao_cadastral()
 );
 
 dataset!("csosn", csosn;

@@ -75,6 +75,8 @@ pub use data::bancos;
 pub use data::cfop;
 #[cfg(feature = "cnaes")]
 pub use data::cnaes;
+#[cfg(feature = "cnpj-motivos")]
+pub use data::cnpj_motivos;
 #[cfg(feature = "feriados")]
 pub use data::feriados;
 #[cfg(feature = "ibge")]
