@@ -4,6 +4,7 @@
 
 //! Validação de documentos brasileiros e acesso a dados públicos embutidos por feature.
 
+pub mod cartao_credito;
 pub mod cep;
 pub mod cnh;
 pub mod cnis;
@@ -16,6 +17,11 @@ pub mod renavam;
 pub mod titulo_eleitor;
 pub mod types;
 pub mod util;
+pub use cartao_credito::{
+    detect_card_brand, format_cartao_credito, is_valid_cartao_credito, is_valid_luhn,
+    strip_cartao_credito, validate_cartao_credito, CardBrand, CartaoCreditoValidationResult,
+    ValidCartaoCredito,
+};
 pub use cep::{format_cep, is_valid_cep, strip_cep, validate_cep};
 pub use cnh::{format_cnh, is_valid_cnh, strip_cnh, validate_cnh};
 pub use cnis::{

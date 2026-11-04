@@ -85,7 +85,7 @@ branded!(
     /// Boleto de arrecadação validado.
     Arrecadacao,
     /// Número de cartão validado.
-    CartaoCredito,
+    CartaoCredito => new_unchecked,
     /// Código EAN validado.
     Ean => new_unchecked,
     /// Inscrição estadual validada.
