@@ -32,5 +32,6 @@ pub fn fetchers() -> Vec<Box<dyn Fetcher>> {
         Box::new(crate::fetchers::ibge::FETCHER),
         Box::new(crate::fetchers::cnaes::FETCHER),
         Box::new(crate::fetchers::ncm::FETCHER),
+        Box::new(crate::fetchers::selic::FETCHER),
     ]
 }

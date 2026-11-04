@@ -11,6 +11,7 @@ use crate::{
 pub(crate) mod cnaes;
 pub(crate) mod ibge;
 pub(crate) mod ncm;
+pub(crate) mod selic;
 
 pub(crate) struct DatasetFetcher {
     pub id: &'static str,
