@@ -1933,3 +1933,94 @@ warning: ignoring test `vectors_titulo_eleitor` as `tests/vectors_titulo_eleitor
   tarefa 6.4 acrescentou a comparação de bytes, a troca atômica e o teste de
   idempotência. Um único macro carrega tanto arrays quanto objetos tipados.
 - Próxima tarefa: 7.1.
+
+## FASE-07 — concluída
+
+- Tarefas 7.1 a 7.10 concluídas.
+- Commits
+  - `b5c9a23` — feat(bot): definir contrato dos fetchers e contexto injetável
+  - `3986ecd` — feat(bot): classificar erros das fontes e retenção de dados
+  - `1320b64` — feat(bot): obter respostas HTTP com timeout e retry linear
+  - `d025a97` — feat(bot): decodificar UTF-8 e Windows-1252 e normalizar texto
+  - `6cd6f3f` — feat(bot): ler fontes CSV, XLSX, ZIP e HTML
+  - `6a4d1b8` — feat(bot): preparar dados tipados com diff e limites de sanidade
+  - `6b047cf` — feat(bot): orquestrar refresh, retenção e relatório com dry run
+  - `d0673d0` — feat(bot): persistir transições de saúde e escalar alertas
+  - `989316a` — feat(bot): contar drift dos datasets com mudanças reais no Git
+  - `189a190` — test(bot): cobrir framework e retenção com fixtures offline
+- Saída dos critérios de aceite
+
+```text
++ cargo test -p br-data-bot
+    Finished `test` profile [unoptimized] target(s) in 0.08s
+     Running unittests src/lib.rs (target/debug/deps/br_data_bot-b052c781bd04d4d0)
+
+running 2 tests
+test framework::zip::tests::rejeita_path_traversal_e_tamanho_excessivo ... ok
+test framework::json_writer::tests::json_canonico_e_repetivel ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/main.rs (target/debug/deps/br_data_bot-957c4c1fbff3790e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/framework.rs (target/debug/deps/framework-4e2b4dab497d59db)
+
+running 7 tests
+test decodifica_bom_utf8_e_windows_1252 ... ok
+test repete_bloqueio_cinco_vezes_e_nao_repete_link_descontinuado ... ok
+test saude_muda_em_transicoes_e_auth_permanece_warning ... ok
+test dry_run_usa_dependencia_preparada_sem_gravar_arquivos ... ok
+test interpreta_cabecalho_csv_html_e_data_excel ... ok
+test prepara_ordena_distingue_drift_e_protege_a_semente ... ok
+test refresh_retem_fonte_bloqueada_e_continua_dependente ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests br_data_bot
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ cargo clippy -p br-data-bot --all-targets -- -D warnings
+    Checking br-validators v0.1.0 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/br-validators-rust/crates/br-validators)
+    Checking br-data-bot v0.1.0 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/br-validators-rust/crates/br-data-bot)
+    Finished `dev` profile [unoptimized] target(s) in 1.58s
++ cargo run -p br-data-bot -- refresh --all --dry-run
+   Compiling bitflags v2.13.2
+   Compiling selectors v0.25.0
+   Compiling tower-http v0.6.11
+   Compiling reqwest v0.12.28
+   Compiling scraper v0.20.0
+   Compiling br-data-bot v0.1.0 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/br-validators-rust/crates/br-data-bot)
+    Finished `dev` profile [unoptimized] target(s) in 3.07s
+     Running `target/debug/br-data-bot refresh --all --dry-run`
+{
+  "executadoEm": "2026-11-04T13:40:15.872556415+00:00",
+  "datasets": [],
+  "sourceAlerts": [],
+  "resumo": {
+    "datasetsVerificados": 0,
+    "datasetsAlterados": 0,
+    "totalAdicionados": 0,
+    "totalRemovidos": 0,
+    "totalAlterados": 0,
+    "sourceAlerts": 0,
+    "criticalAlerts": 0
+  }
+}
+```
+
+- Os testes usam fixtures e um cliente HTTP em memória. O dry run também
+  entrega a saída preparada de um dataset aos dependentes em memória.
+- O resultado de falha guarda `embedded_retained` e o estado da fonte separado.
+  Uma dependência ausente não recebe o rótulo de link descontinuado.
+- ZIP 2.5.0 mantém a API usada por Calamine 0.26. A série ZIP 2.6 não compila
+  com essa versão do Calamine.
+- O CI da FASE-06 concluiu com sucesso.
+  [Execução no GitHub](https://github.com/open-data-brazil/br-validators-rust/actions/runs/41838324284).
+- Próxima tarefa: 8.1.
