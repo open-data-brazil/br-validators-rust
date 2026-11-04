@@ -38,5 +38,6 @@ pub fn fetchers() -> Vec<Box<dyn Fetcher>> {
         Box::new(crate::fetchers::pncp_reference::FETCHER),
         Box::new(crate::fetchers::transparencia_snapshots::FETCHER),
         Box::new(crate::fetchers::bancos::FETCHER),
+        Box::new(crate::fetchers::cbo::FETCHER),
     ]
 }

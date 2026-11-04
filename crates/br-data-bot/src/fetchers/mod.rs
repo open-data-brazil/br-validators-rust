@@ -12,6 +12,7 @@ use crate::{
 };
 
 pub(crate) mod bancos;
+pub(crate) mod cbo;
 pub(crate) mod cnaes;
 pub(crate) mod ibge;
 pub(crate) mod moedas;
