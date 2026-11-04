@@ -4,8 +4,10 @@
 
 //! Validação de documentos brasileiros e acesso a dados públicos embutidos por feature.
 
+pub mod cpf;
 pub mod types;
 pub mod util;
+pub use cpf::{format_cpf, is_valid_cpf, strip_cpf, validate_cpf};
 pub use types::*;
 
 /// Versão do workspace.

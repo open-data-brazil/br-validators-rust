@@ -147,6 +147,13 @@ pub type ValidationResult<T> = Result<Valid<T>, ValidationError>;
 /// Texto formatado ou erro de validação.
 pub type FormatResult = Result<String, ValidationError>;
 
+pub(crate) fn fail<T>(code: ValidationErrorCode, message: &'static str) -> ValidationResult<T> {
+    Err(ValidationError {
+        code,
+        message: Cow::Borrowed(message),
+    })
+}
+
 /// Serializa um resultado no formato JSON do projeto original.
 #[cfg(feature = "serde")]
 pub fn to_json_contract<T: AsRef<str>>(result: &ValidationResult<T>) -> String {

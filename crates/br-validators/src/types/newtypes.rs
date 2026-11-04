@@ -1,13 +1,19 @@
 use std::{fmt, ops::Deref};
 
 macro_rules! branded {
-    ($($(#[$meta:meta])* $name:ident),* $(,)?) => {$(
+    ($($(#[$meta:meta])* $name:ident $(=> $constructor:ident)?),* $(,)?) => {$(
         $(#[$meta])*
         #[derive(Debug, Clone, PartialEq, Eq, Hash)]
         #[cfg_attr(feature = "serde", derive(serde::Serialize), serde(transparent))]
-        pub struct $name(pub(crate) String);
+        pub struct $name(String);
 
         impl $name {
+            $(
+                pub(crate) fn $constructor(value: String) -> Self {
+                    Self(value)
+                }
+            )?
+
             /// Empresta a representação canônica.
             pub fn as_str(&self) -> &str {
                 &self.0
@@ -51,7 +57,7 @@ branded!(
     /// CNPJ validado.
     Cnpj,
     /// CPF validado.
-    Cpf,
+    Cpf => new_unchecked,
     /// CNH validada.
     Cnh,
     /// RENAVAM validado.

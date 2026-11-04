@@ -18,6 +18,17 @@ pub fn strip_chars(input: &str, removed: &[char]) -> String {
     input.chars().filter(|c| !removed.contains(c)).collect()
 }
 
+pub(crate) fn format_groups(mut input: &str, groups: &[(usize, &str)]) -> Option<String> {
+    let mut result = String::with_capacity(input.len());
+    for &(width, separator) in groups {
+        let (group, rest) = input.split_at_checked(width)?;
+        result.push_str(group);
+        result.push_str(separator);
+        input = rest;
+    }
+    input.is_empty().then_some(result)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
