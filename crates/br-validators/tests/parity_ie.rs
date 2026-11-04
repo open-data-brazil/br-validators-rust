@@ -1,7 +1,16 @@
 use br_validators::{validate_inscricao_estadual, Uf};
 use serde_json::{json, Value};
 
-const UFS: &[Uf] = &[Uf::AC, Uf::AL, Uf::AM, Uf::AP];
+const UFS: &[Uf] = &[
+    Uf::AC,
+    Uf::AL,
+    Uf::AM,
+    Uf::AP,
+    Uf::BA,
+    Uf::CE,
+    Uf::DF,
+    Uf::ES,
+];
 
 #[test]
 fn inscricao_estadual_tem_paridade_com_typescript() {

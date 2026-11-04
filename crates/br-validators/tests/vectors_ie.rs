@@ -5,7 +5,16 @@ use br_validators::{
     strip_inscricao_estadual, validate_inscricao_estadual, Uf,
 };
 
-const UFS: &[Uf] = &[Uf::AC, Uf::AL, Uf::AM, Uf::AP];
+const UFS: &[Uf] = &[
+    Uf::AC,
+    Uf::AL,
+    Uf::AM,
+    Uf::AP,
+    Uf::BA,
+    Uf::CE,
+    Uf::DF,
+    Uf::ES,
+];
 
 #[test]
 fn inscricao_estadual_reproduz_vetores_dourados() {

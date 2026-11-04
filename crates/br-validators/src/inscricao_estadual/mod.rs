@@ -4,14 +4,22 @@ mod ac;
 mod al;
 mod am;
 mod ap;
+mod ba;
+mod ce;
 mod common;
+mod df;
+mod es;
 mod modulo_ie;
 
 pub use ac::{strip_ie_ac, validate_ie_ac};
 pub use al::{strip_ie_al, validate_ie_al};
 pub use am::{strip_ie_am, validate_ie_am};
 pub use ap::{strip_ie_ap, validate_ie_ap};
+pub use ba::{strip_ie_ba, validate_ie_ba};
+pub use ce::{strip_ie_ce, validate_ie_ce};
 pub use common::{IeError, InscricaoEstadualValidationResult, ValidInscricaoEstadual};
+pub use df::{strip_ie_df, validate_ie_df};
+pub use es::{strip_ie_es, validate_ie_es};
 
 use crate::types::{FormatResult, Uf, ValidationErrorCode as E};
 
@@ -61,6 +69,10 @@ pub fn validate_inscricao_estadual(input: &str, uf: Uf) -> InscricaoEstadualVali
         Uf::AL => validate_ie_al(input),
         Uf::AM => validate_ie_am(input),
         Uf::AP => validate_ie_ap(input),
+        Uf::BA => validate_ie_ba(input),
+        Uf::CE => validate_ie_ce(input),
+        Uf::DF => validate_ie_df(input),
+        Uf::ES => validate_ie_es(input),
         _ => Err(common::failure(
             None,
             E::UnsupportedFormat,
@@ -81,5 +93,9 @@ pub fn is_valid_inscricao_estadual(input: &str, uf: Uf) -> bool {
 /// Retorna o erro de validação para uma inscrição inválida.
 pub fn format_inscricao_estadual(input: &str, uf: Uf) -> FormatResult {
     let valid = validate_inscricao_estadual(input, uf).map_err(|failure| failure.error)?;
-    Ok(valid.value.into_inner())
+    if uf == Uf::DF {
+        df::apply_mask(&valid.value)
+    } else {
+        Ok(valid.value.into_inner())
+    }
 }
