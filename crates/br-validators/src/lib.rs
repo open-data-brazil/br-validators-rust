@@ -5,6 +5,7 @@
 //! Validação de documentos brasileiros e acesso a dados públicos embutidos por feature.
 
 pub mod types;
+pub mod util;
 pub use types::*;
 
 /// Versão do workspace.
