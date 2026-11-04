@@ -20,15 +20,14 @@ pub fn write_dataset<T: Serialize>(path: &Path, records: &[T]) -> Result<WriteOu
 }
 
 pub fn write_json<T: Serialize + ?Sized>(path: &Path, value: &T) -> Result<WriteOutcome> {
-    let mut bytes = serde_json::to_vec_pretty(value).context("serializar JSON")?;
-    bytes.push(b'\n');
+    let bytes = canonical_json(value).context("serializar JSON")?;
     let path_name = path
         .file_name()
         .and_then(|name| name.to_str())
         .context("nome de arquivo inválido")?;
     let arquivo = ArquivoMeta {
         path: path_name.into(),
-        sha256: format!("{:x}", Sha256::digest(&bytes)),
+        sha256: sha256(&bytes),
         bytes: bytes.len() as u64,
     };
     match fs::read(path) {
@@ -48,6 +47,16 @@ pub fn write_json<T: Serialize + ?Sized>(path: &Path, value: &T) -> Result<Write
         arquivo,
         changed: true,
     })
+}
+
+pub fn canonical_json<T: Serialize + ?Sized>(value: &T) -> serde_json::Result<Vec<u8>> {
+    let mut bytes = serde_json::to_vec_pretty(value)?;
+    bytes.push(b'\n');
+    Ok(bytes)
+}
+
+pub fn sha256(bytes: &[u8]) -> String {
+    format!("{:x}", Sha256::digest(bytes))
 }
 
 fn replace_atomically(path: &Path, name: &str, bytes: &[u8]) -> io::Result<()> {

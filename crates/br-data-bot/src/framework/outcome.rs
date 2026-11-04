@@ -15,6 +15,8 @@ pub enum SourceError {
     AuthMissing(String),
     #[error("dependency failed: {0}")]
     Dependency(String),
+    #[error("internal error: {0}")]
+    Internal(String),
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
@@ -45,7 +47,7 @@ impl SourceError {
             Self::LinkDeprecated { .. } | Self::AuthMissing(_) => SourceUnavailable,
             Self::Blocked(_) => SourceBlocked,
             Self::Parse(_) | Self::Empty(_) => SourceEmpty,
-            Self::Dependency(_) => DependencyFailed,
+            Self::Dependency(_) | Self::Internal(_) => DependencyFailed,
         }
     }
 
@@ -57,7 +59,7 @@ impl SourceError {
             Self::Blocked(_) => Some(SourceBlocked),
             Self::Parse(_) | Self::Empty(_) => Some(ParseError),
             Self::AuthMissing(_) => Some(AuthMissing),
-            Self::Dependency(_) => None,
+            Self::Dependency(_) | Self::Internal(_) => None,
         }
     }
 
