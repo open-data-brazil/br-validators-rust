@@ -16,6 +16,7 @@ pub mod pis_pasep;
 pub mod placa;
 pub mod processo_judicial;
 pub mod renavam;
+pub mod telefone;
 pub mod titulo_eleitor;
 pub mod types;
 pub mod util;
@@ -55,6 +56,10 @@ pub use processo_judicial::{
     ProcessoJudicialSegments, ProcessoJudicialValidationResult, ValidProcessoJudicial,
 };
 pub use renavam::{format_renavam, is_valid_renavam, strip_renavam, validate_renavam};
+pub use telefone::{
+    extract_telefone_digits, format_telefone, is_valid_telefone, normalize_telefone_digits,
+    strip_telefone, validate_telefone, TelefoneTipo, TelefoneValidationResult, ValidTelefone,
+};
 pub use titulo_eleitor::{
     format_titulo_eleitor, is_valid_titulo_eleitor, strip_titulo_eleitor, validate_titulo_eleitor,
     TituloEleitorError, TituloEleitorValidationResult, ValidTituloEleitor,

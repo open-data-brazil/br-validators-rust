@@ -95,7 +95,7 @@ branded!(
     /// Registro geral validado.
     Rg,
     /// Número de telefone validado.
-    Telefone,
+    Telefone => new_unchecked,
     /// Payload BR Code validado.
     BrCode,
     /// Identificador CNIS validado.
