@@ -26,6 +26,10 @@ const UFS: &[Uf] = &[
     Uf::PR,
     Uf::RJ,
     Uf::RN,
+    Uf::RO,
+    Uf::RR,
+    Uf::RS,
+    Uf::SC,
 ];
 
 #[test]
