@@ -3,4 +3,15 @@ name = "br-validators-cli"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-publish = false
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "CLI de validação de documentos brasileiros"
+
+[[bin]]
+name = "br-validators"
+path = "src/main.rs"
+
+[dependencies]
+br-validators = { path = "../br-validators", features = ["serde"] }
+clap.workspace = true
