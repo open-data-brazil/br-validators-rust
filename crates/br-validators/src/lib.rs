@@ -11,6 +11,7 @@ pub mod cep;
 pub mod cnh;
 pub mod cnis;
 pub mod cnpj;
+pub mod compare;
 pub mod cpf;
 pub mod detect;
 pub mod ean;
