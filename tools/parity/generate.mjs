@@ -89,6 +89,7 @@ await mkdir(output, { recursive: true });
 const format = new Map();
 const strip = new Map();
 const detect = new Map();
+const generated = new Map();
 
 for (const document of documents) {
   const { id, suffix, uf } = document;
@@ -119,6 +120,13 @@ for (const document of documents) {
       const generateOpts = { seed: firstSeed + i, ...options[i % options.length] };
       const opts = document.ufPrefix ? { uf: generateOpts.uf } : uf ? { uf } : {};
       const input = core.generate(generator, generateOpts);
+      addCase(generated, generator, generateOpts, input);
+      if (i < 3) {
+        for (const output of [{ masked: true }, { masked: true, stripped: true }]) {
+          const displayOpts = { ...generateOpts, ...output };
+          addCase(generated, generator, displayOpts, core.generate(generator, displayOpts));
+        }
+      }
       const expected = validate(input, opts);
       if (!expected.ok) {
         throw new Error(`Gerador ${generator} produziu ${input} com opções ${JSON.stringify(generateOpts)}: ${expected.message}`);
@@ -141,4 +149,16 @@ for (const { type, raw } of formatted.cases) {
 await save('format', format);
 await save('strip', strip);
 await save('detect', detect);
+const extra = [
+  ['cpf', { seed: 0 }],
+  ['cpf', { seed: 0xffffffff }],
+  ['cpf', { seed: 0x100000000 }],
+  ['cartao-credito', { seed: 42 }],
+  ['brcode', { seed: 42, pixKey: 'pix@bcb.gov.br', merchantName: 'Teste', merchantCity: 'curitiba', amount: '9,75', txid: 'A42' }],
+  ['brcode', { seed: 42, pixKey: 'bad' }],
+];
+for (const [type, opts] of extra) {
+  addCase(generated, type, opts, core.generate(type, opts));
+}
+await save('generate', generated);
 console.log(`format: ${format.size}\nstrip: ${strip.size}\ndetect: ${detect.size}`);

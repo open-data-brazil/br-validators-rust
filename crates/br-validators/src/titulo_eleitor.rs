@@ -180,7 +180,7 @@ pub fn validate_titulo_eleitor(input: &str) -> TituloEleitorValidationResult {
             None,
         ));
     }
-    if !valid_checksum(sequential, weights, uf_code, special, check_digits) {
+    if check_digits != titulo_check_digits(sequential, weights, uf_code) {
         return Err(failure(
             E::InvalidCheckDigit,
             "Título de Eleitor check digits are invalid",
@@ -199,13 +199,8 @@ pub fn validate_titulo_eleitor(input: &str) -> TituloEleitorValidationResult {
     })
 }
 
-fn valid_checksum(
-    sequential: &str,
-    weights: &[u32],
-    uf_code: u8,
-    special: bool,
-    digits: &str,
-) -> bool {
+pub(crate) fn titulo_check_digits(sequential: &str, weights: &[u32], uf_code: u8) -> String {
+    let special = matches!(uf_code, 1 | 2);
     let values: Vec<_> = sequential.chars().filter_map(|c| c.to_digit(10)).collect();
     let first = resolve_digit(weighted_sum(&values, weights) % 11, special);
     let tail = [u32::from(uf_code / 10), u32::from(uf_code % 10), first];
@@ -213,7 +208,7 @@ fn valid_checksum(
         weighted_sum(&tail, &TITULO_ELEITOR_DV2_WEIGHTS) % 11,
         special,
     );
-    digits == format!("{first}{second}")
+    format!("{first}{second}")
 }
 
 fn resolve_digit(remainder: u32, special: bool) -> u32 {

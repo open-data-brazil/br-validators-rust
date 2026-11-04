@@ -29,3 +29,6 @@ TypeScript não oferece geração para esses tipos.
 Cada caso guarda `input`, `opts` e `expected` sem remover campos da resposta
 original. Os arquivos `format.json` e `strip.json` incluem o tipo em
 `opts.type`. Os tipos que exigem UF também têm casos por estado.
+
+`generate.json` registra as saídas exatas da geração com semente, além de
+casos com máscara, opção `stripped`, bandeira e campos customizados de BR Code.

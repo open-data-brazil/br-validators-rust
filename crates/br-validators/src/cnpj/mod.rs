@@ -68,13 +68,17 @@ fn valid_checksum(input: &str) -> bool {
     let Some((base, digits)) = input.split_at_checked(CNPJ_BASE_LENGTH) else {
         return false;
     };
+    digits == cnpj_check_digits(base)
+}
+
+pub(crate) fn cnpj_check_digits(base: &str) -> String {
     let first = compute_check_digit(base, &CNPJ_DV1_WEIGHTS, ascii_value::cnpj_char_value);
     let second = compute_check_digit(
         &format!("{base}{first}"),
         &CNPJ_DV2_WEIGHTS,
         ascii_value::cnpj_char_value,
     );
-    digits == format!("{first}{second}")
+    format!("{first}{second}")
 }
 
 /// Valida CNPJ numérico ou alfanumérico (BR-CNPJ-A-005).

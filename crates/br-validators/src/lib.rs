@@ -18,6 +18,8 @@ pub mod detect;
 pub mod diff;
 pub mod ean;
 pub mod format;
+#[cfg(feature = "generate")]
+pub mod generate;
 pub mod inscricao_estadual;
 pub mod mask;
 pub mod nfe_chave;

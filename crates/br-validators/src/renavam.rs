@@ -64,14 +64,21 @@ fn valid_checksum(input: &str) -> bool {
     let Some((base, digits)) = input.split_at_checked(RENAVAM_BASE_LENGTH) else {
         return false;
     };
+    digits == renavam_check_digit(base).to_string()
+}
+
+pub(crate) fn renavam_check_digit(base: &str) -> u32 {
     let values: Vec<_> = base.chars().filter_map(|c| c.to_digit(10)).collect();
     let remainder = weighted_sum(&values, &RENAVAM_DV_WEIGHTS) % 11;
     let expected = 11 - remainder;
-    let expected = if expected > 9 { 0 } else { expected };
-    digits == expected.to_string()
+    if expected > 9 {
+        0
+    } else {
+        expected
+    }
 }
 
-/// Verifica se o RENAVAM é válida.
+/// Verifica se o RENAVAM é válido.
 pub fn is_valid_renavam(input: &str) -> bool {
     validate_renavam(input).is_ok()
 }

@@ -16,7 +16,7 @@ pub const CARTAO_PAN_MIN_LENGTH: usize = 8;
 pub const CARTAO_PAN_MAX_LENGTH: usize = 19;
 
 // BR-LUHN-005. Prefixos heurísticos da implementação original.
-const ELO_IIN_PREFIXES: &[&str] = &[
+pub(crate) const ELO_IIN_PREFIXES: &[&str] = &[
     "401178", "401179", "431274", "438935", "451416", "457393", "457631", "457632", "504175",
     "506699", "506770", "509048", "509049", "627780", "636297", "636368", "650031", "650032",
     "650033", "650035", "650051", "650405", "650439", "650485", "650486", "650487", "650488",
@@ -24,7 +24,7 @@ const ELO_IIN_PREFIXES: &[&str] = &[
     "650498", "650499", "651652", "651653", "651654", "651655", "651656", "651657", "651658",
     "651659", "651660", "655000", "655001",
 ];
-const HIPERCARD_IIN_PREFIXES: &[&str] = &["606282", "384100"];
+pub(crate) const HIPERCARD_IIN_PREFIXES: &[&str] = &["606282", "384100"];
 
 /// Bandeira estimada pelo prefixo IIN.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

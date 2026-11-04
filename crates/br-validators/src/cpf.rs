@@ -80,10 +80,14 @@ fn valid_checksum(cpf: &str) -> bool {
     let Some((base, digits)) = cpf.split_at_checked(CPF_DV1_WEIGHTS.len()) else {
         return false;
     };
+    digits == cpf_check_digits(base)
+}
+
+pub(crate) fn cpf_check_digits(base: &str) -> String {
     let digit_value = |character: char| character.to_digit(10).unwrap_or_default();
     let first = compute_check_digit(base, &CPF_DV1_WEIGHTS, digit_value);
     let second = compute_check_digit(&format!("{base}{first}"), &CPF_DV2_WEIGHTS, digit_value);
-    digits == format!("{first}{second}")
+    format!("{first}{second}")
 }
 
 /// Verifica se o CPF é válido.

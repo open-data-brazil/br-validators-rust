@@ -22,6 +22,6 @@ fn oraculo_contem_casos_de_paridade() {
         total += cases.len();
         files += 1;
     }
-    assert_eq!(files, 24);
+    assert_eq!(files, 25);
     assert!(total > 18_000);
 }

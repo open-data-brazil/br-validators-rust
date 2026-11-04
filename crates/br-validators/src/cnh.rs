@@ -66,6 +66,10 @@ fn valid_checksum(input: &str) -> bool {
     let Some((base, digits)) = input.split_at_checked(CNH_BASE_LENGTH) else {
         return false;
     };
+    digits == cnh_check_digits(base)
+}
+
+pub(crate) fn cnh_check_digits(base: &str) -> String {
     let values: Vec<_> = base.chars().filter_map(|c| c.to_digit(10)).collect();
     let first = weighted_sum(&values, &CNH_DV1_WEIGHTS) % 11;
     let second = weighted_sum(&values, &CNH_DV2_WEIGHTS) % 11;
@@ -76,7 +80,7 @@ fn valid_checksum(input: &str) -> bool {
         (first, second)
     };
     let second = if second == 10 { 0 } else { second };
-    digits == format!("{first}{second}")
+    format!("{first}{second}")
 }
 
 /// Verifica se a CNH é válida.
