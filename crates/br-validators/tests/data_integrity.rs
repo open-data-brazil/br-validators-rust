@@ -118,7 +118,7 @@ dataset!("cest", cest;
 );
 
 dataset!("cfop", cfop;
-    "cfop.json", "cfop", CFOP
+    "cfop.json", "cfop", get_all_cfop()
 );
 
 dataset!("cnaes", cnaes;

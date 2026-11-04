@@ -160,6 +160,41 @@ pub fn upper_trim(input: &str) -> String {
     input.trim_matches(is_ecmascript_whitespace).to_uppercase()
 }
 
+/// Código fiscal localizado na tabela de referência.
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize)]
+pub struct ValidFiscalCode {
+    /// Código canônico da fonte.
+    pub value: &'static str,
+    /// Descrição oficial.
+    pub description: &'static str,
+    /// Representação formatada, quando disponível.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub format: Option<String>,
+}
+
+/// Resultado da validação de um código fiscal na tabela embutida.
+pub type FiscalCodeValidationResult = LookupResult<ValidFiscalCode>;
+
+/// Converte uma consulta fiscal em validação com descrição e máscara.
+///
+/// # Errors
+///
+/// Preserva a falha retornada pela consulta.
+pub fn fiscal_validation_from_lookup<T>(
+    lookup: LookupResult<&'static T>,
+    parts: impl FnOnce(&'static T) -> (&'static str, &'static str),
+    format: Option<fn(&str) -> String>,
+) -> FiscalCodeValidationResult {
+    lookup.map(|row| {
+        let (value, description) = parts(row);
+        ValidFiscalCode {
+            value,
+            description,
+            format: format.map(|format| format(value)),
+        }
+    })
+}
+
 /// Converte para minúsculas e remove acentos do alfabeto latino.
 pub fn fold(input: &str) -> String {
     input
