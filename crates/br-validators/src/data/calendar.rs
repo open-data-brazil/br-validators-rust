@@ -1,18 +1,22 @@
-use crate::util::chars::is_ecmascript_whitespace;
-
 use super::lookup::Data;
 
 // Fonte: Lei 662/1949, Lei 10.607/2002, Lei 6.802/1980 e Lei 14.759/2023.
-pub(super) const FIXOS: &[(u32, u32, i32)] = &[
-    (1, 1, 1),
-    (4, 21, 1),
-    (5, 1, 1),
-    (9, 7, 1),
-    (10, 12, 1),
-    (11, 2, 1),
-    (11, 15, 1),
-    (11, 20, 2024),
-    (12, 25, 1),
+pub(super) const FIXOS: &[(u32, u32, i32, &str, &str)] = &[
+    (1, 1, 1, "Confraternização Universal", "Lei 662/1949"),
+    (4, 21, 1, "Tiradentes", "Lei 662/1949"),
+    (5, 1, 1, "Dia do Trabalho", "Lei 662/1949"),
+    (9, 7, 1, "Independência do Brasil", "Lei 662/1949"),
+    (10, 12, 1, "Nossa Senhora Aparecida", "Lei 6.802/1980"),
+    (11, 2, 1, "Finados", "Lei 662/1949"),
+    (11, 15, 1, "Proclamação da República", "Lei 662/1949"),
+    (
+        11,
+        20,
+        2024,
+        "Dia Nacional de Zumbi e da Consciência Negra",
+        "Lei 14.759/2023",
+    ),
+    (12, 25, 1, "Natal", "Lei 662/1949"),
 ];
 
 pub(super) fn pascoa(ano: i32) -> Option<Data> {
@@ -45,63 +49,13 @@ pub(super) fn feriado_nacional(data: Data) -> bool {
     let (ano, mes, dia) = data.partes();
     FIXOS
         .iter()
-        .any(|&(m, d, desde)| m == mes && d == dia && ano >= desde)
+        .any(|&(m, d, desde, ..)| m == mes && d == dia && ano >= desde)
         || sexta_feira_santa(ano) == Some(data)
-}
-
-/// Retorna a data de hoje em Brasília no formato ISO.
-pub fn get_brazil_today_iso() -> String {
-    Data::hoje_brasil().to_string()
 }
 
 pub(super) fn dia_util(data: Data) -> bool {
     data.dia_da_semana() < 5 && !feriado_nacional(data)
 }
 
-/// Retrocede dias úteis. Datas inválidas produzem texto vazio.
-pub fn subtract_business_days(from_iso: &str, business_days: i64) -> String {
-    if business_days < 1 {
-        return from_iso.into();
-    }
-    from_iso
-        .parse()
-        .ok()
-        .and_then(|date| subtrai_dias_uteis(date, business_days))
-        .map_or_else(String::new, |data| data.to_string())
-}
-
-fn subtrai_dias_uteis(mut date: Data, mut days: i64) -> Option<Data> {
-    while days > 0 {
-        date = date.checked_add_days(-1)?;
-        if dia_util(date) {
-            days -= 1;
-        }
-    }
-    Some(date)
-}
-
-pub(super) fn defasado_em(data_referencia: &str, hoje: Data) -> bool {
-    data_referencia.parse::<Data>().is_ok_and(|referencia| {
-        subtrai_dias_uteis(hoje, 1).is_some_and(|anterior| referencia < anterior)
-    })
-}
-
-pub(super) fn normalize_bacen_date(date: &str) -> Option<String> {
-    let (first, second, third) = date_parts(date, '-')?;
-    match (first.len(), second.len(), third.len()) {
-        (4, 2, 2) => Some(format!("{first}-{second}-{third}")),
-        (2, 2, 4) => Some(format!("{third}-{first}-{second}")),
-        _ => None,
-    }
-}
-
-pub(super) fn date_parts(date: &str, separator: char) -> Option<(&str, &str, &str)> {
-    let (first, rest) = date
-        .trim_matches(is_ecmascript_whitespace)
-        .split_once(separator)?;
-    let (second, third) = rest.split_once(separator)?;
-    [first, second, third]
-        .iter()
-        .all(|part| part.bytes().all(|b| b.is_ascii_digit()))
-        .then_some((first, second, third))
-}
+#[cfg(any(feature = "ptax", feature = "selic"))]
+pub(super) mod mercado;

@@ -55,7 +55,7 @@ pub mod anp_combustiveis;
 #[cfg(feature = "bancos")]
 pub mod bancos;
 
-#[cfg(any(feature = "ptax", feature = "selic"))]
+#[cfg(any(feature = "ptax", feature = "selic", feature = "feriados"))]
 mod calendar;
 
 #[cfg(feature = "cbo")]

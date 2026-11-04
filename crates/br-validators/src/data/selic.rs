@@ -5,9 +5,9 @@ use std::{collections::HashMap, ops::Deref, sync::LazyLock};
 use crate::schema::DatasetMetadata;
 pub use crate::schema::SelicMetaObservacao;
 
-pub use super::calendar::{get_brazil_today_iso, subtract_business_days};
+pub use super::calendar::mercado::{get_brazil_today_iso, subtract_business_days};
 use super::{
-    calendar::{date_parts, defasado_em, normalize_bacen_date},
+    calendar::mercado::{date_parts, defasado_em, normalize_bacen_date},
     lookup::{index_by, Data},
 };
 

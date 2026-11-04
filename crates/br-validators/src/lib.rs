@@ -71,6 +71,8 @@ pub use cpf::{format_cpf, is_valid_cpf, strip_cpf, validate_cpf};
 pub use data::aeroportos;
 #[cfg(feature = "bancos")]
 pub use data::bancos;
+#[cfg(feature = "feriados")]
+pub use data::feriados;
 #[cfg(feature = "ibge")]
 pub use data::ibge;
 #[cfg(feature = "incoterms")]

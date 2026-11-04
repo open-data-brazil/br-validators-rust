@@ -229,15 +229,15 @@ dataset!("tse-municipios", tse_municipios;
 #[test]
 fn feriados() {
     use data::feriados as dataset;
-    let meta = &*dataset::METADATA;
+    let meta = get_dataset_metadata("feriados").expect("metadados de feriados");
     assert_eq!(meta.id, "feriados");
     arquivos(meta, &["portaria-extras.json"]);
     contagem(
         meta,
         "portariaExtras",
-        dataset::PORTARIA_EXTRAS.values().map(Vec::len).sum(),
+        dataset::get_portaria_extras().values().map(Vec::len).sum(),
     );
-    for (ano, dados) in &*dataset::PORTARIA_EXTRAS {
+    for (ano, dados) in dataset::get_portaria_extras() {
         ordenados(dados);
         let prefixo = format!("{ano:04}-");
         assert!(dados.iter().all(|dado| dado.data.starts_with(&prefixo)));

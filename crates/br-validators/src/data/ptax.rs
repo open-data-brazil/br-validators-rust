@@ -6,7 +6,10 @@ use crate::schema::DatasetMetadata;
 pub use crate::schema::PtaxCotacao;
 
 use super::{
-    calendar::{defasado_em, dia_util, normalize_bacen_date},
+    calendar::{
+        dia_util,
+        mercado::{defasado_em, normalize_bacen_date},
+    },
     lookup::{group_by, upper_trim, Data},
 };
 
@@ -156,7 +159,7 @@ pub fn get_ptax_historico_em(
         .collect()
 }
 
-pub use super::calendar::{get_brazil_today_iso, subtract_business_days};
+pub use super::calendar::mercado::{get_brazil_today_iso, subtract_business_days};
 
 /// Verifica se a data ISO é dia útil, conforme o calendário nacional.
 pub fn is_brazil_business_day(iso: &str) -> bool {

@@ -207,7 +207,6 @@ pub fn search<T, const N: usize>(
 
 /// Data civil gregoriana entre os anos 1 e 9999.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
-#[cfg_attr(feature = "serde", derive(serde::Serialize))]
 pub struct Data {
     ano: i32,
     mes: u32,
@@ -288,6 +287,20 @@ impl fmt::Display for Data {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let (ano, mes, dia) = self.partes();
         write!(f, "{ano:04}-{mes:02}-{dia:02}")
+    }
+}
+
+impl serde::Serialize for Data {
+    fn serialize<S: serde::Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
+        serializer.collect_str(self)
+    }
+}
+
+impl<'de> serde::Deserialize<'de> for Data {
+    fn deserialize<D: serde::Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
+        let input =
+            <std::borrow::Cow<'de, str> as serde::Deserialize<'de>>::deserialize(deserializer)?;
+        input.parse().map_err(serde::de::Error::custom)
     }
 }
 
