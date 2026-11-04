@@ -40,5 +40,6 @@ pub fn fetchers() -> Vec<Box<dyn Fetcher>> {
         Box::new(crate::fetchers::bancos::FETCHER),
         Box::new(crate::fetchers::cbo::FETCHER),
         Box::new(crate::fetchers::aeroportos::FETCHER),
+        Box::new(crate::fetchers::tse_municipios::FETCHER),
     ]
 }

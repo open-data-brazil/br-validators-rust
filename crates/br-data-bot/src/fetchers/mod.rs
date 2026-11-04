@@ -22,6 +22,7 @@ pub(crate) mod pncp_reference;
 pub(crate) mod ptax;
 pub(crate) mod selic;
 pub(crate) mod transparencia_snapshots;
+pub(crate) mod tse_municipios;
 
 pub(crate) struct DatasetFetcher {
     pub id: &'static str,
