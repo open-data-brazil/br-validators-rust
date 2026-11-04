@@ -73,7 +73,7 @@ branded!(
     /// Placa de veículo validada.
     Placa,
     /// PIS ou PASEP validado.
-    PisPasep,
+    PisPasep => new_unchecked,
     /// Número de Identificação do Trabalhador validado.
     Nit,
     /// Chave PIX validada.

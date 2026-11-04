@@ -7,6 +7,7 @@
 pub mod cep;
 pub mod cnpj;
 pub mod cpf;
+pub mod pis_pasep;
 pub mod types;
 pub mod util;
 pub use cep::{format_cep, is_valid_cep, strip_cep, validate_cep};
@@ -15,6 +16,7 @@ pub use cnpj::{
     is_valid_cnpj_alphanumeric, is_valid_cnpj_numeric, strip_cnpj, validate_cnpj,
 };
 pub use cpf::{format_cpf, is_valid_cpf, strip_cpf, validate_cpf};
+pub use pis_pasep::{format_pis_pasep, is_valid_pis_pasep, strip_pis_pasep, validate_pis_pasep};
 pub use types::*;
 
 /// Versão do workspace.
