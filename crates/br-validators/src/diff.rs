@@ -68,6 +68,13 @@ fn slice(value: &str, start: usize, end: usize) -> &str {
 }
 
 /// Identifica campos alterados com as opções padrão.
+///
+/// ```
+/// use br_validators::{diff, DocumentType};
+/// let result = diff("12345678909", "12345678901", DocumentType::Cpf);
+/// assert!(result.changed);
+/// assert_eq!(result.fields.first().map(|field| field.field), Some("dv"));
+/// ```
 pub fn diff(a: &str, b: &str, ty: DocumentType) -> DiffResult {
     diff_with_options(a, b, ty, &PlatformOptions::default())
 }

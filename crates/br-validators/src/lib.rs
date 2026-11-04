@@ -112,5 +112,16 @@ pub use titulo_eleitor::{
 };
 pub use types::*;
 
+pub use batch::batch;
+pub use compare::compare;
+pub use detect::detect;
+pub use diff::diff;
+pub use format::format_document;
+#[cfg(feature = "generate")]
+pub use generate::generate;
+pub use mask::mask;
+pub use platform::{validate_document, DocumentType, PlatformOptions};
+pub use sanitize::sanitize;
+
 /// Versão do workspace.
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");

@@ -22,7 +22,7 @@ pub struct CompareResult {
 /// Compara dois documentos com as opções padrão.
 ///
 /// ```
-/// use br_validators::{compare::compare, platform::DocumentType};
+/// use br_validators::{compare, DocumentType};
 /// assert!(compare("123.456.789-09", "12345678909", DocumentType::Cpf).equal);
 /// ```
 pub fn compare(a: &str, b: &str, ty: DocumentType) -> CompareResult {

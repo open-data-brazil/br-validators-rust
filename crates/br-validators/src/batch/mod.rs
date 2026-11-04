@@ -68,6 +68,13 @@ pub struct BatchResult {
 }
 
 /// Valida as entradas e preserva a posição original de cada uma.
+///
+/// ```
+/// use br_validators::{batch, DocumentType, PlatformOptions};
+/// let result = batch(["12345678909", "bad"], DocumentType::Cpf, &PlatformOptions::default());
+/// assert_eq!(result.summary.valid, 1);
+/// assert_eq!(result.summary.invalid, 1);
+/// ```
 pub fn batch<I, S>(inputs: I, ty: DocumentType, opts: &PlatformOptions) -> BatchResult
 where
     I: IntoIterator<Item = S>,

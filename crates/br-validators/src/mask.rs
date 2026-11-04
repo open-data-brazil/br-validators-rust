@@ -21,7 +21,7 @@ pub fn is_maskable_document_type(ty: &str) -> bool {
 /// Valida o documento e devolve o texto para exibição.
 ///
 /// ```
-/// use br_validators::{mask::mask, platform::DocumentType};
+/// use br_validators::{mask, DocumentType};
 /// assert_eq!(mask("12345678909", DocumentType::Cpf, &Default::default()).unwrap(), "123.456.789-09");
 /// ```
 ///
