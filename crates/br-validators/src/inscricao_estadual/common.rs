@@ -52,6 +52,16 @@ pub(super) fn failure(uf: Option<Uf>, code: E, message: impl Into<Cow<'static, s
 }
 
 pub(super) fn normalize(input: &str, uf: Uf) -> Result<String, IeError> {
+    normalize_with(input, uf, |c| {
+        matches!(c, '.' | '-' | '/') || is_ecmascript_whitespace(c)
+    })
+}
+
+pub(super) fn normalize_with(
+    input: &str,
+    uf: Uf,
+    is_separator: impl Fn(char) -> bool,
+) -> Result<String, IeError> {
     let trimmed = input.trim_matches(is_ecmascript_whitespace);
     if trimmed.is_empty() {
         return Err(failure(
@@ -62,7 +72,7 @@ pub(super) fn normalize(input: &str, uf: Uf) -> Result<String, IeError> {
     }
     if !trimmed
         .chars()
-        .all(|c| c.is_ascii_digit() || matches!(c, '.' | '-' | '/') || is_ecmascript_whitespace(c))
+        .all(|c| c.is_ascii_digit() || is_separator(c))
     {
         return Err(failure(
             Some(uf),

@@ -18,6 +18,10 @@ const UFS: &[Uf] = &[
     Uf::MA,
     Uf::MG,
     Uf::MS,
+    Uf::MT,
+    Uf::PA,
+    Uf::PB,
+    Uf::PE,
 ];
 
 #[test]
