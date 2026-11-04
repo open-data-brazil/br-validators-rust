@@ -226,6 +226,15 @@ impl Data {
         ((1..=9999).contains(&ano) && (1..=dias).contains(&dia)).then_some(Self { ano, mes, dia })
     }
 
+    /// Retorna a data atual em Brasília (UTC−3).
+    pub fn hoje_brasil() -> Self {
+        data_brasil(SystemTime::now()).unwrap_or(Self {
+            ano: 1970,
+            mes: 1,
+            dia: 1,
+        })
+    }
+
     /// Retorna ano, mês e dia.
     pub const fn partes(self) -> (i32, u32, u32) {
         (self.ano, self.mes, self.dia)
@@ -318,7 +327,7 @@ impl FromStr for Data {
 
 /// Retorna a data atual em Brasília (UTC−3).
 pub fn hoje_brasil() -> (i32, u32, u32) {
-    data_brasil(SystemTime::now()).map_or((1970, 1, 1), Data::partes)
+    Data::hoje_brasil().partes()
 }
 
 fn data_brasil(instant: SystemTime) -> Option<Data> {

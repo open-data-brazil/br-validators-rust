@@ -207,7 +207,7 @@ dataset!("portos", portos;
 );
 
 dataset!("ptax", ptax;
-    "ptax.json", "cotacoes", PTAX
+    "ptax.json", "cotacoes", get_ptax_list()
 );
 
 dataset!("selic", selic;
@@ -338,18 +338,18 @@ fn contagens_de_tabelas_e_subconjuntos() {
             .count(),
     );
     contagem(
-        &ptax::METADATA,
+        get_dataset_metadata("ptax").expect("metadados de PTAX"),
         "diasUteis",
-        ptax::PTAX
+        ptax::get_ptax_list()
             .iter()
             .map(|c| &c.data)
             .collect::<BTreeSet<_>>()
             .len(),
     );
     contagem(
-        &ptax::METADATA,
+        get_dataset_metadata("ptax").expect("metadados de PTAX"),
         "moedas",
-        ptax::PTAX
+        ptax::get_ptax_list()
             .iter()
             .map(|c| &c.moeda)
             .collect::<BTreeSet<_>>()

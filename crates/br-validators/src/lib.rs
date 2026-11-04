@@ -75,6 +75,8 @@ pub use data::bancos;
 pub use data::ibge;
 #[cfg(feature = "moedas")]
 pub use data::moedas;
+#[cfg(feature = "ptax")]
+pub use data::ptax;
 #[cfg(feature = "tse-municipios")]
 pub use data::tse_municipios;
 #[cfg(feature = "_data")]
