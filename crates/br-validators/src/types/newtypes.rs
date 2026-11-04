@@ -89,7 +89,7 @@ branded!(
     /// Código EAN validado.
     Ean => new_unchecked,
     /// Inscrição estadual validada.
-    InscricaoEstadual,
+    InscricaoEstadual => new_unchecked,
     /// Inscrição estadual de produtor rural validada.
     InscricaoEstadualProdutorRural,
     /// Registro geral validado.
