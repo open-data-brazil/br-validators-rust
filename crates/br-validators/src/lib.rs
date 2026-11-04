@@ -83,6 +83,8 @@ pub use data::cnpj_motivos;
 pub use data::csosn;
 #[cfg(feature = "cst")]
 pub use data::cst;
+#[cfg(feature = "esocial")]
+pub use data::esocial;
 #[cfg(feature = "feriados")]
 pub use data::feriados;
 #[cfg(feature = "ibge")]

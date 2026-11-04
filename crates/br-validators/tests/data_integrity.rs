@@ -141,8 +141,8 @@ dataset!("cst", cst;
 );
 
 dataset!("esocial", esocial;
-    "categorias.json", "categorias", CATEGORIAS;
-    "rubricas.json", "rubricas", RUBRICAS
+    "categorias.json", "categorias", get_all_esocial_categorias();
+    "rubricas.json", "rubricas", get_all_esocial_rubricas()
 );
 
 dataset!("ibge", ibge;

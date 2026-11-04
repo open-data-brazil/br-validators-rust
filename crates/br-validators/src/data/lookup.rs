@@ -224,17 +224,28 @@ pub fn search<T, const N: usize>(
     fields: impl Fn(&T) -> [&str; N],
     limit: Option<usize>,
 ) -> Vec<&'static T> {
+    search_by(
+        items,
+        query,
+        |item, query| fields(item).iter().any(|field| fold(field).contains(query)),
+        limit,
+    )
+}
+
+/// Busca com a regra de correspondência do dataset, usando a consulta normalizada.
+pub fn search_by<T>(
+    items: &'static [T],
+    query: &str,
+    matches: impl Fn(&T, &str) -> bool,
+    limit: Option<usize>,
+) -> Vec<&'static T> {
     let query = fold(query.trim_matches(is_ecmascript_whitespace));
     if query.is_empty() {
         return Vec::new();
     }
     items
         .iter()
-        .filter(|item| {
-            fields(item)
-                .iter()
-                .any(|field| fold(field).contains(&query))
-        })
+        .filter(|item| matches(item, &query))
         // As buscas originais testam o limite depois de incluir o primeiro resultado.
         .take(limit.unwrap_or(10).max(1))
         .collect()
