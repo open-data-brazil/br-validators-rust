@@ -5,36 +5,9 @@ use br_validators::{
     strip_inscricao_estadual, validate_inscricao_estadual, Uf,
 };
 
-const UFS: &[Uf] = &[
-    Uf::AC,
-    Uf::AL,
-    Uf::AM,
-    Uf::AP,
-    Uf::BA,
-    Uf::CE,
-    Uf::DF,
-    Uf::ES,
-    Uf::GO,
-    Uf::MA,
-    Uf::MG,
-    Uf::MS,
-    Uf::MT,
-    Uf::PA,
-    Uf::PB,
-    Uf::PE,
-    Uf::PI,
-    Uf::PR,
-    Uf::RJ,
-    Uf::RN,
-    Uf::RO,
-    Uf::RR,
-    Uf::RS,
-    Uf::SC,
-];
-
 #[test]
 fn inscricao_estadual_reproduz_vetores_dourados() {
-    for &uf in UFS {
+    for uf in Uf::ALL {
         let name = format!("ie.{}.official.json", uf.as_str().to_ascii_lowercase());
         let vector = common::load_vector(&name);
         let golden = &vector["golden"];
@@ -79,7 +52,7 @@ fn inscricao_estadual_reproduz_vetores_negativos() {
         ("dfLegacy12", Uf::DF, "INVALID_LENGTH"),
         ("dfBadPrefix", Uf::DF, "UNSUPPORTED_FORMAT"),
     ] {
-        if UFS.contains(&uf) {
+        {
             let input = vector["cases"][name].as_str().unwrap();
             assert_eq!(
                 validate_inscricao_estadual(input, uf)

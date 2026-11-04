@@ -1,33 +1,6 @@
 use br_validators::{validate_inscricao_estadual, Uf};
 use serde_json::{json, Value};
 
-const UFS: &[Uf] = &[
-    Uf::AC,
-    Uf::AL,
-    Uf::AM,
-    Uf::AP,
-    Uf::BA,
-    Uf::CE,
-    Uf::DF,
-    Uf::ES,
-    Uf::GO,
-    Uf::MA,
-    Uf::MG,
-    Uf::MS,
-    Uf::MT,
-    Uf::PA,
-    Uf::PB,
-    Uf::PE,
-    Uf::PI,
-    Uf::PR,
-    Uf::RJ,
-    Uf::RN,
-    Uf::RO,
-    Uf::RR,
-    Uf::RS,
-    Uf::SC,
-];
-
 #[test]
 fn inscricao_estadual_tem_paridade_com_typescript() {
     let cases: Vec<Value> =
@@ -35,9 +8,6 @@ fn inscricao_estadual_tem_paridade_com_typescript() {
     for case in cases {
         let input = case["input"].as_str().unwrap();
         let uf: Uf = case["opts"]["uf"].as_str().unwrap().parse().unwrap();
-        if !UFS.contains(&uf) {
-            continue;
-        }
         let actual = match validate_inscricao_estadual(input, uf) {
             Ok(valid) => {
                 json!({"ok": true, "value": valid.value.as_str(), "format": valid.format.as_str(), "uf": valid.uf.as_str()})

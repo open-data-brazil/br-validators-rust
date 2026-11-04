@@ -11,3 +11,12 @@ pub(super) fn cyclic_sum(body: &str, start: u32, reset: u32) -> u32 {
 pub(super) fn descending_sum_8(body: &str) -> u32 {
     cyclic_sum(body, 9, 9)
 }
+
+pub(super) fn sp_check_digit(canonical: &str, weights: &[u32]) -> u32 {
+    let sum: u32 = canonical
+        .bytes()
+        .zip(weights)
+        .map(|(byte, weight)| u32::from(byte - b'0') * weight)
+        .sum();
+    sum % 11 % 10
+}

@@ -26,6 +26,9 @@ mod ro;
 mod rr;
 mod rs;
 mod sc;
+mod se;
+mod sp;
+mod to;
 
 pub use ac::{strip_ie_ac, validate_ie_ac};
 pub use al::{strip_ie_al, validate_ie_al};
@@ -52,8 +55,11 @@ pub use ro::{strip_ie_ro, validate_ie_ro};
 pub use rr::{strip_ie_rr, validate_ie_rr};
 pub use rs::{strip_ie_rs, validate_ie_rs};
 pub use sc::{strip_ie_sc, validate_ie_sc};
+pub use se::{strip_ie_se, validate_ie_se};
+pub use sp::{strip_ie_sp, validate_ie_sp};
+pub use to::{strip_ie_to, validate_ie_to};
 
-use crate::types::{FormatResult, Uf, ValidationErrorCode as E};
+use crate::types::{FormatResult, Uf};
 
 pub use crate::util::chars::only_digits as strip_inscricao_estadual;
 
@@ -121,11 +127,9 @@ pub fn validate_inscricao_estadual(input: &str, uf: Uf) -> InscricaoEstadualVali
         Uf::RR => validate_ie_rr(input),
         Uf::RS => validate_ie_rs(input),
         Uf::SC => validate_ie_sc(input),
-        _ => Err(common::failure(
-            None,
-            E::UnsupportedFormat,
-            format!("UF {uf} is not supported"),
-        )),
+        Uf::SE => validate_ie_se(input),
+        Uf::SP => validate_ie_sp(input),
+        Uf::TO => validate_ie_to(input),
     }
 }
 
@@ -141,9 +145,9 @@ pub fn is_valid_inscricao_estadual(input: &str, uf: Uf) -> bool {
 /// Retorna o erro de validação para uma inscrição inválida.
 pub fn format_inscricao_estadual(input: &str, uf: Uf) -> FormatResult {
     let valid = validate_inscricao_estadual(input, uf).map_err(|failure| failure.error)?;
-    if uf == Uf::DF {
-        df::apply_mask(&valid.value)
-    } else {
-        Ok(valid.value.into_inner())
+    match uf {
+        Uf::DF => df::apply_mask(&valid.value),
+        Uf::SP => sp::apply_mask(&valid.value),
+        _ => Ok(valid.value.into_inner()),
     }
 }
