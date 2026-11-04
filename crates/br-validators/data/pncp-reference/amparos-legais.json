@@ -380,7 +380,7 @@
   {
     "id": 64,
     "nome": "Lei 14.133/2021, Art. 76, I, d",
-    "descricao": "Dispensa de Licitação:  investidura",
+    "descricao": "Dispensa de Licitação: investidura",
     "ativo": true
   },
   {
@@ -434,7 +434,7 @@
   {
     "id": 73,
     "nome": "Lei 14.133/2021, Art. 76, II, c",
-    "descricao": "Dispensa de Licitação:  venda de ações, que poderão ser negociadas em bolsa, observada a legislação específica",
+    "descricao": "Dispensa de Licitação: venda de ações, que poderão ser negociadas em bolsa, observada a legislação específica",
     "ativo": true
   },
   {
@@ -758,7 +758,7 @@
   {
     "id": 127,
     "nome": "Lei 12.850/2013, Art. 3º, §1º, V",
-    "descricao": "Dispensa de Licitação: contratação de serviços técnicos especializados, aquisição ou locação de equipamentos destinados à polícia judiciária para o rastreamento e obtenção de provas por meio de  interceptação de comunicações telefônicas e telemáticas, nos termos da legislação específica",
+    "descricao": "Dispensa de Licitação: contratação de serviços técnicos especializados, aquisição ou locação de equipamentos destinados à polícia judiciária para o rastreamento e obtenção de provas por meio de interceptação de comunicações telefônicas e telemáticas, nos termos da legislação específica",
     "ativo": true
   },
   {
@@ -926,13 +926,13 @@
   {
     "id": 155,
     "nome": "Lei 14.744/2023, art 2º, I",
-    "descricao": "Dispensa de licitação: Empresa Brasileira de Correios e Telégrafos, para a prestação e a utilização de serviços postais não exclusivos, definidos expressamente no Decreto-Lei nº 509, de 20 de março de 1969, e na Lei nº 6.538, de 22 de junho de 1978.",
+    "descricao": "Dispensa de licitação: Empresa Brasileira de Correios e Telégrafos, para a prestação e a utilização de serviços postais não exclusivos, definidos expressamente no Decreto-Lei nº 509, de 20 de março de 1969, e na Lei nº 6.538, de 22 de junho de 1978.",
     "ativo": true
   },
   {
     "id": 156,
     "nome": "Lei 14.744/2023, art 2º, II",
-    "descricao": "Dispensa de licitação: Telecomunicações Brasileiras S.A., para utilização de serviços de comunicação multimídia regidos pela Lei nº 9.472, de 16 de julho de 1997.",
+    "descricao": "Dispensa de licitação: Telecomunicações Brasileiras S.A., para utilização de serviços de comunicação multimídia regidos pela Lei nº 9.472, de 16 de julho de 1997.",
     "ativo": true
   },
   {
@@ -943,26 +943,26 @@
   },
   {
     "id": 158,
-    "nome": "Lei 14.981/2024,  art. 2º, I (Calamidade pública)",
+    "nome": "Lei 14.981/2024, art. 2º, I (Calamidade pública)",
     "descricao": "Dispensa de Licitação: aquisição de bens, a contratação de obras e de serviços, inclusive de engenharia, observado o disposto no Capítulo III.",
     "ativo": true
   },
   {
     "id": 159,
-    "nome": "Lei 14.981/2024,  art. 2º, II (Calamidade pública)",
+    "nome": "Lei 14.981/2024, art. 2º, II (Calamidade pública)",
     "descricao": "Reduzir pela metade os prazos mínimos de que tratam o art. 55 e o § 3º do art. 75 da Lei nº 14.133, de 2021, para a apresentação das propostas e dos lances, nas licitações ou nas contratações diretas com disputa eletrônica.",
     "ativo": true
   },
   {
     "id": 160,
-    "nome": "Lei 14.981/2024,  art. 2º, IV (Calamidade pública)",
+    "nome": "Lei 14.981/2024, art. 2º, IV (Calamidade pública)",
     "descricao": "Contrato: firmar contrato verbal, nos termos do disposto no § 2º do art. 95 da Lei nº 14.133, de 2021, desde que o seu valor não seja superior a R$ 100.000,00 (cem mil reais), nas hipóteses em que a urgência não permitir a formalização do instrumento contratual.",
     "ativo": true
   },
   {
     "id": 161,
     "nome": "Lei 14.981/2024, art. 21 (Calamidade pública)",
-    "descricao": "Dispensa de licitação: Fica a União, por meio do Ministério da Fazenda, autorizada a contratar, mediante dispensa de licitação, serviços auxiliares para a supervisão do uso dos recursos aplicados em medidas adotadas pelos entes afetados para o enfrentamento e a mitigação dos danos decorrentes de calamidade pública reconhecida pelo Congresso Nacional, nos termos do art. 65 da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal), em parte ou na integralidade do território nacional.",
+    "descricao": "Dispensa de licitação: Fica a União, por meio do Ministério da Fazenda, autorizada a contratar, mediante dispensa de licitação, serviços auxiliares para a supervisão do uso dos recursos aplicados em medidas adotadas pelos entes afetados para o enfrentamento e a mitigação dos danos decorrentes de calamidade pública reconhecida pelo Congresso Nacional, nos termos do art. 65 da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal), em parte ou na integralidade do território nacional.",
     "ativo": true
   },
   {
@@ -992,7 +992,7 @@
   {
     "id": 166,
     "nome": "Medida Provisória nº 1.309/2025, art. 3º",
-    "descricao": "Dispensa de licitação: As instituições administradoras do Fundo Garantidor de Operações - FGO e do Fundo  Garantidor para Investimentos - FGI poderão contratar, de forma direta e sem licitação, empresa pública  federal para operacionalizar o processo de identificação dos mutuários passíveis das ações de apoio às atividades de que trata esta Medida Provisória.",
+    "descricao": "Dispensa de licitação: As instituições administradoras do Fundo Garantidor de Operações - FGO e do Fundo Garantidor para Investimentos - FGI poderão contratar, de forma direta e sem licitação, empresa pública federal para operacionalizar o processo de identificação dos mutuários passíveis das ações de apoio às atividades de que trata esta Medida Provisória.",
     "ativo": true
   },
   {
@@ -1004,13 +1004,13 @@
   {
     "id": 168,
     "nome": "Medida Provisória nº 1.309/2025, art. 12, IV",
-    "descricao": "Dispensa de licitação:  permitida a adoção do sistema de registro de preços.",
+    "descricao": "Dispensa de licitação: permitida a adoção do sistema de registro de preços.",
     "ativo": true
   },
   {
     "id": 169,
     "nome": "Medida Provisória nº 1.309/2025, art. 12, IV",
-    "descricao": "Pregão:  permitida a adoção do sistema de registro de preços.",
+    "descricao": "Pregão: permitida a adoção do sistema de registro de preços.",
     "ativo": true
   },
   {
@@ -1022,7 +1022,7 @@
   {
     "id": 171,
     "nome": "Medida Provisória nº 1.314/2025, art. 2º, paragráfo 4º",
-    "descricao": "Art. 2º  Fica autorizada a utilização do superávit financeiro apurado em 31 de dezembro de 2024 de fontes supervisionadas por unidades do Ministério da Fazenda, limitada ao montante de até R$ 12.000.000.000,00 (doze bilhões de reais), como fonte de recursos para a disponibilização de linha de crédito rural criada com o objetivo de permitir a liquidação ou a amortização das seguintes operações:   (...)   § 4º  Para fins do disposto neste artigo, a União, por intermédio do Ministério da Fazenda, celebrará contrato, mediante dispensa de licitação, com o BNDES.",
+    "descricao": "Art. 2º Fica autorizada a utilização do superávit financeiro apurado em 31 de dezembro de 2024 de fontes supervisionadas por unidades do Ministério da Fazenda, limitada ao montante de até R$ 12.000.000.000,00 (doze bilhões de reais), como fonte de recursos para a disponibilização de linha de crédito rural criada com o objetivo de permitir a liquidação ou a amortização das seguintes operações: (...) § 4º Para fins do disposto neste artigo, a União, por intermédio do Ministério da Fazenda, celebrará contrato, mediante dispensa de licitação, com o BNDES.",
     "ativo": true
   },
   {
@@ -1052,7 +1052,7 @@
   {
     "id": 176,
     "nome": "Lei 9.636/1998, Art. 24-C, I",
-    "descricao": "Elaboração de propostas de alienação para bens individuais ou lotes de ativos imobiliários da União; (Incluído pela Lei 14.011, de 2020)",
+    "descricao": "Elaboração de propostas de alienação para bens individuais ou lotes de ativos imobiliários da União; (Incluído pela Lei 14.011, de 2020)",
     "ativo": true
   },
   {

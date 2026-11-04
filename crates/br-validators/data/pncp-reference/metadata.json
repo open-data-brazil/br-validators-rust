@@ -12,7 +12,7 @@
     "https://pncp.gov.br/api/pncp/v1/tipos-instrumentos-cobranca",
     "https://pncp.gov.br/api/pncp/v1/fontes-orcamentarias"
   ],
-  "capturadoEm": "2026-10-25",
+  "capturadoEm": "2026-11-04",
   "contagens": {
     "amparos-legais": 191,
     "criterios-julgamento": 16,
@@ -26,15 +26,15 @@
   "alteracoes": {
     "adicionados": 0,
     "removidos": 0,
-    "alterados": 0,
-    "comparadoCom": "2026-10-24"
+    "alterados": 14,
+    "comparadoCom": "2026-10-25"
   },
   "agendamento": "diario",
   "arquivos": [
     {
       "path": "amparos-legais.json",
-      "sha256": "1bf387214a2ddd4a444283c7174ec023c40ebb84818472ad2e6eb67fb468d1bc",
-      "bytes": 63951
+      "sha256": "fcc20f5ff71023e1aa995ca2a8c871a1622f2a85f8d0435143c454833a3a09fb",
+      "bytes": 63925
     },
     {
       "path": "criterios-julgamento.json",
