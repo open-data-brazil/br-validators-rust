@@ -55,7 +55,7 @@ macro_rules! branded {
 
 branded!(
     /// CNPJ validado.
-    Cnpj,
+    Cnpj => new_unchecked,
     /// CPF validado.
     Cpf => new_unchecked,
     /// CNH validada.
