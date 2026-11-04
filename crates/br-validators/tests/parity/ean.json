@@ -1,0 +1,20 @@
+[
+  {"input":"4006381333931","opts":{},"expected":{"ok":true,"value":"4006381333931","format":"ean-13"}},
+  {"input":"4 006381 333931","opts":{},"expected":{"ok":true,"value":"4006381333931","format":"ean-13"}},
+  {"input":"96385074","opts":{},"expected":{"ok":true,"value":"96385074","format":"ean-8"}},
+  {"input":"9638 5074","opts":{},"expected":{"ok":true,"value":"96385074","format":"ean-8"}},
+  {"input":"4006381333930","opts":{},"expected":{"ok":false,"code":"INVALID_CHECK_DIGIT","message":"EAN check digit is invalid"}},
+  {"input":"","opts":{},"expected":{"ok":false,"code":"EMPTY_INPUT","message":"EAN input is empty"}},
+  {"input":"   ","opts":{},"expected":{"ok":false,"code":"EMPTY_INPUT","message":"EAN input is empty"}},
+  {"input":".- /","opts":{},"expected":{"ok":false,"code":"EMPTY_INPUT","message":"EAN input is empty"}},
+  {"input":"abc","opts":{},"expected":{"ok":false,"code":"EMPTY_INPUT","message":"EAN input is empty"}},
+  {"input":"１２３","opts":{},"expected":{"ok":false,"code":"EMPTY_INPUT","message":"EAN input is empty"}},
+  {"input":"11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111","opts":{},"expected":{"ok":false,"code":"INVALID_LENGTH","message":"EAN must have 8 (EAN-8) or 13 (EAN-13) digits after normalization"}},
+  {"input":"00000000000","opts":{},"expected":{"ok":false,"code":"INVALID_LENGTH","message":"EAN must have 8 (EAN-8) or 13 (EAN-13) digits after normalization"}},
+  {"input":"11111111111111","opts":{},"expected":{"ok":false,"code":"INVALID_LENGTH","message":"EAN must have 8 (EAN-8) or 13 (EAN-13) digits after normalization"}},
+  {"input":"1_2+3","opts":{},"expected":{"ok":false,"code":"INVALID_CHARACTER","message":"EAN contains invalid characters"}},
+  {"input":"1 2","opts":{},"expected":{"ok":false,"code":"INVALID_LENGTH","message":"EAN must have 8 (EAN-8) or 13 (EAN-13) digits after normalization"}},
+  {"input":"﻿123","opts":{},"expected":{"ok":false,"code":"INVALID_LENGTH","message":"EAN must have 8 (EAN-8) or 13 (EAN-13) digits after normalization"}},
+  {"input":"🦀123","opts":{},"expected":{"ok":false,"code":"INVALID_CHARACTER","message":"EAN contains invalid characters"}},
+  {"input":"12\n3","opts":{},"expected":{"ok":false,"code":"INVALID_LENGTH","message":"EAN must have 8 (EAN-8) or 13 (EAN-13) digits after normalization"}}
+]
