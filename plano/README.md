@@ -88,7 +88,7 @@ Marque aqui ao concluir cada fase (a IA executora deve atualizar este bloco):
 - [x] FASE-01 workspace
 - [x] FASE-02 tipos base
 - [x] FASE-03 validadores simples
-- [ ] FASE-04 validadores complexos
+- [x] FASE-04 validadores complexos
 - [ ] FASE-05 APIs de plataforma
 - [ ] FASE-06 infra de dados
 - [ ] FASE-07 framework do bot
