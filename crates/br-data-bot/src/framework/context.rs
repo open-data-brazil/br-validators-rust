@@ -20,6 +20,7 @@ pub struct FetchContext<'a> {
     pub env: &'a dyn Fn(&str) -> Option<String>,
     pub(super) staged: Option<&'a StagedData>,
     retained: RefCell<Vec<SourceError>>,
+    publication_sources: RefCell<Option<Vec<String>>>,
 }
 
 impl<'a> FetchContext<'a> {
@@ -36,6 +37,7 @@ impl<'a> FetchContext<'a> {
             env,
             staged: None,
             retained: RefCell::default(),
+            publication_sources: RefCell::default(),
         }
     }
 
@@ -60,6 +62,14 @@ impl<'a> FetchContext<'a> {
         let path = self.data_dir(id).join(file);
         let bytes = fs::read(&path).with_context(|| format!("ler {}", path.display()))?;
         serde_json::from_slice(&bytes).with_context(|| format!("interpretar {}", path.display()))
+    }
+
+    pub fn set_publication_sources(&self, endpoints: Vec<String>) {
+        self.publication_sources.replace(Some(endpoints));
+    }
+
+    pub(super) fn take_publication_sources(&self) -> Option<Vec<String>> {
+        self.publication_sources.take()
     }
 
     pub fn retain_partial(&self, error: SourceError) {

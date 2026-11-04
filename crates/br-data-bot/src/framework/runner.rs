@@ -161,8 +161,16 @@ fn run_dataset(
         changes.removidos += file.changes.removidos;
         changes.alterados += file.changes.alterados;
     }
-    let next =
-        changed.then(|| next_metadata(fetcher, ctx.today, previous.as_ref(), &files, changes));
+    let next = changed.then(|| {
+        next_metadata(
+            fetcher,
+            ctx.today,
+            previous.as_ref(),
+            &files,
+            changes,
+            ctx.take_publication_sources(),
+        )
+    });
     if let Some(metadata) = &next {
         if !dry_run {
             let metadata = canonical_json(metadata)?;

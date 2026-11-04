@@ -25,6 +25,7 @@ pub(super) fn next_metadata(
     previous: Option<&DatasetMetadata>,
     files: &[PreparedFile],
     changes: DatasetChanges,
+    endpoints: Option<Vec<String>>,
 ) -> DatasetMetadata {
     let mut contagens = previous.map_or_else(BTreeMap::new, |meta| meta.contagens.clone());
     let mut arquivos: BTreeMap<_, _> = previous
@@ -53,7 +54,7 @@ pub(super) fn next_metadata(
         id: fetcher.id().into(),
         nome: fetcher.nome().into(),
         fonte: fetcher.fonte().into(),
-        endpoints: fetcher.endpoints(),
+        endpoints: endpoints.unwrap_or_else(|| fetcher.endpoints()),
         capturado_em: today.to_string(),
         contagens,
         alteracoes: Alteracoes {
