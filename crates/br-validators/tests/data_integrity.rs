@@ -151,7 +151,7 @@ dataset!("ibge", ibge;
 );
 
 dataset!("ibpt", ibpt;
-    "cargas.json", "cargas", CARGAS
+    "cargas.json", "cargas", get_all_ibpt_cargas()
 );
 
 dataset!("incoterms", incoterms;

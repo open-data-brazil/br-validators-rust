@@ -81,6 +81,8 @@ pub use data::cnpj_motivos;
 pub use data::feriados;
 #[cfg(feature = "ibge")]
 pub use data::ibge;
+#[cfg(feature = "ibpt")]
+pub use data::ibpt;
 #[cfg(feature = "incoterms")]
 pub use data::incoterms;
 #[cfg(feature = "moedas")]
