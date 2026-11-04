@@ -1,6 +1,9 @@
 //! Metadados e política de atualização dos datasets ativos.
 
-use crate::schema::{Agendamento, DatasetMetadata};
+use crate::{
+    data::lookup::Data,
+    schema::{Agendamento, DatasetMetadata},
+};
 
 /// Retorna os metadados dos datasets habilitados, em ordem de identificador.
 pub fn get_data_catalog() -> Vec<&'static DatasetMetadata> {
@@ -93,48 +96,15 @@ pub fn is_stale(meta: &DatasetMetadata, hoje: (u32, u32, u32)) -> bool {
         Agendamento::Derivado | Agendamento::Estatico => return false,
     };
 
-    let captura = data_iso(&meta.capturado_em);
-    let hoje = dia_gregoriano(hoje);
+    let captura = meta.capturado_em.parse::<Data>();
+    let (ano, mes, dia) = hoje;
+    let hoje = i32::try_from(ano)
+        .ok()
+        .and_then(|ano| Data::new(ano, mes, dia));
     match (captura, hoje) {
-        (Some(captura), Some(hoje)) => hoje - captura > limite,
+        (Ok(captura), Some(hoje)) => hoje.dias_desde(captura) > limite,
         _ => true,
     }
-}
-
-fn data_iso(data: &str) -> Option<i64> {
-    let mut partes = data.split('-');
-    let ano = partes.next()?;
-    let mes = partes.next()?;
-    let dia = partes.next()?;
-    if partes.next().is_some()
-        || ano.len() != 4
-        || mes.len() != 2
-        || dia.len() != 2
-        || ![ano, mes, dia]
-            .iter()
-            .all(|parte| parte.bytes().all(|byte| byte.is_ascii_digit()))
-    {
-        return None;
-    }
-    dia_gregoriano((ano.parse().ok()?, mes.parse().ok()?, dia.parse().ok()?))
-}
-
-fn dia_gregoriano((ano, mes, dia): (u32, u32, u32)) -> Option<i64> {
-    let dias_por_mes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    let indice = usize::try_from(mes.checked_sub(1)?).ok()?;
-    let mut dias_no_mes = *dias_por_mes.get(indice)?;
-    let bissexto = ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0);
-    if bissexto && mes == 2 {
-        dias_no_mes += 1;
-    }
-    if ano == 0 || dia == 0 || dia > dias_no_mes {
-        return None;
-    }
-    let anos_completos = i64::from(ano) - 1;
-    let dias_anos =
-        anos_completos * 365 + anos_completos / 4 - anos_completos / 100 + anos_completos / 400;
-    let dias_meses: u32 = dias_por_mes.iter().take(indice).sum();
-    Some(dias_anos + i64::from(dias_meses) + i64::from(bissexto && mes > 2) + i64::from(dia))
 }
 
 #[cfg(test)]

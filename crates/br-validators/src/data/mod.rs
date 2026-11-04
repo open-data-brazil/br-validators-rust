@@ -1,5 +1,41 @@
 //! Registros embutidos, carregados na primeira consulta.
 
+#[cfg(any(
+    feature = "aeroportos",
+    feature = "anp-combustiveis",
+    feature = "bancos",
+    feature = "cbo",
+    feature = "cep-faixas",
+    feature = "cest",
+    feature = "cfop",
+    feature = "cnaes",
+    feature = "cnpj-motivos",
+    feature = "csosn",
+    feature = "cst",
+    feature = "esocial",
+    feature = "feriados",
+    feature = "ibge",
+    feature = "ibpt",
+    feature = "incoterms",
+    feature = "inss",
+    feature = "irpf",
+    feature = "iss-municipal",
+    feature = "lc116",
+    feature = "moedas",
+    feature = "natureza-juridica",
+    feature = "nbs",
+    feature = "ncm",
+    feature = "nfe-cuf",
+    feature = "paises-bacen",
+    feature = "pncp-reference",
+    feature = "portos",
+    feature = "ptax",
+    feature = "selic",
+    feature = "simples-nacional",
+    feature = "telefone-ddd",
+    feature = "transparencia-snapshots",
+    feature = "tse-municipios",
+))]
 macro_rules! embedded {
     ($(#[$m:meta])* $vis:vis static $name:ident : $ty:ty = $path:literal;) => {
         $(#[$m])*
@@ -69,6 +105,8 @@ pub mod iss_municipal;
 
 #[cfg(feature = "lc116")]
 pub mod lc116;
+
+pub mod lookup;
 
 #[cfg(feature = "moedas")]
 pub mod moedas;
