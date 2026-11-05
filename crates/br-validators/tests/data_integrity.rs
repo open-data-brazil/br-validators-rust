@@ -248,10 +248,10 @@ fn feriados() {
 #[test]
 fn inss() {
     use data::inss as dataset;
-    let meta = &*dataset::METADATA;
+    let meta = get_dataset_metadata("inss").expect("metadados de INSS");
     assert_eq!(meta.id, "inss");
     arquivos(meta, &["tabela-contribuicao.json"]);
-    let tabelas = &dataset::TABELA_CONTRIBUICAO.tabelas;
+    let tabelas = dataset::get_inss_tabelas();
     ordenados(tabelas);
     contagem(meta, "anos", tabelas.len());
     contagem(meta, "faixas", tabelas.iter().map(|t| t.faixas.len()).sum());

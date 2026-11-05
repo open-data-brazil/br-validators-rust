@@ -97,6 +97,8 @@ pub use data::ibge;
 pub use data::ibpt;
 #[cfg(feature = "incoterms")]
 pub use data::incoterms;
+#[cfg(feature = "inss")]
+pub use data::inss;
 #[cfg(feature = "irpf")]
 pub use data::irpf;
 #[cfg(feature = "iss-municipal")]
