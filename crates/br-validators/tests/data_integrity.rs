@@ -97,8 +97,8 @@ dataset!("aeroportos", aeroportos;
 );
 
 dataset!("anp-combustiveis", anp_combustiveis;
-    "semanas.json", "semanas", SEMANAS;
-    "precos-medios.json", "precosMedios", PRECOS_MEDIOS
+    "semanas.json", "semanas", get_all_anp_semanas_pesquisa();
+    "precos-medios.json", "precosMedios", get_all_anp_precos_medios()
 );
 
 dataset!("bancos", bancos;
@@ -305,9 +305,9 @@ fn contagens_de_tabelas_e_subconjuntos() {
             .filter(|a| a.iata.is_some())
             .count(),
     );
-    let precos = &*anp_combustiveis::PRECOS_MEDIOS;
+    let precos = anp_combustiveis::get_all_anp_precos_medios();
     contagem(
-        &anp_combustiveis::METADATA,
+        get_dataset_metadata("anp-combustiveis").expect("metadados ANP"),
         "municipios",
         precos
             .iter()
@@ -316,7 +316,7 @@ fn contagens_de_tabelas_e_subconjuntos() {
             .len(),
     );
     contagem(
-        &anp_combustiveis::METADATA,
+        get_dataset_metadata("anp-combustiveis").expect("metadados ANP"),
         "produtos",
         precos
             .iter()
@@ -325,7 +325,7 @@ fn contagens_de_tabelas_e_subconjuntos() {
             .len(),
     );
     contagem(
-        &anp_combustiveis::METADATA,
+        get_dataset_metadata("anp-combustiveis").expect("metadados ANP"),
         "ufs",
         precos.iter().map(|p| &p.uf).collect::<BTreeSet<_>>().len(),
     );

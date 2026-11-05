@@ -69,6 +69,8 @@ pub use cnpj::{
 pub use cpf::{format_cpf, is_valid_cpf, strip_cpf, validate_cpf};
 #[cfg(feature = "aeroportos")]
 pub use data::aeroportos;
+#[cfg(feature = "anp-combustiveis")]
+pub use data::anp_combustiveis;
 #[cfg(feature = "bancos")]
 pub use data::bancos;
 #[cfg(feature = "cbo")]
