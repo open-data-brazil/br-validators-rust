@@ -106,7 +106,7 @@ dataset!("bancos", bancos;
 );
 
 dataset!("cbo", cbo;
-    "cbo.json", "cbo", CBO
+    "cbo.json", "cbo", get_all_cbo()
 );
 
 dataset!("cep-faixas", cep_faixas;
