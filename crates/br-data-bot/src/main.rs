@@ -32,6 +32,13 @@ enum Command {
     Drift,
     /// Gera relatórios de frescor, alertas e histórico diário.
     Report,
+    /// Incrementa a versão compartilhada e registra as alterações de dados.
+    Bump {
+        #[arg(long, value_enum, default_value = "patch")]
+        level: br_data_bot::publication::version::Level,
+        #[arg(long)]
+        write_changelog: bool,
+    },
     /// Atualiza os dados a partir das fontes registradas.
     Refresh {
         /// Seleciona todos os datasets da execução periódica.
@@ -82,6 +89,17 @@ fn main() -> Result<()> {
                     fetcher.nome()
                 );
             }
+        }
+        Command::Bump {
+            level,
+            write_changelog,
+        } => {
+            let version = br_data_bot::publication::version::bump(
+                &std::env::current_dir()?,
+                level,
+                write_changelog,
+            )?;
+            br_data_bot::publication::version::emit_outputs(&version)?;
         }
         Command::Report => br_data_bot::publication::report::run(&std::env::current_dir()?)?,
         Command::Drift => println!("changed={}", drift::changed(&std::env::current_dir()?)?),

@@ -1,6 +1,7 @@
 //! Relatórios e artefatos de distribuição derivados dos dados locais.
 
 pub mod report;
+pub mod version;
 
 use crate::framework::{
     prepare::valid_data_filename,
