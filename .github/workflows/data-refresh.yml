@@ -87,25 +87,22 @@ jobs:
           if [[ -f data/refresh-reports/job-summary.md ]]; then
             cat data/refresh-reports/job-summary.md >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Garantir arquivos permitidos
+        run: python scripts/check-data-changes.py
       - name: Verificar workspace
         run: |
           cargo fmt --all --check
           cargo clippy --workspace --all-targets --all-features -- -D warnings
           cargo test --workspace --all-features
           cargo test -p br-validators --no-default-features
-      - name: Garantir arquivos permitidos
-        run: |
-          while IFS= read -r -d '' file; do
-            case "$file" in
-              crates/br-validators/data/*|data/refresh-reports/*|docs/DATA-FRESHNESS.md) ;;
-              *) echo "Arquivo inesperado: $file" >&2; exit 1 ;;
-            esac
-          done < <(git ls-files --modified --deleted --others --exclude-standard -z)
       - id: drift
         run: cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
       - id: bump
         if: inputs.dry_run != true && (steps.drift.outputs.changed != '0' || inputs.force_release)
         run: cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+      - name: Garantir arquivos permitidos após bump
+        if: steps.bump.outputs.tag != ''
+        run: python scripts/check-data-changes.py --after-bump
       - name: Verificar após bump
         if: steps.bump.outputs.tag != ''
         run: |

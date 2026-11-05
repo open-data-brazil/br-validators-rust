@@ -4,3 +4,5 @@
 /dist/
 /data/refresh-reports/fetch-outcomes/
 /data/refresh-reports/job-summary.md
+
+__pycache__/
