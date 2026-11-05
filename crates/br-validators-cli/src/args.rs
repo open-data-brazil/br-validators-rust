@@ -42,4 +42,20 @@ pub struct Args {
     #[arg(long)]
     #[arg(help = "Federative unit")]
     pub uf: Option<String>,
+
+    /// Tipo forçado da chave PIX.
+    #[arg(
+        long = "type",
+        help = "Force PIX key type: cpf, cnpj, email, phone, evp"
+    )]
+    pub pix_type: Option<String>,
+    /// Forma forçada do boleto.
+    #[arg(long, help = "Force boleto input kind")]
+    pub kind: Option<String>,
+    /// Emissor informado para o NIT.
+    #[arg(long, help = "Override NIT issuer: inss | caixa")]
+    pub issuer: Option<String>,
+    /// Tipo informado para o NIT.
+    #[arg(long, help = "Override NIT tipo: nit | pis | nis")]
+    pub tipo: Option<String>,
 }
