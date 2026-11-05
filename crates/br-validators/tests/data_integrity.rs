@@ -377,4 +377,11 @@ fn catalogo_contem_os_34_datasets_em_ordem() {
     let catalogo = br_validators::get_data_catalog();
     assert_eq!(catalogo.len(), 34);
     assert!(catalogo.windows(2).all(|par| par[0].id < par[1].id));
+    for meta in catalogo {
+        assert!(std::ptr::eq(get_dataset_metadata(&meta.id).unwrap(), meta));
+        assert!(!meta.arquivos.is_empty());
+        assert!(!meta.endpoints.is_empty());
+    }
+    assert!(get_dataset_metadata("IBGE").is_none());
+    assert!(get_dataset_metadata("").is_none());
 }

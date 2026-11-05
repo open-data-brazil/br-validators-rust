@@ -5,8 +5,9 @@ use crate::{
     schema::{Agendamento, DatasetMetadata},
 };
 
-/// Retorna os metadados dos datasets habilitados, em ordem de identificador.
-pub fn get_data_catalog() -> Vec<&'static DatasetMetadata> {
+use std::{collections::HashMap, sync::LazyLock};
+
+static CATALOGO: LazyLock<Vec<&'static DatasetMetadata>> = LazyLock::new(|| {
     vec![
         #[cfg(feature = "aeroportos")]
         &*crate::data::aeroportos::METADATA,
@@ -77,11 +78,22 @@ pub fn get_data_catalog() -> Vec<&'static DatasetMetadata> {
         #[cfg(feature = "tse-municipios")]
         &*crate::data::tse_municipios::METADATA,
     ]
+});
+static POR_ID: LazyLock<HashMap<&'static str, &'static DatasetMetadata>> = LazyLock::new(|| {
+    CATALOGO
+        .iter()
+        .map(|meta| (meta.id.as_str(), *meta))
+        .collect()
+});
+
+/// Retorna os metadados dos datasets habilitados, em ordem de identificador.
+pub fn get_data_catalog() -> Vec<&'static DatasetMetadata> {
+    CATALOGO.clone()
 }
 
 /// Consulta os metadados pelo identificador exato da feature.
 pub fn get_dataset_metadata(id: &str) -> Option<&'static DatasetMetadata> {
-    get_data_catalog().into_iter().find(|meta| meta.id == id)
+    POR_ID.get(id).copied()
 }
 
 /// Verifica a defasagem em relação a uma data informada pelo chamador.
