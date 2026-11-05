@@ -9,6 +9,7 @@ on:
       dry_run: { description: 'Simular sem commit ou release', type: boolean, default: false }
       force_release: { description: 'Criar release mesmo sem drift', type: boolean, default: false }
       reason: { description: 'Motivo obrigatório para force_release', type: string, default: '' }
+      retry_delay_ms: { description: 'Base de espera entre retries; 0 acelera verificação manual', type: string, default: '30000' }
   workflow_call:
     inputs:
       datasets: { type: string, default: '' }
@@ -16,6 +17,7 @@ on:
       dry_run: { type: boolean, default: false }
       force_release: { type: boolean, default: false }
       reason: { type: string, default: '' }
+      retry_delay_ms: { type: string, default: '30000' }
 permissions: { contents: write }
 concurrency: { group: data-refresh, cancel-in-progress: false }
 defaults:
@@ -55,7 +57,7 @@ jobs:
           DATASETS: ${{ inputs.datasets }}
           INCLUDE_MANUAL: ${{ inputs.include_manual }}
           DRY_RUN: ${{ inputs.dry_run }}
-          DATA_REFRESH_RETRY_DELAY_MS: '30000'
+          DATA_REFRESH_RETRY_DELAY_MS: ${{ inputs.retry_delay_ms || '30000' }}
           IBPT_TOKEN: ${{ secrets.IBPT_TOKEN }}
           IBPT_CNPJ: ${{ secrets.IBPT_CNPJ }}
         run: |

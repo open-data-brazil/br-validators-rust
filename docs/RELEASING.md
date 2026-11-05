@@ -32,7 +32,9 @@ Secrets opcionais:
 ## Refresh automático
 
 `Data refresh` roda às 03:00 UTC, meia-noite em Brasília. Faz cinco tentativas
-HTTP com espera linear; a base configurada é 30 segundos. O limite é de 90 minutos
+HTTP com espera linear; a base configurada é 30 segundos. O input
+`retry_delay_ms` permite ajustar essa espera em execuções manuais; `0` elimina
+a espera entre tentativas, preservando as cinco tentativas e os limites HTTP. O limite é de 90 minutos
 para o refresh diário e 240 minutos com fontes manuais.
 
 ```bash
