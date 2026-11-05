@@ -2116,3 +2116,75 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 - A rota oficial autenticada do IBPT fica pendente de verificação real
   com credenciais. A captura local usou o espelho previsto.
 - Próxima tarefa: 9.0.
+
+
+## FASE-09 — concluída
+
+- Tarefas 9.0 a 9.35 concluídas, com um commit por tarefa.
+- Commits
+- `854561e` — feat(data): compartilhar resolução, busca e datas civis
+- `baa2bd6` — feat(ibge): consultar municípios e validar cMunFG
+- `0b0719f` — feat(bancos): consultar participantes por Compe e ISPB
+- `73451b3` — feat(aeroportos): consultar por IATA, ICAO e município
+- `f95608a` — feat(tse-municipios): consultar códigos TSE e IBGE nos dois sentidos
+- `3c4e13c` — feat(moedas): consultar códigos ISO e buscar nomes
+- `7800542` — feat(ptax): consultar cotações e calcular defasagem em dias úteis
+- `e8405a6` — feat(selic): consultar a meta histórica e informar defasagem
+- `82b5ecf` — feat(paises-bacen): consultar códigos de país da NF-e
+- `afa33ad` — feat(incoterms): consultar regras da edição 2020
+- `9edae31` — feat(feriados): consultar o calendário federal e pontos facultativos
+- `ad87c13` — feat(cnaes): consultar códigos e buscar subclasses
+- `214a4d7` — feat(cfop): consultar, validar e formatar códigos do CONFAZ
+- `20cc1a8` — feat(natureza-juridica): consultar códigos do cadastro CNPJ
+- `fecf3c4` — feat(cnpj-motivos): consultar motivos de situação cadastral
+- `6077448` — feat(ibpt): consultar carga por NCM, UF e exceção
+- `6f5b821` — feat(nbs): consultar serviços pela máscara oficial
+- `a81a983` — feat(cest): consultar códigos e relacionar posições NCM
+- `9740b27` — feat(cst): consultar e validar as quatro tabelas SPED
+- `7f87295` — feat(csosn): consultar e validar códigos do Simples Nacional
+- `a0179e4` — feat(lc116): consultar e buscar itens da lista de serviços
+- `6a28c90` — feat(esocial): consultar e buscar categorias e rubricas
+- `a38d1b7` — feat(simples-nacional): consultar faixas e calcular alíquota em centavos
+- `aaf2ae3` — feat(ncm): consultar, validar e formatar a nomenclatura
+- `ddcb006` — feat(cbo): consultar e buscar ocupações
+- `1a75907` — feat(portos): consultar instalações e municípios da ANTAQ
+- `981e358` — feat(anp-combustiveis): consultar médias municipais e semanas
+- `8c006f3` — feat(pncp-reference): consultar e buscar tabelas de domínio
+- `3e14708` — feat(transparencia-snapshots): consultar o registro de rotas
+- `5da358b` — feat(iss-municipal): consultar faixas com proveniência e cascata
+- `5668a44` — feat(irpf): consultar faixas e calcular imposto em centavos
+- `fd972cc` — feat(inss): consultar faixas e calcular contribuição progressiva
+- `8f80a41` — feat(nfe-cuf): consultar códigos e siglas das UFs
+- `a77c0c8` — feat(telefone): consultar municípios e região dos DDDs
+- `399c14c` — feat(cep): consultar prefixos postais do CNEFE
+- `3ade90f` — feat(data-catalog): indexar metadados dos 34 datasets ativos
+
+- Saída integral dos critérios de aceite em [FASE-09-aceite.txt](evidencias/FASE-09-aceite.txt).
+- Os testes da biblioteca com todas as features, os doc-tests e as compilações
+  isoladas de IBGE, bancos, PTAX, NCM e CEP passaram. Os quatro checks exigidos
+  também passaram antes de cada commit.
+- Os 34 módulos expõem consultas tipadas e mantêm os carregadores `LazyLock`
+  privados. O catálogo reúne apenas as features habilitadas e consulta por ID
+  com índice. As buscas mantêm a ordem real da referência e removem acentos
+  conforme a convenção do plano.
+- IBGE inclui cMunFG e suas exceções oficiais; os validadores fiscais de
+  CFOP, NCM, CST e CSOSN preservam os códigos e mensagens da referência.
+  As consultas de PTAX e Selic têm variantes com data explícita. Os testes
+  de janelas móveis usam datas presentes nos dados embutidos.
+- IRPF e INSS usam centavos `i64`, intermediários inteiros e arredondamento
+  final; o Simples Nacional usa receita em centavos e razão inteira antes
+  da conversão da alíquota para exibição. Os schemas das tabelas preservam
+  os valores em reais do JSON de origem.
+- A consulta de ISS aplica a cascata recorte municipal → MUNIC/IBGE →
+  estimativa LC 116, conservando proveniência e avisos. Sua feature inclui
+  IBGE, necessário à última etapa. A data de captura dos resultados MUNIC
+  vem do metadata agregado de ISS: a FASE-06 unificou os dois manifests,
+  enquanto o TypeScript mantém um metadata específico para o complemento.
+- A consulta de DDD fica separada da validação do telefone, como no original.
+  A consulta de CEP usa os primeiros cinco dígitos, sem alterar a validação
+  estrutural do CEP.
+- Desvios da API: consultas falhas usam `Option` ou `LookupResult`; datas
+  e tipos de domínio são explícitos. Cálculos monetários recebem e devolvem
+  centavos em vez de números de ponto flutuante, como exige o plano.
+- A pendência sobre conversão do fator de vencimento do boleto permanece.
+- Próxima tarefa: 10.1.

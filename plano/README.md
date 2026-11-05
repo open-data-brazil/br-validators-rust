@@ -93,7 +93,7 @@ Marque aqui ao concluir cada fase (a IA executora deve atualizar este bloco):
 - [x] FASE-06 infra de dados
 - [x] FASE-07 framework do bot
 - [x] FASE-08 fetchers (ondas A, B, C, D, E)
-- [ ] FASE-09 lookups na lib
+- [x] FASE-09 lookups na lib
 - [ ] FASE-10 relatórios
 - [ ] FASE-11 automação GitHub
 - [ ] FASE-12 CLI
