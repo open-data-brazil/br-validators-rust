@@ -203,7 +203,7 @@ dataset!("pncp-reference", pncp_reference;
 );
 
 dataset!("portos", portos;
-    "portos.json", "portos", PORTOS
+    "portos.json", "portos", get_all_portos()
 );
 
 dataset!("ptax", ptax;
