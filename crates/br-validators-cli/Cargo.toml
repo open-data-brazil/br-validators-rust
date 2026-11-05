@@ -14,5 +14,6 @@ path = "src/main.rs"
 doc = false
 
 [dependencies]
-br-validators = { path = "../br-validators", features = ["serde"] }
+br-validators = { path = "../br-validators", features = ["full"] }
 clap.workspace = true
+serde_json.workspace = true

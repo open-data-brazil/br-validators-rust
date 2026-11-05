@@ -1,22 +1,25 @@
 #![forbid(unsafe_code)]
 
-use clap::{Parser, Subcommand};
+use clap::Parser;
+use std::{
+    io::{self, Write},
+    process::ExitCode,
+};
 
-#[derive(Parser)]
-#[command(version)]
-struct Cli {
-    #[command(subcommand)]
-    command: Command,
-}
-
-#[derive(Subcommand)]
-enum Command {
-    /// Exibe a versão do workspace.
-    Version,
-}
-
-fn main() {
-    match Cli::parse().command {
-        Command::Version => println!("{}", br_validators::VERSION),
+fn main() -> ExitCode {
+    let args = br_validators_cli::args::Args::parse();
+    let output = br_validators_cli::run(&args);
+    let mut stdout = io::stdout().lock();
+    let mut stderr = io::stderr().lock();
+    for line in output.stdout {
+        if writeln!(stdout, "{line}").is_err() {
+            return ExitCode::from(2);
+        }
     }
+    for line in output.stderr {
+        if writeln!(stderr, "{line}").is_err() {
+            return ExitCode::from(2);
+        }
+    }
+    ExitCode::from(output.exit_code)
 }
