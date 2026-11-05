@@ -28,7 +28,7 @@ env:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: ${{ inputs.include_manual && 240 || 90 }}
     outputs:
       released: ${{ steps.publish.outputs.released }}
       tag: ${{ steps.bump.outputs.tag }}

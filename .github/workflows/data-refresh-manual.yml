@@ -1,0 +1,16 @@
+name: Monthly manual sources
+on:
+  schedule:
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+    inputs:
+      dry_run: { description: 'Simular sem publicação', type: boolean, default: false }
+permissions: { contents: write }
+jobs:
+  refresh:
+    uses: ./.github/workflows/data-refresh.yml
+    with:
+      datasets: 'cep-faixas iss-municipal cst lc116 esocial'
+      include_manual: true
+      dry_run: ${{ inputs.dry_run || false }}
+    secrets: inherit

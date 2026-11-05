@@ -32,8 +32,8 @@ Secrets opcionais:
 ## Refresh automático
 
 `Data refresh` roda às 03:00 UTC, meia-noite em Brasília. Faz cinco tentativas
-HTTP com espera linear; a base configurada é 30 segundos. O limite de 240 minutos
-também comporta as fontes manuais pesadas.
+HTTP com espera linear; a base configurada é 30 segundos. O limite é de 90 minutos
+para o refresh diário e 240 minutos com fontes manuais.
 
 ```bash
 gh workflow run data-refresh.yml -f dry_run=true
@@ -49,6 +49,11 @@ Com drift, o bot sobe PATCH, registra o changelog, verifica o workspace, commita
 e envia main e tag atomicamente. Sem drift, commita relatórios somente quando
 muda a saúde de uma fonte. Alterações apenas no relógio não geram commits diários.
 O rebase anterior ao push aborta o job em caso de conflito.
+
+`Monthly manual sources` reutiliza o mesmo fluxo no primeiro dia de cada mês,
+às 06:00 UTC, para CEP/CNEFE, ISS/MUNIC, CST, LC 116 e eSocial. Pode ser acionado
+manualmente com `dry_run=true`, usando `data-refresh-manual.yml`. O limite é de
+240 minutos e a execução compartilha a fila do refresh diário.
 
 ```bash
 gh workflow run data-refresh.yml -f force_release=true -f reason='primeira release'
