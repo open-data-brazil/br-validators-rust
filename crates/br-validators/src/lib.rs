@@ -113,6 +113,8 @@ pub use data::natureza_juridica;
 pub use data::nbs;
 #[cfg(feature = "ncm")]
 pub use data::ncm;
+#[cfg(feature = "nfe-cuf")]
+pub use data::nfe_cuf;
 #[cfg(feature = "paises-bacen")]
 pub use data::paises_bacen;
 #[cfg(feature = "pncp-reference")]
