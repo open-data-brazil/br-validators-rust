@@ -14,6 +14,9 @@ pub fn run(args: &Args) -> Output {
     match args.command.as_deref() {
         None => Output::text(Args::command().render_long_help().to_string()),
         Some("version") => Output::text(br_validators::VERSION),
+        Some(command) if commands::platform::recognizes(command) => {
+            commands::platform::run(command, args)
+        }
         Some(command) if commands::document::recognizes(command) => {
             commands::document::run(command, args)
         }

@@ -58,4 +58,37 @@ pub struct Args {
     /// Tipo informado para o NIT.
     #[arg(long, help = "Override NIT tipo: nit | pis | nis")]
     pub tipo: Option<String>,
+    /// Limite de linhas ou resultados.
+    #[arg(long, help = "Maximum rows")]
+    pub limit: Option<usize>,
+    /// Coluna CSV por nome ou índice.
+    #[arg(long, help = "CSV column name or zero-based index")]
+    pub col: Option<String>,
+    /// Separador CSV.
+    #[arg(long, help = "CSV delimiter (default: comma)")]
+    pub delimiter: Option<char>,
+    /// Trata a primeira linha como cabeçalho.
+    #[arg(long, help = "Treat first CSV row as header (default: true)")]
+    pub skip_header: bool,
+    /// Desativa a leitura do cabeçalho CSV.
+    #[arg(long, help = "Parse CSV without header row")]
+    pub no_skip_header: bool,
+    /// Semente do gerador determinístico.
+    #[arg(long, help = "Deterministic PRNG seed")]
+    pub seed: Option<u64>,
+    /// Aplica máscara ao documento gerado.
+    #[arg(long, help = "Return masked/formatted output")]
+    pub masked: bool,
+    /// Retorna o documento canônico.
+    #[arg(long, help = "Return canonical stripped value")]
+    pub stripped: bool,
+    /// Variante de formato do gerador.
+    #[arg(long, help = "Format variant")]
+    pub format: Option<String>,
+    /// Bandeira do cartão gerado.
+    #[arg(long, help = "Card brand (visa, mastercard, amex, elo, hipercard)")]
+    pub brand: Option<String>,
+    /// Quantidade de documentos sintéticos.
+    #[arg(long, default_value_t = 1, help = "Number of synthetic values")]
+    pub count: usize,
 }
