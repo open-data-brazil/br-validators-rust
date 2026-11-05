@@ -2,6 +2,7 @@
 
 use std::{collections::BTreeSet, fs, path::Path};
 
+use br_validators::pncp_reference::PncpReferenceTableId;
 use br_validators::{
     data, get_dataset_metadata,
     schema::{DatasetMetadata, Keyed},
@@ -192,14 +193,14 @@ dataset!("paises-bacen", paises_bacen;
 );
 
 dataset!("pncp-reference", pncp_reference;
-    "modalidades.json", "modalidades", MODALIDADES;
-    "amparos-legais.json", "amparos-legais", AMPAROS_LEGAIS;
-    "modos-disputa.json", "modos-disputa", MODOS_DISPUTA;
-    "tipos-instrumentos-convocatorios.json", "tipos-instrumentos-convocatorios", TIPOS_INSTRUMENTOS_CONVOCATORIOS;
-    "tipos-contrato.json", "tipos-contrato", TIPOS_CONTRATO;
-    "criterios-julgamento.json", "criterios-julgamento", CRITERIOS_JULGAMENTO;
-    "tipos-instrumentos-cobranca.json", "tipos-instrumentos-cobranca", TIPOS_INSTRUMENTOS_COBRANCA;
-    "fontes-orcamentarias.json", "fontes-orcamentarias", FONTES_ORCAMENTARIAS
+    "modalidades.json", "modalidades", get_all_pncp_reference(PncpReferenceTableId::Modalidades);
+    "amparos-legais.json", "amparos-legais", get_all_pncp_reference(PncpReferenceTableId::AmparosLegais);
+    "modos-disputa.json", "modos-disputa", get_all_pncp_reference(PncpReferenceTableId::ModosDisputa);
+    "tipos-instrumentos-convocatorios.json", "tipos-instrumentos-convocatorios", get_all_pncp_reference(PncpReferenceTableId::TiposInstrumentosConvocatorios);
+    "tipos-contrato.json", "tipos-contrato", get_all_pncp_reference(PncpReferenceTableId::TiposContrato);
+    "criterios-julgamento.json", "criterios-julgamento", get_all_pncp_reference(PncpReferenceTableId::CriteriosJulgamento);
+    "tipos-instrumentos-cobranca.json", "tipos-instrumentos-cobranca", get_all_pncp_reference(PncpReferenceTableId::TiposInstrumentosCobranca);
+    "fontes-orcamentarias.json", "fontes-orcamentarias", get_all_pncp_reference(PncpReferenceTableId::FontesOrcamentarias)
 );
 
 dataset!("portos", portos;

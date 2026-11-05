@@ -109,6 +109,8 @@ pub use data::nbs;
 pub use data::ncm;
 #[cfg(feature = "paises-bacen")]
 pub use data::paises_bacen;
+#[cfg(feature = "pncp-reference")]
+pub use data::pncp_reference;
 #[cfg(feature = "portos")]
 pub use data::portos;
 #[cfg(feature = "ptax")]
