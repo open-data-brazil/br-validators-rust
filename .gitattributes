@@ -1,1 +1,3 @@
 /crates/br-validators/data/**/*.json text eol=lf
+
+/crates/br-data-bot/tests/snapshots/*.md text eol=lf
