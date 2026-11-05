@@ -172,7 +172,7 @@ impl FetchContext<'_> {
     }
 }
 
-pub(super) fn valid_data_filename(file: &str) -> bool {
+pub(crate) fn valid_data_filename(file: &str) -> bool {
     let Some(stem) = file.strip_suffix(".json") else {
         return false;
     };

@@ -1,0 +1,10 @@
+{
+  "datasetId": "feriados",
+  "status": "embedded_retained",
+  "failureKind": "source_blocked",
+  "primeiraFalhaEm": "2026-11-04",
+  "endpoints": [
+    "https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026"
+  ],
+  "mensagem": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026"
+}

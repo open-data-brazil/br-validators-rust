@@ -1,0 +1,29 @@
+{
+  "executadoEm": "2026-11-04T13:40:00+00:00",
+  "datasets": [
+    {
+      "id": "bancos",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "bancos": 459
+      },
+      "message": "Fonte verificada"
+    }
+  ],
+  "sourceAlerts": [],
+  "resumo": {
+    "datasetsVerificados": 1,
+    "datasetsAlterados": 0,
+    "totalAdicionados": 0,
+    "totalRemovidos": 0,
+    "totalAlterados": 0,
+    "sourceAlerts": 0,
+    "criticalAlerts": 0
+  }
+}

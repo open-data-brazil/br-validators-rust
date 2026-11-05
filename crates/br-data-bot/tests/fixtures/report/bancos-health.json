@@ -1,0 +1,10 @@
+{
+  "datasetId": "bancos",
+  "status": "source_blocked",
+  "failureKind": "source_blocked",
+  "primeiraFalhaEm": "2026-11-03",
+  "endpoints": [
+    "https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv"
+  ],
+  "mensagem": "Bloqueio | rede\nDados preservados."
+}

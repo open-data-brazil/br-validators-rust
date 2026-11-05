@@ -1,0 +1,10 @@
+{
+  "datasetId": "csosn",
+  "status": "embedded_retained",
+  "failureKind": "link_deprecated",
+  "primeiraFalhaEm": "2026-11-04",
+  "endpoints": [
+    "https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10"
+  ],
+  "mensagem": "Dados embutidos preservados para as fontes com falha. reference probe failed: link deprecated (HTTP 404) at https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10"
+}

@@ -34,7 +34,7 @@ pub fn write_json<T: Serialize + ?Sized>(path: &Path, value: &T) -> Result<Write
     Ok(WriteOutcome { arquivo, changed })
 }
 
-pub(super) fn write_encoded(path: &Path, bytes: &[u8]) -> Result<bool> {
+pub(crate) fn write_encoded(path: &Path, bytes: &[u8]) -> Result<bool> {
     let path_name = path
         .file_name()
         .and_then(|name| name.to_str())

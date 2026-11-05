@@ -30,6 +30,8 @@ enum Command {
     List,
     /// Conta os datasets com alterações de registros e arquivos modificados.
     Drift,
+    /// Gera relatórios de frescor, alertas e histórico diário.
+    Report,
     /// Atualiza os dados a partir das fontes registradas.
     Refresh {
         /// Seleciona todos os datasets da execução periódica.
@@ -81,6 +83,7 @@ fn main() -> Result<()> {
                 );
             }
         }
+        Command::Report => br_data_bot::publication::report::run(&std::env::current_dir()?)?,
         Command::Drift => println!("changed={}", drift::changed(&std::env::current_dir()?)?),
         Command::ImportSeed { from } => import_seed::run(&from)?,
         Command::Refresh {

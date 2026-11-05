@@ -1,0 +1,13 @@
+{
+  "datasetId": "ibpt",
+  "status": "source_unavailable",
+  "failureKind": "auth_missing",
+  "primeiraFalhaEm": "2026-11-04",
+  "endpoints": [
+    "https://deolhonoimposto.ibpt.org.br/",
+    "https://apidoni.ibpt.org.br/api/v1/produtos",
+    "https://ibpt.valraw.com.br/api/meta.json",
+    "data/source-mirrors/ibpt/golden-cargas.json"
+  ],
+  "mensagem": "Dados embutidos preservados para as fontes com falha. missing credentials: IBPT_TOKEN ou IBPT_CNPJ"
+}

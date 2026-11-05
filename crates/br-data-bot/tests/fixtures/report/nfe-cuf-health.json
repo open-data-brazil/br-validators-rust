@@ -1,0 +1,10 @@
+{
+  "datasetId": "nfe-cuf",
+  "status": "source_unavailable",
+  "failureKind": "auth_missing",
+  "primeiraFalhaEm": "2026-11-03",
+  "endpoints": [
+    "http://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=Il8k4BIjb48="
+  ],
+  "mensagem": "Credenciais ausentes."
+}
