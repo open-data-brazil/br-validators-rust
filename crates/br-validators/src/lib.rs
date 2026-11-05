@@ -1,4 +1,5 @@
 #![forbid(unsafe_code)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 #![warn(missing_docs, clippy::pedantic)]
 #![allow(clippy::module_name_repetitions, clippy::must_use_candidate)]
 

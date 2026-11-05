@@ -13,6 +13,10 @@ description = "Validadores de documentos brasileiros (CPF, CNPJ, ‚Ä¶) e dados p√
 readme = "../../README.md"
 include = ["src/**", "data/**", "README.md", "LICENSE"]
 
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
 [dependencies]
 serde = { workspace = true, optional = true }
 serde_json = { workspace = true, optional = true }
