@@ -46,6 +46,9 @@ pub fn active_alerts(
             continue;
         }
         let state: SourceHealth = serde_json::from_slice(&fs::read(entry.path())?)?;
+        if report.datasets.iter().any(|d| d.id == state.dataset_id) {
+            continue;
+        }
         if state.status == SourceFetchStatus::Ok {
             alerts.remove(&state.dataset_id);
             continue;
@@ -168,7 +171,7 @@ pub fn freshness(
     }
     out.push('\n');
     out.push_str(&alerts_markdown(alerts));
-    out.push_str("## Verification\n\n- Agenda: diária às 00:00 America/Sao_Paulo (`0 3 * * *` UTC em [data-refresh.yml](../.github/workflows/data-refresh.yml)).\n- HTTP: 5 tentativas; espera linear com base `DATA_REFRESH_RETRY_DELAY_MS` (30 s local, 120 s no CI).\n- Falhas preservam os dados embutidos e registram alertas.\n- Dry run: `cargo run -p br-data-bot -- refresh --all --dry-run`.\n- API: `get_data_catalog()` e `get_dataset_metadata(id)`.\n- Fontes: [OFFICIAL-SOURCES.md](OFFICIAL-SOURCES.md).\n\n");
+    out.push_str("## Verification\n\n- Agenda: diária às 00:00 America/Sao_Paulo (`0 3 * * *` UTC em [data-refresh.yml](../.github/workflows/data-refresh.yml)).\n- HTTP: 5 tentativas; espera linear com base `DATA_REFRESH_RETRY_DELAY_MS` (30 s por padrão, configurável no CI).\n- Falhas preservam os dados embutidos e registram alertas.\n- Dry run: `cargo run -p br-data-bot -- refresh --all --dry-run`.\n- API: `get_data_catalog()` e `get_dataset_metadata(id)`.\n- Fontes: [OFFICIAL-SOURCES.md](OFFICIAL-SOURCES.md).\n\n");
     out
 }
 
@@ -207,7 +210,16 @@ pub fn critical(alerts: &[SourceAlert]) -> String {
 }
 
 pub fn run(root: &Path) -> Result<()> {
-    let report = super::latest(root)?;
+    run_from(root, None)
+}
+
+pub fn run_from(root: &Path, from: Option<&Path>) -> Result<()> {
+    let source = from.map_or_else(
+        || root.join("data/refresh-reports/latest.json"),
+        Path::to_path_buf,
+    );
+    let bytes = fs::read(&source)?;
+    let report = serde_json::from_slice(&bytes)?;
     let datasets = super::metadata(root)?;
     let alerts = active_alerts(root, &report, &datasets)?;
     let reports = root.join("data/refresh-reports");
@@ -224,10 +236,7 @@ pub fn run(root: &Path) -> Result<()> {
     let summary = format!("### Data refresh report\n\n- Datasets verificados: {}\n- Datasets alterados: {}\n- Alertas: {}\n- Críticos: {}\n\n{}",report.resumo.datasets_verificados,report.resumo.datasets_alterados,alerts.len(),alerts.iter().filter(|a| a.severity == Severity::Critical).count(),alerts_markdown(&alerts));
     write_encoded(&reports.join("job-summary.md"), summary.as_bytes())?;
     let date = run_date(&report)?;
-    write_encoded(
-        &reports.join(format!("daily/{date}.json")),
-        &fs::read(reports.join("latest.json"))?,
-    )?;
+    write_encoded(&reports.join(format!("daily/{date}.json")), &bytes)?;
     for entry in fs::read_dir(reports.join("daily"))? {
         let entry = entry?;
         if !entry.file_type()?.is_file() {

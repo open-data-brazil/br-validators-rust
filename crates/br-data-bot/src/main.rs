@@ -31,7 +31,11 @@ enum Command {
     /// Conta os datasets com alterações de registros e arquivos modificados.
     Drift,
     /// Gera relatórios de frescor, alertas e histórico diário.
-    Report,
+    Report {
+        /// Relatório alternativo, como a saída de refresh --dry-run.
+        #[arg(long)]
+        from: Option<PathBuf>,
+    },
     /// Empacota os dados e o catálogo com checksums reproduzíveis.
     Bundle {
         #[arg(long, default_value = "dist")]
@@ -118,7 +122,9 @@ fn main() -> Result<()> {
         Command::Bundle { out } => {
             br_data_bot::publication::bundle::run(&std::env::current_dir()?, &out)?
         }
-        Command::Report => br_data_bot::publication::report::run(&std::env::current_dir()?)?,
+        Command::Report { from } => {
+            br_data_bot::publication::report::run_from(&std::env::current_dir()?, from.as_deref())?
+        }
         Command::Drift => println!("changed={}", drift::changed(&std::env::current_dir()?)?),
         Command::ImportSeed { from } => import_seed::run(&from)?,
         Command::Refresh {

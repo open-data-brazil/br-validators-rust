@@ -1,0 +1,149 @@
+name: Data refresh
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      datasets: { description: 'IDs separados por espaço; vazio usa --all', type: string, default: '' }
+      include_manual: { description: 'Incluir fontes manuais', type: boolean, default: false }
+      dry_run: { description: 'Simular sem commit ou release', type: boolean, default: false }
+      force_release: { description: 'Criar release mesmo sem drift', type: boolean, default: false }
+      reason: { description: 'Motivo obrigatório para force_release', type: string, default: '' }
+  workflow_call:
+    inputs:
+      datasets: { type: string, default: '' }
+      include_manual: { type: boolean, default: false }
+      dry_run: { type: boolean, default: false }
+      force_release: { type: boolean, default: false }
+      reason: { type: string, default: '' }
+permissions: { contents: write }
+concurrency: { group: data-refresh, cancel-in-progress: false }
+defaults:
+  run: { shell: bash }
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: '0'
+  CARGO_PROFILE_DEV_DEBUG: '0'
+  CARGO_PROFILE_TEST_DEBUG: '0'
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    outputs:
+      released: ${{ steps.publish.outputs.released }}
+      tag: ${{ steps.bump.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.DATA_REFRESH_TOKEN || secrets.GITHUB_TOKEN }}
+      - uses: dtolnay/rust-toolchain@stable
+        with: { components: 'rustfmt, clippy' }
+      - uses: Swatinem/rust-cache@v2
+      - name: Validar solicitação
+        env:
+          FORCE_RELEASE: ${{ inputs.force_release }}
+          REASON: ${{ inputs.reason }}
+        run: |
+          if [[ "$FORCE_RELEASE" == true && -z "${REASON//[[:space:]]/}" ]]; then
+            echo 'reason é obrigatório com force_release' >&2
+            exit 1
+          fi
+      - name: Refresh
+        env:
+          DATASETS: ${{ inputs.datasets }}
+          INCLUDE_MANUAL: ${{ inputs.include_manual }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          DATA_REFRESH_RETRY_DELAY_MS: '30000'
+          IBPT_TOKEN: ${{ secrets.IBPT_TOKEN }}
+          IBPT_CNPJ: ${{ secrets.IBPT_CNPJ }}
+        run: |
+          args=(--all)
+          if [[ -n "$DATASETS" ]]; then
+            read -r -a args <<< "$DATASETS"
+            for id in "${args[@]}"; do
+              [[ "$id" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]] || { echo 'ID inválido' >&2; exit 1; }
+            done
+          fi
+          if [[ "$INCLUDE_MANUAL" == true ]]; then args+=(--include-manual); fi
+          if [[ "$DRY_RUN" == true ]]; then
+            args+=(--dry-run)
+            cargo run --locked --release -p br-data-bot -- refresh "${args[@]}" > "$RUNNER_TEMP/dry-run.json"
+          else
+            cargo run --locked --release -p br-data-bot -- refresh "${args[@]}"
+          fi
+      - name: Relatórios
+        env: { DRY_RUN: '${{ inputs.dry_run }}' }
+        run: |
+          if [[ "$DRY_RUN" == true ]]; then
+            cargo run --locked --release -p br-data-bot -- report --from "$RUNNER_TEMP/dry-run.json"
+          else
+            cargo run --locked --release -p br-data-bot -- report
+          fi
+      - name: Job summary
+        if: always()
+        run: |
+          if [[ -f data/refresh-reports/job-summary.md ]]; then
+            cat data/refresh-reports/job-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Verificar workspace
+        run: |
+          cargo fmt --all --check
+          cargo clippy --workspace --all-targets --all-features -- -D warnings
+          cargo test --workspace --all-features
+          cargo test -p br-validators --no-default-features
+      - name: Garantir arquivos permitidos
+        run: |
+          while IFS= read -r -d '' file; do
+            case "$file" in
+              crates/br-validators/data/*|data/refresh-reports/*|docs/DATA-FRESHNESS.md) ;;
+              *) echo "Arquivo inesperado: $file" >&2; exit 1 ;;
+            esac
+          done < <(git ls-files --modified --deleted --others --exclude-standard -z)
+      - id: drift
+        run: cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+      - id: bump
+        if: inputs.dry_run != true && (steps.drift.outputs.changed != '0' || inputs.force_release)
+        run: cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+      - name: Verificar após bump
+        if: steps.bump.outputs.tag != ''
+        run: |
+          cargo fmt --all --check
+          cargo clippy --workspace --all-targets --all-features -- -D warnings
+          cargo test --workspace --all-features
+          cargo test -p br-validators --no-default-features
+      - id: publish
+        if: inputs.dry_run != true
+        env:
+          REASON: ${{ inputs.reason }}
+          TAG: ${{ steps.bump.outputs.tag }}
+        run: |
+          git config user.name 'br-data-bot[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          today=$(TZ=America/Sao_Paulo date +%F)
+          reason="${REASON//$'\n'/ }"
+          if [[ -n "$TAG" ]]; then
+            git add -A -- crates/br-validators/data data/refresh-reports docs/DATA-FRESHNESS.md CHANGELOG.md Cargo.toml Cargo.lock
+            git commit -m "chore(data): refresh $today ($TAG)${reason:+ — $reason}"
+            git pull --rebase origin main
+            git tag -a "$TAG" -m "Release $TAG — atualização de dados"
+            git push --atomic origin HEAD:main "refs/tags/$TAG"
+            echo 'released=true' >> "$GITHUB_OUTPUT"
+          elif ! git diff --quiet -- data/refresh-reports/source-health || [[ -n "$(git ls-files --others --exclude-standard data/refresh-reports/source-health)" ]]; then
+            git add -A -- data/refresh-reports docs/DATA-FRESHNESS.md
+            git commit -m "chore(data): saúde das fontes $today"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            echo 'released=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'Sem mudanças de dados ou saúde das fontes.'
+            echo 'released=false' >> "$GITHUB_OUTPUT"
+          fi
+  release:
+    needs: refresh
+    if: needs.refresh.outputs.released == 'true'
+    uses: ./.github/workflows/release.yml
+    with: { tag: '${{ needs.refresh.outputs.tag }}' }
+    secrets: inherit
+    permissions: { contents: write }

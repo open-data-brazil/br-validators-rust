@@ -66,7 +66,7 @@
 ## Verification
 
 - Agenda: diária às 00:00 America/Sao_Paulo (`0 3 * * *` UTC em [data-refresh.yml](../.github/workflows/data-refresh.yml)).
-- HTTP: 5 tentativas; espera linear com base `DATA_REFRESH_RETRY_DELAY_MS` (30 s local, 120 s no CI).
+- HTTP: 5 tentativas; espera linear com base `DATA_REFRESH_RETRY_DELAY_MS` (30 s por padrão, configurável no CI).
 - Falhas preservam os dados embutidos e registram alertas.
 - Dry run: `cargo run -p br-data-bot -- refresh --all --dry-run`.
 - API: `get_data_catalog()` e `get_dataset_metadata(id)`.
