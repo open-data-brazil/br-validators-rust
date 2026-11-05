@@ -2286,3 +2286,85 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
   da CLI, conforme a ordem das fases; a entrega final precisará de uma release
   que inclua a CLI completa e a feature remote.
 - Próxima tarefa: 12.1.
+
+## FASE-12 — concluída
+
+- Tarefas 12.1 a 12.6 concluídas, com um commit por tarefa.
+- Commits
+  - `09ccbde` — feat(cli): definir argumentos, entrada e contrato de saída
+  - `4fe670c` — feat(cli): portar comandos dos 19 documentos e conversões
+  - `eebb378` — feat(cli): portar detecção, lotes e comandos de plataforma
+  - `43c936e` — feat(cli): portar consultas de dados e cálculos fiscais
+  - `cdaa50a` — test(cli): conferir processos, códigos e snapshots do TypeScript
+  - `2a92ccb` — docs(cli): documentar instalação e exemplos de uso
+
+- Saída dos critérios de aceite
+
+```text
++ cargo test -p br-validators-cli
+     Running unittests src/lib.rs (target/debug/deps/br_validators_cli-782fc04ff467e0e7)
+running 3 tests
+test commands::data::fiscal::money::tests::decimal_exato ... ok
+test input::tests::preserva_espacos_posicionais_e_normaliza_arquivo ... ok
+test output::tests::respeita_json_quiet_e_codigos ... ok
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/data.rs (target/debug/deps/data-c107904e1852a9c3)
+running 2 tests
+test consultas_de_referencia_encontram_registros_e_rejeitam_ausentes ... ok
+test calendario_fiscal_e_catalogo ... ok
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/documents.rs (target/debug/deps/documents-5f27d6f8bda56dcd)
+running 3 tests
+test distingue_uso_invalido_e_erro_de_validacao ... ok
+test preserva_parse_conversao_metadata_e_aliases ... ok
+test validadores_cli_reproduzem_o_oraculo_e_os_codigos_de_saida ... ok
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+     Running tests/platform.rs (target/debug/deps/platform-d418dffccbb0881b)
+running 1 test
+test plataforma_preserva_contratos_e_codigos ... ok
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/process.rs (target/debug/deps/process-7eb5267dc9643a36)
+running 4 tests
+test snapshots_originais_preservam_o_contrato_json ... ok
+test plataforma_e_entrada_por_stdin ... ok
+test documentos_no_processo_real ... ok
+test dados_no_processo_real ... ok
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.42s
+
++ cargo run -q -p br-validators-cli -- cpf validate 123.456.789-09 --json
+{
+  "format": "numeric",
+  "ok": true,
+  "value": "12345678909"
+}
++ cargo run -q -p br-validators-cli -- cnpj validate 12ABC34501DE35 --quiet; echo "exit=$?"
+exit=0
++ cargo run -q -p br-validators-cli -- cpf validate 111.111.111-11 --quiet; echo "exit=$?"
+exit=1
++ cargo run -q -p br-validators-cli -- bancos lookup 001 --json
+{
+  "banco": {
+    "codigo": "001",
+    "ispb": "00000000",
+    "nome": "Banco do Brasil S.A.",
+    "nomeReduzido": "BCO DO BRASIL S.A.",
+    "participaCompe": true
+  },
+  "ok": true
+}
++ cargo run -q -p br-validators-cli -- ptax lookup USD --verbose
+USD Fechamento PTAX — compra 5.4772 / venda 5.4778 (2026-11-04)
+dataReferencia: 2026-11-04
+isStale: false
+capturadoEm: 2026-11-05
+```
+
+- A CLI cobre os 19 documentos originais, comandos de plataforma (detect, sanitize, mask, compare, diff, batch, generate, list), todas as consultas de dados de referência embutidos com os mesmos códigos de saída (0 válido/encontrado, 1 inválido/não encontrado, 2 erro de sintaxe/uso).
+- Os snapshots e oráculos conferem a compatibilidade estrita byte a byte com as saídas JSON da CLI TypeScript.
+- README da CLI documenta instalação por GitHub Releases e `cargo install --git`.
+- Próxima tarefa: 13.1.
+
