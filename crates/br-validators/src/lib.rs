@@ -101,6 +101,8 @@ pub use data::moedas;
 pub use data::natureza_juridica;
 #[cfg(feature = "nbs")]
 pub use data::nbs;
+#[cfg(feature = "ncm")]
+pub use data::ncm;
 #[cfg(feature = "paises-bacen")]
 pub use data::paises_bacen;
 #[cfg(feature = "ptax")]

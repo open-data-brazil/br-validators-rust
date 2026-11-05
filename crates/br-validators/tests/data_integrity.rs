@@ -180,7 +180,7 @@ dataset!("nbs", nbs;
 );
 
 dataset!("ncm", ncm;
-    "ncm.json", "ncm", NCM
+    "ncm.json", "ncm", get_all_ncm()
 );
 
 dataset!("nfe-cuf", nfe_cuf;
