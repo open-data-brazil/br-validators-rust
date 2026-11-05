@@ -1,0 +1,138 @@
+name: Release
+on:
+  push: { tags: ['v*'] }
+  workflow_call:
+    inputs:
+      tag: { type: string, required: true }
+  workflow_dispatch:
+    inputs:
+      tag: { description: 'Tag existente vMAJOR.MINOR.PATCH', type: string, required: true }
+permissions: { contents: write }
+concurrency: { group: 'release-${{ inputs.tag || github.ref_name }}', cancel-in-progress: false }
+defaults:
+  run: { shell: bash }
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: '0'
+  CARGO_PROFILE_DEV_DEBUG: '0'
+  CARGO_PROFILE_TEST_DEBUG: '0'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.t.outputs.tag }}
+      version: ${{ steps.t.outputs.version }}
+    steps:
+      - id: t
+        env: { TAG: '${{ inputs.tag || github.ref_name }}' }
+        run: |
+          [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with: { ref: 'refs/tags/${{ steps.t.outputs.tag }}', fetch-depth: 0 }
+      - uses: dtolnay/rust-toolchain@stable
+        with: { components: 'rustfmt, clippy' }
+      - uses: Swatinem/rust-cache@v2
+      - name: Conferir versão da tag
+        env: { VERSION: '${{ steps.t.outputs.version }}' }
+        run: |
+          actual=$(cargo metadata --locked --no-deps --format-version 1 | jq -r '.packages[] | select(.name=="br-validators") | .version')
+          [[ "$actual" == "$VERSION" ]] || { echo "Tag != Cargo.toml ($actual)" >&2; exit 1; }
+      - name: Verificar workspace
+        run: |
+          cargo fmt --all --check
+          cargo clippy --workspace --all-targets --all-features -- -D warnings
+          cargo test --workspace --all-features
+          cargo test -p br-validators --no-default-features
+  cli-binaries:
+    needs: verify
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, target: x86_64-unknown-linux-gnu }
+          - { os: ubuntu-24.04-arm, target: aarch64-unknown-linux-gnu }
+          - { os: macos-15, target: aarch64-apple-darwin }
+          - { os: macos-15-intel, target: x86_64-apple-darwin }
+          - { os: windows-latest, target: x86_64-pc-windows-msvc }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: 'refs/tags/${{ needs.verify.outputs.tag }}' }
+      - uses: dtolnay/rust-toolchain@stable
+        with: { targets: '${{ matrix.target }}' }
+      - uses: Swatinem/rust-cache@v2
+        with: { key: '${{ matrix.target }}' }
+      - name: Compilar CLI
+        env: { TARGET: '${{ matrix.target }}' }
+        run: cargo build --locked --release -p br-validators-cli --target "$TARGET"
+      - name: Executar e empacotar CLI
+        env:
+          TAG: ${{ needs.verify.outputs.tag }}
+          TARGET: ${{ matrix.target }}
+        run: |
+          suffix=''
+          if [[ "$TARGET" == *windows-msvc ]]; then suffix='.exe'; fi
+          binary="target/$TARGET/release/br-validators$suffix"
+          "$binary" --version
+          python scripts/package-cli.py --tag "$TAG" --target "$TARGET" --binary "$binary" --out dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cli-${{ matrix.target }}
+          path: dist/br-validators-*
+          if-no-files-found: error
+  publish:
+    needs: [verify, cli-binaries]
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ needs.verify.outputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: 'refs/tags/${{ needs.verify.outputs.tag }}' }
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: actions/download-artifact@v4
+        with: { pattern: 'cli-*', path: dist, merge-multiple: true }
+      - name: Gerar dados e notas
+        run: |
+          cargo run --locked --release -p br-data-bot -- bundle --out dist
+          cargo run --locked --release -p br-data-bot -- release-notes --tag "$TAG" > dist/RELEASE_NOTES.md
+      - name: Conferir checksums de todos os assets
+        working-directory: dist
+        run: |
+          sha256sum br-validators-* >> SHA256SUMS
+          LC_ALL=C sort -k2 SHA256SUMS -o SHA256SUMS
+          sha256sum -c SHA256SUMS
+      - name: Publicar GitHub Release
+        run: |
+          assets=(dist/catalog.json dist/SHA256SUMS dist/br-data-*.tar.gz dist/br-data-*.zip dist/data/*.json dist/br-validators-*)
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "${assets[@]}" --clobber
+          else
+            gh release create "$TAG" "${assets[@]}" --draft --verify-tag --title "$TAG" --notes-file dist/RELEASE_NOTES.md
+          fi
+          gh release edit "$TAG" --draft=false --latest --notes-file dist/RELEASE_NOTES.md
+  crates-io:
+    needs: [verify, publish]
+    runs-on: ubuntu-latest
+    env:
+      CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+      ENABLE_CRATES_IO: ${{ vars.ENABLE_CRATES_IO }}
+    steps:
+      - name: Gate de publicação opcional
+        id: gate
+        run: |
+          enabled=false
+          if [[ -n "$CARGO_REGISTRY_TOKEN" && "$ENABLE_CRATES_IO" == true ]]; then enabled=true; fi
+          echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
+          if [[ "$enabled" == false ]]; then echo 'crates.io desativado; distribuição por GitHub Release e git.'; fi
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.enabled == 'true'
+        with: { ref: 'refs/tags/${{ needs.verify.outputs.tag }}' }
+      - uses: dtolnay/rust-toolchain@stable
+        if: steps.gate.outputs.enabled == 'true'
+      - name: Publicar biblioteca quando habilitado pelo mantenedor
+        if: steps.gate.outputs.enabled == 'true'
+        run: cargo publish --locked -p br-validators
