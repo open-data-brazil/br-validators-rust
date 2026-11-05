@@ -180,6 +180,9 @@ pub fn format_telefone(input: &str) -> FormatResult {
     })
 }
 
+#[cfg(feature = "telefone-ddd")]
+pub use crate::data::telefone_ddd::{get_ddd_info, DddInfo};
+
 #[cfg(test)]
 mod tests {
     use super::*;

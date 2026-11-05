@@ -220,7 +220,7 @@ dataset!("simples-nacional", simples_nacional;
 );
 
 dataset!("telefone-ddd", telefone_ddd;
-    "ddd-municipios.json", "ddds", DDD_MUNICIPIOS
+    "ddd-municipios.json", "ddds", get_ddd_municipios()
 );
 
 dataset!("tse-municipios", tse_municipios;
