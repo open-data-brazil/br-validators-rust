@@ -20,6 +20,8 @@ rustdoc-args = ["--cfg", "docsrs"]
 [dependencies]
 serde = { workspace = true, optional = true }
 serde_json = { workspace = true, optional = true }
+ureq = { workspace = true, optional = true }
+sha2 = { workspace = true, optional = true }
 
 [features]
 default = []
@@ -71,7 +73,8 @@ logistics = ["aeroportos", "portos", "anp-combustiveis"]
 geo = ["ibge", "tse-municipios", "cep-faixas", "telefone-ddd", "feriados"]
 gov = ["pncp-reference", "transparencia-snapshots"]
 all-data = ["fiscal", "trade", "finance", "payroll", "logistics", "geo", "gov"]
-full = ["all-data", "serde", "generate"]
+remote = ["dep:ureq", "dep:sha2", "dep:serde", "dep:serde_json", "schema"]
+full = ["all-data", "serde", "generate", "remote"]
 
 [dev-dependencies]
 sha2.workspace = true

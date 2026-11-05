@@ -33,6 +33,8 @@ pub mod pix;
 pub mod placa;
 pub mod platform;
 pub mod processo_judicial;
+#[cfg(feature = "remote")]
+pub mod remote;
 pub mod renavam;
 pub mod rg;
 pub mod sanitize;
@@ -194,6 +196,8 @@ pub use format::format_document;
 pub use generate::generate;
 pub use mask::mask;
 pub use platform::{validate_document, DocumentType, PlatformOptions};
+#[cfg(feature = "remote")]
+pub use remote::RemoteClient;
 pub use sanitize::sanitize;
 
 /// Versão do workspace.
