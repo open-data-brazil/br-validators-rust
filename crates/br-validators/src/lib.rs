@@ -119,6 +119,8 @@ pub use data::ptax;
 pub use data::selic;
 #[cfg(feature = "simples-nacional")]
 pub use data::simples_nacional;
+#[cfg(feature = "transparencia-snapshots")]
+pub use data::transparencia_snapshots;
 #[cfg(feature = "tse-municipios")]
 pub use data::tse_municipios;
 #[cfg(feature = "_data")]

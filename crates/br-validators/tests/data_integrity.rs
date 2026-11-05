@@ -278,10 +278,10 @@ fn irpf() {
 #[test]
 fn transparencia_snapshots() {
     use data::transparencia_snapshots as dataset;
-    let meta = &*dataset::METADATA;
+    let meta = get_dataset_metadata("transparencia-snapshots").expect("metadados da Transparência");
     assert_eq!(meta.id, "transparencia-snapshots");
     arquivos(meta, &["endpoints.json"]);
-    let endpoints = &dataset::ENDPOINTS.endpoints;
+    let endpoints = dataset::get_transparencia_endpoints();
     ordenados(endpoints);
     contagem(meta, "endpoints", endpoints.len());
     contagem(
