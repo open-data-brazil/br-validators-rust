@@ -160,8 +160,8 @@ dataset!("incoterms", incoterms;
 );
 
 dataset!("iss-municipal", iss_municipal;
-    "iss-municipal.json", "municipios", ISS_MUNICIPAL;
-    "iss-munic-ibge.json", "municIbgeMunicipios", ISS_MUNIC_IBGE
+    "iss-municipal.json", "municipios", get_all_iss_municipal();
+    "iss-munic-ibge.json", "municIbgeMunicipios", get_all_iss_munic_ibge()
 );
 
 dataset!("lc116", lc116;
@@ -331,9 +331,9 @@ fn contagens_de_tabelas_e_subconjuntos() {
         precos.iter().map(|p| &p.uf).collect::<BTreeSet<_>>().len(),
     );
     contagem(
-        &iss_municipal::METADATA,
+        get_dataset_metadata("iss-municipal").expect("metadados do ISS"),
         "estimativaRows",
-        iss_municipal::ISS_MUNICIPAL
+        iss_municipal::get_all_iss_municipal()
             .iter()
             .filter(|m| m.estimativa)
             .count(),
