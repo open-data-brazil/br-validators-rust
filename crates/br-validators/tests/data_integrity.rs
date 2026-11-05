@@ -111,7 +111,7 @@ dataset!("cbo", cbo;
 );
 
 dataset!("cep-faixas", cep_faixas;
-    "faixas.json", "faixas", FAIXAS
+    "faixas.json", "faixas", get_cep_faixas()
 );
 
 dataset!("cest", cest;

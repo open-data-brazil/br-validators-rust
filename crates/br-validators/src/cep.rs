@@ -75,6 +75,9 @@ pub fn format_cep(input: &str) -> FormatResult {
     })
 }
 
+#[cfg(feature = "cep-faixas")]
+pub use crate::data::cep_faixas::{get_cep_faixa_info, get_cep_faixas, CepFaixa};
+
 #[cfg(test)]
 mod tests {
     use super::*;
