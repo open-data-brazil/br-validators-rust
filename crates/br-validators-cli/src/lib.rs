@@ -17,6 +17,9 @@ pub fn run(args: &Args) -> Output {
         Some(command) if commands::platform::recognizes(command) => {
             commands::platform::run(command, args)
         }
+        Some(command) if commands::data::recognizes(command, args) => {
+            commands::data::run(command, args)
+        }
         Some(command) if commands::document::recognizes(command) => {
             commands::document::run(command, args)
         }

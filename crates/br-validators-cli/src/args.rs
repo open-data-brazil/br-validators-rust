@@ -91,4 +91,25 @@ pub struct Args {
     /// Quantidade de documentos sintéticos.
     #[arg(long, default_value_t = 1, help = "Number of synthetic values")]
     pub count: usize,
+    /// Data ISO da observação.
+    #[arg(long, help = "Observation date (YYYY-MM-DD)")]
+    pub data: Option<String>,
+    /// Data de consulta da meta Selic.
+    #[arg(long, help = "SELIC observation date")]
+    pub date: Option<String>,
+    /// Início do histórico.
+    #[arg(long, help = "First date of range")]
+    pub desde: Option<String>,
+    /// Fim do histórico.
+    #[arg(long, help = "Last date of range")]
+    pub ate: Option<String>,
+    /// Ano do calendário.
+    #[arg(long, help = "Calendar year")]
+    pub year: Option<i32>,
+    /// Ano da tabela fiscal.
+    #[arg(long, help = "Tax table year")]
+    pub ano: Option<u32>,
+    /// Tributo da tabela CST.
+    #[arg(long, help = "Tax table: icms | ipi | pis | cofins")]
+    pub tax: Option<String>,
 }
