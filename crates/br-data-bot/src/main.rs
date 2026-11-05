@@ -1,6 +1,7 @@
 #![forbid(unsafe_code)]
 
 mod import_seed;
+mod measure_features;
 
 use std::path::PathBuf;
 
@@ -76,6 +77,12 @@ enum Command {
         #[arg(long)]
         from: PathBuf,
     },
+    /// Mede o tamanho de binário gerado por feature e gera data/bundle-sizes/feature-sizes.md.
+    MeasureFeatures {
+        /// Diretório de saída para a tabela de tamanhos.
+        #[arg(long, default_value = "data/bundle-sizes")]
+        out: PathBuf,
+    },
 }
 
 fn main() -> Result<()> {
@@ -127,6 +134,7 @@ fn main() -> Result<()> {
         }
         Command::Drift => println!("changed={}", drift::changed(&std::env::current_dir()?)?),
         Command::ImportSeed { from } => import_seed::run(&from)?,
+        Command::MeasureFeatures { out } => measure_features::run(&std::env::current_dir()?, &out)?,
         Command::Refresh {
             all: _,
             ids,
