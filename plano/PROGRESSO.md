@@ -2188,3 +2188,40 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
   centavos em vez de números de ponto flutuante, como exige o plano.
 - A pendência sobre conversão do fator de vencimento do boleto permanece.
 - Próxima tarefa: 10.1.
+
+
+## FASE-10 — concluída
+
+- Tarefas 10.1 a 10.4 concluídas, com um commit por tarefa.
+- Commits
+- `38a4adf` — feat(bot): gerar relatórios de frescor e alertas das fontes
+- `69154c8` — feat(bot): incrementar versão e registrar changelog dos dados
+- `8f7fb55` — feat(bot): gerar notas para releases humanas e de dados
+- `a21821c` — feat(bot): empacotar dados com catálogo e checksums reproduzíveis
+
+- Saída integral dos critérios de aceite em [FASE-10-aceite.txt](evidencias/FASE-10-aceite.txt).
+- `report` gera o documento de frescor, alertas críticos, resumo do job e
+  cópia diária exata do último refresh, com retenção de 90 dias. A saúde
+  persistida inclui fontes fora do último refresh. Snapshots conferem a
+  saída determinística e o escape de células Markdown.
+- A linha de base de saúde gerada pelo bot na FASE-08 foi versionada com
+  o primeiro relatório. O resumo do job e os outcomes individuais continuam
+  ignorados. Os relatórios não alteram os dados embutidos.
+- `bump` preserva comentários do TOML, usa SemVer puro e atualiza os três
+  membros do lockfile offline. Os testes cobrem patch, minor, major,
+  pre-release inválido, overflow, fallback do lock e deltas no changelog.
+  O aceite incrementou para 0.1.1 e restaurou manifest, lock e changelog,
+  como determina a fase. A versão permanece 0.1.0 até a primeira release.
+- `release-notes` extrai a seção pedida do changelog, distingue seções de
+  dados e humanas e inclui a dependência git do repositório definido em
+  AGENTS.md. Os alertas ativos são acrescentados quando há relatório local.
+- `bundle` distribui todos os arquivos de dados, catálogo, TAR.GZ, ZIP e
+  SHA256SUMS. Confere tamanho e hash dos manifests antes da escrita.
+  Duas gerações produziram checksums idênticos; os testes também comparam
+  os conteúdos de TAR e ZIP, permissões e datas fixas. Os arquivos metadata
+  acompanham os dados dentro dos arquivos compactados.
+- Desvio de determinismo: a data da entrada de dados no changelog deriva
+  da data do relatório de refresh, em vez do relógio de execução do bump.
+  Isso conserva a data do evento e torna a mesma entrada reproduzível.
+- Pendências anteriores permanecem; nenhuma nova fonte foi introduzida.
+- Próxima tarefa: 11.1.

@@ -1,0 +1,235 @@
++ export CARGO_INCREMENTAL=0 CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 CARGO_NET_OFFLINE=true
++ CARGO_INCREMENTAL=0
++ CARGO_PROFILE_DEV_DEBUG=0
++ CARGO_PROFILE_TEST_DEBUG=0
++ CARGO_NET_OFFLINE=true
++ cargo run -p br-data-bot -- report
+    Finished `dev` profile [unoptimized] target(s) in 0.06s
+     Running `target/debug/br-data-bot report`
++ git diff --stat docs/DATA-FRESHNESS.md
++ cargo run -p br-data-bot -- bundle --out dist
+    Finished `dev` profile [unoptimized] target(s) in 0.06s
+     Running `target/debug/br-data-bot bundle --out dist`
++ cd dist
++ sha256sum -c SHA256SUMS
+br-data-v0.1.0.tar.gz: OK
+br-data-v0.1.0.zip: OK
+catalog.json: OK
+data/aeroportos--aeroportos.json: OK
+data/anp-combustiveis--precos-medios.json: OK
+data/anp-combustiveis--semanas.json: OK
+data/bancos--bancos.json: OK
+data/cbo--cbo.json: OK
+data/cep-faixas--faixas.json: OK
+data/cest--cest.json: OK
+data/cfop--cfop.json: OK
+data/cnaes--cnaes.json: OK
+data/cnpj-motivos--motivos.json: OK
+data/csosn--csosn.json: OK
+data/cst--cst-cofins.json: OK
+data/cst--cst-icms.json: OK
+data/cst--cst-ipi.json: OK
+data/cst--cst-pis.json: OK
+data/esocial--categorias.json: OK
+data/esocial--rubricas.json: OK
+data/feriados--portaria-extras.json: OK
+data/ibge--estados.json: OK
+data/ibge--municipios.json: OK
+data/ibpt--cargas.json: OK
+data/incoterms--incoterms.json: OK
+data/inss--tabela-contribuicao.json: OK
+data/irpf--tabela-progressiva.json: OK
+data/iss-municipal--iss-munic-ibge.json: OK
+data/iss-municipal--iss-municipal.json: OK
+data/lc116--lc116.json: OK
+data/moedas--moedas.json: OK
+data/natureza-juridica--naturezas.json: OK
+data/nbs--nbs.json: OK
+data/ncm--ncm.json: OK
+data/nfe-cuf--cuf.json: OK
+data/paises-bacen--paises.json: OK
+data/pncp-reference--amparos-legais.json: OK
+data/pncp-reference--criterios-julgamento.json: OK
+data/pncp-reference--fontes-orcamentarias.json: OK
+data/pncp-reference--modalidades.json: OK
+data/pncp-reference--modos-disputa.json: OK
+data/pncp-reference--tipos-contrato.json: OK
+data/pncp-reference--tipos-instrumentos-cobranca.json: OK
+data/pncp-reference--tipos-instrumentos-convocatorios.json: OK
+data/portos--portos.json: OK
+data/ptax--ptax.json: OK
+data/selic--selic.json: OK
+data/simples-nacional--anexos.json: OK
+data/telefone-ddd--ddd-municipios.json: OK
+data/transparencia-snapshots--endpoints.json: OK
+data/tse-municipios--mapeamento.json: OK
++ cargo run -p br-data-bot -- bump --write-changelog --level patch
+    Finished `dev` profile [unoptimized] target(s) in 0.06s
+     Running `target/debug/br-data-bot bump --write-changelog --level patch`
+version=0.1.1
+tag=v0.1.1
++ git diff Cargo.toml CHANGELOG.md
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index a87f6b7..137cefd 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -5,3 +5,13 @@ Este arquivo registra as mudanças relevantes do projeto. O formato segue
+ [Versionamento Semântico](https://semver.org/lang/pt-BR/).
+ 
+ ## [Unreleased]
++
++## [0.1.1] - 2026-11-04
++
++### Dados
++
++| Dataset | + | − | ~ | Capturado em |
++|---------|---|---|---|--------------|
++
++- Sem alterações nos datasets; release solicitada pelo mantenedor.
++
+diff --git a/Cargo.toml b/Cargo.toml
+index 7500eae..94c9a66 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -3,7 +3,7 @@ resolver = "2"
+ members = ["crates/br-validators", "crates/br-validators-cli", "crates/br-data-bot"]
+ 
+ [workspace.package]
+-version = "0.1.0"
++version = "0.1.1"
+ edition = "2021"
+ rust-version = "1.80"
+ license = "MIT"
++ git checkout Cargo.toml Cargo.lock CHANGELOG.md
+Updated 3 paths from the index
++ cargo test -p br-data-bot
+   Compiling br-data-bot v0.1.0 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/br-validators-rust/crates/br-data-bot)
+    Finished `test` profile [unoptimized] target(s) in 2.63s
+     Running unittests src/lib.rs (target/debug/deps/br_data_bot-fde98758dbcd8849)
+
+running 63 tests
+test fetchers::cfop::tests::extrai_codigos_da_pagina_e_conserva_os_registros_dourados ... ok
+test fetchers::cnaes::tests::normaliza_subclasses_da_fixture_conforme_a_semente ... ok
+test fetchers::cnpj_motivos::tests::interpreta_o_zip_e_respeita_o_diretorio_mensal_oficial ... ok
+test fetchers::csosn::tests::gera_os_dez_codigos_do_ajuste_sinief ... ok
+test fetchers::cnpj_motivos::tests::usa_espelho_quando_a_receita_bloqueia_e_propaga_404 ... ok
+test fetchers::cest::tests::identifica_ncms_e_segmento_nos_anexos_do_convenio ... ok
+test fetchers::bancos::tests::reconhece_bom_codigos_e_campos_com_aspas ... ok
+test fetchers::feriados::tests::gera_as_datas_especificas_do_calendario_federal ... ok
+test fetchers::cep_faixas::tests::mantem_o_primeiro_municipio_no_empate ... ok
+test fetchers::cbo::tests::restaura_acentos_e_preserva_codigos_dourados ... ok
+test fetchers::cst::tests::prepara_as_quatro_tabelas_e_respeita_o_estado_dos_postbacks ... ok
+test fetchers::ibpt::tests::mapeia_amostra_apidoni_da_referencia ... ok
+test fetchers::esocial::tests::preserva_grupos_rubricas_e_datas_da_fonte ... ok
+test fetchers::bancos::tests::prepara_csv_oficial_e_propaga_404 ... ok
+test fetchers::incoterms::tests::gera_as_regras_da_icc_e_preserva_os_dados_quando_o_probe_falha ... ok
+test fetchers::inss::tests::gera_as_faixas_e_o_teto_da_referencia_2025 ... ok
+test fetchers::irpf::tests::gera_tabela_da_referencia_e_retem_a_semente_se_probe_falha ... ok
+test fetchers::ibge::tests::fixture_preserva_municipios_e_resolve_uf_pela_regiao_imediata ... ok
+test fetchers::cnaes::tests::fetch_aceita_contagem_valida_e_propaga_404 ... ok
+test fetchers::lc116::tests::planalto_reune_texto_da_lista_com_marcacao_e_entidades ... ok
+test fetchers::ibpt::tests::consulta_apidoni_com_rastreio_sem_parametros_sensiveis ... ok
+test fetchers::moedas::tests::combina_a_lista_bacen_com_os_simbolos_iso_4217 ... ok
+test fetchers::ibpt::tests::sem_credenciais_preserva_a_tabela_versionada_e_registra_auth_missing ... ok
+test fetchers::esocial::tests::prepara_os_dois_arquivos_e_propaga_404 ... ok
+test fetchers::moedas::tests::fetch_prepara_moedas_e_propaga_404 ... ok
+test fetchers::natureza_juridica::tests::prepara_o_zip_do_espelho_autorizado_e_preserva_a_tabela ... ok
+test fetchers::cfop::tests::usa_espelho_ao_receber_404_e_informa_falha_sem_espelho ... ok
+test fetchers::ncm::tests::remove_bom_e_conserva_apenas_folhas ... ok
+test fetchers::nfe_cuf::tests::cruza_a_tabela_do_manual_com_as_27_ufs_do_ibge ... ok
+test fetchers::cbo::tests::prepara_csv_sem_caractere_de_substituicao_e_propaga_404 ... ok
+test fetchers::lc116::tests::republicacao_nfse_preserva_a_semente_e_faz_fallback_do_planalto ... ok
+test fetchers::pncp_reference::tests::compara_modalidades_da_fixture_e_da_semente ... ok
+test fetchers::paises_bacen::tests::tenta_bacen_apos_404_do_portal_e_complementa_com_a_tabela_oficial ... ok
+test fetchers::iss_municipal::tests::preserva_capitais_leis_confirmadas_e_faixas_estimadas ... ok
+test fetchers::cep_faixas::tests::agrega_csv_oficial_dentro_do_zip ... ok
+test fetchers::nbs::tests::identifica_o_cabecalho_e_os_codigos_folha ... ok
+test fetchers::ptax::tests::seleciona_os_dois_nomes_de_fechamento_e_ignora_abertura ... ok
+test fetchers::aeroportos::tests::cruza_anac_com_o_mapa_iata_e_municipios_ibge ... ok
+test fetchers::rfb::tests::escolhe_mes_recente_da_receita_e_ignora_host_externo ... ok
+test fetchers::selic::tests::interpreta_a_resposta_real_e_mescla_repeticoes_pela_data ... ok
+test fetchers::selic::tests::consulta_a_janela_definida_pela_data_embutida ... ok
+test fetchers::simples_nacional::tests::valida_anexos_e_faixas_da_lei_complementar ... ok
+test fetchers::transparencia_snapshots::tests::falha_de_probe_tem_alerta_e_preserva_classificacao ... ok
+test fetchers::transparencia_snapshots::tests::probes_reais_preservam_o_registro_sem_timestamp ... ok
+test fetchers::iss_municipal::tests::ordena_o_pib_do_sidra_e_confere_com_a_planilha_oficial ... ok
+test fetchers::pncp_reference::tests::prepara_oito_tabelas_e_retem_somente_a_que_falhar ... ok
+test fetchers::paises_bacen::tests::abre_ods_oficial_descarta_excluidos_e_rejeita_zip_truncado ... ok
+test framework::zip::tests::rejeita_path_traversal_e_tamanho_excessivo ... ok
+test framework::json_writer::tests::json_canonico_e_repetivel ... ok
+test fetchers::ibge::tests::fetch_respeita_limites_e_propaga_falha_de_link ... ok
+test fetchers::aeroportos::tests::prepara_o_csv_com_dependencia_local_e_propaga_404 ... ok
+test fetchers::ptax::tests::prepara_todas_as_moedas_no_periodo_embutido ... ok
+test fetchers::nbs::tests::prepara_planilha_oficial_e_propaga_404 ... ok
+test fetchers::telefone_ddd::tests::deriva_os_67_ddds_do_mapa_anatel_e_dos_municipios_ibge ... ok
+test fetchers::ncm::tests::fetch_aceita_folhas_e_propaga_link_descontinuado ... ok
+test fetchers::tse_municipios::tests::restaura_acento_e_confere_os_vinculos_tse_ibge ... ok
+test fetchers::tse_municipios::tests::prepara_zip_oficial_com_ibge_local_e_propaga_404 ... ok
+test fetchers::cest::tests::usa_o_espelho_ao_receber_404_e_propaga_falha_sem_ele ... ok
+test fetchers::anp_combustiveis::tests::interpreta_planilha_oficial_e_descobre_link_mais_recente ... ok
+test fetchers::portos::tests::recupera_texto_windows_1252_e_preserva_codigos_e_coordenadas ... ok
+test fetchers::ibpt::tests::seleciona_ultima_versao_e_filtra_ncms_dourados_no_espelho ... ok
+test fetchers::portos::tests::descobre_zip_datado_e_prepara_dados_sem_u_fffd ... ok
+test fetchers::anp_combustiveis::tests::troca_janela_semanal_e_propaga_404 ... ok
+
+test result: ok. 63 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.73s
+
+     Running unittests src/main.rs (target/debug/deps/br_data_bot-f53f535874785469)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/framework.rs (target/debug/deps/framework-299cfa1df7f183da)
+
+running 7 tests
+test decodifica_bom_utf8_e_windows_1252 ... ok
+test repete_bloqueio_cinco_vezes_e_nao_repete_link_descontinuado ... ok
+test saude_muda_em_transicoes_e_auth_permanece_warning ... ok
+test interpreta_cabecalho_csv_html_e_data_excel ... ok
+test dry_run_usa_dependencia_preparada_sem_gravar_arquivos ... ok
+test prepara_ordena_distingue_drift_e_protege_a_semente ... ok
+test refresh_retem_fonte_bloqueada_e_continua_dependente ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/publication_bundle.rs (target/debug/deps/publication_bundle-4cf9791186db9cce)
+
+running 2 tests
+test manifesto_divergente_impede_publicar_dados_trocados ... ok
+test bundle_reproduzivel_contem_dados_exatos_e_manifesta_hashes ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.68s
+
+     Running tests/publication_notes.rs (target/debug/deps/publication_notes-cbb70e41061eb6d5)
+
+running 2 tests
+test extrai_apenas_a_versao_pedida_e_recusa_tags_invalidas ... ok
+test gera_notas_de_dados_e_de_release_humana ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/publication_report.rs (target/debug/deps/publication_report-a5d9993129199b42)
+
+running 2 tests
+test relatorios_reproduzem_snapshots_e_incluem_saude_fora_do_ultimo_refresh ... ok
+test grava_copia_exata_e_conserva_apenas_90_dias ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/publication_version.rs (target/debug/deps/publication_version-0280a86206f33267)
+
+running 4 tests
+test incrementa_semver_e_recusa_pre_release_e_overflow ... ok
+test fallback_do_lock_preserva_dependencias_externas ... ok
+test changelog_usa_deltas_do_refresh_e_data_do_relatorio ... ok
+test bump_preserva_comentarios_e_atualiza_os_tres_membros ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+   Doc-tests br_data_bot
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
