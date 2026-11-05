@@ -107,6 +107,8 @@ pub use data::paises_bacen;
 pub use data::ptax;
 #[cfg(feature = "selic")]
 pub use data::selic;
+#[cfg(feature = "simples-nacional")]
+pub use data::simples_nacional;
 #[cfg(feature = "tse-municipios")]
 pub use data::tse_municipios;
 #[cfg(feature = "_data")]

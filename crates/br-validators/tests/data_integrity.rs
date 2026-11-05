@@ -215,7 +215,7 @@ dataset!("selic", selic;
 );
 
 dataset!("simples-nacional", simples_nacional;
-    "anexos.json", "anexos", ANEXOS
+    "anexos.json", "anexos", get_all_simples_anexos()
 );
 
 dataset!("telefone-ddd", telefone_ddd;
@@ -360,9 +360,9 @@ fn contagens_de_tabelas_e_subconjuntos() {
         "dias",
         selic::get_selic_list().len(),
     );
-    let anexos = &*simples_nacional::ANEXOS;
+    let anexos = simples_nacional::get_all_simples_anexos();
     contagem(
-        &simples_nacional::METADATA,
+        get_dataset_metadata("simples-nacional").expect("metadados do Simples"),
         "faixas",
         anexos.iter().map(|a| a.faixas.len()).sum(),
     );

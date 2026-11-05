@@ -111,6 +111,9 @@ pub mod lc116;
 
 pub mod lookup;
 
+#[cfg(feature = "simples-nacional")]
+mod money;
+
 #[cfg(feature = "moedas")]
 pub mod moedas;
 
