@@ -1,0 +1,42 @@
+[package]
+name = "br-validators-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+br-validators = { path = "../crates/br-validators" }
+
+[[bin]]
+name = "brcode"
+path = "fuzz_targets/brcode.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "boleto"
+path = "fuzz_targets/boleto.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "detect"
+path = "fuzz_targets/detect.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "inscricao_estadual"
+path = "fuzz_targets/inscricao_estadual.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "processo_judicial"
+path = "fuzz_targets/processo_judicial.rs"
+test = false
+doc = false

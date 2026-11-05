@@ -1,0 +1,33 @@
+name: Fuzzing
+
+on:
+  schedule:
+    - cron: '0 5 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  fuzz:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - brcode
+          - boleto
+          - detect
+          - inscricao_estadual
+          - processo_judicial
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@nightly
+      - name: Instalar cargo-fuzz
+        run: cargo install cargo-fuzz --locked
+      - name: Executar fuzzing (10 minutos)
+        run: cargo fuzz run ${{ matrix.target }} -- -max_total_time=600
+        working-directory: fuzz

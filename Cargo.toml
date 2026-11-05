@@ -1,6 +1,7 @@
 [workspace]
 resolver = "2"
 members = ["crates/br-validators", "crates/br-validators-cli", "crates/br-data-bot"]
+exclude = ["fuzz"]
 
 [workspace.package]
 version = "0.1.1"

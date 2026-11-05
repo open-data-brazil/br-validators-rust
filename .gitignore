@@ -4,5 +4,8 @@
 /dist/
 /data/refresh-reports/fetch-outcomes/
 /data/refresh-reports/job-summary.md
+/fuzz/target/
+/fuzz/corpus/
+/fuzz/artifacts/
 
 __pycache__/
