@@ -2225,3 +2225,64 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
   Isso conserva a data do evento e torna a mesma entrada reproduzível.
 - Pendências anteriores permanecem; nenhuma nova fonte foi introduzida.
 - Próxima tarefa: 11.1.
+
+
+## FASE-11 — concluída
+
+- Tarefas 11.1 a 11.5 concluídas, incluindo o workflow mensal opcional.
+- Commits
+- `a63ee9b` — ci(bot): automatizar refresh diário e chamada da release
+- `0f6f8e4` — ci(release): publicar dados e CLI para cinco plataformas
+- `084f336` — ci(bot): impedir alterações de API durante o refresh
+- `f112874` — docs(release): documentar permissões, refresh e distribuição
+- `94572d2` — ci(bot): agendar refresh mensal das fontes manuais
+- `d08d181` — fix(ci): preservar LF nos snapshots de relatórios no Windows
+- `d4e95f2` — ci(bot): configurar intervalo de retry nas execuções manuais
+- `9db90b2` — chore(data): refresh 2026-11-05 (v0.1.1) — primeira release
+
+- Aceite local: [saída integral](evidencias/FASE-11-aceite-local.txt).
+  Actionlint passou. A simulação verificou 27 datasets, com dois deltas
+  calculados em memória, quatro avisos e zero críticos; `drift` retornou `changed=0`.
+- [Dry run verde](https://github.com/open-data-brazil/br-validators-rust/actions/runs/42022191725),
+  com relatório, summary, guarda e os quatro checks Cargo.
+  [Saída do watch](evidencias/FASE-11-dry-run.txt) e
+  [estado final dos jobs](evidencias/FASE-11-dry-run.json).
+- A primeira tentativa de dry run, 42020419590, foi cancelada durante o refresh
+  para tornar o intervalo de retry configurável no dispatch. O aceite usou
+  cinco tentativas com intervalo zero; a agenda diária conserva a base de 30 s.
+- [Primeiro refresh com release, verde](https://github.com/open-data-brazil/br-validators-rust/actions/runs/42024978218),
+  acionado com `force_release=true`, motivo `primeira release` e `retry_delay_ms=0`.
+  [Watch integral](evidencias/FASE-11-primeira-release.txt) e
+  [estado final dos jobs](evidencias/FASE-11-primeira-release.json).
+- [GitHub Release v0.1.1](https://github.com/open-data-brazil/br-validators-rust/releases/tag/v0.1.1):
+  catálogo com 34 datasets, 48 JSONs individuais, TAR.GZ, ZIP, SHA256SUMS e cinco
+  pacotes da CLI. Todos os pacotes foram compilados e executados nos runners
+  nativos. O job de crates.io passou pelo gate sem publicar.
+- Todos os assets foram baixados e seus hashes conferidos. O endpoint `latest`
+  retornou 0.1.1; a CLI Linux baixada executou `--version` com sucesso.
+  [Inventário](evidencias/FASE-11-assets.json) e
+  [verificação dos assets](evidencias/FASE-11-verificacao-assets.txt).
+- Um projeto em `/tmp`, fora do workspace, compilou a dependência git na tag
+  v0.1.1 com a feature bancos e consultou `001 — Banco do Brasil S.A.`.
+  [Saída do consumo por git](evidencias/FASE-11-consumo-git.txt).
+- O refresh real atualizou CEST, PTAX e Selic, com 11 adições, 14 remoções e duas
+  alterações. Registrou sete avisos e nenhum crítico. IBGE e CNAE foram retidos
+  diante de bloqueio no runner; não houve substituição de fonte oficial.
+- [CI verde](https://github.com/open-data-brazil/br-validators-rust/actions/runs/42022188294)
+  em lint, MSRV 1.80, Linux, macOS e Windows. Os snapshots exigem LF também
+  no checkout Windows, mantendo a comparação byte a byte.
+- Desvios: macOS 13 foi substituído por macOS 15 Intel após a aposentadoria do
+  runner; Linux ARM usa runner nativo. Os detalhes e a referência oficial estão
+  em [RELEASING.md](../docs/RELEASING.md).
+- A revisão automática rejeitou mudar a permissão global do Actions de leitura
+  para escrita, por ampliar o acesso dos demais workflows. O padrão permanece
+  em leitura; refresh e release recebem `contents: write` explicitamente.
+  A publicação verde confirmou que essa alternativa funciona. Main não tem
+  proteção e nenhum PAT foi necessário. A aprovação de PRs pelo bot permanece
+  desabilitada. Não há pendência operacional decorrente dessa rejeição.
+- A publicação em crates.io exige token e opt-in `ENABLE_CRATES_IO=true`;
+  ambos permanecem ausentes. A distribuição segue exclusivamente por GitHub.
+- Pendências anteriores preservadas. A primeira release precede a expansão
+  da CLI, conforme a ordem das fases; a entrega final precisará de uma release
+  que inclua a CLI completa e a feature remote.
+- Próxima tarefa: 12.1.

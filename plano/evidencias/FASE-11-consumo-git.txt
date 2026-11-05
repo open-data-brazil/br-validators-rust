@@ -1,0 +1,19 @@
+    Updating git repository `https://github.com/open-data-brazil/br-validators-rust`
+    Updating crates.io index
+     Locking 12 packages to highest compatible versions
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling serde_core v1.0.229
+   Compiling zmij v1.0.23
+   Compiling serde v1.0.229
+   Compiling serde_json v1.0.154
+   Compiling itoa v1.0.18
+   Compiling memchr v2.8.3
+   Compiling syn v3.0.9
+   Compiling serde_derive v1.0.229
+   Compiling br-validators v0.1.1 (https://github.com/open-data-brazil/br-validators-rust?tag=v0.1.1#9db90b2b)
+   Compiling br-validators-release-smoke v0.0.0 (/tmp/br-validators-fase-11-consumer)
+    Finished `dev` profile [unoptimized] target(s) in 13.04s
+     Running `/tmp/br-validators-fase-11-consumer/target/debug/br-validators-release-smoke`
+001 — Banco do Brasil S.A.

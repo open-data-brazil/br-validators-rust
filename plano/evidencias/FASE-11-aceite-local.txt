@@ -1,0 +1,476 @@
++ docker run --rm -v /home/iiii/PESSOAL-PROJETOS-ALEXANDRE/br-validators-rust:/repo -w /repo rhysd/actionlint:latest
++ cargo run -p br-data-bot -- refresh --all --dry-run
+    Finished `dev` profile [unoptimized] target(s) in 0.16s
+     Running `target/debug/br-data-bot refresh --all --dry-run`
+{
+  "executadoEm": "2026-11-05T11:36:26.032473524+00:00",
+  "datasets": [
+    {
+      "id": "ibge",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "estados": 27,
+        "municipios": 5571
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "aeroportos",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "aeroportos": 533,
+        "comIata": 87
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "anp-combustiveis",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "municipios": 396,
+        "precosMedios": 2426,
+        "produtos": 7,
+        "semanas": 1,
+        "ufs": 27
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "bancos",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "bancos": 459
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "cbo",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cbo": 2694
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "cest",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cest": 1021
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "cfop",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cfop": 689
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "cnaes",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cnaes": 1332
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "cnpj-motivos",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "motivos": 61
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "csosn",
+      "status": "embedded_retained",
+      "sourceStatus": "embedded_retained",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "csosn": 10
+      },
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: link deprecated (HTTP 404) at https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10"
+    },
+    {
+      "id": "feriados",
+      "status": "embedded_retained",
+      "sourceStatus": "embedded_retained",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "feriadosNacionaisFixos": 9,
+        "feriadosNacionaisMoveis": 1,
+        "pontosFacultativosFederais": 9,
+        "portariaExtras": 2
+      },
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026"
+    },
+    {
+      "id": "incoterms",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "incoterms": 11
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "inss",
+      "status": "embedded_retained",
+      "sourceStatus": "embedded_retained",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "anos": 1,
+        "faixas": 4
+      },
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabelas-de-contribuicao"
+    },
+    {
+      "id": "irpf",
+      "status": "embedded_retained",
+      "sourceStatus": "embedded_retained",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "anos": 1,
+        "faixas": 5
+      },
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas"
+    },
+    {
+      "id": "moedas",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "moedas": 154
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "natureza-juridica",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "naturezas": 90
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "nbs",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "nbs": 917
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "ncm",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "ncm": 10516
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "nfe-cuf",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "cuf": 27
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "paises-bacen",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "paises": 254
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "pncp-reference",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "amparos-legais": 191,
+        "criterios-julgamento": 16,
+        "fontes-orcamentarias": 6,
+        "modalidades": 19,
+        "modos-disputa": 6,
+        "tipos-contrato": 12,
+        "tipos-instrumentos-cobranca": 1,
+        "tipos-instrumentos-convocatorios": 5
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "portos",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "portos": 1094
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "ptax",
+      "status": "ok",
+      "changed": true,
+      "changes": {
+        "adicionados": 10,
+        "removidos": 10,
+        "alterados": 0
+      },
+      "contagens": {
+        "cotacoes": 860,
+        "diasUteis": 86,
+        "moedas": 10
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "selic",
+      "status": "ok",
+      "changed": true,
+      "changes": {
+        "adicionados": 1,
+        "removidos": 1,
+        "alterados": 0
+      },
+      "contagens": {
+        "dias": 90,
+        "observacoes": 90
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "telefone-ddd",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "ddds": 67
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "transparencia-snapshots",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "endpoints": 8,
+        "queryAdapter": 7
+      },
+      "message": "Fonte verificada"
+    },
+    {
+      "id": "tse-municipios",
+      "status": "ok",
+      "changed": false,
+      "changes": {
+        "adicionados": 0,
+        "removidos": 0,
+        "alterados": 0
+      },
+      "contagens": {
+        "municipios": 5571
+      },
+      "message": "Fonte verificada"
+    }
+  ],
+  "sourceAlerts": [
+    {
+      "datasetId": "csosn",
+      "severity": "warning",
+      "status": "embedded_retained",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: link deprecated (HTTP 404) at https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10",
+      "endpoints": [
+        "https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10"
+      ],
+      "retainedEmbeddedDataFrom": "2026-06-27",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 2
+    },
+    {
+      "datasetId": "feriados",
+      "severity": "warning",
+      "status": "embedded_retained",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026",
+      "endpoints": [
+        "https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026"
+      ],
+      "retainedEmbeddedDataFrom": "2026-06-23",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 2
+    },
+    {
+      "datasetId": "inss",
+      "severity": "warning",
+      "status": "embedded_retained",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabelas-de-contribuicao",
+      "endpoints": [
+        "https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabelas-de-contribuicao"
+      ],
+      "retainedEmbeddedDataFrom": "2026-06-26",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 2
+    },
+    {
+      "datasetId": "irpf",
+      "severity": "warning",
+      "status": "embedded_retained",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas",
+      "endpoints": [
+        "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas"
+      ],
+      "retainedEmbeddedDataFrom": "2026-06-26",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 2
+    }
+  ],
+  "resumo": {
+    "datasetsVerificados": 27,
+    "datasetsAlterados": 2,
+    "totalAdicionados": 11,
+    "totalRemovidos": 11,
+    "totalAlterados": 0,
+    "sourceAlerts": 4,
+    "criticalAlerts": 0
+  }
+}
++ cargo run -p br-data-bot -- drift
+    Finished `dev` profile [unoptimized] target(s) in 0.08s
+     Running `target/debug/br-data-bot drift`
+changed=0

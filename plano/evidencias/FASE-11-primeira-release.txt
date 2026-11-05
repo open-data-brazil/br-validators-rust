@@ -1,0 +1,2131 @@
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 5 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 5 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 6 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 6 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 7 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 7 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 8 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 8 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 9 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 9 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 10 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 10 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 11 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 11 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 12 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 13 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 13 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 14 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 14 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 15 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 15 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  * Refresh
+  * Relatórios
+  * Job summary
+  * Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 16 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  * Verificar workspace
+  * Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  * Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  * Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 16 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 17 minutes ago
+
+JOBS
+* refresh (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  * Verificar após bump
+  * Run git config user.name 'br-data-bot[bot]'
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 17 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / verify (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  * Verificar workspace
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 18 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / verify (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  * Verificar workspace
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 18 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / verify (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  * Verificar workspace
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 19 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / cli-binaries (macos-15-intel, x86_64-apple-darwin) (ID 127245872414)
+* release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) (ID 127245872567)
+* release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) (ID 127245872621)
+* release / cli-binaries (macos-15, aarch64-apple-darwin) (ID 127245872797)
+* release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) (ID 127245872887)
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 19 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / cli-binaries (macos-15-intel, x86_64-apple-darwin) (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  * Run Swatinem/rust-cache@v2
+  * Compilar CLI
+  * Executar e empacotar CLI
+  * Run actions/upload-artifact@v4
+  * Post Run actions/checkout@v4
+* release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  * Compilar CLI
+  * Executar e empacotar CLI
+  * Run actions/upload-artifact@v4
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+* release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / cli-binaries (macos-15, aarch64-apple-darwin) (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  * Run actions/upload-artifact@v4
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 20 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / cli-binaries (macos-15-intel, x86_64-apple-darwin) (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  * Compilar CLI
+  * Executar e empacotar CLI
+  * Run actions/upload-artifact@v4
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+* release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+✓ release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) in 31s (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15, aarch64-apple-darwin) in 56s (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 20 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / cli-binaries (macos-15-intel, x86_64-apple-darwin) (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  * Compilar CLI
+  * Executar e empacotar CLI
+  * Run actions/upload-artifact@v4
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+✓ release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) in 1m24s (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) in 31s (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15, aarch64-apple-darwin) in 56s (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 21 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / cli-binaries (macos-15-intel, x86_64-apple-darwin) (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+✓ release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) in 1m24s (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) in 31s (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15, aarch64-apple-darwin) in 56s (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 21 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / cli-binaries (macos-15-intel, x86_64-apple-darwin) (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+✓ release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) in 1m24s (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) in 31s (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15, aarch64-apple-darwin) in 56s (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 22 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15-intel, x86_64-apple-darwin) in 2m44s (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) in 1m24s (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) in 31s (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15, aarch64-apple-darwin) in 56s (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / publish (ID 127247246541)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Run actions/download-artifact@v4
+  * Gerar dados e notas
+  * Conferir checksums de todos os assets
+  * Publicar GitHub Release
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 22 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15-intel, x86_64-apple-darwin) in 2m44s (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) in 1m24s (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) in 31s (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15, aarch64-apple-darwin) in 56s (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / publish (ID 127247246541)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Run actions/download-artifact@v4
+  * Gerar dados e notas
+  * Conferir checksums de todos os assets
+  * Publicar GitHub Release
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 23 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15-intel, x86_64-apple-darwin) in 2m44s (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) in 1m24s (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) in 31s (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15, aarch64-apple-darwin) in 56s (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / publish (ID 127247246541)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Run actions/download-artifact@v4
+  * Gerar dados e notas
+  * Conferir checksums de todos os assets
+  * Publicar GitHub Release
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 24 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15-intel, x86_64-apple-darwin) in 2m44s (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) in 1m24s (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) in 31s (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15, aarch64-apple-darwin) in 56s (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / publish (ID 127247246541)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Run actions/download-artifact@v4
+  * Gerar dados e notas
+  * Conferir checksums de todos os assets
+  * Publicar GitHub Release
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Data refresh · 42024978218
+Triggered via workflow_dispatch about 24 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15-intel, x86_64-apple-darwin) in 2m44s (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) in 1m24s (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) in 31s (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15, aarch64-apple-darwin) in 56s (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+* release / publish (ID 127247246541)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Run actions/download-artifact@v4
+  * Gerar dados e notas
+  * Conferir checksums de todos os assets
+  * Publicar GitHub Release
+  * Post Run Swatinem/rust-cache@v2
+  * Post Run actions/checkout@v4
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+✓ main Data refresh · 42024978218
+Triggered via workflow_dispatch about 25 minutes ago
+
+JOBS
+✓ refresh in 17m14s (ID 127236806487)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Validar solicitação
+  ✓ Refresh
+  ✓ Relatórios
+  ✓ Job summary
+  ✓ Garantir arquivos permitidos
+  ✓ Verificar workspace
+  ✓ Run cargo run --locked --release -p br-data-bot -- drift >> "$GITHUB_OUTPUT"
+  ✓ Run cargo run --locked --release -p br-data-bot -- bump --write-changelog --level patch
+  ✓ Garantir arquivos permitidos após bump
+  ✓ Verificar após bump
+  ✓ Run git config user.name 'br-data-bot[bot]'
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / verify in 1m54s (ID 127244943447)
+  ✓ Set up job
+  ✓ Run [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Tag inválida' >&2; exit 1; }
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Conferir versão da tag
+  ✓ Verificar workspace
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15-intel, x86_64-apple-darwin) in 2m44s (ID 127245872414)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (windows-latest, x86_64-pc-windows-msvc) in 1m24s (ID 127245872567)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-24.04-arm, aarch64-unknown-linux-gnu) in 31s (ID 127245872621)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (macos-15, aarch64-apple-darwin) in 56s (ID 127245872797)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / cli-binaries (ubuntu-latest, x86_64-unknown-linux-gnu) in 25s (ID 127245872887)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Compilar CLI
+  ✓ Executar e empacotar CLI
+  ✓ Run actions/upload-artifact@v4
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / publish in 2m48s (ID 127247246541)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Run dtolnay/rust-toolchain@stable
+  ✓ Run Swatinem/rust-cache@v2
+  ✓ Run actions/download-artifact@v4
+  ✓ Gerar dados e notas
+  ✓ Conferir checksums de todos os assets
+  ✓ Publicar GitHub Release
+  ✓ Post Run Swatinem/rust-cache@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+✓ release / crates-io in 4s (ID 127248615291)
+  ✓ Set up job
+  ✓ Gate de publicação opcional
+  - Run actions/checkout@v4
+  - Run dtolnay/rust-toolchain@stable
+  - Publicar biblioteca quando habilitado pelo mantenedor
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+refresh: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+refresh: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / verify: .github#5
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / verify: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+release / publish: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / publish: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+release / crates-io: .github#1
+
