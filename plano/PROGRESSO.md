@@ -2368,3 +2368,45 @@ capturadoEm: 2026-11-05
 - README da CLI documenta instalação por GitHub Releases e `cargo install --git`.
 - Próxima tarefa: 13.1.
 
+## FASE-13 — concluída
+
+- Tarefas 13.1 a 13.6 concluídas.
+- Commits:
+  - `28efa44` — docs: espelhar README raiz com links do playground e distribuição
+  - `7c3b9f9` — docs: portar especificações e guias para docs/
+  - `199b81d` — docs(lib): configurar docs.rs e doc_auto_cfg
+  - `44bee94` — feat(lib): adicionar feature remote para consulta de releases
+  - `627a9b9` — chore(dist): validar integridade do pacote da biblioteca
+  - `d8579da` — chore(bot): gerar tabela de tamanhos por feature
+- Saída dos critérios de aceite:
+
+```text
++ cargo doc -p br-validators --all-features --no-deps
+ Documenting br-validators v0.1.1 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/br-validators-rust/crates/br-validators)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.45s
+   Generated target/doc/br_validators/index.html
+
++ cargo test -p br-validators --features remote
+     Running tests/remote.rs (target/debug/deps/remote-...)
+running 2 tests
+test remote_client_detecta_divergencia_de_checksum ... ok
+test remote_client_consulta_catalogo_e_baixa_com_checksum ... ok
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
++ cargo publish -p br-validators --dry-run --allow-dirty
+    Packaged 279 files, 8.9MiB (962.8KiB compressed)
+   Verifying br-validators v0.1.1 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/br-validators-rust/crates/br-validators)
+   Compiling br-validators v0.1.1 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/br-validators-rust/target/package/br-validators-0.1.1)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.43s
+   Uploading br-validators v0.1.1 (/home/iiii/PESSOAL-PROJETOS-ALEXANDRE/br-validators-rust/crates/br-validators)
+warning: aborting upload due to dry run
+```
+
+- Documentação espelhada do original com badges de GitHub Release, CI, Data refresh, docs.rs, Playground e MSRV 1.80.
+- Especificações oficiais e guias técnicos portados para `docs/` (`OFFICIAL-SOURCES.md`, `VALIDATION-RULES.md`, `IE-STATE-ALGORITHMS.md`, `CNPJ-ALPHANUMERIC.md`, `DATA-SOURCE-MAINTENANCE.md`, `VERSIONING.md`, `ARCHITECTURE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`).
+- Metadados para docs.rs configurados com `--cfg docsrs` e `doc_auto_cfg` ativo.
+- Feature `remote` implementada com `RemoteClient` e testes offline baseados em `TcpListener`.
+- Integridade do pacote verificada em dry-run: 279 arquivos, 8.9 MiB descompactado, 962.8 KiB compactado (< 10 MB).
+- Tabela de tamanhos por feature compilada e gerada em `data/bundle-sizes/feature-sizes.md` cobrindo 46 variações de features.
+- Próxima tarefa: 14.1.
+
