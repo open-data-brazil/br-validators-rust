@@ -1,9 +1,10 @@
 {
-  "executadoEm": "2026-11-04T15:04:53.827938508+00:00",
+  "executadoEm": "2026-11-05T12:12:44.778567963+00:00",
   "datasets": [
     {
       "id": "ibge",
-      "status": "ok",
+      "status": "embedded_retained",
+      "sourceStatus": "source_blocked",
       "changed": false,
       "changes": {
         "adicionados": 0,
@@ -14,7 +15,7 @@
         "estados": 27,
         "municipios": 5571
       },
-      "message": "Fonte verificada"
+      "message": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request"
     },
     {
       "id": "aeroportos",
@@ -80,14 +81,14 @@
     {
       "id": "cest",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "changes": {
         "adicionados": 0,
-        "removidos": 0,
-        "alterados": 0
+        "removidos": 3,
+        "alterados": 2
       },
       "contagens": {
-        "cest": 1021
+        "cest": 1018
       },
       "message": "Fonte verificada"
     },
@@ -107,7 +108,8 @@
     },
     {
       "id": "cnaes",
-      "status": "ok",
+      "status": "embedded_retained",
+      "sourceStatus": "source_blocked",
       "changed": false,
       "changes": {
         "adicionados": 0,
@@ -117,7 +119,7 @@
       "contagens": {
         "cnaes": 1332
       },
-      "message": "Fonte verificada"
+      "message": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request"
     },
     {
       "id": "cnpj-motivos",
@@ -146,7 +148,7 @@
       "contagens": {
         "csosn": 10
       },
-      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: link deprecated (HTTP 404) at https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10"
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: error sending request"
     },
     {
       "id": "feriados",
@@ -270,7 +272,8 @@
     },
     {
       "id": "nfe-cuf",
-      "status": "ok",
+      "status": "embedded_retained",
+      "sourceStatus": "embedded_retained",
       "changed": false,
       "changes": {
         "adicionados": 0,
@@ -280,7 +283,7 @@
       "contagens": {
         "cuf": 27
       },
-      "message": "Fonte verificada"
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.ibge.gov.br/explica/codigos-dos-municipios.php"
     },
     {
       "id": "paises-bacen",
@@ -334,10 +337,10 @@
     {
       "id": "ptax",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "changes": {
-        "adicionados": 0,
-        "removidos": 0,
+        "adicionados": 10,
+        "removidos": 10,
         "alterados": 0
       },
       "contagens": {
@@ -350,10 +353,10 @@
     {
       "id": "selic",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "changes": {
-        "adicionados": 0,
-        "removidos": 0,
+        "adicionados": 1,
+        "removidos": 1,
         "alterados": 0
       },
       "contagens": {
@@ -408,10 +411,34 @@
   ],
   "sourceAlerts": [
     {
+      "datasetId": "ibge",
+      "severity": "warning",
+      "status": "source_blocked",
+      "message": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request",
+      "endpoints": [
+        "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
+      ],
+      "retainedEmbeddedDataFrom": "2026-10-22",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 1
+    },
+    {
+      "datasetId": "cnaes",
+      "severity": "warning",
+      "status": "source_blocked",
+      "message": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request",
+      "endpoints": [
+        "https://servicodados.ibge.gov.br/api/v2/cnae/subclasses"
+      ],
+      "retainedEmbeddedDataFrom": "2026-11-04",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 1
+    },
+    {
       "datasetId": "csosn",
       "severity": "warning",
       "status": "embedded_retained",
-      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: link deprecated (HTTP 404) at https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: error sending request",
       "endpoints": [
         "https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/a03_10"
       ],
@@ -429,7 +456,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-23",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 1
+      "consecutiveFailureDays": 2
     },
     {
       "datasetId": "inss",
@@ -441,7 +468,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 1
+      "consecutiveFailureDays": 2
     },
     {
       "datasetId": "irpf",
@@ -453,16 +480,28 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 2
+    },
+    {
+      "datasetId": "nfe-cuf",
+      "severity": "warning",
+      "status": "embedded_retained",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.ibge.gov.br/explica/codigos-dos-municipios.php",
+      "endpoints": [
+        "https://www.ibge.gov.br/explica/codigos-dos-municipios.php"
+      ],
+      "retainedEmbeddedDataFrom": "2026-06-26",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
       "consecutiveFailureDays": 1
     }
   ],
   "resumo": {
     "datasetsVerificados": 27,
-    "datasetsAlterados": 0,
-    "totalAdicionados": 0,
-    "totalRemovidos": 0,
-    "totalAlterados": 0,
-    "sourceAlerts": 4,
+    "datasetsAlterados": 3,
+    "totalAdicionados": 11,
+    "totalRemovidos": 14,
+    "totalAlterados": 2,
+    "sourceAlerts": 7,
     "criticalAlerts": 0
   }
 }

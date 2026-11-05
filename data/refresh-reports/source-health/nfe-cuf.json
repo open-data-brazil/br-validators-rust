@@ -1,5 +1,10 @@
 {
   "datasetId": "nfe-cuf",
-  "status": "ok",
-  "primeiraFalhaEm": null
+  "status": "embedded_retained",
+  "failureKind": "source_blocked",
+  "primeiraFalhaEm": "2026-11-05",
+  "endpoints": [
+    "https://www.ibge.gov.br/explica/codigos-dos-municipios.php"
+  ],
+  "mensagem": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.ibge.gov.br/explica/codigos-dos-municipios.php"
 }

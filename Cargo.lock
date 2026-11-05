@@ -143,7 +143,7 @@ dependencies = [
 
 [[package]]
 name = "br-data-bot"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "br-validators",
@@ -168,7 +168,7 @@ dependencies = [
 
 [[package]]
 name = "br-validators"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "serde",
  "serde_json",
@@ -177,7 +177,7 @@ dependencies = [
 
 [[package]]
 name = "br-validators-cli"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "br-validators",
  "clap",

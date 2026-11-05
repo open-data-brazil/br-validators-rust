@@ -1,5 +1,10 @@
 {
   "datasetId": "cnaes",
-  "status": "ok",
-  "primeiraFalhaEm": null
+  "status": "source_blocked",
+  "failureKind": "source_blocked",
+  "primeiraFalhaEm": "2026-11-05",
+  "endpoints": [
+    "https://servicodados.ibge.gov.br/api/v2/cnae/subclasses"
+  ],
+  "mensagem": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request"
 }
