@@ -111,7 +111,7 @@ pub mod lc116;
 
 pub mod lookup;
 
-#[cfg(feature = "simples-nacional")]
+#[cfg(any(feature = "simples-nacional", feature = "irpf"))]
 mod money;
 
 #[cfg(feature = "moedas")]

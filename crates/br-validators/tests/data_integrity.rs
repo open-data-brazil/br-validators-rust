@@ -263,10 +263,10 @@ fn inss() {
 #[test]
 fn irpf() {
     use data::irpf as dataset;
-    let meta = &*dataset::METADATA;
+    let meta = get_dataset_metadata("irpf").expect("metadados de IRPF");
     assert_eq!(meta.id, "irpf");
     arquivos(meta, &["tabela-progressiva.json"]);
-    let tabelas = &dataset::TABELA_PROGRESSIVA.tabelas;
+    let tabelas = dataset::get_irpf_tabelas();
     ordenados(tabelas);
     contagem(meta, "anos", tabelas.len());
     contagem(meta, "faixas", tabelas.iter().map(|t| t.faixas.len()).sum());
