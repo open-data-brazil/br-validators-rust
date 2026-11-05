@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "banco": {
+    "codigo": "001",
+    "ispb": "00000000",
+    "nome": "Banco do Brasil S.A.",
+    "nomeReduzido": "BCO DO BRASIL S.A.",
+    "participaCompe": true
+  }
+}
