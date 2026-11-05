@@ -32,6 +32,11 @@ enum Command {
     Drift,
     /// Gera relatórios de frescor, alertas e histórico diário.
     Report,
+    /// Empacota os dados e o catálogo com checksums reproduzíveis.
+    Bundle {
+        #[arg(long, default_value = "dist")]
+        out: PathBuf,
+    },
     /// Gera as notas da versão registrada no changelog.
     ReleaseNotes {
         #[arg(long)]
@@ -110,6 +115,9 @@ fn main() -> Result<()> {
             "{}",
             br_data_bot::publication::release_notes::render(&std::env::current_dir()?, &tag)?
         ),
+        Command::Bundle { out } => {
+            br_data_bot::publication::bundle::run(&std::env::current_dir()?, &out)?
+        }
         Command::Report => br_data_bot::publication::report::run(&std::env::current_dir()?)?,
         Command::Drift => println!("changed={}", drift::changed(&std::env::current_dir()?)?),
         Command::ImportSeed { from } => import_seed::run(&from)?,

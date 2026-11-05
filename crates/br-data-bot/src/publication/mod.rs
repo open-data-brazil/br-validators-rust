@@ -1,5 +1,6 @@
 //! Relatórios e artefatos de distribuição derivados dos dados locais.
 
+pub mod bundle;
 pub mod release_notes;
 pub mod report;
 pub mod version;
