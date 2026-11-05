@@ -29,6 +29,14 @@ Secrets opcionais:
   O job também exige a variável `ENABLE_CRATES_IO=true`. Mantenha essa variável
   ausente ou falsa. GitHub Release não precisa desses valores.
 
+### Verificação de integridade do pacote (`cargo publish --dry-run`)
+
+O pacote da biblioteca `br-validators` é mantido estritamente abaixo do limite de 10 MB do crates.io (tamanho verificado: ~963 KB compactado / 8.9 MB descompactado com 279 arquivos de dados e código-fonte):
+
+```bash
+cargo publish -p br-validators --dry-run --allow-dirty
+```
+
 ## Refresh automático
 
 `Data refresh` roda às 03:00 UTC, meia-noite em Brasília. Faz cinco tentativas
