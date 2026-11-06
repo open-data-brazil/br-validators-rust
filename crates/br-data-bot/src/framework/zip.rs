@@ -22,7 +22,7 @@ pub(super) fn extract_with_limit(
     let mut files = Vec::new();
     for index in 0..archive.len() {
         let entry = archive.by_index(index).map_err(zip_error)?;
-        let name = entry.name().to_owned();
+        let name = entry.name().map_err(zip_error)?.into_owned();
         if entry.enclosed_name().is_none()
             || name.starts_with(['/', '\\'])
             || name
