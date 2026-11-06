@@ -5,7 +5,7 @@
 [![CI](https://github.com/open-data-brazil/br-validators-rust/actions/workflows/ci.yml/badge.svg)](https://github.com/open-data-brazil/br-validators-rust/actions/workflows/ci.yml)
 [![Data refresh](https://github.com/open-data-brazil/br-validators-rust/actions/workflows/data-refresh.yml/badge.svg)](https://github.com/open-data-brazil/br-validators-rust/actions/workflows/data-refresh.yml)
 [![docs.rs](https://docs.rs/br-validators/badge.svg)](https://docs.rs/br-validators)
-[![Playground](https://img.shields.io/badge/Playground-doc--raiz--playground-green.svg)](https://doc-raiz-playground.vercel.app/)
+[![Playground](https://img.shields.io/badge/Playground-open--data--brazil.github.io-green.svg)](https://open-data-brazil.github.io/br-validators/)
 [![MSRV: 1.80](https://img.shields.io/badge/MSRV-1.80-orange.svg)](Cargo.toml)
 
 **100% open-source** (MIT) workspace em Rust — biblioteca de alta performance para formatação e validação de identificadores e documentos brasileiros, CLI para terminal e datasets públicos oficiais embutidos offline. Port oficial do projeto [open-data-brazil/br-validators](https://github.com/open-data-brazil/br-validators). Os algoritmos rastreiam diretamente as fontes primárias oficiais (Receita Federal, Bacen, CONTRAN, Correios, SEFAZ).
@@ -15,7 +15,7 @@
 | **Library** | [`br-validators`](crates/br-validators) via dependência git (`Cargo.toml`) ou GitHub Releases |
 | **CLI** | [`br-validators-cli`](crates/br-validators-cli) via binários pré-compilados no [GitHub Releases](https://github.com/open-data-brazil/br-validators-rust/releases) ou `cargo install --git` |
 | **Dados** | Embedded offline (JSON) ou assets no [GitHub Releases](https://github.com/open-data-brazil/br-validators-rust/releases) e URLs `raw` |
-| **Playground** | [doc-raiz-playground.vercel.app](https://doc-raiz-playground.vercel.app/) — interface web interativa do ecossistema, 100% client-side sem envio de PII |
+| **Playground** | [open-data-brazil.github.io/br-validators](https://open-data-brazil.github.io/br-validators/) — interface web interativa do ecossistema, 100% client-side sem envio de PII |
 
 Datasets de referência (IBGE, bancos Bacen STR, consulta DDD, feriados nacionais, CNAE, CFOP, CST, LC 116, eSocial categorias/rubricas, NCM, CBO, natureza jurídica, NBS, CEST, moedas, cotações PTAX, países Bacen, cUF NF-e, tabelas IRPF/INSS, SELIC meta, ISS municipal top 500 PIB, Incoterms, aeroportos ANAC, portos ANTAQ, preços de combustíveis ANP LPC) são embutidos offline e atualizados **diariamente** (00:00 Brasília) — veja [docs/DATA-FRESHNESS.md](docs/DATA-FRESHNESS.md). Alertas críticos de fontes: [data/refresh-reports/CRITICAL-ALERTS.md](data/refresh-reports/CRITICAL-ALERTS.md).
 
@@ -137,25 +137,25 @@ br-validators ptax lookup USD --verbose
 
 | Tipo | Módulo Rust | Comando CLI | Playground |
 |------|-------------|-------------|------------|
-| CNPJ (numérico + alfanumérico) | `br_validators::validate_cnpj` | `br-validators cnpj …` | [`/cnpj`](https://doc-raiz-playground.vercel.app/cnpj) |
-| CPF | `br_validators::validate_cpf` | `br-validators cpf …` | [`/cpf`](https://doc-raiz-playground.vercel.app/cpf) |
-| CEP | `br_validators::validate_cep` | `br-validators cep …` | [`/cep`](https://doc-raiz-playground.vercel.app/cep) |
-| Telefone (Anatel fixo + móvel) | `br_validators::validate_telefone` | `br-validators telefone …` | [`/telefone`](https://doc-raiz-playground.vercel.app/telefone) |
-| CNH | `br_validators::validate_cnh` | `br-validators cnh …` | [`/cnh`](https://doc-raiz-playground.vercel.app/cnh) |
-| RENAVAM | `br_validators::validate_renavam` | `br-validators renavam …` | [`/renavam`](https://doc-raiz-playground.vercel.app/renavam) |
-| Título de eleitor | `br_validators::validate_titulo_eleitor` | `br-validators titulo …` | [`/titulo-eleitor`](https://doc-raiz-playground.vercel.app/titulo-eleitor) |
-| Processo judicial CNJ | `br_validators::validate_processo_judicial` | `br-validators processo-judicial …` | [`/processo-judicial`](https://doc-raiz-playground.vercel.app/processo-judicial) |
-| RG (por UF, 27 unidades federativas) | `br_validators::validate_rg` | `br-validators rg … --uf SP` | [`/rg`](https://doc-raiz-playground.vercel.app/rg) |
-| NF-e chave de acesso | `br_validators::validate_nfe_chave` | `br-validators nfe …` | [`/nfe-chave`](https://doc-raiz-playground.vercel.app/nfe-chave) |
-| Placa veicular (Mercosul + padrão cinza) | `br_validators::validate_placa` | `br-validators placa …` | [`/placa`](https://doc-raiz-playground.vercel.app/placa) |
-| PIS / PASEP / NIS | `br_validators::validate_pis_pasep` | `br-validators pis-pasep …` | [`/pis`](https://doc-raiz-playground.vercel.app/pis) |
-| Chave PIX | `br_validators::validate_pix_key` | `br-validators pix …` | [`/pix`](https://doc-raiz-playground.vercel.app/pix) |
-| BR Code (QR Code PIX) | `br_validators::validate_br_code` | `br-validators brcode …` | [`/brcode`](https://doc-raiz-playground.vercel.app/brcode) |
-| Boleto cobrança (bancário) | `br_validators::validate_boleto` | `br-validators boleto …` | [`/boleto`](https://doc-raiz-playground.vercel.app/boleto) |
-| Boleto arrecadação (concessionárias) | `br_validators::validate_boleto` | `br-validators boleto …` | [`/boleto`](https://doc-raiz-playground.vercel.app/boleto) |
-| Cartão de crédito (Luhn / ISO 7812) | `br_validators::validate_cartao_credito` | `br-validators cartao …` | [`/cartao-credito`](https://doc-raiz-playground.vercel.app/cartao-credito) |
-| Inscrição Estadual (todas as 27 UFs) | `br_validators::validate_inscricao_estadual` | `br-validators ie … --uf SP` | [`/ie`](https://doc-raiz-playground.vercel.app/ie) |
-| Inscrição Estadual SP produtor rural | `br_validators::validate_ie_sp_produtor_rural` | `br-validators ie …` (automático com `P`) | [`/ie`](https://doc-raiz-playground.vercel.app/ie) |
+| CNPJ (numérico + alfanumérico) | `br_validators::validate_cnpj` | `br-validators cnpj …` | [`/cnpj`](https://open-data-brazil.github.io/br-validators/cnpj) |
+| CPF | `br_validators::validate_cpf` | `br-validators cpf …` | [`/cpf`](https://open-data-brazil.github.io/br-validators/cpf) |
+| CEP | `br_validators::validate_cep` | `br-validators cep …` | [`/cep`](https://open-data-brazil.github.io/br-validators/cep) |
+| Telefone (Anatel fixo + móvel) | `br_validators::validate_telefone` | `br-validators telefone …` | [`/telefone`](https://open-data-brazil.github.io/br-validators/telefone) |
+| CNH | `br_validators::validate_cnh` | `br-validators cnh …` | [`/cnh`](https://open-data-brazil.github.io/br-validators/cnh) |
+| RENAVAM | `br_validators::validate_renavam` | `br-validators renavam …` | [`/renavam`](https://open-data-brazil.github.io/br-validators/renavam) |
+| Título de eleitor | `br_validators::validate_titulo_eleitor` | `br-validators titulo …` | [`/titulo-eleitor`](https://open-data-brazil.github.io/br-validators/titulo-eleitor) |
+| Processo judicial CNJ | `br_validators::validate_processo_judicial` | `br-validators processo-judicial …` | [`/processo-judicial`](https://open-data-brazil.github.io/br-validators/processo-judicial) |
+| RG (por UF, 27 unidades federativas) | `br_validators::validate_rg` | `br-validators rg … --uf SP` | [`/rg`](https://open-data-brazil.github.io/br-validators/rg) |
+| NF-e chave de acesso | `br_validators::validate_nfe_chave` | `br-validators nfe …` | [`/nfe-chave`](https://open-data-brazil.github.io/br-validators/nfe-chave) |
+| Placa veicular (Mercosul + padrão cinza) | `br_validators::validate_placa` | `br-validators placa …` | [`/placa`](https://open-data-brazil.github.io/br-validators/placa) |
+| PIS / PASEP / NIS | `br_validators::validate_pis_pasep` | `br-validators pis-pasep …` | [`/pis`](https://open-data-brazil.github.io/br-validators/pis) |
+| Chave PIX | `br_validators::validate_pix_key` | `br-validators pix …` | [`/pix`](https://open-data-brazil.github.io/br-validators/pix) |
+| BR Code (QR Code PIX) | `br_validators::validate_br_code` | `br-validators brcode …` | [`/brcode`](https://open-data-brazil.github.io/br-validators/brcode) |
+| Boleto cobrança (bancário) | `br_validators::validate_boleto` | `br-validators boleto …` | [`/boleto`](https://open-data-brazil.github.io/br-validators/boleto) |
+| Boleto arrecadação (concessionárias) | `br_validators::validate_boleto` | `br-validators boleto …` | [`/boleto`](https://open-data-brazil.github.io/br-validators/boleto) |
+| Cartão de crédito (Luhn / ISO 7812) | `br_validators::validate_cartao_credito` | `br-validators cartao …` | [`/cartao-credito`](https://open-data-brazil.github.io/br-validators/cartao-credito) |
+| Inscrição Estadual (todas as 27 UFs) | `br_validators::validate_inscricao_estadual` | `br-validators ie … --uf SP` | [`/ie`](https://open-data-brazil.github.io/br-validators/ie) |
+| Inscrição Estadual SP produtor rural | `br_validators::validate_ie_sp_produtor_rural` | `br-validators ie …` (automático com `P`) | [`/ie`](https://open-data-brazil.github.io/br-validators/ie) |
 
 ---
 
@@ -163,13 +163,13 @@ br-validators ptax lookup USD --verbose
 
 | API | Módulo Rust | CLI | Playground | Finalidade |
 |-----|-------------|-----|------------|------------|
-| `detect()` | `br_validators::detect` | `br-validators detect …` | [`/detect`](https://doc-raiz-playground.vercel.app/detect) | Auto-classificação do tipo de identificador |
-| `sanitize()` | `br_validators::sanitize` | `br-validators sanitize <type> …` | [`/sanitize`](https://doc-raiz-playground.vercel.app/sanitize) | Normalização e correção de caracteres comuns |
+| `detect()` | `br_validators::detect` | `br-validators detect …` | [`/detect`](https://open-data-brazil.github.io/br-validators/detect) | Auto-classificação do tipo de identificador |
+| `sanitize()` | `br_validators::sanitize` | `br-validators sanitize <type> …` | [`/sanitize`](https://open-data-brazil.github.io/br-validators/sanitize) | Normalização e correção de caracteres comuns |
 | `mask()` | `br_validators::mask` | `br-validators mask <type> …` | via ações `format` | Aplicação de máscara visual padrão |
-| `compare()` | `br_validators::compare` | `br-validators compare <type> …` | [`/compare`](https://doc-raiz-playground.vercel.app/compare) | Igualdade semântica normalizada |
-| `batch()` | `br_validators::batch` | `br-validators batch <type> …` | [`/batch`](https://doc-raiz-playground.vercel.app/batch) | Validação em lote com estatísticas |
-| `diff()` | `br_validators::diff` | `br-validators diff <type> …` | [`/diff`](https://doc-raiz-playground.vercel.app/diff) | Análise de divergência estrutural campo a campo |
-| `generate()` | `br_validators::generate` | `br-validators generate …` | [`/generate`](https://doc-raiz-playground.vercel.app/generate) | Geração de fixtures válidas para testes sintéticos |
+| `compare()` | `br_validators::compare` | `br-validators compare <type> …` | [`/compare`](https://open-data-brazil.github.io/br-validators/compare) | Igualdade semântica normalizada |
+| `batch()` | `br_validators::batch` | `br-validators batch <type> …` | [`/batch`](https://open-data-brazil.github.io/br-validators/batch) | Validação em lote com estatísticas |
+| `diff()` | `br_validators::diff` | `br-validators diff <type> …` | [`/diff`](https://open-data-brazil.github.io/br-validators/diff) | Análise de divergência estrutural campo a campo |
+| `generate()` | `br_validators::generate` | `br-validators generate …` | [`/generate`](https://open-data-brazil.github.io/br-validators/generate) | Geração de fixtures válidas para testes sintéticos |
 
 ```rust
 use br_validators::{compare, diff, mask, DocumentType};
@@ -211,35 +211,35 @@ Tabelas e classificações governamentais embutidas diretamente na biblioteca �
 
 | Dataset | Feature | CLI | Playground | Funções-chave | Fonte oficial |
 |---------|---------|-----|------------|---------------|---------------|
-| IBGE estados e municípios | `ibge` | `ibge lookup` · `ibge list` | [`/data/ibge`](https://doc-raiz-playground.vercel.app/data/ibge) | `get_estados`, `get_municipios`, `get_municipio_por_codigo` | [IBGE localidades](https://servicodados.ibge.gov.br/api/docs/localidades) |
-| Bacen STR bancos | `bancos` | `bancos lookup` · `bancos list` | [`/data/bancos`](https://doc-raiz-playground.vercel.app/data/bancos) | `get_bancos`, `get_banco_por_codigo`, `get_banco_por_ispb` | [Bacen STR CSV](https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv) |
-| ANAC aeródromos públicos | `aeroportos` | `aeroportos lookup` | [`/data/logistics`](https://doc-raiz-playground.vercel.app/data/logistics) | `get_aeroportos`, `get_aeroporto_por_iata`, `get_aeroporto_por_icao` | [ANAC aeródromos CSV](https://www.anac.gov.br/acesso-a-informacao/dados-abertos/areas-de-atuacao/aerodromos/lista-de-aerodromos-publicos/aerodromospublicosv1.csv/@@download/file/aerodromospublicosv1.csv) |
-| ANTAQ instalações portuárias | `portos` | `portos lookup` | [`/data/logistics`](https://doc-raiz-playground.vercel.app/data/logistics) | `get_porto_por_codigo`, `search_portos`, `get_portos_por_municipio` | [ANTAQ instalações portuárias](https://www.gov.br/antaq/pt-br/central-de-conteudos/Instalaesporturias06052025.zip) |
-| ANP preços de combustíveis (LPC) | `anp-combustiveis` | — | [`/data/logistics`](https://doc-raiz-playground.vercel.app/data/logistics) | `get_anp_precos_medios`, `get_anp_semana_atual` | [ANP levantamento LPC](https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas) |
-| TSE ↔ IBGE municípios | `tse-municipios` | `tse-municipios lookup` | [`/data/ibge`](https://doc-raiz-playground.vercel.app/data/ibge) | `get_municipio_ibge_por_codigo_tse`, `get_codigos_tse_por_municipio` | [TSE dados abertos](https://cdn.tse.jus.br/estatistica/sead/odsele/municipio_tse_ibge/municipio_tse_ibge.zip) |
+| IBGE estados e municípios | `ibge` | `ibge lookup` · `ibge list` | [`/data/ibge`](https://open-data-brazil.github.io/br-validators/data/ibge) | `get_estados`, `get_municipios`, `get_municipio_por_codigo` | [IBGE localidades](https://servicodados.ibge.gov.br/api/docs/localidades) |
+| Bacen STR bancos | `bancos` | `bancos lookup` · `bancos list` | [`/data/bancos`](https://open-data-brazil.github.io/br-validators/data/bancos) | `get_bancos`, `get_banco_por_codigo`, `get_banco_por_ispb` | [Bacen STR CSV](https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv) |
+| ANAC aeródromos públicos | `aeroportos` | `aeroportos lookup` | [`/data/logistics`](https://open-data-brazil.github.io/br-validators/data/logistics) | `get_aeroportos`, `get_aeroporto_por_iata`, `get_aeroporto_por_icao` | [ANAC aeródromos CSV](https://www.anac.gov.br/acesso-a-informacao/dados-abertos/areas-de-atuacao/aerodromos/lista-de-aerodromos-publicos/aerodromospublicosv1.csv/@@download/file/aerodromospublicosv1.csv) |
+| ANTAQ instalações portuárias | `portos` | `portos lookup` | [`/data/logistics`](https://open-data-brazil.github.io/br-validators/data/logistics) | `get_porto_por_codigo`, `search_portos`, `get_portos_por_municipio` | [ANTAQ instalações portuárias](https://www.gov.br/antaq/pt-br/central-de-conteudos/Instalaesporturias06052025.zip) |
+| ANP preços de combustíveis (LPC) | `anp-combustiveis` | — | [`/data/logistics`](https://open-data-brazil.github.io/br-validators/data/logistics) | `get_anp_precos_medios`, `get_anp_semana_atual` | [ANP levantamento LPC](https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas) |
+| TSE ↔ IBGE municípios | `tse-municipios` | `tse-municipios lookup` | [`/data/ibge`](https://open-data-brazil.github.io/br-validators/data/ibge) | `get_municipio_ibge_por_codigo_tse`, `get_codigos_tse_por_municipio` | [TSE dados abertos](https://cdn.tse.jus.br/estatistica/sead/odsele/municipio_tse_ibge/municipio_tse_ibge.zip) |
 | Anatel DDD geográfico | `telefone-ddd` | `ddd lookup` | — | `get_ddd_info` | [Anatel painel DDD](https://informacoes.anatel.gov.br/paineis/areas-tarifarias/codigos-nacionais) |
-| Feriados nacionais | `feriados` | `feriados list --year` | [`/data/calendar`](https://doc-raiz-playground.vercel.app/data/calendar) | `is_feriado_nacional`, `get_feriados_nacionais`, `get_proximo_dia_util` | [Lei 662/1949](https://www.planalto.gov.br/ccivil_03/leis/l0662.htm) |
-| CNAE 2.3 subclasses | `cnaes` | `cnae lookup` · `cnae search` | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_cnae_por_codigo`, `search_cnaes` | [IBGE CNAE API](https://servicodados.ibge.gov.br/api/docs/cnae) |
-| CFOP operações fiscais | `cfop` | `cfop lookup` · `cfop search` | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_cfop_por_codigo`, `search_cfop` | [CONFAZ CFOP](https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/cfop_cvsn_70_vigente) |
-| CST (ICMS, IPI, PIS, COFINS) | `cst` | — | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_cst_icms_por_codigo`, `get_cst_ipi_por_codigo` | [RFB SPED tabelas](http://www.sped.fazenda.gov.br/spedtabelas/AppConsulta/publico/aspx/ConsultaTabelasExternas.aspx?CodSistema=SpedFiscal) |
-| LC 116 lista de serviços ISS | `lc116` | — | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_lc116_por_codigo`, `search_lc116` | [LC 116/2003 Planalto](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp116.htm) |
-| eSocial (categorias + rubricas) | `esocial` | — | [`/data/payroll`](https://doc-raiz-playground.vercel.app/data/payroll) | `get_esocial_categoria_por_codigo`, `get_esocial_rubrica_por_codigo` | [eSocial leiautes S-1.3](https://www.gov.br/esocial/pt-br/documentacao-tecnica/leiautes-esocial-versao-s-1-3-nt-06-2026/tabelas.html) |
-| NCM Siscomex | `ncm` | `ncm lookup` · `ncm search` | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_ncm_por_codigo`, `search_ncm` | [Siscomex NCM JSON](https://portalunico.siscomex.gov.br/classif/api/publico/nomenclatura/download/json?perfil=PUBLICO) |
-| Natureza jurídica RFB | `natureza-juridica` | `natureza-juridica lookup` | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_natureza_juridica_por_codigo` | [RFB Dados Abertos CNPJ](https://dadosabertos.rfb.gov.br/CNPJ/dados_abertos_cnpj/) |
-| NBS serviços nacionais | `nbs` | `nbs lookup` | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_nbs_por_codigo`, `search_nbs` | [NFSe Anexo B NBS2](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/anexo_b-nbs2-lista_servico_nacional-snnfse.xlsx) |
-| CEST substituição tributária | `cest` | `cest lookup` | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_cest_por_codigo`, `get_cest_por_ncm` | [CONFAZ Convênio 142/2018](https://www.confaz.fazenda.gov.br/legislacao/convenios/2018/CV142_18) |
-| Moedas ISO 4217 + Bacen | `moedas` | `moedas lookup` | [`/data/trade`](https://doc-raiz-playground.vercel.app/data/trade) | `get_moeda_por_codigo`, `search_moedas` | [Bacen PTAX Moedas](https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/Moedas) |
-| Bacen PTAX Fechamento | `ptax` | `ptax lookup` · `ptax historico` | [`/data/trade`](https://doc-raiz-playground.vercel.app/data/trade) | `get_ptax_cotacao`, `get_ptax_historico`, `get_ptax_ultimo_dia_util` | [Bacen Olinda PTAX API](https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/swagger-ui3) |
-| Países Bacen (NF-e cPais) | `paises-bacen` | `paises-bacen lookup` | [`/data/trade`](https://doc-raiz-playground.vercel.app/data/trade) | `get_pais_por_codigo_bacen`, `get_paises_bacen` | [Tabela de Países NF-e](http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=FOXZNFX/p50=) |
-| NF-e cUF códigos UF | `nfe-cuf` | `nfe-cuf lookup` | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_cuf_por_codigo` | [Manual de Orientação NF-e](http://www.nfe.fazenda.gov.br/) |
-| IRPF tabela progressiva | `irpf` | `irpf tabela` · `irpf calc` | [`/data/payroll`](https://doc-raiz-playground.vercel.app/data/payroll) | `get_irpf_tabela_progressiva`, `calcular_irpf_mensal` | [RFB Tabelas IRPF](https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas) |
-| INSS faixas de contribuição | `inss` | `inss tabela` · `inss calc` | [`/data/payroll`](https://doc-raiz-playground.vercel.app/data/payroll) | `get_inss_tabela_contribuicao`, `calcular_inss_mensal` | [INSS Tabelas](https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabelas-de-contribuicao) |
-| SELIC meta Bacen | `selic` | `selic` | [`/data/finance`](https://doc-raiz-playground.vercel.app/data/finance) | `get_selic_meta`, `get_selic_meta_por_data` | [Bacen SGS série 432](https://www3.bcb.gov.br/sgspub/localizarseries/localizarSeries.do?method=prepararTelaLocalizarSeries) |
-| ISS municipal (top 500 PIB) | `iss-municipal` | `iss-municipal lookup` | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_iss_municipal_por_ibge` | [IBGE SIDRA PIB 5938](https://apisidra.ibge.gov.br/values/t/5938/n6/all/v/37/p/2022) |
-| Incoterms 2020 ICC | `incoterms` | `incoterms lookup` | [`/data/trade`](https://doc-raiz-playground.vercel.app/data/trade) | `get_incoterm_por_codigo`, `get_incoterms` | [ICC Incoterms](https://iccwbo.org/resources-for-business/incoterms-rules/) |
-| CBO 2002 ocupações | `cbo` | `cbo lookup` | [`/data/fiscal`](https://doc-raiz-playground.vercel.app/data/fiscal) | `get_cbo_por_codigo`, `search_cbo` | [MTE CBO](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/cbo/servicos/downloads/cbo2002-ocupacao.csv) |
+| Feriados nacionais | `feriados` | `feriados list --year` | [`/data/calendar`](https://open-data-brazil.github.io/br-validators/data/calendar) | `is_feriado_nacional`, `get_feriados_nacionais`, `get_proximo_dia_util` | [Lei 662/1949](https://www.planalto.gov.br/ccivil_03/leis/l0662.htm) |
+| CNAE 2.3 subclasses | `cnaes` | `cnae lookup` · `cnae search` | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_cnae_por_codigo`, `search_cnaes` | [IBGE CNAE API](https://servicodados.ibge.gov.br/api/docs/cnae) |
+| CFOP operações fiscais | `cfop` | `cfop lookup` · `cfop search` | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_cfop_por_codigo`, `search_cfop` | [CONFAZ CFOP](https://www.confaz.fazenda.gov.br/legislacao/ajustes/sinief/cfop_cvsn_70_vigente) |
+| CST (ICMS, IPI, PIS, COFINS) | `cst` | — | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_cst_icms_por_codigo`, `get_cst_ipi_por_codigo` | [RFB SPED tabelas](http://www.sped.fazenda.gov.br/spedtabelas/AppConsulta/publico/aspx/ConsultaTabelasExternas.aspx?CodSistema=SpedFiscal) |
+| LC 116 lista de serviços ISS | `lc116` | — | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_lc116_por_codigo`, `search_lc116` | [LC 116/2003 Planalto](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp116.htm) |
+| eSocial (categorias + rubricas) | `esocial` | — | [`/data/payroll`](https://open-data-brazil.github.io/br-validators/data/payroll) | `get_esocial_categoria_por_codigo`, `get_esocial_rubrica_por_codigo` | [eSocial leiautes S-1.3](https://www.gov.br/esocial/pt-br/documentacao-tecnica/leiautes-esocial-versao-s-1-3-nt-06-2026/tabelas.html) |
+| NCM Siscomex | `ncm` | `ncm lookup` · `ncm search` | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_ncm_por_codigo`, `search_ncm` | [Siscomex NCM JSON](https://portalunico.siscomex.gov.br/classif/api/publico/nomenclatura/download/json?perfil=PUBLICO) |
+| Natureza jurídica RFB | `natureza-juridica` | `natureza-juridica lookup` | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_natureza_juridica_por_codigo` | [RFB Dados Abertos CNPJ](https://dadosabertos.rfb.gov.br/CNPJ/dados_abertos_cnpj/) |
+| NBS serviços nacionais | `nbs` | `nbs lookup` | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_nbs_por_codigo`, `search_nbs` | [NFSe Anexo B NBS2](https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/anexo_b-nbs2-lista_servico_nacional-snnfse.xlsx) |
+| CEST substituição tributária | `cest` | `cest lookup` | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_cest_por_codigo`, `get_cest_por_ncm` | [CONFAZ Convênio 142/2018](https://www.confaz.fazenda.gov.br/legislacao/convenios/2018/CV142_18) |
+| Moedas ISO 4217 + Bacen | `moedas` | `moedas lookup` | [`/data/trade`](https://open-data-brazil.github.io/br-validators/data/trade) | `get_moeda_por_codigo`, `search_moedas` | [Bacen PTAX Moedas](https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/Moedas) |
+| Bacen PTAX Fechamento | `ptax` | `ptax lookup` · `ptax historico` | [`/data/trade`](https://open-data-brazil.github.io/br-validators/data/trade) | `get_ptax_cotacao`, `get_ptax_historico`, `get_ptax_ultimo_dia_util` | [Bacen Olinda PTAX API](https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/swagger-ui3) |
+| Países Bacen (NF-e cPais) | `paises-bacen` | `paises-bacen lookup` | [`/data/trade`](https://open-data-brazil.github.io/br-validators/data/trade) | `get_pais_por_codigo_bacen`, `get_paises_bacen` | [Tabela de Países NF-e](http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=FOXZNFX/p50=) |
+| NF-e cUF códigos UF | `nfe-cuf` | `nfe-cuf lookup` | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_cuf_por_codigo` | [Manual de Orientação NF-e](http://www.nfe.fazenda.gov.br/) |
+| IRPF tabela progressiva | `irpf` | `irpf tabela` · `irpf calc` | [`/data/payroll`](https://open-data-brazil.github.io/br-validators/data/payroll) | `get_irpf_tabela_progressiva`, `calcular_irpf_mensal` | [RFB Tabelas IRPF](https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas) |
+| INSS faixas de contribuição | `inss` | `inss tabela` · `inss calc` | [`/data/payroll`](https://open-data-brazil.github.io/br-validators/data/payroll) | `get_inss_tabela_contribuicao`, `calcular_inss_mensal` | [INSS Tabelas](https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabelas-de-contribuicao) |
+| SELIC meta Bacen | `selic` | `selic` | [`/data/finance`](https://open-data-brazil.github.io/br-validators/data/finance) | `get_selic_meta`, `get_selic_meta_por_data` | [Bacen SGS série 432](https://www3.bcb.gov.br/sgspub/localizarseries/localizarSeries.do?method=prepararTelaLocalizarSeries) |
+| ISS municipal (top 500 PIB) | `iss-municipal` | `iss-municipal lookup` | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_iss_municipal_por_ibge` | [IBGE SIDRA PIB 5938](https://apisidra.ibge.gov.br/values/t/5938/n6/all/v/37/p/2022) |
+| Incoterms 2020 ICC | `incoterms` | `incoterms lookup` | [`/data/trade`](https://open-data-brazil.github.io/br-validators/data/trade) | `get_incoterm_por_codigo`, `get_incoterms` | [ICC Incoterms](https://iccwbo.org/resources-for-business/incoterms-rules/) |
+| CBO 2002 ocupações | `cbo` | `cbo lookup` | [`/data/fiscal`](https://open-data-brazil.github.io/br-validators/data/fiscal) | `get_cbo_por_codigo`, `search_cbo` | [MTE CBO](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/cbo/servicos/downloads/cbo2002-ocupacao.csv) |
 | CEP faixas por município | `cep-faixas` | `cep faixa` | — | `get_cep_faixa_info` | [IBGE CNEFE 2022](https://www.ibge.gov.br/estatisticas/sociais/populacao/38734-cadastro-nacional-de-enderecos-para-fins-estatisticos.html) |
-| Catálogo de transparência | `_data` | — | [`/data/catalog`](https://doc-raiz-playground.vercel.app/data/catalog) | `get_data_catalog`, `get_dataset_metadata` | [docs/DATA-FRESHNESS.md](docs/DATA-FRESHNESS.md) |
+| Catálogo de transparência | `_data` | — | [`/data/catalog`](https://open-data-brazil.github.io/br-validators/data/catalog) | `get_data_catalog`, `get_dataset_metadata` | [docs/DATA-FRESHNESS.md](docs/DATA-FRESHNESS.md) |
 
 ```rust
 use br_validators::data::ncm::get_ncm_por_codigo;
