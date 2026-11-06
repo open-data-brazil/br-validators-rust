@@ -83,9 +83,10 @@ fn bundle_reproduzivel_contem_dados_exatos_e_manifesta_hashes() {
     assert_eq!(zip.len(), files.len());
     for i in 0..zip.len() {
         let mut file = zip.by_index(i).unwrap();
+        let name = file.name().unwrap().into_owned();
         let mut bytes = Vec::new();
         file.read_to_end(&mut bytes).unwrap();
-        assert_eq!(files.get(file.name()), Some(&bytes));
+        assert_eq!(files.get(&name), Some(&bytes));
     }
     assert_eq!(
         files["catalog.json"],
