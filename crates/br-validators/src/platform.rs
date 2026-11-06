@@ -16,6 +16,7 @@ use crate::{
 
 /// Tipos reconhecidos pelas APIs de plataforma.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[non_exhaustive]
 #[cfg_attr(
     feature = "serde",
     derive(serde::Serialize, serde::Deserialize),

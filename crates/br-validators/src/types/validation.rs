@@ -62,6 +62,7 @@ impl Error for ValidationError {}
 
 /// Formato reconhecido pelo validador.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[non_exhaustive]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(rename_all = "kebab-case"))]
 pub enum DocumentFormat {
