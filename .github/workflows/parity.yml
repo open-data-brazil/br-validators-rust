@@ -1,0 +1,59 @@
+name: Paridade contínua
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Clonar versão mais recente do original
+        run: git clone --depth 1 https://github.com/open-data-brazil/br-validators.git /tmp/br-validators-upstream
+      - name: Compilar original em TypeScript
+        run: |
+          cd /tmp/br-validators-upstream
+          pnpm install --no-frozen-lockfile
+          pnpm --filter @br-validators/core build
+      - name: Regenerar oráculo de paridade
+        run: node tools/parity/generate.mjs /tmp/br-validators-upstream
+      - name: Testar paridade contra o oráculo atualizado
+        id: test_parity
+        run: cargo test -p br-validators --test 'parity_*'
+      - name: Verificar divergências e abrir issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          upstream_version=$(node -p "require('/tmp/br-validators-upstream/packages/br-validators/package.json').version")
+          diff_output=$(git diff --stat crates/br-validators/tests/parity/ || true)
+          body=$(cat <<EOF
+          ### Divergência detectada com br-validators v$upstream_version
+
+          O workflow semanal de paridade contínua detectou divergência ou novos comportamentos no repositório original em TypeScript.
+
+          #### Arquivos com alterações no oráculo:
+          \`\`\`
+          $diff_output
+          \`\`\`
+
+          Revise as alterações no upstream e implemente as correções correspondentes na biblioteca Rust.
+          EOF
+          )
+          gh issue create --title "Divergência com br-validators v$upstream_version" --body "$body"
