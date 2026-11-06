@@ -78,6 +78,8 @@ pub use data::anp_combustiveis;
 pub use data::bancos;
 #[cfg(feature = "cbo")]
 pub use data::cbo;
+#[cfg(feature = "cep-faixas")]
+pub use data::cep_faixas;
 #[cfg(feature = "cest")]
 pub use data::cest;
 #[cfg(feature = "cfop")]
