@@ -2449,4 +2449,11 @@ Testing search_cnaes ... Success
 - Workflow semanal de paridade contínua (`parity.yml`) configurado para rastrear upstream, regenerar o oráculo e abrir issues automáticas em caso de divergência.
 - Todas as fases planejadas (FASE-00 a FASE-14) estão 100% concluídas.
 
+## Hospedagem e Playground
+
+- Playground migrado com sucesso da Vercel para o GitHub Pages (`https://open-data-brazil.github.io/br-validators/`).
+- Exportação estática Next.js 15 (`output: 'export'`) configurada com suporte condicional a `basePath` e `trailingSlash`.
+- Pipeline de publicação via GitHub Actions `.github/workflows/deploy-pages.yml` ativo e validado (HTTP 200).
+- Todos os links dos READMEs nos repositórios TypeScript e Rust atualizados.
+
 
