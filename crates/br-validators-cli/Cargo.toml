@@ -3,6 +3,7 @@ name = "br-validators-cli"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+publish = false
 license.workspace = true
 repository.workspace = true
 authors.workspace = true
@@ -14,7 +15,7 @@ path = "src/main.rs"
 doc = false
 
 [dependencies]
-br-validators = { path = "../br-validators", features = ["full"] }
+br-validators = { version = "0.1.1", path = "../br-validators", features = ["full"] }
 clap.workspace = true
 serde_json.workspace = true
 

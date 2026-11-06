@@ -1,0 +1,44 @@
+# cargo-deny configuration (https://embarkstudios.github.io/cargo-deny/)
+
+[advisories]
+yanked = "warn"
+unmaintained = "none"
+unsound = "none"
+ignore = [
+    # br-data-bot não usa ZipArchive::extract; processa entradas individualmente com verificação de caminho
+    "RUSTSEC-2026-0367",
+    "RUSTSEC-2026-0368",
+    "RUSTSEC-2026-0369",
+    "RUSTSEC-2026-0429",
+    # quick-xml transitivo de calamine v0.26.1 (usado em planilhas oficiais de IRPF/INSS)
+    "RUSTSEC-2026-0194",
+    "RUSTSEC-2026-0195",
+    # calamine v0.26.1 OLE2 parser (usado em planilhas oficiais confiáveis)
+    "RUSTSEC-2026-0436",
+]
+
+[licenses]
+confidence-threshold = 0.8
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "Unicode-3.0",
+    "Zlib",
+    "MPL-2.0",
+    "CDLA-Permissive-2.0",
+]
+
+[bans]
+multiple-versions = "allow"
+wildcards = "deny"
+allow-wildcard-paths = true
+highlight = "all"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
+allow-git = []

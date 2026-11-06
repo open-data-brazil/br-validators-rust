@@ -22,7 +22,7 @@ zip = { version = "=2.5.0", default-features = false, features = ["deflate"] }
 scraper = { version = "0.20", features = ["deterministic"] }
 encoding_rs = "0.8"
 anyhow.workspace = true
-br-validators = { path = "../br-validators", features = ["schema"] }
+br-validators = { version = "0.1.1", path = "../br-validators", features = ["schema"] }
 reqwest = { version = "0.12", default-features = false, features = ["blocking", "rustls-tls", "gzip", "json", "cookies"] }
 serde.workspace = true
 serde_json.workspace = true
