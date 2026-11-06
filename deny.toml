@@ -10,11 +10,6 @@ ignore = [
     "RUSTSEC-2026-0368",
     "RUSTSEC-2026-0369",
     "RUSTSEC-2026-0429",
-    # quick-xml transitivo de calamine v0.26.1 (usado em planilhas oficiais de IRPF/INSS)
-    "RUSTSEC-2026-0194",
-    "RUSTSEC-2026-0195",
-    # calamine v0.26.1 OLE2 parser (usado em planilhas oficiais confiáveis)
-    "RUSTSEC-2026-0436",
 ]
 
 [licenses]
