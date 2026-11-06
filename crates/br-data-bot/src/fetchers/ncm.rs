@@ -56,6 +56,7 @@ fn fetch(ctx: &FetchContext<'_>) -> Result<Vec<PreparedFile>, SourceError> {
     let opts = RequestOpts {
         timeout: Some(Duration::from_secs(120)),
         headers: [("Accept".into(), "application/json".into())].into(),
+        ..RequestOpts::default()
     };
     let response = ctx.http.get(URL, &opts)?;
     let records = parse(&response.bytes)?;

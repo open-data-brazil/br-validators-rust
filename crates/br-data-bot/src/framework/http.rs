@@ -33,10 +33,14 @@ pub trait HttpClient: Send + Sync {
     }
 }
 
+pub const DEFAULT_MAX_HTTP_BYTES: u64 = 200 * 1024 * 1024;
+pub const LARGE_DATASET_MAX_HTTP_BYTES: u64 = 1024 * 1024 * 1024;
+
 #[derive(Debug, Default, Clone)]
 pub struct RequestOpts {
     pub timeout: Option<Duration>,
     pub headers: BTreeMap<String, String>,
+    pub max_bytes: Option<u64>,
 }
 
 #[derive(Debug, Clone)]
@@ -141,7 +145,36 @@ fn send_request(
         .get(reqwest::header::CONTENT_TYPE)
         .and_then(|value| value.to_str().ok())
         .map(str::to_owned);
-    let bytes = response.bytes().map_err(classify_reqwest)?.to_vec();
+
+    let limit = opts.max_bytes.unwrap_or_else(|| {
+        if public_url.unwrap_or("").contains("cnefe")
+            || public_url.unwrap_or("").contains("cep")
+            || response.url().as_str().contains("cnefe")
+        {
+            LARGE_DATASET_MAX_HTTP_BYTES
+        } else {
+            DEFAULT_MAX_HTTP_BYTES
+        }
+    });
+    if let Some(content_length) = response.content_length() {
+        if content_length > limit {
+            return Err(SourceError::Parse(format!(
+                "resposta HTTP ({content_length} bytes) acima do limite de {limit} bytes"
+            )));
+        }
+    }
+    use std::io::Read;
+    let mut bytes = Vec::new();
+    response
+        .take(limit.saturating_add(1))
+        .read_to_end(&mut bytes)
+        .map_err(|error| SourceError::Parse(format!("leitura HTTP: {error}")))?;
+    if bytes.len() as u64 > limit {
+        return Err(SourceError::Parse(format!(
+            "resposta HTTP excedeu o limite de {limit} bytes"
+        )));
+    }
+
     Ok(HttpResponse {
         status,
         final_url,
@@ -173,12 +206,18 @@ impl FakeHttp {
 }
 
 impl HttpClient for FakeHttp {
-    fn get(&self, url: &str, _: &RequestOpts) -> Result<HttpResponse, SourceError> {
+    fn get(&self, url: &str, opts: &RequestOpts) -> Result<HttpResponse, SourceError> {
         let bytes = self
             .responses
             .get(url)
             .cloned()
             .ok_or_else(|| SourceError::Parse(format!("fixture ausente para {url}")))??;
+        let limit = opts.max_bytes.unwrap_or(DEFAULT_MAX_HTTP_BYTES);
+        if bytes.len() as u64 > limit {
+            return Err(SourceError::Parse(format!(
+                "resposta HTTP excedeu o limite de {limit} bytes"
+            )));
+        }
         Ok(HttpResponse {
             status: 200,
             final_url: url.to_owned(),
