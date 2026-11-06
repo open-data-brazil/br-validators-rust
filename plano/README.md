@@ -96,6 +96,6 @@ Marque aqui ao concluir cada fase (a IA executora deve atualizar este bloco):
 - [x] FASE-09 lookups na lib
 - [x] FASE-10 relatórios
 - [x] FASE-11 automação GitHub
-- [ ] FASE-12 CLI
-- [ ] FASE-13 docs e distribuição
-- [ ] FASE-14 hardening
+- [x] FASE-12 CLI
+- [x] FASE-13 docs e distribuição
+- [x] FASE-14 hardening

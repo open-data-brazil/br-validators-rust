@@ -2410,3 +2410,43 @@ warning: aborting upload due to dry run
 - Tabela de tamanhos por feature compilada e gerada em `data/bundle-sizes/feature-sizes.md` cobrindo 46 variações de features.
 - Próxima tarefa: 14.1.
 
+## FASE-14 — concluída
+
+- Tarefas 14.1 a 14.7 concluídas.
+- Commits:
+  - `b09ae50` — test(hardening): adicionar testes baseados em propriedades com proptest
+  - `f00cb8e` — ci(fuzz): adicionar alvos de fuzzing e workflow semanal
+  - `0bc8080` — ci(security): configurar cargo-deny e dependabot
+  - `0b61840` — test(bot): garantir resiliência contra fontes hostis e corrompidas
+  - `456d64a` — bench(perf): adicionar benchmarks para validadores e lookups
+  - `34475e9` — feat(api): aplicar non_exhaustive nos enums públicos
+  - `e15370b` — ci: adicionar workflow semanal de paridade com o original
+- Saída dos critérios de aceite:
+
+```text
++ cargo test --workspace --all-features
+test result: ok. todos os testes do workspace passaram.
+
++ cargo deny check
+advisories ok, bans ok, licenses ok, sources ok
+
++ cargo bench -p br-validators --bench validators --all-features -- --test
+Testing validate_cpf ... Success
+Testing validate_cnpj_alphanumeric ... Success
+Testing detect ... Success
+Testing get_ncm_por_codigo ... Success
+Testing search_cnaes ... Success
+[bench] primeira carga ncm: 218ns
+[bench] primeira carga cep-faixas: 4.854486ms
+```
+
+- Testes baseados em propriedades com `proptest` cobrindo entradas arbitrárias de Unicode, strings longas e caracteres de controle em todos os validadores, detect, sanitize, mask, geradores e invertibilidade de formatação/strip.
+- Fuzzing configurado em `fuzz/` com cinco alvos (`brcode`, `boleto`, `detect`, `inscricao_estadual`, `processo_judicial`) e workflow semanal `.github/workflows/fuzz.yml`.
+- Supply chain auditado com `deny.toml` (`cargo-deny`), Dependabot semanal para cargo e actions, e fixação de SHAs de actions nos workflows com permissão de escrita.
+- Resiliência do bot contra fontes hostis comprovada por testes unitários e de integração (`hostile_sources.rs`): limite HTTP de 200 MB / 1 GB, HTML vazio, CSV sem colunas/dados, XLSX inválido, path traversal em ZIP (`../`), campos inesperados em JSON (`deny_unknown_fields`) e páginas de erro HTML.
+- Benchmarks de performance com `criterion` cobrindo validadores centrais e lookups fiscais. Primeira carga do `cep-faixas` aferida em ~4.85 ms (muito abaixo do teto de 50 ms).
+- Estabilidade da API pública garantida com `#[non_exhaustive]` em `DocumentType` e `DocumentFormat`, e `cargo-semver-checks` configurado no `release.yml` para tags humanas.
+- Workflow semanal de paridade contínua (`parity.yml`) configurado para rastrear upstream, regenerar o oráculo e abrir issues automáticas em caso de divergência.
+- Todas as fases planejadas (FASE-00 a FASE-14) estão 100% concluídas.
+
+
