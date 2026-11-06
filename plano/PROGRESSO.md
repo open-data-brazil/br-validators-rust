@@ -2459,7 +2459,8 @@ Testing search_cnaes ... Success
   - Identidade visual alinhada a `https://teste.abastevo.com.br/` (Manrope para títulos e Source Sans 3 para corpo via Google Fonts).
   - Topbar em deep navy (`#0b1849`), indicador kicker em verde esmeralda (`#10b981`), botões translúcidos em pill shape (`radius-pill`).
   - Home page com Hero profissional, pilares de valor e cards interativos de exploração (badges temáticas, descrições, chips de features e setas circulares com micro-interações).
-  - Sidebar e layout modernizados com espaçamento harmonioso, bordas e sombras sutis, e scrollbars finas customizadas.
+  - Header da sidebar unificado: barra superior da sidebar com altura de 60px, fundo `#0b1849` e texto "Documentos" em Manrope 800 branco com `DocumentIcon`, alinhado perfeitamente com o header principal como uma barra contínua de ponta a ponta ("como se fosse um só").
+  - Tipografia da sidebar aprimorada: largura expandida para 280px, fontes aumentadas para 15px (0.9375rem) com peso 600 em cor de alto contraste, e item ativo em destaque com fundo tinted (`var(--tint-blue)`), borda de destaque e barra indicadora lateral de 4px.
   - Testes E2E do Playwright (5/5) e linter 100% aprovados, exportação estática validada e deploy verificado em produção no GitHub Pages.
 
 
