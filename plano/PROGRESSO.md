@@ -2455,5 +2455,11 @@ Testing search_cnaes ... Success
 - Exportação estática Next.js 15 (`output: 'export'`) configurada com suporte condicional a `basePath` e `trailingSlash`.
 - Pipeline de publicação via GitHub Actions `.github/workflows/deploy-pages.yml` ativo e validado (HTTP 200).
 - Todos os links dos READMEs nos repositórios TypeScript e Rust atualizados.
+- **Rebranding UI (Design System Abastevo):**
+  - Identidade visual alinhada a `https://teste.abastevo.com.br/` (Manrope para títulos e Source Sans 3 para corpo via Google Fonts).
+  - Topbar em deep navy (`#0b1849`), indicador kicker em verde esmeralda (`#10b981`), botões translúcidos em pill shape (`radius-pill`).
+  - Home page com Hero profissional, pilares de valor e cards interativos de exploração (badges temáticas, descrições, chips de features e setas circulares com micro-interações).
+  - Sidebar e layout modernizados com espaçamento harmonioso, bordas e sombras sutis, e scrollbars finas customizadas.
+  - Testes E2E do Playwright (5/5) e linter 100% aprovados, exportação estática validada e deploy verificado em produção no GitHub Pages.
 
 
