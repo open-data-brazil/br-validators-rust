@@ -40,8 +40,8 @@ jobs:
           ref: main
           fetch-depth: 0
           token: ${{ secrets.DATA_REFRESH_TOKEN || secrets.GITHUB_TOKEN }}
-      - uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # master
-        with: { components: 'rustfmt, clippy' }
+      - uses: dtolnay/rust-toolchain@stable
+        with: { toolchain: stable, components: 'rustfmt, clippy' }
       - uses: Swatinem/rust-cache@f0deed1e0edfc6a9be95417288c0e1099b1eeec3 # v2.7.7
       - name: Validar solicitação
         env:
