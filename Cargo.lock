@@ -213,7 +213,7 @@ dependencies = [
 
 [[package]]
 name = "br-data-bot"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "anyhow",
  "br-validators",
@@ -238,7 +238,7 @@ dependencies = [
 
 [[package]]
 name = "br-validators"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "criterion",
  "proptest",
@@ -250,7 +250,7 @@ dependencies = [
 
 [[package]]
 name = "br-validators-cli"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "assert_cmd",
  "br-validators",
