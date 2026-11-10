@@ -77,9 +77,19 @@ fn remote_client_consulta_catalogo_e_baixa_com_checksum() {
         while running_clone.load(Ordering::Relaxed) {
             match listener.accept() {
                 Ok((mut stream, _)) => {
-                    let mut buf = [0u8; 1024];
-                    let n = stream.read(&mut buf).unwrap_or(0);
-                    let req = String::from_utf8_lossy(&buf[..n]);
+                    stream
+                        .set_nonblocking(false)
+                        .expect("stream em modo bloqueante");
+                    let mut buf = Vec::new();
+                    let mut chunk = [0u8; 1024];
+                    while !buf.windows(4).any(|w| w == b"\r\n\r\n") {
+                        match stream.read(&mut chunk) {
+                            Ok(0) => break,
+                            Ok(n) => buf.extend_from_slice(&chunk[..n]),
+                            Err(_) => break,
+                        }
+                    }
+                    let req = String::from_utf8_lossy(&buf);
                     let path = req.split_whitespace().nth(1).unwrap_or("");
 
                     let (status, body) = if path.ends_with("/catalog.json") {
@@ -157,9 +167,19 @@ fn remote_client_detecta_divergencia_de_checksum() {
         while running_clone.load(Ordering::Relaxed) {
             match listener.accept() {
                 Ok((mut stream, _)) => {
-                    let mut buf = [0u8; 1024];
-                    let n = stream.read(&mut buf).unwrap_or(0);
-                    let req = String::from_utf8_lossy(&buf[..n]);
+                    stream
+                        .set_nonblocking(false)
+                        .expect("stream em modo bloqueante");
+                    let mut buf = Vec::new();
+                    let mut chunk = [0u8; 1024];
+                    while !buf.windows(4).any(|w| w == b"\r\n\r\n") {
+                        match stream.read(&mut chunk) {
+                            Ok(0) => break,
+                            Ok(n) => buf.extend_from_slice(&chunk[..n]),
+                            Err(_) => break,
+                        }
+                    }
+                    let req = String::from_utf8_lossy(&buf);
                     let path = req.split_whitespace().nth(1).unwrap_or("");
 
                     let (status, body) = if path.ends_with("/catalog.json") {
