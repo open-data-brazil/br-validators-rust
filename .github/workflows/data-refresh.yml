@@ -143,6 +143,8 @@ jobs:
     needs: refresh
     if: needs.refresh.outputs.released == 'true'
     uses: ./.github/workflows/release.yml
-    with: { tag: '${{ needs.refresh.outputs.tag }}' }
+    with:
+      tag: '${{ needs.refresh.outputs.tag }}'
+      skip_semver: true
     secrets: inherit
     permissions: { contents: write }

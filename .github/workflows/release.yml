@@ -4,6 +4,7 @@ on:
   workflow_call:
     inputs:
       tag: { type: string, required: true }
+      skip_semver: { type: boolean, default: false }
   workflow_dispatch:
     inputs:
       tag: { description: 'Tag existente vMAJOR.MINOR.PATCH', type: string, required: true }
@@ -47,13 +48,13 @@ jobs:
           cargo test -p br-validators --no-default-features
       - name: Calcular baseline SemVer
         id: baseline
-        if: github.event_name != 'workflow_call'
+        if: inputs.skip_semver != true
         env: { TAG: '${{ steps.t.outputs.tag }}' }
         run: |
           rev=$(git tag --list 'v*' --sort=-v:refname | grep -vx "$TAG" | head -n1 || true)
           echo "rev=$rev" >> "$GITHUB_OUTPUT"
       - name: Verificar SemVer para tags humanas
-        if: github.event_name != 'workflow_call' && steps.baseline.outputs.rev != ''
+        if: inputs.skip_semver != true && steps.baseline.outputs.rev != ''
         uses: obi1kenobi/cargo-semver-checks-action@6b69fcf40e9b5fb17adeb57e4b6ecd020649a239 # v2.9
         with:
           package: br-validators
