@@ -8,23 +8,23 @@
     "https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarGraficoPorId&hdOidSeriesSelecionadas=432",
     "https://www.bcb.gov.br/controleinflacao/copom"
   ],
-  "capturadoEm": "2026-11-09",
+  "capturadoEm": "2026-11-10",
   "contagens": {
     "dias": 90,
     "observacoes": 90
   },
   "alteracoes": {
-    "adicionados": 3,
-    "removidos": 3,
+    "adicionados": 1,
+    "removidos": 1,
     "alterados": 0,
-    "comparadoCom": "2026-11-06"
+    "comparadoCom": "2026-11-09"
   },
   "agendamento": "diario",
   "arquivos": [
     {
       "path": "selic.json",
-      "sha256": "445de360ed9d78946a1a9c53e4fc88a43b59d99b29308d061db4131160da7f37",
-      "bytes": 4827
+      "sha256": "ec3a992f99cea0ba0ba3369f0d1782a2135ac732a66271300926fc37e50ac514",
+      "bytes": 4828
     }
   ],
   "documentacao": "docs/OFFICIAL-SOURCES.md#selic-meta-sgs-432"
