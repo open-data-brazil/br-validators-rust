@@ -1,7 +1,7 @@
 # Data freshness — reference datasets
 
 > Auto-generated — do not edit manually. Gerado por `br-data-bot report`.
-> Última captura disponível: 2026-11-10
+> Última captura disponível: 2026-11-11
 
 ## Summary
 
@@ -9,7 +9,7 @@
 |---------|----------------|-----------|---------------|-------------|-------------|---------------|
 | ANAC Public Aerodromos | 2026-10-26 | 533 aeroportos / 87 comIata | 0 | 0 | 0 | [ANAC — Lista de aeródromos de uso público](https://www.anac.gov.br/acesso-a-informacao/dados-abertos/areas-de-atuacao/aerodromos/lista-de-aerodromos-publicos/aerodromospublicosv1.csv/@@download/file/aerodromospublicosv1.csv) |
 | ANP — Levantamento de Preços de Combustíveis (LPC) | 2026-11-04 | 396 municipios / 2426 precosMedios / 7 produtos / 1 semanas / 27 ufs | 0 | 0 | 0 | [ANP — resumo_semanal_lpc (municipal averages)](https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas) |
-| Bacen STR Participants | 2026-11-06 | 460 bancos | 0 | 0 | 0 | [Banco Central — Participantes STR](https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv) |
+| Bacen STR Participants | 2026-11-11 | 460 bancos | 1 | 1 | 0 | [Banco Central — Participantes STR](https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv) |
 | CBO 2002 — Brazilian Occupations | 2026-11-04 | 2694 cbo | 0 | 0 | 0 | [MTE CBO 2002 ocupacao.csv](https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/cbo/servicos/downloads/cbo2002-ocupacao.csv) |
 | CEP prefix lookup (IBGE CNEFE 2022) | 2026-06-23 | 24649 faixas | 0 | 0 | 0 | [IBGE CNEFE Censo 2022 microdata by UF](https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/Censo_Demografico_2022/Arquivos_CNEFE/CSV/UF) |
 | CONFAZ CEST | 2026-11-05 | 1018 cest | 0 | 0 | 0 | [CONFAZ Convênio ICMS 142/2018 — Anexos II a XXVI](https://www.confaz.fazenda.gov.br/legislacao/convenios/2018/CV142_18) |
@@ -35,8 +35,8 @@
 | NF-e Bacen Country Codes | 2026-11-04 | 254 paises | 0 | 0 | 0 | [Portal Nacional NF-e — Tabela de Países (Bacen)](http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=PfPDd6dW200=) |
 | PNCP domain reference tables | 2026-11-04 | 191 amparos-legais / 16 criterios-julgamento / 6 fontes-orcamentarias / 19 modalidades / 6 modos-disputa / 12 tipos-contrato / 1 tipos-instrumentos-cobranca / 5 tipos-instrumentos-convocatorios | 0 | 0 | 0 | [PNCP Cadastro API — static domain tables (Lei 14.133 ecosystem)](https://pncp.gov.br/api/pncp/v1/modalidades) |
 | ANTAQ port installations | 2026-11-04 | 1094 portos | 0 | 0 | 0 | [ANTAQ — Instalações Portuárias Outorgadas (Portos.xlsx)](https://www.gov.br/antaq/pt-br/central-de-conteudos/Instalaesporturias06052025.zip) |
-| Bacen PTAX Fechamento | 2026-11-10 | 860 cotacoes / 86 diasUteis / 10 moedas | 0 | 10 | 0 | [Banco Central Olinda PTAX API — Fechamento PTAX](https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaPeriodo(moeda=@moeda,dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)) |
-| Bacen SGS — Meta Selic (série 432) | 2026-11-10 | 90 dias / 90 observacoes | 1 | 1 | 0 | [Banco Central — Taxa meta Selic definida pelo Copom](https://dadosabertos.bcb.gov.br/dataset/432-taxa-de-juros---meta-selic-definida-pelo-copom) |
+| Bacen PTAX Fechamento | 2026-11-11 | 860 cotacoes / 86 diasUteis / 10 moedas | 10 | 10 | 0 | [Banco Central Olinda PTAX API — Fechamento PTAX](https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaPeriodo(moeda=@moeda,dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)) |
+| Bacen SGS — Meta Selic (série 432) | 2026-11-11 | 90 dias / 90 observacoes | 1 | 1 | 0 | [Banco Central — Taxa meta Selic definida pelo Copom](https://dadosabertos.bcb.gov.br/dataset/432-taxa-de-juros---meta-selic-definida-pelo-copom) |
 | LC 123/2006 — Simples Nacional (anexos e faixas) | 2026-06-25 | 5 anexos / 30 faixas | 0 | 0 | 0 | [Lei Complementar 123/2006 — Anexos I a V (redação LC 155/2016)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) |
 | Anatel DDD Geographic Lookup | 2026-10-26 | 67 ddds | 0 | 0 | 0 | [Anatel Plano de Numeração + IBGE municipios](https://informacoes.anatel.gov.br/paineis/areas-tarifarias/codigos-nacionais) |
 | Portal da Transparência endpoint registry | 2026-10-26 | 8 endpoints / 7 queryAdapter | 0 | 0 | 0 | [CGU Portal da Transparência — Swagger audit (query endpoints; no bulk embed in v1)](https://api.portaldatransparencia.gov.br/swagger-ui/index.html) |
@@ -58,7 +58,7 @@
 | ibge | critical | source_blocked | 2026-10-22 | Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request |
 | ibpt | warning | source_unavailable | 2026-10-26 | Dados embutidos preservados para as fontes com falha. missing credentials: IBPT_TOKEN ou IBPT_CNPJ |
 | inss | warning | embedded_retained | 2026-06-26 | Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabelas-de-contribuicao |
-| irpf | warning | embedded_retained | 2026-06-26 | Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: error sending request |
+| irpf | warning | embedded_retained | 2026-06-26 | Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas |
 | nfe-cuf | warning | embedded_retained | 2026-06-26 | Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.ibge.gov.br/explica/codigos-dos-municipios.php |
 | simples-nacional | warning | embedded_retained | 2026-06-25 | Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: error sending request |
 

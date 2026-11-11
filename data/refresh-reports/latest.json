@@ -1,5 +1,5 @@
 {
-  "executadoEm": "2026-11-10T10:52:31.240054322+00:00",
+  "executadoEm": "2026-11-11T10:29:08.278327951+00:00",
   "datasets": [
     {
       "id": "ibge",
@@ -53,10 +53,10 @@
     {
       "id": "bancos",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "changes": {
-        "adicionados": 0,
-        "removidos": 0,
+        "adicionados": 1,
+        "removidos": 1,
         "alterados": 0
       },
       "contagens": {
@@ -212,7 +212,7 @@
         "anos": 1,
         "faixas": 5
       },
-      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: error sending request"
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas"
     },
     {
       "id": "moedas",
@@ -339,7 +339,7 @@
       "status": "ok",
       "changed": true,
       "changes": {
-        "adicionados": 0,
+        "adicionados": 10,
         "removidos": 10,
         "alterados": 0
       },
@@ -420,7 +420,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-10-22",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 6
+      "consecutiveFailureDays": 7
     },
     {
       "datasetId": "cnaes",
@@ -432,7 +432,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-11-04",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 6
+      "consecutiveFailureDays": 7
     },
     {
       "datasetId": "csosn",
@@ -444,7 +444,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-27",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 6
+      "consecutiveFailureDays": 7
     },
     {
       "datasetId": "feriados",
@@ -456,7 +456,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-23",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 7
+      "consecutiveFailureDays": 8
     },
     {
       "datasetId": "inss",
@@ -468,19 +468,19 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 7
+      "consecutiveFailureDays": 8
     },
     {
       "datasetId": "irpf",
       "severity": "warning",
       "status": "embedded_retained",
-      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: error sending request",
+      "message": "Dados embutidos preservados para as fontes com falha. reference probe failed: source blocked or unreachable: HTTP 403 at https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas",
       "endpoints": [
         "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas"
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 7
+      "consecutiveFailureDays": 8
     },
     {
       "datasetId": "nfe-cuf",
@@ -492,14 +492,14 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 6
+      "consecutiveFailureDays": 7
     }
   ],
   "resumo": {
     "datasetsVerificados": 27,
-    "datasetsAlterados": 2,
-    "totalAdicionados": 1,
-    "totalRemovidos": 11,
+    "datasetsAlterados": 3,
+    "totalAdicionados": 12,
+    "totalRemovidos": 12,
     "totalAlterados": 0,
     "sourceAlerts": 7,
     "criticalAlerts": 2
