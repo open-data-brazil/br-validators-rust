@@ -6,6 +6,17 @@ Este arquivo registra as mudanças relevantes do projeto. O formato segue
 
 ## [Unreleased]
 
+## [0.1.7] - 2026-11-13
+
+### Dados
+
+| Dataset | + | − | ~ | Capturado em |
+|---------|---|---|---|--------------|
+| Bacen STR Participants | 0 | 1 | 1 | 2026-11-13 |
+| Bacen PTAX Fechamento | 10 | 10 | 0 | 2026-11-13 |
+| Bacen SGS — Meta Selic (série 432) | 1 | 1 | 0 | 2026-11-13 |
+
+
 ## [0.1.6] - 2026-11-12
 
 ### Dados

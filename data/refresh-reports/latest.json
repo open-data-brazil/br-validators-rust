@@ -1,5 +1,5 @@
 {
-  "executadoEm": "2026-11-12T10:45:32.245073955+00:00",
+  "executadoEm": "2026-11-13T10:42:28.199598712+00:00",
   "datasets": [
     {
       "id": "ibge",
@@ -55,12 +55,12 @@
       "status": "ok",
       "changed": true,
       "changes": {
-        "adicionados": 1,
-        "removidos": 0,
-        "alterados": 0
+        "adicionados": 0,
+        "removidos": 1,
+        "alterados": 1
       },
       "contagens": {
-        "bancos": 461
+        "bancos": 460
       },
       "message": "Fonte verificada"
     },
@@ -420,7 +420,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-10-22",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 8
+      "consecutiveFailureDays": 9
     },
     {
       "datasetId": "cnaes",
@@ -432,7 +432,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-11-04",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 8
+      "consecutiveFailureDays": 9
     },
     {
       "datasetId": "csosn",
@@ -444,7 +444,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-27",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 8
+      "consecutiveFailureDays": 9
     },
     {
       "datasetId": "feriados",
@@ -456,7 +456,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-23",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 9
+      "consecutiveFailureDays": 10
     },
     {
       "datasetId": "inss",
@@ -468,7 +468,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 9
+      "consecutiveFailureDays": 10
     },
     {
       "datasetId": "irpf",
@@ -480,7 +480,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 9
+      "consecutiveFailureDays": 10
     },
     {
       "datasetId": "nfe-cuf",
@@ -492,15 +492,15 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 8
+      "consecutiveFailureDays": 9
     }
   ],
   "resumo": {
     "datasetsVerificados": 27,
     "datasetsAlterados": 3,
-    "totalAdicionados": 12,
-    "totalRemovidos": 11,
-    "totalAlterados": 0,
+    "totalAdicionados": 11,
+    "totalRemovidos": 12,
+    "totalAlterados": 1,
     "sourceAlerts": 7,
     "criticalAlerts": 2
   }

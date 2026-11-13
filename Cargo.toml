@@ -4,7 +4,7 @@ members = ["crates/br-validators", "crates/br-validators-cli", "crates/br-data-b
 exclude = ["fuzz"]
 
 [workspace.package]
-version = "0.1.6"
+version = "0.1.7"
 edition = "2021"
 rust-version = "1.80"
 license = "MIT"
