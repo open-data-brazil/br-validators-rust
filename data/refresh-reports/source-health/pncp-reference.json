@@ -1,5 +1,17 @@
 {
   "datasetId": "pncp-reference",
-  "status": "ok",
-  "primeiraFalhaEm": null
+  "status": "source_blocked",
+  "failureKind": "source_blocked",
+  "primeiraFalhaEm": "2026-11-15",
+  "endpoints": [
+    "https://pncp.gov.br/api/pncp/v1/modalidades",
+    "https://pncp.gov.br/api/pncp/v1/modos-disputas",
+    "https://pncp.gov.br/api/pncp/v1/tipos-contratos",
+    "https://pncp.gov.br/api/pncp/v1/tipos-instrumentos-cobranca",
+    "https://pncp.gov.br/api/pncp/v1/fontes-orcamentarias",
+    "https://pncp.gov.br/api/pncp/v1/tipos-instrumentos-convocatorios",
+    "https://pncp.gov.br/api/pncp/v1/criterios-julgamentos",
+    "https://pncp.gov.br/api/pncp/v1/amparos-legais"
+  ],
+  "mensagem": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: HTTP 503 at https://pncp.gov.br/api/pncp/v1/modalidades"
 }

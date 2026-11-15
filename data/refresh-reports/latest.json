@@ -1,5 +1,5 @@
 {
-  "executadoEm": "2026-11-14T09:55:16.262637092+00:00",
+  "executadoEm": "2026-11-15T10:31:19.113369947+00:00",
   "datasets": [
     {
       "id": "ibge",
@@ -258,7 +258,8 @@
     },
     {
       "id": "ncm",
-      "status": "ok",
+      "status": "embedded_retained",
+      "sourceStatus": "source_empty",
       "changed": false,
       "changes": {
         "adicionados": 0,
@@ -268,7 +269,7 @@
       "contagens": {
         "ncm": 10516
       },
-      "message": "Fonte verificada"
+      "message": "Dados embutidos preservados para as fontes com falha. parse error: expected value at line 1 column 1"
     },
     {
       "id": "nfe-cuf",
@@ -301,7 +302,8 @@
     },
     {
       "id": "pncp-reference",
-      "status": "ok",
+      "status": "embedded_retained",
+      "sourceStatus": "source_blocked",
       "changed": false,
       "changes": {
         "adicionados": 0,
@@ -318,7 +320,7 @@
         "tipos-instrumentos-cobranca": 1,
         "tipos-instrumentos-convocatorios": 5
       },
-      "message": "Fonte verificada"
+      "message": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: HTTP 503 at https://pncp.gov.br/api/pncp/v1/modalidades"
     },
     {
       "id": "portos",
@@ -337,9 +339,9 @@
     {
       "id": "ptax",
       "status": "ok",
-      "changed": true,
+      "changed": false,
       "changes": {
-        "adicionados": 10,
+        "adicionados": 0,
         "removidos": 0,
         "alterados": 0
       },
@@ -420,7 +422,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-10-22",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 10
+      "consecutiveFailureDays": 11
     },
     {
       "datasetId": "cnaes",
@@ -432,7 +434,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-11-04",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 10
+      "consecutiveFailureDays": 11
     },
     {
       "datasetId": "csosn",
@@ -444,7 +446,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-27",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 10
+      "consecutiveFailureDays": 11
     },
     {
       "datasetId": "feriados",
@@ -456,7 +458,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-23",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 11
+      "consecutiveFailureDays": 12
     },
     {
       "datasetId": "inss",
@@ -468,7 +470,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 11
+      "consecutiveFailureDays": 12
     },
     {
       "datasetId": "irpf",
@@ -480,7 +482,19 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 11
+      "consecutiveFailureDays": 12
+    },
+    {
+      "datasetId": "ncm",
+      "severity": "warning",
+      "status": "source_empty",
+      "message": "Dados embutidos preservados para as fontes com falha. parse error: expected value at line 1 column 1",
+      "endpoints": [
+        "https://portalunico.siscomex.gov.br/classif/api/publico/nomenclatura/download/json?perfil=PUBLICO"
+      ],
+      "retainedEmbeddedDataFrom": "2026-11-04",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 1
     },
     {
       "datasetId": "nfe-cuf",
@@ -492,16 +506,35 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 10
+      "consecutiveFailureDays": 11
+    },
+    {
+      "datasetId": "pncp-reference",
+      "severity": "warning",
+      "status": "source_blocked",
+      "message": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: HTTP 503 at https://pncp.gov.br/api/pncp/v1/modalidades",
+      "endpoints": [
+        "https://pncp.gov.br/api/pncp/v1/modalidades",
+        "https://pncp.gov.br/api/pncp/v1/modos-disputas",
+        "https://pncp.gov.br/api/pncp/v1/tipos-contratos",
+        "https://pncp.gov.br/api/pncp/v1/tipos-instrumentos-cobranca",
+        "https://pncp.gov.br/api/pncp/v1/fontes-orcamentarias",
+        "https://pncp.gov.br/api/pncp/v1/tipos-instrumentos-convocatorios",
+        "https://pncp.gov.br/api/pncp/v1/criterios-julgamentos",
+        "https://pncp.gov.br/api/pncp/v1/amparos-legais"
+      ],
+      "retainedEmbeddedDataFrom": "2026-11-04",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 1
     }
   ],
   "resumo": {
     "datasetsVerificados": 27,
-    "datasetsAlterados": 2,
-    "totalAdicionados": 11,
+    "datasetsAlterados": 1,
+    "totalAdicionados": 1,
     "totalRemovidos": 1,
     "totalAlterados": 0,
-    "sourceAlerts": 7,
+    "sourceAlerts": 9,
     "criticalAlerts": 2
   }
 }

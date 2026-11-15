@@ -6,6 +6,15 @@ Este arquivo registra as mudanças relevantes do projeto. O formato segue
 
 ## [Unreleased]
 
+## [0.1.9] - 2026-11-15
+
+### Dados
+
+| Dataset | + | − | ~ | Capturado em |
+|---------|---|---|---|--------------|
+| Bacen SGS — Meta Selic (série 432) | 1 | 1 | 0 | 2026-11-15 |
+
+
 ## [0.1.8] - 2026-11-14
 
 ### Dados
