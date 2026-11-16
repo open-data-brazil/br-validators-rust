@@ -11,3 +11,6 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
+    ignore:
+      # O ref @1.80 do job msrv é a versão mínima do Rust, não a versão da action.
+      - dependency-name: "dtolnay/rust-toolchain"
