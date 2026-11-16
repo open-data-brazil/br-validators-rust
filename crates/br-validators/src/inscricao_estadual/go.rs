@@ -37,7 +37,7 @@ pub fn validate_ie_go(input: &str) -> InscricaoEstadualValidationResult {
         .ok_or_else(|| invalid_length(Uf::GO, 9))?;
     let sum = descending_sum_8(body);
     let number = body.parse::<u32>().unwrap_or_default();
-    let expected = if sum % 11 == 0 && (10_103_105..=10_119_997).contains(&number) {
+    let expected = if sum.is_multiple_of(11) && (10_103_105..=10_119_997).contains(&number) {
         1
     } else {
         modulo11_check_digit(sum)

@@ -202,7 +202,7 @@ pub fn search_iss_municipal(
     let uf = uf.map(upper_trim);
     ISS_MUNICIPAL
         .iter()
-        .filter(|row| uf.as_ref().map_or(true, |uf| row.uf == *uf))
+        .filter(|row| uf.as_ref().is_none_or(|uf| row.uf == *uf))
         .filter(|row| {
             fold(&row.nome).contains(&query)
                 || row.uf.to_lowercase().contains(&query)

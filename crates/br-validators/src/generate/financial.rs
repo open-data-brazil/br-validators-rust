@@ -88,7 +88,7 @@ pub(super) fn cartao(rng: &mut RandomSource, brand: Option<GeneratableCardBrand>
         }
         let candidate = format!("{partial}{}", luhn_check_digit(&partial));
         if let Ok(valid) = validate_cartao_credito(&candidate) {
-            if brand.map_or(true, |expected| valid.brand == expected.brand()) {
+            if brand.is_none_or(|expected| valid.brand == expected.brand()) {
                 return candidate;
             }
         }

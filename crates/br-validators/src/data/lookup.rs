@@ -27,7 +27,7 @@ pub fn resolve_string_code(
         input,
         "Record",
         |input| strip_chars(input, strip),
-        |code| !code.is_empty() && len.map_or(true, |len| code.encode_utf16().count() == len),
+        |code| !code.is_empty() && len.is_none_or(|len| code.encode_utf16().count() == len),
         label,
         |code| Some(code.to_owned()),
     )

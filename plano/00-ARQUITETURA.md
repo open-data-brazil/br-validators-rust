@@ -153,7 +153,7 @@ pub type LookupResult<T> = Result<T, LookupError>;
 
 - Cada dataset = 1 módulo + 1 feature Cargo com o mesmo id (`ibge`, `bancos`, `tse-municipios`, …).
 - Carregamento: `include_str!("../data/<id>/<arquivo>.json")` + `serde_json::from_str` dentro de
-  `std::sync::LazyLock` (MSRV **1.80**). Índices (HashMap por código) também em `LazyLock`.
+  `std::sync::LazyLock` (MSRV **1.88**). Índices (HashMap por código) também em `LazyLock`.
 - Desserialização falhando = bug de build → testes garantem que todo JSON embutido desserializa (FASE-06).
   Em runtime usar `.expect("embedded dataset <id> is valid JSON (guaranteed by tests)")` — é a **única**
   exceção permitida à regra "sem expect".
@@ -271,7 +271,7 @@ Regra adotada (SemVer puro, versão única do workspace):
 
 ## 11. MSRV, plataformas, qualidade
 
-- MSRV: **1.80** (`rust-version = "1.80"`), edição **2021**.
+- MSRV: **1.88** (`rust-version = "1.88"`), edição **2021**.
 - CI: Linux, macOS, Windows; `cargo fmt --check`, `cargo clippy --all-targets --all-features -- -D warnings`,
   `cargo test --workspace --all-features`, `cargo test -p br-validators --no-default-features`,
   `cargo doc --no-deps` com `RUSTDOCFLAGS="-D warnings"`.

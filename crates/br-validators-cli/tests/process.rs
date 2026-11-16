@@ -65,7 +65,7 @@ fn documentos_no_processo_real() {
             .unwrap()
             .iter()
             .find(|case| {
-                case["expected"]["ok"] == true && uf.map_or(true, |uf| case["opts"]["uf"] == uf)
+                case["expected"]["ok"] == true && uf.is_none_or(|uf| case["opts"]["uf"] == uf)
             })
             .unwrap();
         let mut args = vec![ty, "validate", case["input"].as_str().unwrap(), "--json"];

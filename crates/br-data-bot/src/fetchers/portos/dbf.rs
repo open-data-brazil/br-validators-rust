@@ -25,13 +25,13 @@ pub(super) fn ler(bytes: &[u8]) -> Option<BTreeMap<String, Campos>> {
     if bytes.get(fim_campos) != Some(&0x0d) {
         return None;
     }
-    let mut descritores = bytes.get(32..fim_campos)?.chunks_exact(32);
-    if !descritores.remainder().is_empty() {
+    let (descritores, remainder) = bytes.get(32..fim_campos)?.as_chunks::<32>();
+    if !remainder.is_empty() {
         return None;
     }
     let mut offset = 1; // byte inicial indica registro ativo ou excluído
     let mut colunas = BTreeMap::new();
-    for campo in &mut descritores {
+    for campo in descritores {
         let nome = campo.get(..11)?.split(|&b| b == 0).next()?;
         let largura = usize::from(*campo.get(16)?);
         let coluna = offset..offset + largura;
