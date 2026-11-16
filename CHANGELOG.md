@@ -6,6 +6,14 @@ Este arquivo registra as mudanças relevantes do projeto. O formato segue
 
 ## [Unreleased]
 
+## [0.1.11] - 2026-11-16
+
+### Manutenção
+
+- MSRV elevado para Rust 1.88.
+- Dependências atualizadas: `ureq` 3.5, `reqwest` 0.13 e `zip` 9.6, além das transitivas.
+- Release de macOS arm64 passa a ser compilada em runner Intel, evitando bloqueio por capacidade.
+
 ## [0.1.10] - 2026-11-16
 
 ### Dados
