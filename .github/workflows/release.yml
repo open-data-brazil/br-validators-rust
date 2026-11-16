@@ -67,7 +67,9 @@ jobs:
         include:
           - { os: ubuntu-latest, target: x86_64-unknown-linux-gnu }
           - { os: ubuntu-24.04-arm, target: aarch64-unknown-linux-gnu }
-          - { os: macos-15, target: aarch64-apple-darwin }
+          # O runner macOS arm64 hospedado tem restrição de capacidade; o alvo arm64 é
+          # compilado de forma cruzada no runner Intel, que é mais estável.
+          - { os: macos-15-intel, target: aarch64-apple-darwin }
           - { os: macos-15-intel, target: x86_64-apple-darwin }
           - { os: windows-latest, target: x86_64-pc-windows-msvc }
     runs-on: ${{ matrix.os }}
@@ -89,7 +91,12 @@ jobs:
           suffix=''
           if [[ "$TARGET" == *windows-msvc ]]; then suffix='.exe'; fi
           binary="target/$TARGET/release/br-validators$suffix"
-          "$binary" --version
+          host=$(rustc -vV | sed -n 's/^host: //p')
+          if [[ "$host" == "$TARGET" ]]; then
+            "$binary" --version
+          else
+            file "$binary"
+          fi
           python scripts/package-cli.py --tag "$TAG" --target "$TARGET" --binary "$binary" --out dist
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
