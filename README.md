@@ -6,7 +6,7 @@
 [![Data refresh](https://github.com/open-data-brazil/br-validators-rust/actions/workflows/data-refresh.yml/badge.svg)](https://github.com/open-data-brazil/br-validators-rust/actions/workflows/data-refresh.yml)
 [![docs.rs](https://docs.rs/br-validators/badge.svg)](https://docs.rs/br-validators)
 [![Playground](https://img.shields.io/badge/Playground-open--data--brazil.github.io-green.svg)](https://open-data-brazil.github.io/br-validators/)
-[![MSRV: 1.80](https://img.shields.io/badge/MSRV-1.80-orange.svg)](Cargo.toml)
+[![MSRV: 1.88](https://img.shields.io/badge/MSRV-1.88-orange.svg)](Cargo.toml)
 
 **100% open-source** (MIT) workspace em Rust — biblioteca de alta performance para formatação e validação de identificadores e documentos brasileiros, CLI para terminal e datasets públicos oficiais embutidos offline. Port oficial do projeto [open-data-brazil/br-validators](https://github.com/open-data-brazil/br-validators). Os algoritmos rastreiam diretamente as fontes primárias oficiais (Receita Federal, Bacen, CONTRAN, Correios, SEFAZ).
 

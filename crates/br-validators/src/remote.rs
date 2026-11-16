@@ -2,7 +2,7 @@
 //!
 //! Requer a feature `remote`.
 
-use std::{collections::BTreeMap, fmt, io::Read};
+use std::{collections::BTreeMap, fmt};
 
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
 use sha2::{Digest, Sha256};
@@ -230,17 +230,15 @@ impl RemoteClient {
     }
 
     fn download_url(url: &str) -> Result<Vec<u8>, RemoteError> {
-        let response = ureq::get(url).call().map_err(|err| match err {
-            ureq::Error::Status(404, _) => RemoteError::NotFound(url.to_string()),
+        let mut response = ureq::get(url).call().map_err(|err| match err {
+            ureq::Error::StatusCode(404) => RemoteError::NotFound(url.to_string()),
             other => RemoteError::Http(other.to_string()),
         })?;
 
-        let mut reader = response.into_reader();
-        let mut buffer = Vec::new();
-        reader
-            .read_to_end(&mut buffer)
-            .map_err(|e| RemoteError::Http(e.to_string()))?;
-
-        Ok(buffer)
+        response
+            .body_mut()
+            .with_config()
+            .read_to_vec()
+            .map_err(|e| RemoteError::Http(e.to_string()))
     }
 }
