@@ -1,10 +1,5 @@
 {
   "datasetId": "ncm",
-  "status": "source_empty",
-  "failureKind": "parse_error",
-  "primeiraFalhaEm": "2026-11-15",
-  "endpoints": [
-    "https://portalunico.siscomex.gov.br/classif/api/publico/nomenclatura/download/json?perfil=PUBLICO"
-  ],
-  "mensagem": "Dados embutidos preservados para as fontes com falha. parse error: expected value at line 1 column 1"
+  "status": "ok",
+  "primeiraFalhaEm": null
 }
