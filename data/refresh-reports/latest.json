@@ -1,10 +1,9 @@
 {
-  "executadoEm": "2026-11-16T10:46:36.722146611+00:00",
+  "executadoEm": "2026-11-17T11:36:38.992251016+00:00",
   "datasets": [
     {
       "id": "ibge",
-      "status": "embedded_retained",
-      "sourceStatus": "source_blocked",
+      "status": "ok",
       "changed": false,
       "changes": {
         "adicionados": 0,
@@ -15,7 +14,7 @@
         "estados": 27,
         "municipios": 5571
       },
-      "message": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request"
+      "message": "Fonte verificada"
     },
     {
       "id": "aeroportos",
@@ -53,10 +52,10 @@
     {
       "id": "bancos",
       "status": "ok",
-      "changed": true,
+      "changed": false,
       "changes": {
-        "adicionados": 1,
-        "removidos": 1,
+        "adicionados": 0,
+        "removidos": 0,
         "alterados": 0
       },
       "contagens": {
@@ -108,8 +107,7 @@
     },
     {
       "id": "cnaes",
-      "status": "embedded_retained",
-      "sourceStatus": "source_blocked",
+      "status": "ok",
       "changed": false,
       "changes": {
         "adicionados": 0,
@@ -119,7 +117,7 @@
       "contagens": {
         "cnaes": 1332
       },
-      "message": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request"
+      "message": "Fonte verificada"
     },
     {
       "id": "cnpj-motivos",
@@ -302,17 +300,17 @@
     {
       "id": "pncp-reference",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "changes": {
-        "adicionados": 0,
+        "adicionados": 2,
         "removidos": 0,
         "alterados": 0
       },
       "contagens": {
-        "amparos-legais": 191,
+        "amparos-legais": 192,
         "criterios-julgamento": 16,
         "fontes-orcamentarias": 6,
-        "modalidades": 19,
+        "modalidades": 20,
         "modos-disputa": 6,
         "tipos-contrato": 12,
         "tipos-instrumentos-cobranca": 1,
@@ -322,7 +320,8 @@
     },
     {
       "id": "portos",
-      "status": "ok",
+      "status": "embedded_retained",
+      "sourceStatus": "source_empty",
       "changed": false,
       "changes": {
         "adicionados": 0,
@@ -332,14 +331,14 @@
       "contagens": {
         "portos": 1094
       },
-      "message": "Fonte verificada"
+      "message": "Dados embutidos preservados para as fontes com falha. parse error: ZIP: invalid Zip archive: Could not find EOCD"
     },
     {
       "id": "ptax",
       "status": "ok",
       "changed": true,
       "changes": {
-        "adicionados": 0,
+        "adicionados": 10,
         "removidos": 10,
         "alterados": 0
       },
@@ -411,30 +410,6 @@
   ],
   "sourceAlerts": [
     {
-      "datasetId": "ibge",
-      "severity": "critical",
-      "status": "source_blocked",
-      "message": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request",
-      "endpoints": [
-        "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
-      ],
-      "retainedEmbeddedDataFrom": "2026-10-22",
-      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 12
-    },
-    {
-      "datasetId": "cnaes",
-      "severity": "critical",
-      "status": "source_blocked",
-      "message": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request",
-      "endpoints": [
-        "https://servicodados.ibge.gov.br/api/v2/cnae/subclasses"
-      ],
-      "retainedEmbeddedDataFrom": "2026-11-04",
-      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 12
-    },
-    {
       "datasetId": "csosn",
       "severity": "warning",
       "status": "embedded_retained",
@@ -444,7 +419,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-27",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "feriados",
@@ -456,7 +431,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-23",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 13
+      "consecutiveFailureDays": 14
     },
     {
       "datasetId": "inss",
@@ -468,7 +443,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 13
+      "consecutiveFailureDays": 14
     },
     {
       "datasetId": "irpf",
@@ -480,7 +455,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 13
+      "consecutiveFailureDays": 14
     },
     {
       "datasetId": "nfe-cuf",
@@ -492,16 +467,29 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
+    },
+    {
+      "datasetId": "portos",
+      "severity": "warning",
+      "status": "source_empty",
+      "message": "Dados embutidos preservados para as fontes com falha. parse error: ZIP: invalid Zip archive: Could not find EOCD",
+      "endpoints": [
+        "https://www.gov.br/antaq/pt-br/central-de-conteudos/informacoes-geograficas",
+        "https://www.gov.br/antaq/pt-br/central-de-conteudos/Instalaesporturias06052025.zip"
+      ],
+      "retainedEmbeddedDataFrom": "2026-11-04",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 1
     }
   ],
   "resumo": {
     "datasetsVerificados": 27,
     "datasetsAlterados": 3,
-    "totalAdicionados": 2,
-    "totalRemovidos": 12,
+    "totalAdicionados": 13,
+    "totalRemovidos": 11,
     "totalAlterados": 0,
-    "sourceAlerts": 7,
-    "criticalAlerts": 2
+    "sourceAlerts": 6,
+    "criticalAlerts": 0
   }
 }

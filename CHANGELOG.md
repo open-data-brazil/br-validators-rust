@@ -6,6 +6,17 @@ Este arquivo registra as mudanças relevantes do projeto. O formato segue
 
 ## [Unreleased]
 
+## [0.1.12] - 2026-11-17
+
+### Dados
+
+| Dataset | + | − | ~ | Capturado em |
+|---------|---|---|---|--------------|
+| PNCP domain reference tables | 2 | 0 | 0 | 2026-11-17 |
+| Bacen PTAX Fechamento | 10 | 10 | 0 | 2026-11-17 |
+| Bacen SGS — Meta Selic (série 432) | 1 | 1 | 0 | 2026-11-17 |
+
+
 ## [0.1.11] - 2026-11-16
 
 ### Manutenção

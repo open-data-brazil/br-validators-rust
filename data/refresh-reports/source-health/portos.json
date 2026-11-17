@@ -1,5 +1,11 @@
 {
   "datasetId": "portos",
-  "status": "ok",
-  "primeiraFalhaEm": null
+  "status": "source_empty",
+  "failureKind": "parse_error",
+  "primeiraFalhaEm": "2026-11-17",
+  "endpoints": [
+    "https://www.gov.br/antaq/pt-br/central-de-conteudos/informacoes-geograficas",
+    "https://www.gov.br/antaq/pt-br/central-de-conteudos/Instalaesporturias06052025.zip"
+  ],
+  "mensagem": "Dados embutidos preservados para as fontes com falha. parse error: ZIP: invalid Zip archive: Could not find EOCD"
 }

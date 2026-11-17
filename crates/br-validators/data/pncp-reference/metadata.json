@@ -12,29 +12,29 @@
     "https://pncp.gov.br/api/pncp/v1/tipos-instrumentos-cobranca",
     "https://pncp.gov.br/api/pncp/v1/fontes-orcamentarias"
   ],
-  "capturadoEm": "2026-11-04",
+  "capturadoEm": "2026-11-17",
   "contagens": {
-    "amparos-legais": 191,
+    "amparos-legais": 192,
     "criterios-julgamento": 16,
     "fontes-orcamentarias": 6,
-    "modalidades": 19,
+    "modalidades": 20,
     "modos-disputa": 6,
     "tipos-contrato": 12,
     "tipos-instrumentos-cobranca": 1,
     "tipos-instrumentos-convocatorios": 5
   },
   "alteracoes": {
-    "adicionados": 0,
+    "adicionados": 2,
     "removidos": 0,
-    "alterados": 14,
-    "comparadoCom": "2026-10-25"
+    "alterados": 0,
+    "comparadoCom": "2026-11-04"
   },
   "agendamento": "diario",
   "arquivos": [
     {
       "path": "amparos-legais.json",
-      "sha256": "fcc20f5ff71023e1aa995ca2a8c871a1622f2a85f8d0435143c454833a3a09fb",
-      "bytes": 63925
+      "sha256": "55ad7ba127b12b04cbfab34bb70fd9e2d33b02f96f45ea71166b5fcdd4503843",
+      "bytes": 64245
     },
     {
       "path": "criterios-julgamento.json",
@@ -48,8 +48,8 @@
     },
     {
       "path": "modalidades.json",
-      "sha256": "0d8f30f7ae1125fed4b0b192d2e35cdfd280a4e9b565c75b03926e913aadf6a6",
-      "bytes": 5972
+      "sha256": "8b17569034b3232b4325b4d084f7e502fa7c1db6080d97994fd053b0ee7c2cbc",
+      "bytes": 6488
     },
     {
       "path": "modos-disputa.json",

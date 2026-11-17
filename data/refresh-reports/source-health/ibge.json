@@ -1,10 +1,5 @@
 {
   "datasetId": "ibge",
-  "status": "source_blocked",
-  "failureKind": "source_blocked",
-  "primeiraFalhaEm": "2026-11-05",
-  "endpoints": [
-    "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
-  ],
-  "mensagem": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: error sending request"
+  "status": "ok",
+  "primeiraFalhaEm": null
 }
