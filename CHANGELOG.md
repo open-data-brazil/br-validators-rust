@@ -6,6 +6,18 @@ Este arquivo registra as mudanças relevantes do projeto. O formato segue
 
 ## [Unreleased]
 
+## [0.1.13] - 2026-11-18
+
+### Dados
+
+| Dataset | + | − | ~ | Capturado em |
+|---------|---|---|---|--------------|
+| Bacen STR Participants | 1 | 0 | 0 | 2026-11-18 |
+| NCM — Nomenclatura Comum do Mercosul | 0 | 0 | 1 | 2026-11-18 |
+| Bacen PTAX Fechamento | 10 | 10 | 0 | 2026-11-18 |
+| Bacen SGS — Meta Selic (série 432) | 1 | 1 | 0 | 2026-11-18 |
+
+
 ## [0.1.12] - 2026-11-17
 
 ### Dados
