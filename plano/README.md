@@ -1,7 +1,7 @@
 # Plano — br-validators-rust
 
 Port em Rust do projeto [open-data-brazil/br-validators](https://github.com/open-data-brazil/br-validators)
-(TypeScript, commit de referência `9a6cd85`, versão `1.10.1-data.33`), com:
+(TypeScript, revisão atual em [REFERENCE_COMMIT](../reference/REFERENCE_COMMIT)), com:
 
 - **Biblioteca Rust** (`br-validators`) — validadores de documentos brasileiros + ~32 datasets públicos embutidos (offline).
 - **Bot de ingestão em Rust** (`br-data-bot`) — baixa as fontes oficiais todo dia, detecta mudanças, atualiza os JSON.
