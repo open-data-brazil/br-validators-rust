@@ -6,6 +6,19 @@ Este arquivo registra as mudanças relevantes do projeto. O formato segue
 
 ## [Unreleased]
 
+## [0.1.18] - 2026-11-23
+
+### Dados
+
+| Dataset | + | − | ~ | Capturado em |
+|---------|---|---|---|--------------|
+| Bacen STR Participants | 1 | 0 | 0 | 2026-11-23 |
+| IBGE Localidades | 0 | 0 | 1 | 2026-11-23 |
+| Bacen PTAX Fechamento | 0 | 10 | 0 | 2026-11-23 |
+| Bacen SGS — Meta Selic (série 432) | 1 | 1 | 0 | 2026-11-23 |
+| Anatel DDD Geographic Lookup | 0 | 0 | 2 | 2026-11-23 |
+
+
 ## [0.1.17] - 2026-11-22
 
 ### Dados

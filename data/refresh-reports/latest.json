@@ -1,14 +1,14 @@
 {
-  "executadoEm": "2026-11-22T10:51:32.270976298+00:00",
+  "executadoEm": "2026-11-23T13:09:21.650577020+00:00",
   "datasets": [
     {
       "id": "ibge",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "changes": {
         "adicionados": 0,
         "removidos": 0,
-        "alterados": 0
+        "alterados": 1
       },
       "contagens": {
         "estados": 27,
@@ -52,14 +52,14 @@
     {
       "id": "bancos",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "changes": {
-        "adicionados": 0,
+        "adicionados": 1,
         "removidos": 0,
         "alterados": 0
       },
       "contagens": {
-        "bancos": 461
+        "bancos": 462
       },
       "message": "Fonte verificada"
     },
@@ -336,15 +336,15 @@
     {
       "id": "ptax",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "changes": {
         "adicionados": 0,
-        "removidos": 0,
+        "removidos": 10,
         "alterados": 0
       },
       "contagens": {
-        "cotacoes": 860,
-        "diasUteis": 86,
+        "cotacoes": 850,
+        "diasUteis": 85,
         "moedas": 10
       },
       "message": "Fonte verificada"
@@ -367,11 +367,11 @@
     {
       "id": "telefone-ddd",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "changes": {
         "adicionados": 0,
         "removidos": 0,
-        "alterados": 0
+        "alterados": 2
       },
       "contagens": {
         "ddds": 67
@@ -419,7 +419,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-27",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 18
+      "consecutiveFailureDays": 19
     },
     {
       "datasetId": "feriados",
@@ -431,7 +431,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-23",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 19
+      "consecutiveFailureDays": 20
     },
     {
       "datasetId": "inss",
@@ -443,7 +443,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 19
+      "consecutiveFailureDays": 20
     },
     {
       "datasetId": "irpf",
@@ -455,7 +455,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 19
+      "consecutiveFailureDays": 20
     },
     {
       "datasetId": "nfe-cuf",
@@ -467,7 +467,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 18
+      "consecutiveFailureDays": 19
     },
     {
       "datasetId": "portos",
@@ -480,15 +480,15 @@
       ],
       "retainedEmbeddedDataFrom": "2026-11-04",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 6
+      "consecutiveFailureDays": 7
     }
   ],
   "resumo": {
     "datasetsVerificados": 27,
-    "datasetsAlterados": 1,
-    "totalAdicionados": 1,
-    "totalRemovidos": 1,
-    "totalAlterados": 0,
+    "datasetsAlterados": 5,
+    "totalAdicionados": 2,
+    "totalRemovidos": 11,
+    "totalAlterados": 3,
     "sourceAlerts": 6,
     "criticalAlerts": 1
   }
