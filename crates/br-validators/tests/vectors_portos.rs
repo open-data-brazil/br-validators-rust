@@ -29,6 +29,20 @@ fn consulta_instalacoes_e_municipios_dos_vetores_oficiais() {
 }
 
 #[test]
+fn busca_prioriza_nome_exato_e_prefixo_antes_de_substrings() {
+    let vectors: serde_json::Value =
+        serde_json::from_str(include_str!("vectors/portos.official.json")).unwrap();
+    let santos = vectors["golden"]["santos"]["codigo"].as_str().unwrap();
+    let resultados = search_portos("  SANTOS  ", Some(3));
+    let codigos: Vec<_> = resultados
+        .iter()
+        .map(|porto| porto.codigo.as_str())
+        .collect();
+    assert_eq!(codigos, [santos, "BRSP031", "BRBA021"]);
+    assert!(search_portos("Santos", Some(0)).is_empty());
+}
+
+#[test]
 fn distingue_entrada_formato_e_instalacao_ausente() {
     for (input, code, message) in [
         (" ", LookupErrorCode::InvalidInput, "Port code is required"),

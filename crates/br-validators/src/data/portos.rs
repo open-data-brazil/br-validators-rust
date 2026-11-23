@@ -2,9 +2,9 @@
 
 use std::{collections::HashMap, sync::LazyLock};
 
-use super::lookup::{group_by, index_by, lookup_code, search, upper_trim};
+use super::lookup::{fold, group_by, index_by, lookup_code, upper_trim};
 pub use crate::schema::Porto;
-use crate::{schema::DatasetMetadata, LookupResult};
+use crate::{schema::DatasetMetadata, util::chars::is_ecmascript_whitespace, LookupResult};
 
 embedded! {
     /// Registros de `portos.json`.
@@ -69,12 +69,37 @@ pub fn get_portos_por_municipio(codigo: impl Into<i64>) -> &'static [&'static Po
         .map_or(&[], Vec::as_slice)
 }
 
-/// Busca por nome da instalação, código ou município.
+/// Busca por nome da instalação, código ou município. Prioriza nome ou código
+/// exato, depois prefixo do nome e, por fim, as demais correspondências.
 pub fn search_portos(query: &str, limit: Option<usize>) -> Vec<&'static Porto> {
-    search(
-        &PORTOS,
-        query,
-        |row| [&row.nome, &row.codigo, &row.municipio_nome],
-        limit,
-    )
+    let query = fold(query.trim_matches(is_ecmascript_whitespace));
+    let limit = limit.unwrap_or(10);
+    if query.is_empty() || limit == 0 {
+        return Vec::new();
+    }
+
+    let mut ranked = Vec::new();
+    for porto in &*PORTOS {
+        let nome = fold(&porto.nome);
+        let codigo = fold(&porto.codigo);
+        let rank = if nome == query || codigo == query {
+            0
+        } else if nome.starts_with(&query) {
+            1
+        } else if nome.contains(&query)
+            || codigo.contains(&query)
+            || fold(&porto.municipio_nome).contains(&query)
+        {
+            2
+        } else {
+            continue;
+        };
+        ranked.push((rank, porto));
+    }
+    ranked.sort_by_key(|&(rank, _)| rank);
+    ranked
+        .into_iter()
+        .take(limit)
+        .map(|(_, porto)| porto)
+        .collect()
 }
