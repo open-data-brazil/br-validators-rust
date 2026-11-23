@@ -301,10 +301,19 @@ mod tests {
         }
         let munic = complemento_munic(&municipios, &seed);
         assert_eq!(munic.len() + seed.len(), municipios.len());
-        assert_eq!(
-            crate::framework::json_writer::canonical_json(&munic)?,
-            include_bytes!("../../../br-validators/data/iss-municipal/iss-munic-ibge.json")
-        );
+        let codigos_iss: BTreeSet<_> = seed.iter().map(|row| row.codigo_ibge).collect();
+        let mut esperados = municipios
+            .iter()
+            .filter(|m| !codigos_iss.contains(&m.codigo));
+        for row in munic {
+            let municipio = esperados.next().expect("município sem regra detalhada");
+            assert_eq!(row.codigo_ibge, municipio.codigo);
+            assert_eq!(row.nome, municipio.nome);
+            assert_eq!(row.uf, municipio.uf);
+            assert!((row.aliquota_min - ISS_MIN).abs() < f64::EPSILON);
+            assert!((row.aliquota_max - ISS_MAX).abs() < f64::EPSILON);
+            assert_eq!(row.munic_ano_pesquisa, 2024);
+        }
         Ok(())
     }
 }

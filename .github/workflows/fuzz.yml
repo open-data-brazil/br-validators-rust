@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@nightly
       - name: Instalar cargo-fuzz
-        run: cargo install cargo-fuzz --locked
+        run: cargo +nightly install cargo-fuzz --locked
       - name: Executar fuzzing (10 minutos)
-        run: cargo fuzz run ${{ matrix.target }} -- -max_total_time=600
+        run: cargo +nightly fuzz run ${{ matrix.target }} -- -max_total_time=600
         working-directory: fuzz
