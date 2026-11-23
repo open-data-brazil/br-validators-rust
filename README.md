@@ -25,18 +25,20 @@ Datasets de referência (IBGE, bancos Bacen STR, consulta DDD, feriados nacionai
 
 ### Biblioteca (`Cargo.toml`)
 
-Adicione via dependência git apontando para a tag ou release desejada:
+Adicione via dependência git apontando para a tag desejada. Consulte a
+[release mais recente](https://github.com/open-data-brazil/br-validators-rust/releases/latest)
+para escolher a versão:
 
 ```toml
 [dependencies]
-br-validators = { git = "https://github.com/open-data-brazil/br-validators-rust.git", tag = "v0.1.1" }
+br-validators = { git = "https://github.com/open-data-brazil/br-validators-rust.git", tag = "v0.1.17" }
 ```
 
 Para habilitar grupos de datasets ou serialização Serde:
 
 ```toml
 [dependencies]
-br-validators = { git = "https://github.com/open-data-brazil/br-validators-rust.git", tag = "v0.1.1", features = ["fiscal", "trade", "serde"] }
+br-validators = { git = "https://github.com/open-data-brazil/br-validators-rust.git", tag = "v0.1.17", features = ["fiscal", "trade", "serde"] }
 ```
 
 ### CLI de terminal
