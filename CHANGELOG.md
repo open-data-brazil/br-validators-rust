@@ -6,6 +6,16 @@ Este arquivo registra as mudanças relevantes do projeto. O formato segue
 
 ## [Unreleased]
 
+## [0.1.19] - 2026-11-24
+
+### Dados
+
+| Dataset | + | − | ~ | Capturado em |
+|---------|---|---|---|--------------|
+| Bacen STR Participants | 1 | 0 | 0 | 2026-11-24 |
+| Bacen PTAX Fechamento | 10 | 10 | 0 | 2026-11-24 |
+
+
 ## [0.1.18] - 2026-11-23
 
 ### Dados

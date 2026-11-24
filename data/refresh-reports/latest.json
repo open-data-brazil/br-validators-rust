@@ -1,14 +1,14 @@
 {
-  "executadoEm": "2026-11-23T13:09:21.650577020+00:00",
+  "executadoEm": "2026-11-24T13:24:04.817243385+00:00",
   "datasets": [
     {
       "id": "ibge",
       "status": "ok",
-      "changed": true,
+      "changed": false,
       "changes": {
         "adicionados": 0,
         "removidos": 0,
-        "alterados": 1
+        "alterados": 0
       },
       "contagens": {
         "estados": 27,
@@ -59,7 +59,7 @@
         "alterados": 0
       },
       "contagens": {
-        "bancos": 462
+        "bancos": 463
       },
       "message": "Fonte verificada"
     },
@@ -338,7 +338,7 @@
       "status": "ok",
       "changed": true,
       "changes": {
-        "adicionados": 0,
+        "adicionados": 10,
         "removidos": 10,
         "alterados": 0
       },
@@ -351,27 +351,28 @@
     },
     {
       "id": "selic",
-      "status": "ok",
-      "changed": true,
+      "status": "embedded_retained",
+      "sourceStatus": "source_empty",
+      "changed": false,
       "changes": {
-        "adicionados": 1,
-        "removidos": 1,
+        "adicionados": 0,
+        "removidos": 0,
         "alterados": 0
       },
       "contagens": {
         "dias": 90,
         "observacoes": 90
       },
-      "message": "Fonte verificada"
+      "message": "Dados embutidos preservados para as fontes com falha. parse error: HTTP 304 at https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=27/08/2026&dataFinal=24/11/2026"
     },
     {
       "id": "telefone-ddd",
       "status": "ok",
-      "changed": true,
+      "changed": false,
       "changes": {
         "adicionados": 0,
         "removidos": 0,
-        "alterados": 2
+        "alterados": 0
       },
       "contagens": {
         "ddds": 67
@@ -419,7 +420,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-27",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 19
+      "consecutiveFailureDays": 20
     },
     {
       "datasetId": "feriados",
@@ -431,7 +432,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-23",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 20
+      "consecutiveFailureDays": 21
     },
     {
       "datasetId": "inss",
@@ -443,7 +444,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 20
+      "consecutiveFailureDays": 21
     },
     {
       "datasetId": "irpf",
@@ -455,7 +456,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 20
+      "consecutiveFailureDays": 21
     },
     {
       "datasetId": "nfe-cuf",
@@ -467,7 +468,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 19
+      "consecutiveFailureDays": 20
     },
     {
       "datasetId": "portos",
@@ -480,16 +481,28 @@
       ],
       "retainedEmbeddedDataFrom": "2026-11-04",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 7
+      "consecutiveFailureDays": 8
+    },
+    {
+      "datasetId": "selic",
+      "severity": "warning",
+      "status": "source_empty",
+      "message": "Dados embutidos preservados para as fontes com falha. parse error: HTTP 304 at https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=27/08/2026&dataFinal=24/11/2026",
+      "endpoints": [
+        "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=27/08/2026&dataFinal=24/11/2026"
+      ],
+      "retainedEmbeddedDataFrom": "2026-11-23",
+      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
+      "consecutiveFailureDays": 1
     }
   ],
   "resumo": {
     "datasetsVerificados": 27,
-    "datasetsAlterados": 5,
-    "totalAdicionados": 2,
-    "totalRemovidos": 11,
-    "totalAlterados": 3,
-    "sourceAlerts": 6,
+    "datasetsAlterados": 2,
+    "totalAdicionados": 11,
+    "totalRemovidos": 10,
+    "totalAlterados": 0,
+    "sourceAlerts": 7,
     "criticalAlerts": 1
   }
 }

@@ -1,5 +1,10 @@
 {
   "datasetId": "selic",
-  "status": "ok",
-  "primeiraFalhaEm": null
+  "status": "source_empty",
+  "failureKind": "parse_error",
+  "primeiraFalhaEm": "2026-11-24",
+  "endpoints": [
+    "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=27/08/2026&dataFinal=24/11/2026"
+  ],
+  "mensagem": "Dados embutidos preservados para as fontes com falha. parse error: HTTP 304 at https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=27/08/2026&dataFinal=24/11/2026"
 }
