@@ -1,5 +1,5 @@
 {
-  "executadoEm": "2026-11-24T13:24:04.817243385+00:00",
+  "executadoEm": "2026-11-25T12:16:45.895618259+00:00",
   "datasets": [
     {
       "id": "ibge",
@@ -52,9 +52,9 @@
     {
       "id": "bancos",
       "status": "ok",
-      "changed": true,
+      "changed": false,
       "changes": {
-        "adicionados": 1,
+        "adicionados": 0,
         "removidos": 0,
         "alterados": 0
       },
@@ -351,19 +351,18 @@
     },
     {
       "id": "selic",
-      "status": "embedded_retained",
-      "sourceStatus": "source_empty",
-      "changed": false,
+      "status": "ok",
+      "changed": true,
       "changes": {
-        "adicionados": 0,
-        "removidos": 0,
+        "adicionados": 2,
+        "removidos": 2,
         "alterados": 0
       },
       "contagens": {
         "dias": 90,
         "observacoes": 90
       },
-      "message": "Dados embutidos preservados para as fontes com falha. parse error: HTTP 304 at https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=27/08/2026&dataFinal=24/11/2026"
+      "message": "Fonte verificada"
     },
     {
       "id": "telefone-ddd",
@@ -420,7 +419,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-27",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 20
+      "consecutiveFailureDays": 21
     },
     {
       "datasetId": "feriados",
@@ -432,7 +431,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-23",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 21
+      "consecutiveFailureDays": 22
     },
     {
       "datasetId": "inss",
@@ -444,7 +443,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 21
+      "consecutiveFailureDays": 22
     },
     {
       "datasetId": "irpf",
@@ -456,7 +455,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 21
+      "consecutiveFailureDays": 22
     },
     {
       "datasetId": "nfe-cuf",
@@ -468,7 +467,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 20
+      "consecutiveFailureDays": 21
     },
     {
       "datasetId": "portos",
@@ -481,28 +480,16 @@
       ],
       "retainedEmbeddedDataFrom": "2026-11-04",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 8
-    },
-    {
-      "datasetId": "selic",
-      "severity": "warning",
-      "status": "source_empty",
-      "message": "Dados embutidos preservados para as fontes com falha. parse error: HTTP 304 at https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=27/08/2026&dataFinal=24/11/2026",
-      "endpoints": [
-        "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=27/08/2026&dataFinal=24/11/2026"
-      ],
-      "retainedEmbeddedDataFrom": "2026-11-23",
-      "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 1
+      "consecutiveFailureDays": 9
     }
   ],
   "resumo": {
     "datasetsVerificados": 27,
     "datasetsAlterados": 2,
-    "totalAdicionados": 11,
-    "totalRemovidos": 10,
+    "totalAdicionados": 12,
+    "totalRemovidos": 12,
     "totalAlterados": 0,
-    "sourceAlerts": 7,
+    "sourceAlerts": 6,
     "criticalAlerts": 1
   }
 }
