@@ -1,5 +1,10 @@
 {
   "datasetId": "ncm",
-  "status": "ok",
-  "primeiraFalhaEm": null
+  "status": "source_blocked",
+  "failureKind": "source_blocked",
+  "primeiraFalhaEm": "2026-11-26",
+  "endpoints": [
+    "https://portalunico.siscomex.gov.br/classif/api/publico/nomenclatura/download/json?perfil=PUBLICO"
+  ],
+  "mensagem": "Dados embutidos preservados para as fontes com falha. source blocked or unreachable: HTTP 500 at https://portalunico.siscomex.gov.br/classif/api/publico/nomenclatura/download/json?perfil=PUBLICO"
 }
