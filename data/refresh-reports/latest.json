@@ -1,5 +1,5 @@
 {
-  "executadoEm": "2026-11-27T11:52:24.264907813+00:00",
+  "executadoEm": "2026-11-28T11:28:53.960580913+00:00",
   "datasets": [
     {
       "id": "ibge",
@@ -340,12 +340,12 @@
       "changed": true,
       "changes": {
         "adicionados": 10,
-        "removidos": 10,
+        "removidos": 0,
         "alterados": 0
       },
       "contagens": {
-        "cotacoes": 850,
-        "diasUteis": 85,
+        "cotacoes": 860,
+        "diasUteis": 86,
         "moedas": 10
       },
       "message": "Fonte verificada"
@@ -420,7 +420,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-27",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 23
+      "consecutiveFailureDays": 24
     },
     {
       "datasetId": "feriados",
@@ -432,7 +432,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-23",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 24
+      "consecutiveFailureDays": 25
     },
     {
       "datasetId": "inss",
@@ -444,7 +444,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 24
+      "consecutiveFailureDays": 25
     },
     {
       "datasetId": "irpf",
@@ -456,7 +456,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 24
+      "consecutiveFailureDays": 25
     },
     {
       "datasetId": "nbs",
@@ -468,7 +468,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-11-04",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 2
+      "consecutiveFailureDays": 3
     },
     {
       "datasetId": "nfe-cuf",
@@ -480,7 +480,7 @@
       ],
       "retainedEmbeddedDataFrom": "2026-06-26",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 23
+      "consecutiveFailureDays": 24
     },
     {
       "datasetId": "portos",
@@ -493,14 +493,14 @@
       ],
       "retainedEmbeddedDataFrom": "2026-11-04",
       "documentationAction": "Consultar docs/DATA-SOURCE-MAINTENANCE.md",
-      "consecutiveFailureDays": 11
+      "consecutiveFailureDays": 12
     }
   ],
   "resumo": {
     "datasetsVerificados": 27,
     "datasetsAlterados": 2,
     "totalAdicionados": 11,
-    "totalRemovidos": 11,
+    "totalRemovidos": 1,
     "totalAlterados": 0,
     "sourceAlerts": 7,
     "criticalAlerts": 2
